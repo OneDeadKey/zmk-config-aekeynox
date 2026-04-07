@@ -13,9 +13,9 @@
 #define NUM_LOCK_LAYER 1
 #define SYMBOLS_LAYER  2
 #define VIM_NAV_LAYER  3
-#define NUM_NAV_LAYER  4
+#define NAV_NUM_LAYER  4
 #define NUM_ROW_LAYER  5
-#define FUNCTION_LAYER 6
+#define FN_MEDIA_LAYER 6
 
 // Potentially used by other keymaps deriving from this one, who may add extra layers.
 // Make sure this stays equal to <index_of_last_layer> + 1
@@ -37,27 +37,47 @@
   #error "Please select only up to one hold-tap configuration at a time"
 #endif
 
-#if defined HT_HOME_ROW_MODS || defined HT_TWO_THUMB_KEYS
-  #define HRM_S &hrm LGUI S
-  #define HRM_D &hrm LCTL D
-  #define HRM_F &hrm LALT F
-  #define HRM_J &hrm LALT J
-  #define HRM_K &hrm RCTL K
-  #define HRM_L &hrm RGUI L
+#if defined MACOS
+  #define H_S &hrm LALT
+  #define H_D &hrm LGUI
+  #define H_F &hrm LCTL
+  #define H_J &hrm RCTL
+  #define H_K &hrm RGUI
+  #define H_L &hrm LALT
 #else
-  #define HRM_S &kp S
-  #define HRM_D &kp D
-  #define HRM_F &kp F
-  #define HRM_J &kp J
-  #define HRM_K &kp K
-  #define HRM_L &kp L
+  #define H_S &hrm LGUI
+  #define H_D &hrm LCTL
+  #define H_F &hrm LALT
+  #define H_J &hrm LALT
+  #define H_K &hrm RCTL
+  #define H_L &hrm RGUI
 #endif
 
 #ifdef HRM_SHIFT
-  #define HRM_A    &hrm LSHIFT A
-  #define HRM_SEMI &hrm RSHIFT SEMI
+  #define H_A    &hrm LSHIFT
+  #define H_SEMI &hrm RSHIFT
+#else
+  #define H_A    &kp
+  #define H_SEMI &kp
+#endif
+
+#if defined HT_HOME_ROW_MODS || defined HT_TWO_THUMB_KEYS
+  #define HRM_A    H_A A
+  #define HRM_S    H_S S
+  #define HRM_D    H_D D
+  #define HRM_F    H_F F
+  #define HRM_J    H_J J
+  #define HRM_K    H_K K
+  #define HRM_L    H_L L
+  #define HRM_SEMI H_SEMI SEMI
 #else
   #define HRM_A    &kp A
+  #define HRM_S    &kp S
+  #define HRM_D    &kp D
+  #define HRM_F    &kp F
+  #define HRM_J    &kp J
+  #define HRM_K    &kp K
+  #define HRM_L    &kp L
   #define HRM_SEMI &kp SEMI
 #endif
 
@@ -73,28 +93,36 @@
   #define S34_LAYER NUM_ROW_LAYER
   #define REACH_TAP ESCAPE
 #else
-  #define NAV_LAYER NUM_NAV_LAYER
-  #define NUM_LAYER NUM_NAV_LAYER
-  #define HRM_LAYER FUNCTION_LAYER
-  #define S34_LAYER NUM_NAV_LAYER
+  #define NAV_LAYER NAV_NUM_LAYER
+  #define NUM_LAYER NAV_NUM_LAYER
+  #define HRM_LAYER FN_MEDIA_LAYER
+  #define S34_LAYER NAV_NUM_LAYER
   #define REACH_TAP TAB
 #endif
 
-#if defined HT_TWO_THUMB_KEYS
-  #define SYM_NUM_LAYER &sc NUM_NAV_LAYER CAPSLOCK
+#if defined HT_TWO_THUMB_KEYS && !defined VIM_NAVIGATION
+  #define SYM_NUM_LAYER &sc NAV_NUM_LAYER CAPSLOCK
 #else
   #define SYM_NUM_LAYER &EZ_SL(NUM_LAYER)
 #endif
 
 #ifdef LHAND_SPACE
-  #define LTHUMB_TT  &hrm LCTL SPACE
+  #if defined MACOS
+    #define LTHUMB_TT &hrm LGUI SPACE
+  #else
+    #define LTHUMB_TT &hrm LCTL SPACE
+  #endif
   #define RTHUMB_TT  &magic_backspace
   #define LTHUMB_HRM &lt NAV_LAYER SPACE
   #define RTHUMB_HRM &magic_backspace
   #define LTHUMB_S34 &lt NAV_LAYER SPACE
   #define RTHUMB_S34 &magic_backspace_34_keys
 #else
-  #define LTHUMB_TT  &mt LCTL BACKSPACE
+  #if defined MACOS
+    #define LTHUMB_TT &mt LGUI BACKSPACE
+  #else
+    #define LTHUMB_TT &mt LCTL BACKSPACE
+  #endif
   #define RTHUMB_TT  &magic_space
   #define LTHUMB_HRM &sc NAV_LAYER BACKSPACE
   #define RTHUMB_HRM &lt NAV_LAYER SPACE
@@ -103,17 +131,28 @@
 #endif
 
 #ifdef HT_NONE
-  #define LTHUMB_TUCK   &kp LALT
-  #define LTHUMB_HOME   &kp LCTL
-  #define LTHUMB_REACH  &kp LGUI
+  #if defined MACOS
+    #define LTHUMB_TUCK   &kp LALT
+    #define LTHUMB_HOME   &kp LGUI
+    #define LTHUMB_REACH  &kp LCTL
+  #else
+    #define LTHUMB_TUCK   &kp LALT
+    #define LTHUMB_HOME   &kp LCTL
+    #define LTHUMB_REACH  &kp LGUI
+  #endif
   #define RTHUMB_REACH  &mo NAV_LAYER
   #define RTHUMB_HOME   &kp SPACE
   #define RTHUMB_TUCK   &mo SYMBOLS_LAYER
 #elifdef HT_THUMB_TAPS
   #define LTHUMB_TUCK   &EZ_SK(LSHIFT)
   #define LTHUMB_HOME   LTHUMB_TT
-  #define LTHUMB_REACH  &mt LGUI REACH_TAP
-  #define RTHUMB_REACH  &mt LALT ENTER
+  #if defined MACOS
+    #define LTHUMB_REACH  &mt LCTL REACH_TAP
+    #define RTHUMB_REACH  &mt LGUI ENTER
+  #else
+    #define LTHUMB_REACH  &mt LGUI REACH_TAP
+    #define RTHUMB_REACH  &mt LALT ENTER
+  #endif
   #define RTHUMB_HOME   RTHUMB_TT
   #define RTHUMB_TUCK   &sym_shift_altgr
 #elifdef HT_HOME_ROW_MODS
