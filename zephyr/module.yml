@@ -1,0 +1,3 @@
+name: zmk-config-aekeynox
+build:
+  cmake: .
