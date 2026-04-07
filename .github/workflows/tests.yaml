@@ -1,0 +1,9 @@
+name: Test keymap options
+on: [pull_request, workflow_dispatch]
+
+jobs:
+  build:
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@c62da0e16646d10240ba29191bdbcb5611b3a1af
+    with:
+      archive_name: test-firmwares
+      build_matrix_path: tests.yaml

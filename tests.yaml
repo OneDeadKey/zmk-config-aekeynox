@@ -1,31 +1,27 @@
-# This file describes the firmwares that are built by the GitHub Actions CI.
+# Keymap Checks: dummy keeb + command-line options
 
 include:
 
-  ###
-  # Keymap Checks: dummy keeb + command-line options
-  ##
-
-  # Pro Micro RP2040, default config
+  # default config
   - board: sparkfun_pro_micro_rp2040//zmk
     shield: tester_pro_micro
-    artifact-name: __tester_rp2040
+    artifact-name: tester_rp2040
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS"
 
-  # Pro Micro RP2040, Qwerty + Vim + hrm_shift
+  # Qwerty + Vim + hrm_shift
   - board: sparkfun_pro_micro_rp2040//zmk
     shield: tester_pro_micro
-    artifact-name: __tester_rp2040_qwerty_vim_shift
+    artifact-name: tester_rp2040_qwerty_vim_shift
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DVIM_NAVIGATION;-DHRM_SHIFT"
 
-  # Pro Micro RP2040, Azerty + thumb-taps
+  # Azerty + thumb-taps
   - board: sparkfun_pro_micro_rp2040//zmk
     shield: tester_pro_micro
-    artifact-name: __tester_rp2040_azerty_tt
+    artifact-name: tester_rp2040_azerty_tt
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_AZERTY;-DHT_THUMB_TAPS"
 
-  # Pro Micro RP2040, Ergol + Hummingbird
+  # Ergol + Hummingbird
   - board: sparkfun_pro_micro_rp2040//zmk
     shield: tester_pro_micro
-    artifact-name: __tester_rp2040_ergol_hummingbird
+    artifact-name: tester_rp2040_ergol_hummingbird
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_ERGOL;-DHUMMINGBIRD"
