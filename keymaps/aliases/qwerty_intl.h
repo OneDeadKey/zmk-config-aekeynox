@@ -22,7 +22,7 @@
  */
 
 // first row
-#define S_CARET &kp CARET
+#define S_CARET &spc CARET
 #define S_LT    &kp LT
 #define S_GT    &kp GT
 #define S_DLLR  &kp DLLR
@@ -30,8 +30,8 @@
 #define S_AT    &kp AT
 #define S_AMPS  &kp AMPS
 #define S_STAR  &kp STAR
-#define S_SQT   &kp SQT
-#define S_GRAVE &kp GRAVE
+#define S_SQT   &spc SQT
+#define S_GRAVE &spc GRAVE
 
 // second row
 #define S_LBRC  &kp LBRC
@@ -43,7 +43,7 @@
 #define S_PLUS  &kp PLUS
 #define S_MINUS &kp MINUS
 #define S_FSLH  &kp FSLH
-#define S_DQT   &kp DQT
+#define S_DQT   &spc DQT
 
 // third row
 #define S_TILDE &kp TILDE

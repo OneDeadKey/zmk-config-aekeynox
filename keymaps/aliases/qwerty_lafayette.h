@@ -10,7 +10,7 @@
 #define X_PASTE &kp CMD(V)
 #define X_REDO  &kp CMD(Y)
 
-#define X_CLOSE &kp CMD(W)
+#define X_CTL_W &kp RC(W)
 #define X_SAVE  &kp CMD(S)
 #define X_ALL   &kp CMD(A)
 
@@ -23,8 +23,8 @@
 
 // first row
 #define S_CARET &kp CARET
-#define S_LT    &kp LT
-#define S_GT    &kp GT
+#define S_LT    &kp NUBS
+#define S_GT    &kp PIPE2
 #define S_DLLR  &kp DLLR
 #define S_PRCNT &kp PRCNT
 #define S_AT    &kp AT
@@ -53,8 +53,8 @@
 #define S_HASH  &kp HASH
 #define S_PIPE  &kp PIPE
 #define S_EXCL  &kp EXCL
-#define S_SEMI  &kp SEMI
-#define S_COLON &kp COLON
+#define S_SEMI  &kp LS(COMMA)
+#define S_COLON &kp LS(DOT)
 #define S_QMARK &kp QMARK
 
 // extra
