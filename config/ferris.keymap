@@ -13,4 +13,4 @@
 // Ensure the 2TK flavor is selected.
 #define FOUR_THUMB_KEYS
 
-#include "../keymaps/selenium.keymap"
+#include <aekeynox/selenium.keymap>

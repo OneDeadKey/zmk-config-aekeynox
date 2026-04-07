@@ -1,1 +1,1 @@
-#include "../keymaps/selenium.keymap"
+#include <aekeynox/selenium.keymap>

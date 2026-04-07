@@ -1,0 +1,5 @@
+name: zmk-config-aekeynox
+build:
+  cmake: .
+  settings:
+    dts_root: .
