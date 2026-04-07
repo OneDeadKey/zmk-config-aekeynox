@@ -1,0 +1,9 @@
+&base_layer {
+  display-name = "Base";
+  bindings = <
+    &none  &kp SQT  &kp COMMA &kp DOT &kp P  &kp Y     &kp F  &kp G  &kp C  &kp R  &kp L     &none
+    &none  H_A A    H_S O     H_D E   H_F U  &kp I     &kp D  H_J H  H_K T  H_L N  H_SEMI S  &none
+    &none  &kp SEMI &kp Q     &kp J   &kp K  &kp X     &kp B  &kp M  &kp W  &kp V  &kp Z     &none
+            LTHUMB_TUCK  LTHUMB_HOME  LTHUMB_REACH     RTHUMB_REACH  RTHUMB_HOME  RTHUMB_TUCK
+  >;
+};
