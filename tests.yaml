@@ -25,3 +25,8 @@ include:
     shield: tester_pro_micro
     artifact-name: tester_rp2040_ergol_hummingbird
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_ERGOL;-DHUMMINGBIRD"
+
+  # Ensure the Ferris applies 2TK even when HRM is requested
+  - board: ferris//zmk
+    artifact-name: ferris_hrm
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DHT_HOME_ROW_MODS"
