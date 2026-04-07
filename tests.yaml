@@ -30,3 +30,21 @@ include:
   - board: ferris//zmk
     artifact-name: ferris_hrm
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DHT_HOME_ROW_MODS"
+
+  # Dvorak emulation on Qwerty
+  - board: sparkfun_pro_micro_rp2040//zmk
+    shield: tester_pro_micro
+    artifact-name: tester_qwerty_to_dvorak
+    cmake-args: -DDTS_EXTRA_CPP_FLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY;-DKB_EMULATION_DVORAK"
+
+  # Ergol emulation on Azerty
+  - board: sparkfun_pro_micro_rp2040//zmk
+    shield: tester_pro_micro
+    artifact-name: tester_azerty_to_ergol
+    cmake-args: -DDTS_EXTRA_CPP_FLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_AZERTY;-DKB_EMULATION_ERGOL"
+
+  # Ergol emulation on Qwerty-intl
+  - board: sparkfun_pro_micro_rp2040//zmk
+    shield: tester_pro_micro
+    artifact-name: tester_qwerty_intl_to_ergol
+    cmake-args: -DDTS_EXTRA_CPP_FLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY_INTL;-DKB_EMULATION_ERGOL"
