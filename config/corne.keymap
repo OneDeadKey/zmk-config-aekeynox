@@ -1,1 +1,1 @@
-#include "../include/selenium/selenium.keymap"
+#include "../keymaps/selenium.keymap"

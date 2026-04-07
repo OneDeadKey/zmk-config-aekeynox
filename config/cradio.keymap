@@ -13,4 +13,4 @@
 // Ensure the 2TK flavor is selected.
 #define HT_TWO_THUMB_KEYS
 
-#include "../include/selenium/selenium.keymap"
+#include "../keymaps/selenium.keymap"

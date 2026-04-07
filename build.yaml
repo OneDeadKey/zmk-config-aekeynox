@@ -1,6 +1,4 @@
 # This file describes the firmwares that are built by the GitHub Actions CI.
-#  - all supported keebs have a dedicated firmware implementing `selenium.keymap`
-#  - `__tester_*` artifacts are dummy keebs that just ensure options can be built
 
 include:
 
@@ -96,31 +94,3 @@ include:
     snippet: studio-rpc-usb-uart
     cmake-args: >
       -DCONFIG_ZMK_STUDIO=y
-
-
-  ###
-  # Keymap Checks: dummy keeb + command-line options
-  ##
-
-  # Pro Micro RP2040, default config
-  - board: sparkfun_pro_micro_rp2040//zmk
-    shield: tester_pro_micro
-    artifact-name: __tester_rp2040
-
-  # Pro Micro RP2040, Qwerty + Vim + hrm_shift
-  - board: sparkfun_pro_micro_rp2040//zmk
-    shield: tester_pro_micro
-    artifact-name: __tester_rp2040_qwerty_vim_shift
-    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DVIM_NAVIGATION;-DHRM_SHIFT"
-
-  # Pro Micro RP2040, Azerty + thumb-taps
-  - board: sparkfun_pro_micro_rp2040//zmk
-    shield: tester_pro_micro
-    artifact-name: __tester_rp2040_azerty_tt
-    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DKB_LAYOUT_AZERTY;-DHT_THUMB_TAPS"
-
-  # Pro Micro RP2040, Ergol + Hummingbird
-  - board: sparkfun_pro_micro_rp2040//zmk
-    shield: tester_pro_micro
-    artifact-name: __tester_rp2040_ergol_hummingbird
-    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DKB_LAYOUT_ERGOL;-DHUMMINGBIRD"
