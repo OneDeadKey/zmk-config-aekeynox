@@ -9,6 +9,18 @@ Customize your keymap once, and build it on many keebs.
 [Arsenik]:  https://github.com/OneDeadKey/arsenik
 [Selenium]: https://github.com/OneDeadKey/selenium
 
+## Configuration
+
+Keymap:
+
+- `keymaps/settings.h` is where options can be safely selected
+- `keymaps/selenium.keymap` allows low-level customization
+
+Keebs:
+
+- `config/*.keymap` hold keyboard-specific options
+- `build.yaml` is where you can specify the controller of your ProMicro-based keebs
+
 ## Why the name?
 
 We wanted a name that wasn’t linked to [Arsenik] or [Selenium].
