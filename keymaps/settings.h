@@ -6,13 +6,24 @@
  * Layout-specific actions and symbols.
 ******************************************************************************/
 
-// Uncomment one of the folowing lines if using a non-QWERTY layout:
+// Uncomment one of the following lines if using a non-QWERTY layout:
 
-// #define KB_LAYOUT_QWERTY_LAFAYETTE
 // #define KB_LAYOUT_AZERTY
+// #define KB_LAYOUT_BEPO
+// #define KB_LAYOUT_BEPOLAR
+// #define KB_LAYOUT_DVORAK
 // #define KB_LAYOUT_ERGOL
+// #define KB_LAYOUT_ERGLACE
+// #define KB_LAYOUT_QWERTY_INTL
+// #define KB_LAYOUT_QWERTY_LAFAYETTE
 
-// Uncomment the folowing line if using a Mac:
+// [Experimental]
+// Uncomment one of the following lines to enable layout emulation:
+
+// #define KB_EMULATION_DVORAK  // assumes the host is in QWERTY
+// #define KB_EMULATION_ERGOL   // assumes the host is in QWERTY-intl or AZERTY
+
+// Uncomment the following line if using a Mac:
 
 // #define MACOS
 
@@ -21,7 +32,7 @@
  * Hold-Taps
 ******************************************************************************/
 
-// Uncomment one of the folowing lines to pick your preferred hold-tap config:
+// Uncomment one of the following lines to pick your preferred hold-tap config:
 
 // #define HT_NONE
 // #define HT_THUMB_TAPS
@@ -52,11 +63,12 @@
 // For more information on how hold-taps operate, feel free to read ZMK’s docs:
 // https://zmk.dev/docs/keymaps/behaviors/hold-tap
 
+
 /******************************************************************************
  * Other Options
 *****************************************************************************/
 
-// Uncomment the following line to plit the num-nav layer in two:
+// Uncomment the following line to split the NavNum layer in two:
 //  - one layer for vim-style navigation (right) and GUI shortcuts (left)
 //  - one layer for a full number row + easy access to Shift+Number
 //  + Escape under the left thumb (direct access)
