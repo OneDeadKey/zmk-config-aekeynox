@@ -24,7 +24,6 @@
   )>;
 };
 
-
 / {
   behaviors {
     // Swap out the standard dead key for a one-shot layer to override some of the keys
@@ -35,45 +34,22 @@
       mods      = <(MOD_LSFT|MOD_RSFT)>;
       keep-mods = <(MOD_LSFT|MOD_RSFT)>;
     };
-
-    // Macro to tap Ergo‑L’s ODK before the specified key
-    odk: one_dead_key_macro {
-      compatible = "zmk,behavior-macro-one-param";
-      #binding-cells = <1>;
-      tap-ms = <0>;
-      wait-ms = <0>;
-      bindings
-        = <&macro_tap &kp O>
-        , <&macro_param_1to1>
-        , <&macro_tap &kp MACRO_PLACEHOLDER>
-        ;
-    };
-
-    // Same as `odk`, but adds Shift to the speicied key
-    odks: one_dead_key_shift_macro {
-      compatible = "zmk,behavior-macro-one-param";
-      #binding-cells = <1>;
-      tap-ms = <0>;
-      wait-ms = <0>;
-      bindings
-        = <&macro_tap &kp O>
-        , <&macro_press &kp LSHIFT>
-        , <&macro_param_1to1>
-        , <&macro_tap &kp MACRO_PLACEHOLDER>
-        , <&macro_release &kp LSHIFT>
-        ;
-    };
   };
-};
 
-// Extra layers defned specifically for this keymap.
-// They are appended at the end of the base keymap.
-/ {
+  macros {
+    // Macro to tap Ergo‑L’s ODK before the specified key
+    DEAD_KEY(odk, &kp O)
+    // Same as `odk`, but adds Shift to the specified key
+    DEAD_KEY_SHIFT(odks, &kp O)
+  };
+
+  // Extra layers defined specifically for this keymap.
+  // They are appended at the end of the base keymap.
   keymap {
     compatible = "zmk,keymap";
 
     one_dead_key {
-      display-name = "OneDeadKey";
+      display-name = "1dk";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
         &trans  ,  &odk Q  &odk W  &odk E  &odk R  &kp Z   ,   &odk N  &kp Y    &odk I     &odk O   &odk P    ,  &trans ,
         &trans  ,  &odk A  &odk S  &odk D  &odk F  &kp B   ,   &odk H  &odk J   &odk K     &odk L   &odk SEMI ,  &trans ,
@@ -83,7 +59,7 @@
     };
 
     shifted_one_dead_key {
-      display-name = "ShiftedOneDeadKey";
+      display-name = "1dkShift";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
         &trans  ,  &odks Q  &odks W  &odks E  &odks R  &kp LS(Z)   ,   &odks N  &kp LS(Y)    &odks I     &odks O   &odks P    ,  &trans ,
         &trans  ,  &odks A  &odks S  &odks D  &odks F  &kp LS(B)   ,   &odks H  &odks J      &odks K     &odks L   &odks SEMI ,  &trans ,
