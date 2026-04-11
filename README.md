@@ -18,7 +18,7 @@ This repository allows to build your firmware with GitHub Actions (GHA):
 2. fork this repository
 3. set your configuration in `keymaps/settings.h`<br>
    (warning: do *not* skip this step if you’re not typing in QWERTY)
-4. make sure your keeb is listed in `bulid.yaml`
+4. make sure your keeb is listed in `build.yaml`
 5. save, commit, push
 
 Your firmware will now be built automatically by GitHub’s CI:
