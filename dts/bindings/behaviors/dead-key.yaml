@@ -1,0 +1,14 @@
+compatible: "zmk,behavior-dead-key"
+
+description: >
+  Dead Key Behavior
+  Tap a non-modified dead key before the target key.
+  This ensures the dead key is always applied without any modifier, even if
+  Shift or Ctrl or Cmd are pressed while the target key is tapped.
+
+include: one_param.yaml
+
+properties:
+  dead-key:
+    type: int
+    required: true

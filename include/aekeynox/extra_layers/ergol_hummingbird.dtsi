@@ -34,11 +34,19 @@
       mods      = <(MOD_LSFT|MOD_RSFT)>;
       keep-mods = <(MOD_LSFT|MOD_RSFT)>;
     };
-  };
 
-  macros {
+  #ifdef ENABLE_FANCY_DEAD_KEYS
+    #define SHIFT_KEY &EZ_SK(LSHIFT)
+    odk: odk {
+      compatible = "zmk,behavior-dead-key";
+      #binding-cells = <1>;
+      dead-key = <O>;
+    };
+  #else
     // Macro to tap Ergo‑L’s ODK before the specified key
     DEAD_KEY(odk, &kp O)
+    #define SHIFT_KEY &EZ_SL(ODK_SHIFT_LAYER)
+  #endif
     // Same as `odk`, but adds Shift to the specified key
     DEAD_KEY_SHIFT(odks, &kp O)
   };

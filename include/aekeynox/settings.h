@@ -24,6 +24,9 @@
 // #define KB_EMULATION_ERGOL            // assumes the host is in QWERTY-intl or AZERTY
 // #define KB_EMULATION_QWERTY_LAFAYETTE // assumes the host is in QWERTY-intl or AZERTY
 
+// Uncomment the following line to opt-in to experimental custom dead-key behavior
+// #define ENABLE_FANCY_DEAD_KEYS
+
 // Uncomment the following line if using a Mac:
 
 // #define MACOS
