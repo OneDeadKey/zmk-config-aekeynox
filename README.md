@@ -40,7 +40,7 @@ but here are the main options:
 
 - `HT_*` selects the Selenium hold-tap flavor: EZ, TT, HRM (default), 2TK.
 
-- `KB_LAYOUT_*` must match the layout used on the host computer. If unset, QWERTY is assumed, which **will** result in unexpected symbols or shortcuts in a different keyboald layout is used.
+- `KB_LAYOUT_*` must match the layout used on the host computer. If unset, QWERTY is assumed, which **will** result in unexpected symbols or shortcuts if a different keyboard layout is used.
 
 - `KB_EMULATION_*` (experimental) activates a layout emulation (none by default).
 
