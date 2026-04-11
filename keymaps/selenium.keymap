@@ -7,7 +7,7 @@
 
 #include "aliases.h"      // defines symbols and actions
 #include "bindings.h"     // default SELENIUM_KEYMAP_BINDINGS macro
-#include "dead_keys.dtsi" // defines dead key helpers
+#include "mappings.dtsi"  // key mapping helpers and macros
 #include "hold_taps.dtsi" // defines thumb keys and homerow mods
 
 /**

@@ -1,8 +1,8 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+// Define a dead layer key
 // note: macro_pause_for_release might be useless
-
 #define DEAD_KEY(name, key) name: name {       \
   compatible = "zmk,behavior-macro-one-param"; \
   #binding-cells = <1>;                        \
@@ -16,6 +16,8 @@
     ;                                          \
 };
 
+// Define a shifted dead layer key
+// note: macro_pause_for_release might be useless
 #define DEAD_KEY_SHIFT(name, key) name: name { \
   compatible = "zmk,behavior-macro-one-param"; \
   #binding-cells = <1>;                        \
@@ -31,19 +33,24 @@
     ;                                          \
 };
 
+// Define a two-level key (e.g. punctuation key)
+#define TWO_LEVEL_KEY(name, base, shift) name: name { \
+  compatible = "zmk,behavior-mod-morph";              \
+  #binding-cells = <0>;                               \
+  bindings = <base>, <shift>;                         \
+  mods = <(MOD_LSFT|MOD_RSFT)>;                       \
+};
+
 / {
   macros {
-    spc: space_after_dead_key {
-      compatible = "zmk,behavior-macro-one-param";
-      #binding-cells = <1>;
+    digraph: digraph {
+      compatible = "zmk,behavior-macro-two-param";
+      #binding-cells = <2>;
       tap-ms = <0>;
       wait-ms = <0>;
-      bindings
-        = <&macro_param_1to1>
-        , <&kp MACRO_PLACEHOLDER>
-        , <&macro_pause_for_release>
-        , <&macro_tap &kp SPACE>
-        ;
+      bindings = <
+        &macro_param_1to1 &kp MACRO_PLACEHOLDER
+        &macro_param_2to1 &kp MACRO_PLACEHOLDER>;
     };
   };
 };
