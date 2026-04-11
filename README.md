@@ -10,17 +10,61 @@ Customize your keymap once, and build it on many keebs.
 [Selenium]: https://github.com/OneDeadKey/selenium
 
 
+## In a Nutshell
+
+This repository allows to build your firmware with GitHub Actions (GHA):
+
+1. [create a GitHub account](https://github.com/signup) if you don’t already have one
+2. fork this repository
+3. set your configuration in `keymaps/settings.h`<br>
+   (warning: do *not* skip this step if you’re not typing in QWERTY)
+4. make sure your keeb is listed in `bulid.yaml`
+5. save, commit, push
+
+Your firmware will now be built automatically by GitHub’s CI:
+
+- check the `Actions` tab
+- wait for the latest task to complete
+- click on this task
+- download the CI artifact
+- unzip, pick the firmware matching your keeb
+- flash your keeb
+
+
 ## Configuration
 
-Keymap:
+### `keymaps/settings.h`
 
-- `keymaps/settings.h` is where options can be safely selected
-- `keymaps/selenium.keymap` allows low-level customization
+This is where options can be safely selected. This file should be self-explanatory,
+but here are the main options:
 
-Keebs:
+- `HT_*` selects the Selenium hold-tap flavor: EZ, TT, HRM (default), 2TK.
 
-- `config/*.keymap` hold keyboard-specific options
-- `build.yaml` is where you can specify the controller of your ProMicro-based keebs
+- `KB_LAYOUT_*` must match the layout used on the host computer. If unset, QWERTY is assumed, which **will** result in unexpected symbols or shortcuts in a different keyboald layout is used.
+
+- `KB_EMULATION_*` (experimental) activates a layout emulation (none by default).
+
+- `VIM_NAVIGATION` to enable the Vim variant.
+
+### `keymaps/selenium.keymap`
+
+This file allows low-level customization.
+See the [customizing ZMK](https://zmk.dev/docs/customization) documentation.
+
+### `build.yaml`
+
+This is the list of all keyboard firmware to build.
+
+Pro Micro based keebs consist in two parts:
+- a *shield*, which is the physical keyboard with the keys
+- a *board*, which is tho controller board plugged onto the keeb: Sparkfun, nice!nano, etc.
+
+If you have a Pro Micro keeb, make sure it’s properly described in this file. You might have to
+change the `board` field to match the micro-controller unit associated with your keeb.
+
+### `config/*.keymap`
+
+These are the keyboard descriptors. The folder name can be confusing, but that’s how ZMK works.
 
 
 ## Layout Emulation
