@@ -1,0 +1,84 @@
+#define ODK_LAYER        EXTRA_LAYERS_START_INDEX
+#define ODK_SHIFT_LAYER (EXTRA_LAYERS_START_INDEX + 1)
+
+/ {
+  behaviors {
+    TWO_LEVEL_KEY(apos, &EZ_SL(ODK_LAYER), S_EXCL) // ' ! (1dk)
+    TWO_LEVEL_KEY(comma, S_COMMA, S_SEMI)          // , ;
+    TWO_LEVEL_KEY(dot,   S_DOT,   S_COLON)         // . :
+    TWO_LEVEL_KEY(slash, S_FSLH,  S_QMARK)         // / ?
+  };
+};
+
+
+/******************************************************************************
+ * Base Layer (host-specific)
+******************************************************************************/
+
+#ifdef KB_LAYOUT_AZERTY
+
+  &base_layer {
+    display-name = "Base";
+    bindings = <SELENIUM_KEYMAP_BINDINGS(
+      &none  ,  &kp A  &kp Z  &kp E  &kp R  &kp T   ,   &kp Y  &kp U    &kp I  &kp O  &kp P   ,  &none ,
+      &none  ,  H_A Q  H_S S  H_D D  H_F F  &kp G   ,   &kp H  H_J J    H_K K  H_L L  &apos   ,  &none ,
+      &none  ,  &kp W  &kp X  &kp C  &kp V  &kp B   ,   &kp N  &kp SEMI &comma &dot   &slash  ,  &none ,
+         LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH   ,   RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
+    )>;
+  };
+  #define K_DIA &kp LBRC // diaeresis
+  #define K_ODKS &trans  // no 1dkShift layer
+  #define S_SZ   &trans
+  #define C_MULT &trans
+
+#elif defined KB_LAYOUT_QWERTY_INTL
+
+  &base_layer {
+    display-name = "Base";
+    bindings = <SELENIUM_KEYMAP_BINDINGS(
+      &none  ,  &kp Q  &kp W  &kp E  &kp R  &kp T   ,   &kp Y  &kp U  &kp I  &kp O  &kp P     ,  &none  ,
+      &none  ,  H_A A  H_S S  H_D D  H_F F  &kp G   ,   &kp H  H_J J  H_K K  H_L L  &apos     ,  &none  ,
+      &none  ,  &kp Z  &kp X  &kp C  &kp V  &kp B   ,   &kp N  &kp M  &comma &dot   &kp FSLH  ,  &none  ,
+         LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH   ,   RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
+    )>;
+  };
+  #define K_DIA &kp DQT // diaeresis
+  #define K_ODKS &EZ_SL(ODK_SHIFT_LAYER)
+
+#else
+  #error "KB_EMULATION_QWERTY_LAFAYETTE requires either KB_LAYOUT_AZERTY or KB_LAYOUT_QWERTY_INTL"
+#endif
+
+
+/******************************************************************************
+ * 1DK Layers (non-ASCII chars, host-agnostic)
+******************************************************************************/
+
+/ {
+  keymap {
+    compatible = "zmk,keymap";
+
+    one_dead_key {
+      display-name = "1dk";
+      bindings = <SELENIUM_KEYMAP_BINDINGS(
+        &trans  ,  C_AE    C_EACU  C_EGRV  C_OCRC  &trans   ,   &trans  C_UGRV  C_IDIA  C_OE    &trans  ,  &trans ,
+        &trans  ,  C_AGRV  S_SZ    C_ECRC  S_MINUS &trans   ,   C_YCRC  C_UCRC  C_ICRC  C_OCRC  K_DIA   ,  &trans ,
+        &trans  ,  C_ACRC  C_MULT  C_CCDL  S_UNDER &trans   ,   &trans  C_NTLD  C_MU    &trans  &trans  ,  &trans ,
+                                  K_ODKS , S_SQT , &trans   ,   &trans , S_SQT , &trans
+      )>;
+    };
+
+#ifdef KB_LAYOUT_QWERTY_INTL
+    one_dead_key_shift {
+      display-name = "1dkShift";
+      bindings = <SELENIUM_KEYMAP_BINDINGS(
+        &trans  ,  SC_AE   SC_EACU SC_EGRV SC_OCRC &trans   ,   &trans  SC_UGRV SC_IDIA SC_OE   &trans  ,  &trans ,
+        &trans  ,  SC_AGRV S_SZ    SC_ECRC &trans  &trans   ,   SC_YCRC SC_UCRC SC_ICRC SC_OCRC &none   ,  &trans ,
+        &trans  ,  SC_ACRC &trans  SC_CCDL &trans  &trans   ,   &trans  SC_NTLD &trans  &trans  &trans  ,  &trans ,
+                                 &trans , &trans , &trans   ,   &trans , &trans , &trans
+      )>;
+    };
+#endif
+
+  };
+};

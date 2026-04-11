@@ -69,7 +69,7 @@ These are the keyboard descriptors. The folder name can be confusing, but thatâ€
 
 ## Layout Emulation
 
-This is still pre-alpha. So far only two layouts can be emulated: Dvorak and Ergoâ€‘L.
+This is still experimental.
 
 To emulate Dvorak for QWERTY hosts, just uncomment this line in `keymaps/settings.h`:
 
