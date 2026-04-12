@@ -1,17 +1,43 @@
 # This file describes the firmwares that are built by the GitHub Actions CI.
+# Supported hardware: https://zmk.dev/docs/hardware
 
 include:
 
   ###
-  # ProMicro-Based Keyboards
+  # Composite Keyboards (external MCU)
   #
   # These keebs consist in two parts:
   #  - a shield = the keyboard itself
   #  - a board = the micro-controller unit (MCU), which can be:
-  #    - nice_nano@2 (nice!nano v2)
-  #    - sparkfun_pro_micro_rp2040
-  #    - xiao_ble
-  #    - ... and many others
+  #
+  #    - Pro Micro Interconnect:
+  #      - Adafruit KB2040              adafruit_kb2040//zmk
+  #      - BlueMicro840 v1              bluemicro840//zmk
+  #      - Boardsource Blok             boardsource_blok//zmk
+  #      - Mikoto                       mikoto//zmk
+  #      - Puchi-BLE v1                 puchi_ble//zmk
+  #      - QMK Proton-C                 proton_c//zmk
+  #      - SparkFun Pro Micro RP2040    sparkfun_pro_micro_rp2040//zmk
+  #      - nRFMicro nRF52833            nrfmicro/nrf52833/zmk
+  #      - nRFMicro nRF52840            nrfmicro/nrf52840/zmk
+  #      - nRFMicro nRF52840 (flipped)  nrfmicro/nrf52840/flipped_zmk
+  #      - nice!nano                    nice_nano//zmk
+  #      - nice!nano v2                 nice_nano@2//zmk
+  #
+  #    - XIAO Interconnect:
+  #      - Adafruit QT Py RP2040        adafruit_qt_py_rp2040//zmk
+  #      - Seeed Studio XIAO RP2040     xiao_rp2040//zmk
+  #      - Seeed Studio XIAO SAMD21     seeeduino_xiao//zmk
+  #      - Seeed Studio XIAO nRF52840   xiao_ble//zmk
+  #
+  #    - BlackPill Interconnect:
+  #      - PillBug                      pillbug//zmk
+  #      - BlackPill F401CC             blackpill_f401cc//zmk
+  #      - BlackPill F401CE             blackpill_f401ce//zmk
+  #      - BlackPill F411CE             blackpill_f411ce//zmk
+  #
+  #    - MakerDiary nRF52840 M.2 Interconnect:
+  #      - nRF52840 M.2 Module          nrf52840_m2//zmk
   #
   # => make sure the `board` field matches the MCU on your keyboard
   ##
@@ -21,50 +47,43 @@ include:
     shield: quacken_zero
     artifact-name: quacken_zero
     snippet: studio-rpc-usb-uart
-    cmake-args: >
-      -DCONFIG_ZMK_STUDIO=y
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
 
   # Totem + XIAO BLE
   - board: xiao_ble//zmk
     shield: totem_left
     artifact-name: totem_left
     snippet: studio-rpc-usb-uart
-    cmake-args: >
-      -DCONFIG_ZMK_STUDIO=y
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: xiao_ble//zmk
     shield: totem_right
     artifact-name: totem_right
     snippet: studio-rpc-usb-uart
-    cmake-args: >
-      -DCONFIG_ZMK_STUDIO=y
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
 
   # Corne + nice!nano v2
   - board: nice_nano@2//zmk
     shield: corne_left
     artifact-name: corne_left
     snippet: studio-rpc-usb-uart
-    cmake-args: >
-      -DCONFIG_ZMK_STUDIO=y
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: nice_nano@2//zmk
     shield: corne_right
     artifact-name: corne_right
     snippet: studio-rpc-usb-uart
-    cmake-args: >
-      -DCONFIG_ZMK_STUDIO=y
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
 
-  # Sweep + SparkFun RP2040
-  - board: sparkfun_pro_micro_rp2040//zmk
+  # Sweep + nice!nano v2
+  - board: nice_nano@2//zmk
     shield: cradio_left
     artifact-name: sweep_left
     snippet: studio-rpc-usb-uart
-    cmake-args: >
-      -DCONFIG_ZMK_STUDIO=y
-  - board: sparkfun_pro_micro_rp2040//zmk
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  - board: nice_nano@2//zmk
     shield: cradio_right
     artifact-name: sweep_right
     snippet: studio-rpc-usb-uart
-    cmake-args: >
-      -DCONFIG_ZMK_STUDIO=y
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
 
 
   ###
@@ -75,8 +94,7 @@ include:
   - board: quacken_flex/rp2040
     artifact-name: quacken_flex
     snippet: studio-rpc-usb-uart
-    cmake-args: >
-      -DCONFIG_ZMK_STUDIO=y
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
 
   # Ferris (STM32F072)
   # Note: not enough memory for ZMK Studio
@@ -87,10 +105,8 @@ include:
   - board: glove80_lh
     artifact-name: glove80_left
     snippet: studio-rpc-usb-uart
-    cmake-args: >
-      -DCONFIG_ZMK_STUDIO=y
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: glove80_rh
     artifact-name: glove80_right
     snippet: studio-rpc-usb-uart
-    cmake-args: >
-      -DCONFIG_ZMK_STUDIO=y
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
