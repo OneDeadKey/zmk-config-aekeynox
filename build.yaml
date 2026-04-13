@@ -101,6 +101,16 @@ include:
   - board: ferris//zmk
     artifact-name: ferris
 
+  # Corneish Zen (nRF52840)
+  - board: corneish_zen_left//zmk
+    artifact-name: corneish_zen_left
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  - board: corneish_zen_right//zmk
+    artifact-name: corneish_zen_right
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+
   # Glove80
   - board: glove80_lh
     artifact-name: glove80_left
