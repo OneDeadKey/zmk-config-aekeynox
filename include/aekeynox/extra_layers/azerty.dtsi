@@ -4,14 +4,18 @@
 &base_layer {
   display-name = "Base";
   bindings = <SELENIUM_KEYMAP_BINDINGS(
-    &kp TAB     ,  &kp Q &kp W &kp E &kp R &kp T  ,  &kp Y  &kp U  &kp I     &kp O   &kp P     ,  &kp BACKSPACE    ,
-    &kp ESCAPE  ,  HRM_A HRM_S HRM_D HRM_F &kp G  ,  &kp H  HRM_J  HRM_K     HRM_L   HRM_SEMI  ,  &EZ_SL(DK_LAYER) ,
-    &kp LSHIFT  ,  &kp Z &kp X &kp C &kp V &kp B  ,  &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH  ,  &kp RSHIFT       ,
+    &kp TAB     ,  &kp Q &kp W &kp E &kp R &kp T  ,  &kp Y  &kp U  &kp I     &kp O   &kp P     ,  &kp BACKSPACE  ,
+    &kp ESCAPE  ,  HRM_A HRM_S HRM_D HRM_F &kp G  ,  &kp H  HRM_J  HRM_K     HRM_L   HRM_SEMI  ,  &dead_key      ,
+    &kp LSHIFT  ,  &kp Z &kp X &kp C &kp V &kp B  ,  &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH  ,  &kp RSHIFT     ,
         LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH  ,  RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
   )>;
 };
 
 / {
+  behaviors {
+    TWO_LEVEL_KEY(dead_key, &EZ_SL(DK_LAYER), S_PRCNT) // ' % (1dk)
+  };
+
   // Extra layers defined specifically for this keymap, appended to the base keymap.
   keymap {
     compatible = "zmk,keymap";
@@ -19,7 +23,7 @@
     dead_key_layer {
       display-name = "1dk";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
-        &trans  ,  C_AGRV  C_EACU  C_EGRV  C_EURO  &trans   ,  &trans  C_UGRV  &trans  &trans  &trans  ,  &trans   ,
+        &trans  ,  C_AGRV  C_EACU  C_EGRV  C_EURO  &trans   ,  &trans  C_UGRV  &trans  C_OE    &trans  ,  &trans   ,
         &trans  ,  C_ACRC  &trans  C_ECRC  S_MINUS S_UNDER  ,  &trans  C_UCRC  C_ICRC  C_OCRC  C_MU    ,  &kp LBRC ,
         &trans  ,  &trans  &trans  C_CCDL  S_LPAR  S_RPAR   ,  &trans  &trans  &trans  &trans  &trans  ,  &trans   ,
                                   &trans , S_SQT , &trans   ,  &trans , S_SQT , &trans
