@@ -92,7 +92,8 @@
   #define C_NTLD &digraph RA(N2) N // ñ
 #endif
 
-#define C_MU &kp PIPE // µ
+#define C_MU   &kp PIPE  // µ
+#define C_EURO &kp RA(E) // €
 
 // circumflex accent
 #define C_ACRC &digraph LBKT Q // â
