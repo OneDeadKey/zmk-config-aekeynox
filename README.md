@@ -16,7 +16,7 @@ This repository allows to build your firmware with GitHub Actions (GHA):
 
 1. [create a GitHub account](https://github.com/signup) if you don’t already have one
 2. [fork](https://github.com/OneDeadKey/zmk-config-aekeynox/fork) this repository
-3. set your configuration in [`keymaps/settings.h`](#keymapssettingsh)<br>
+3. set your configuration in [`include/aekeynox/settings.h`](#keymapssettingsh)<br>
    *(this step is **required** for non-QWERTY layouts)*
 4. make sure your keyboard is configured properly in [`build.yaml`](#buildyaml)<br>
    *(this step is **required** for composite keebs based on Pro Micro, XIAO, etc.)*
@@ -34,7 +34,7 @@ Your firmware will now be built automatically by GitHub’s CI:
 
 ## Configuration
 
-### `keymaps/settings.h`
+### `include/aekeynox/settings.h`
 
 This is where options can be safely selected. This file should be self-explanatory,
 but here are the main options:
@@ -54,7 +54,7 @@ but here are the main options:
 [HRM]: https://onedeadkey.github.io/selenium/#flavor-hrm
 [2TK]: https://onedeadkey.github.io/selenium/#flavor-2tk
 
-### `keymaps/selenium.keymap`
+### `include/aekeynox/selenium.keymap`
 
 This file allows low-level customization.
 
@@ -82,7 +82,7 @@ These are the keyboard descriptors. The folder name can be confusing, but that�
 
 This is still experimental.
 
-To emulate Dvorak for QWERTY hosts, just uncomment this line in `keymaps/settings.h`:
+To emulate Dvorak for QWERTY hosts, just uncomment this line in `include/aekeynox/settings.h`:
 
 ```c
 #define KB_EMULATION_DVORAK
