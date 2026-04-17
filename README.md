@@ -2,13 +2,22 @@
 
 Reference ZMK implementation of the [Arsenik] and [Selenium] keymaps.
 
-![ortholinear view of the Selenium keymap](https://github.com/OneDeadKey/selenium/raw/main/selenium.png)
+[Arsenik]:      https://github.com/OneDeadKey/arsenik
+[Selenium]:     https://github.com/OneDeadKey/selenium
+[Selenium 2TK]: https://github.com/OneDeadKey/selenium/raw/main/selenium.png "Selenium, 2TK flavor"
+
+| ![Selenium 2TK] |
+| :-: |
+| [Selenium flavors]:<br> [EZ], [TT], [HRM], [2TK] (pic) + [Vim variant] |
+
+[Selenium flavors]: https://onedeadkey.github.io/selenium
+[EZ]:               https://onedeadkey.github.io/selenium/#flavor-ez
+[TT]:               https://onedeadkey.github.io/selenium/#flavor-tt
+[HRM]:              https://onedeadkey.github.io/selenium/#flavor-hrm
+[2TK]:              https://onedeadkey.github.io/selenium/#flavor-2tk
+[Vim variant]:      https://onedeadkey.github.io/selenium/#vim-variant
 
 Customize your keymap once, and build it on many keebs.
-
-[Arsenik]:  https://github.com/OneDeadKey/arsenik
-[Selenium]: https://github.com/OneDeadKey/selenium
-
 
 ## In a Nutshell
 
@@ -47,12 +56,7 @@ but here are the main options:
 
 - `KB_EMULATION_*` (experimental) activates a layout emulation (none by default).
 
-- `VIM_NAVIGATION` enables the [Vim variant](https://onedeadkey.github.io/selenium/#vim-variant).
-
-[EZ]:  https://onedeadkey.github.io/selenium/#flavor-ez
-[TT]:  https://onedeadkey.github.io/selenium/#flavor-tt
-[HRM]: https://onedeadkey.github.io/selenium/#flavor-hrm
-[2TK]: https://onedeadkey.github.io/selenium/#flavor-2tk
+- `VIM_NAVIGATION` enables the [Vim variant].
 
 ### `include/aekeynox/selenium.keymap`
 
