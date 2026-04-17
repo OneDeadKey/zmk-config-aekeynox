@@ -52,6 +52,20 @@ include:
     cmake-args: >
       -DCONFIG_ZMK_STUDIO=y
 
+  # Lily58 + nice!nano v2
+  - board: nice_nano@2//zmk
+    shield: lily58_left
+    artifact-name: lily58_left
+    snippet: studio-rpc-usb-uart
+    cmake-args: >
+      -DCONFIG_ZMK_STUDIO=y
+  - board: nice_nano@2//zmk
+    shield: lily58_right
+    artifact-name: lily58_right
+    snippet: studio-rpc-usb-uart
+    cmake-args: >
+      -DCONFIG_ZMK_STUDIO=y
+
   # Sweep + SparkFun RP2040
   - board: sparkfun_pro_micro_rp2040//zmk
     shield: cradio_left
