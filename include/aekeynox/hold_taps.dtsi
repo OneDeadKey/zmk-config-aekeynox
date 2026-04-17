@@ -86,6 +86,12 @@
  * Thumb Keys
  */
 
+#ifdef ENABLE_MOD_HOLD_NAVIGATION
+  #define NAV_SC &mhsc
+#else
+  #define NAV_SC &sc
+#endif
+
 #ifdef VIM_NAVIGATION
   #define NAV_LAYER VIM_NAV_LAYER
   #define NUM_LAYER NUM_ROW_LAYER
@@ -124,9 +130,9 @@
     #define LTHUMB_TT &mt LCTL BACKSPACE
   #endif
   #define RTHUMB_TT  &magic_space
-  #define LTHUMB_HRM &sc NAV_LAYER BACKSPACE
+  #define LTHUMB_HRM NAV_SC NAV_LAYER BACKSPACE
   #define RTHUMB_HRM &lt NAV_LAYER SPACE
-  #define LTHUMB_S34 &sc NAV_LAYER BACKSPACE
+  #define LTHUMB_S34 NAV_SC NAV_LAYER BACKSPACE
   #define RTHUMB_S34 &lt S34_LAYER SPACE
 #endif
 
@@ -328,6 +334,30 @@
       tapping-term-ms = <TAPPING_TERM>;
       flavor = "tap-preferred";
       bindings = <&lkp>, <&losm>;
+    };
+
+    // Fancy behaviors for one-handed Alt(+Shift)+{tab,backtick}
+    mhsc: space_cade_with_held_mods {
+      compatible = "zmk,behavior-mod-hold";
+      #binding-cells = <2>;
+      binding = <&sc>;
+      mods-to-hold = <MOD_LALT>;
+    };
+
+    vim_prev: vim_prev {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp LA(LEFT)>, <&kp LS(GRAVE)>;
+      mods      = <(MOD_LALT|MOD_LGUI)>;
+      keep-mods = <(MOD_LALT|MOD_LGUI)>;
+    };
+
+    vim_next: vim_next {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp LA(RIGHT)>, <&kp GRAVE>;
+      mods      = <(MOD_LALT|MOD_LGUI)>;
+      keep-mods = <(MOD_LALT|MOD_LGUI)>;
     };
   };
 };
