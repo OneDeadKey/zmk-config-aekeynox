@@ -9,17 +9,16 @@
 
 // Human-readable constants for the layer indexes.
 // Make sure to update this table if you edit the order / number of layers in the keymap.
-#define BASE_LAYER     0
-#define NUM_LOCK_LAYER 1
-#define SYMBOLS_LAYER  2
-#define VIM_NAV_LAYER  3
-#define NAV_NUM_LAYER  4
-#define NUM_ROW_LAYER  5
-#define FN_MEDIA_LAYER 6
+#define BASE_LAYER       0
+#define NUM_LOCK_LAYER   1
+#define SYMBOLS_LAYER    2
+#define NAV_LAYER 3
+#define NUM_ROW_LAYER    4
+#define FN_MEDIA_LAYER   5
 
 // Potentially used by other keymaps deriving from this one, who may add extra layers.
 // Make sure this stays equal to <index_of_last_layer> + 1
-#define EXTRA_LAYERS_START_INDEX 7
+#define EXTRA_LAYERS_START_INDEX 6
 
 
 /**
@@ -93,21 +92,21 @@
 #endif
 
 #ifdef VIM_NAVIGATION
-  #define NAV_LAYER VIM_NAV_LAYER
+  #define NAV_LAYER NAV_LAYER
   #define NUM_LAYER NUM_ROW_LAYER
   #define HRM_LAYER NUM_ROW_LAYER
   #define S34_LAYER NUM_ROW_LAYER
   #define REACH_TAP ESCAPE
 #else
-  #define NAV_LAYER NAV_NUM_LAYER
-  #define NUM_LAYER NAV_NUM_LAYER
+  #define NAV_LAYER NAV_LAYER
+  #define NUM_LAYER NAV_LAYER
   #define HRM_LAYER FN_MEDIA_LAYER
-  #define S34_LAYER NAV_NUM_LAYER
+  #define S34_LAYER NAV_LAYER
   #define REACH_TAP TAB
 #endif
 
 #if defined HT_TWO_THUMB_KEYS && !defined VIM_NAVIGATION
-  #define SYM_NUM_LAYER &sc NAV_NUM_LAYER CAPSLOCK
+  #define SYM_NUM_LAYER &sc NAV_LAYER CAPSLOCK
 #else
   #define SYM_NUM_LAYER &EZ_SL(NUM_LAYER)
 #endif
