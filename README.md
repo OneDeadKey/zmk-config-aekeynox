@@ -17,7 +17,7 @@ Reference ZMK implementation of the [Arsenik] and [Selenium] keymaps.
 [2TK]:              https://onedeadkey.github.io/selenium/#flavor-2tk
 [Vim variant]:      https://onedeadkey.github.io/selenium/#vim-variant
 
-Customize your keymap once, and build it on many keebs.
+Customize your keymap once, and build it on all supported keebs.
 
 ## In a Nutshell
 
