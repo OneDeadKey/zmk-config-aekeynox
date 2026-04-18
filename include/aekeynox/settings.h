@@ -86,6 +86,18 @@
 
 // #define VIM_NAVIGATION
 
+// Uncomment one of the following lines to choose which layer you want on the
+// left thumb reach key in the hrm flavor:
+
+// #define L_LAYER_2 FN_MEDIA_LAYER // (default)
+// #define L_LAYER_2 NUM_ROW_LAYER
+
+// Uncomment one of the following lines to choose which layer you want on the
+// right thumb reach key in the hrm flavor (same as L_LAYER_2 if unspecified):
+
+// #define R_LAYER_2 FN_MEDIA_LAYER
+// #define R_LAYER_2 NUM_ROW_LAYER
+
 // [Experimental]
 // Uncomment the following line to enable the "mod-hold behavior" on the left
 // hand’s navigation layer key. Enabling this means that if the Alt key is held
