@@ -1,0 +1,48 @@
+/******************************************************************************
+ * Left hand half layers
+******************************************************************************/
+
+#define HL_ARROWS_ESDF \
+  &kp ESC  &kp HOME &kp UP   &kp END   &kp PG_UP , \
+  X_ALL    &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN , \
+  X_UNDO   X_CUT    X_COPY   X_PASTE   X_REDO
+
+#define HL_CONTROL \
+  &none    X_CTL_W  X_PREV   X_NEXT    &none  , \
+  X_ALL    X_SAVE   X_SHTAB  &kp TAB   &none  , \
+  X_UNDO   X_CUT    X_COPY   X_PASTE   X_REDO
+
+#define HL_FUN_PAD \
+  &kp F1  &kp F2  &kp F3  &kp F4  &none , \
+  &kp F5  &kp F6  &kp F7  &kp F8  &none , \
+  &kp F9  &kp F10 &kp F11 &kp F12 &none
+
+#define HL_MIRROR \
+  &kp P    &kp O   &kp I     &kp U &kp Y , \
+  HRM_SEMI HRM_L   HRM_K     HRM_J &kp H , \
+  &kp FSLH &kp DOT &kp COMMA &kp M &kp N
+
+/******************************************************************************
+ * Right hand half layers
+******************************************************************************/
+
+#define HL_NUMPAD \
+  &to NUM_LOCK_LAYER S_N7  S_N8  S_N9  S_FSLH , \
+  S_MINUS            S_N4  S_N5  S_N6  S_N0   , \
+  S_COMMA            S_N1  S_N2  S_N3  S_DOT
+
+#define HL_ARROWS_HJKL \
+  &kp HOME &kp PG_DN &kp PG_UP &kp END   &kp DEL , \
+  &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &none   , \
+  &none    &none     &none     &none     &none
+
+#define HL_ARROWS_IJKL \
+  &kp PG_UP &kp HOME &kp PG_UP &kp END   &none , \
+  &kp PG_DN &kp LEFT &kp DOWN  &kp RIGHT &none , \
+  &none     &none    &none     &none     &none
+
+#define HL_MEDIA \
+  &none  &kp C_PREV  &kp C_VOL_UP  &kp C_BRI_UP   &kp SLCK     , \
+  &none  H_J C_PP    H_K C_MUTE    H_L C_AL_LOCK  H_SEMI PSCRN , \
+  &none  &kp C_NEXT  &kp C_VOL_DN  &kp C_BRI_DN   &kp INS
+
