@@ -9,12 +9,12 @@
 
 // Human-readable constants for the layer indexes.
 // Make sure to update this table if you edit the order / number of layers in the keymap.
-#define BASE_LAYER       0
-#define NUM_LOCK_LAYER   1
-#define SYMBOLS_LAYER    2
-#define NAV_LAYER 3
-#define NUM_ROW_LAYER    4
-#define FN_MEDIA_LAYER   5
+#define BASE_LAYER     0
+#define NUM_LOCK_LAYER 1
+#define SYMBOLS_LAYER  2
+#define NAV_LAYER      3
+#define NUM_ROW_LAYER  4
+#define FN_MEDIA_LAYER 5
 
 // Potentially used by other keymaps deriving from this one, who may add extra layers.
 // Make sure this stays equal to <index_of_last_layer> + 1
@@ -91,17 +91,29 @@
   #define NAV_SC &sc
 #endif
 
-#ifdef VIM_NAVIGATION
-  #define NAV_LAYER NAV_LAYER
-  #define NUM_LAYER NUM_ROW_LAYER
-  #define HRM_LAYER NUM_ROW_LAYER
-  #define S34_LAYER NUM_ROW_LAYER
+#ifndef L_LAYER_1
+  #define L_LAYER_1 NAV_LAYER
+#endif
+
+#ifndef R_LAYER_1
+  #define R_LAYER_1 NAV_LAYER
+#endif
+
+#ifndef L_LAYER_2
+  #define L_LAYER_2 FN_MEDIA_LAYER
+#endif
+
+#ifndef R_LAYER_2
+  #define R_LAYER_2 FN_MEDIA_LAYER
+#endif
+
+#ifndef NUW_LAYER
+  #define NUW_LAYER NAV_LAYER
+#endif
+
+#ifdef ENABLE_QUICK_ESCAPE
   #define REACH_TAP ESCAPE
 #else
-  #define NAV_LAYER NAV_LAYER
-  #define NUM_LAYER NAV_LAYER
-  #define HRM_LAYER FN_MEDIA_LAYER
-  #define S34_LAYER NAV_LAYER
   #define REACH_TAP TAB
 #endif
 
@@ -132,7 +144,7 @@
   #define LTHUMB_HRM NAV_SC NAV_LAYER BACKSPACE
   #define RTHUMB_HRM &lt NAV_LAYER SPACE
   #define LTHUMB_S34 NAV_SC NAV_LAYER BACKSPACE
-  #define RTHUMB_S34 &lt S34_LAYER SPACE
+  #define RTHUMB_S34 &lt R_LAYER_1 SPACE
 #endif
 
 #ifdef HT_NONE
@@ -163,8 +175,8 @@
 #elifdef HT_HOME_ROW_MODS
   #define LTHUMB_TUCK   &EZ_SK(LSHIFT)
   #define LTHUMB_HOME   LTHUMB_HRM
-  #define LTHUMB_REACH  &sc HRM_LAYER REACH_TAP
-  #define RTHUMB_REACH  &sc HRM_LAYER ENTER
+  #define LTHUMB_REACH  &sc L_LAYER_2 REACH_TAP
+  #define RTHUMB_REACH  &sc R_LAYER_2 ENTER
   #define RTHUMB_HOME   RTHUMB_HRM
   #define RTHUMB_TUCK   &sym_shift_altgr
 #elifdef HT_TWO_THUMB_KEYS
@@ -279,7 +291,7 @@
     magic_backspace_34_keys: magic_backspace_34_keys {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&sc HRM_LAYER BACKSPACE>, <&lt HRM_LAYER SPACE>;
+      bindings = <&sc R_LAYER_1 BACKSPACE>, <&lt R_LAYER_1 SPACE>;
       mods      = <MOD_LSFT>;
       keep-mods = <MOD_LSFT>;
     };

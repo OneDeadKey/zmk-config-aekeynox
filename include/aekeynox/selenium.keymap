@@ -70,7 +70,7 @@
     navigation_layer: navigation_layer {
       display-name = "Navigation";
       bindings = <SELENIUM_LAYER_COMPOSE(NAV_LEFT, NAV_RIGHT,
-        &kp CAPS , &sc FN_MEDIA_LAYER DEL , &sc NUM_ROW_LAYER LS(TAB) , &sc NUM_ROW_LAYER ENTER , &lt FN_MEDIA_LAYER LS(SPACE) , &EZ_LSK(RALT)
+        &kp CAPS , &sc FN_MEDIA_LAYER DEL , &sc NUM_LAYER LS(TAB) , &sc NUM_LAYER ENTER , &lt FN_MEDIA_LAYER LS(SPACE) , &EZ_LSK(RALT)
       )>;
     };
 

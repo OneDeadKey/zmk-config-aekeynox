@@ -85,6 +85,13 @@
 #define FN_LEFT   HL_FUN_PAD
 #define FN_RIGHT  HL_MEDIA
 
+#define L_LAYER_1 NAV_LAYER
+#define L_LAYER_2 NAV_LAYER
+#define R_LAYER_1 FN_MEDIA_LAYER
+#define R_LAYER_2 FN_MEDIA_LAYER
+
+#define NUM_LAYER NAV_LAYER
+
 /******************************************************************************
  * Other Options
 *****************************************************************************/
