@@ -123,8 +123,8 @@
   #define R_LAYER_2 FN_MEDIA_LAYER
 #endif
 
-#ifndef NUW_LAYER
-  #define NUW_LAYER NAV_LAYER
+#ifndef NUM_LAYER
+  #define NUM_LAYER NAV_LAYER
 #endif
 
 #ifdef ENABLE_QUICK_ESCAPE
