@@ -91,6 +91,22 @@
   #define NAV_SC &sc
 #endif
 
+#ifndef NAV_LEFT
+  #define NAV_LEFT HL_ARROWS_ESDF
+#endif
+
+#ifndef NAV_RIGHT
+  #define NAV_RIGHT HL_NUMPAD
+#endif
+
+#ifndef FN_LEFT
+  #define FN_LEFT HL_FUN_PAD
+#endif
+
+#ifndef FN_RIGHT
+  #define FN_RIGHT HL_MEDIA
+#endif
+
 #ifndef L_LAYER_1
   #define L_LAYER_1 NAV_LAYER
 #endif
