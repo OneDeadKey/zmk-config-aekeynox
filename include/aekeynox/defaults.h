@@ -37,6 +37,68 @@
   #define ENABLE_HUMMINGBIRD_MODE
 #endif
 
+// Half-layers
+
+#ifdef VIM_NAVIGATION
+  #define DEFAULT_NAV_LEFT  HL_SHORTCUTS
+  #define DEFAULT_NAV_RIGHT HL_ARROWS_HJKL
+#elifdef CALLUM_NAVIGATION
+  #define DEFAULT_NAV_LEFT  HL_CALLUM
+  #define DEFAULT_NAV_RIGHT HL_ARROWS_IJKL
+#else
+  #define DEFAULT_NAV_LEFT  HL_ARROWS_ESDF
+  #define DEFAULT_NAV_RIGHT HL_NUMPAD
+#endif
+
+#if defined VIM_NAVIGATION || defined CALLUM_NAVIGATION
+  #define DEFAULT_L_LAYER_2 NUM_ROW_LAYER
+  #define DEFAULT_R_LAYER_2 NUM_ROW_LAYER
+  #define DEFAULT_NUM_LAYER NUM_ROW_LAYER
+  #ifndef ENABLE_QUICK_ESCAPE
+  #define ENABLE_QUICK_ESCAPE
+  #endif
+#else
+  #define DEFAULT_L_LAYER_2 FN_MEDIA_LAYER
+  #define DEFAULT_R_LAYER_2 FN_MEDIA_LAYER
+  #define DEFAULT_NUM_LAYER NAV_LAYER
+#endif
+
+#ifndef NAV_LEFT
+#define NAV_LEFT DEFAULT_NAV_LEFT
+#endif
+
+#ifndef NAV_RIGHT
+#define NAV_RIGHT DEFAULT_NAV_RIGHT
+#endif
+
+#ifndef FN_LEFT
+#define FN_LEFT HL_FUN_PAD
+#endif
+
+#ifndef FN_RIGHT
+#define FN_RIGHT HL_MEDIA
+#endif
+
+#ifndef L_LAYER_1
+#define L_LAYER_1 NAV_LAYER
+#endif
+
+#ifndef R_LAYER_1
+#define R_LAYER_1 NAV_LAYER
+#endif
+
+#ifndef L_LAYER_2
+#define L_LAYER_2 DEFAULT_L_LAYER_2
+#endif
+
+#ifndef R_LAYER_2
+#define R_LAYER_2 DEFAULT_R_LAYER_2
+#endif
+
+#ifndef NUM_LAYER
+#define NUM_LAYER DEFAULT_NUM_LAYER
+#endif
+
 // Memory
 
 #ifdef LOW_MEMORY_DEVICE
