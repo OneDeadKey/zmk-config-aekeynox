@@ -78,8 +78,6 @@
  * Half layers selection
 *****************************************************************************/
 
-#include "half_layers.dtsi"
-
 // Uncomment some of the following lines to customise the definitions of the
 // Navigation or Function layers. They are composed from two independant half
 // layers that you may pick and choose however you want.
