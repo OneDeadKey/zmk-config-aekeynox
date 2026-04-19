@@ -33,3 +33,41 @@
 #else
   #define OMIT_IF_NO_REF
 #endif
+
+// Half-layers
+
+#ifndef NAV_LEFT
+  #define NAV_LEFT HL_ARROWS_ESDF
+#endif
+
+#ifndef NAV_RIGHT
+  #define NAV_RIGHT HL_NUMPAD
+#endif
+
+#ifndef FN_LEFT
+  #define FN_LEFT HL_FUN_PAD
+#endif
+
+#ifndef FN_RIGHT
+  #define FN_RIGHT HL_MEDIA
+#endif
+
+#ifndef L_LAYER_1
+  #define L_LAYER_1 NAV_LAYER
+#endif
+
+#ifndef R_LAYER_1
+  #define R_LAYER_1 NAV_LAYER
+#endif
+
+#ifndef L_LAYER_2
+  #define L_LAYER_2 FN_MEDIA_LAYER
+#endif
+
+#ifndef R_LAYER_2
+  #define R_LAYER_2 FN_MEDIA_LAYER
+#endif
+
+#ifndef NUM_LAYER
+  #define NUM_LAYER NAV_LAYER
+#endif

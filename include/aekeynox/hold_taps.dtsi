@@ -81,26 +81,6 @@
   #define NAV_SC &sc
 #endif
 
-#ifndef L_LAYER_1
-  #define L_LAYER_1 NAV_LAYER
-#endif
-
-#ifndef R_LAYER_1
-  #define R_LAYER_1 NAV_LAYER
-#endif
-
-#ifndef L_LAYER_2
-  #define L_LAYER_2 FN_MEDIA_LAYER
-#endif
-
-#ifndef R_LAYER_2
-  #define R_LAYER_2 FN_MEDIA_LAYER
-#endif
-
-#ifndef NUM_LAYER
-  #define NUM_LAYER NAV_LAYER
-#endif
-
 #ifdef ENABLE_QUICK_ESCAPE
   #define REACH_TAP ESCAPE
 #else
