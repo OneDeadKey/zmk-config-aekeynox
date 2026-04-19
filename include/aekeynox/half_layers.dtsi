@@ -17,6 +17,10 @@
   &kp F5  &kp F6  &kp F7  &kp F8  &none , \
   &kp F9  &kp F10 &kp F11 &kp F12 &none
 
+#define HL_MIRROR \
+  &kp P    &kp O   &kp I     &kp U &kp Y , \
+  HRM_SEMI HRM_L   HRM_K     HRM_J &kp H , \
+  &kp FSLH &kp DOT &kp COMMA &kp M &kp N
 
 /******************************************************************************
  * Right hand half layers
@@ -31,6 +35,11 @@
   &kp HOME &kp PG_DN &kp PG_UP &kp END   &kp DEL , \
   &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &none   , \
   &none    &none     &none     &none     &none
+
+#define HL_ARROWS_IJKL \
+  &kp PG_UP &kp HOME &kp PG_UP &kp END   &none , \
+  &kp PG_DN &kp LEFT &kp DOWN  &kp RIGHT &none , \
+  &none     &none    &none     &none     &none
 
 #define HL_MEDIA \
   &none  &kp C_PREV  &kp C_VOL_UP  &kp C_BRI_UP   &kp SLCK     , \
