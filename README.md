@@ -39,6 +39,8 @@ Your firmware will now be built automatically by GitHub’s CI:
 - download the CI artifact
 - unzip, pick the firmware matching your keeb
 - flash your keeb
+- if there are issues with bluetooth, flash with your keyboard reset file before flashing the firmware
+
 
 
 ## Configuration
