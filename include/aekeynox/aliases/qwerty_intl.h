@@ -10,7 +10,7 @@
 #define X_PASTE &kp CMD(V)
 #define X_REDO  &kp CMD(Y)
 
-#define X_CTL_W &kp RC(W)
+#define X_CTL_W &kp LC(W)
 #define X_SAVE  &kp CMD(S)
 #define X_ALL   &kp CMD(A)
 

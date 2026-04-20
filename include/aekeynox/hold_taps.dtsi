@@ -45,12 +45,13 @@
   #define H_K &hrm RGUI
   #define H_L &hrm LALT
 #else
+  // avoid right-hand modifiers on Windows and Linux (often remapped by the desktop)
   #define H_S &hrm LGUI
   #define H_D &hrm LCTL
   #define H_F &hrm LALT
   #define H_J &hrm LALT
-  #define H_K &hrm RCTL
-  #define H_L &hrm RGUI
+  #define H_K &hrm LCTL
+  #define H_L &hrm LGUI
 #endif
 
 #ifdef HRM_SHIFT
