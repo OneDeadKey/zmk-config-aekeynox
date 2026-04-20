@@ -6,9 +6,9 @@
 &base_layer {
   display-name = "Base";
   bindings = <SELENIUM_KEYMAP_BINDINGS(
-    &kp Z  ,  &kp Q  &kp W  &kp E  &kp R  &kp T   ,   &kp N  &kp U  &kp I     &dead_key &kp P     ,  &kp FSLH ,
-    &kp Z  ,  HRM_A  HRM_S  HRM_D  HRM_F  &kp G   ,   &kp H  HRM_J  HRM_K     HRM_L     HRM_SEMI  ,  &kp FSLH ,
-    &none  ,  &kp Q  &kp X  &kp C  &kp V  &kp B   ,   &kp Y  &kp M  &kp COMMA &kp DOT   &kp P     ,  &none    ,
+    &kp Z  ,  &kp Q  &kp W  &kp E  &kp R  &kp T   ,   &kp N  &kp U  &kp I     &apos   &kp P     ,  &kp FSLH ,
+    &kp Z  ,  HRM_A  HRM_S  HRM_D  HRM_F  &kp G   ,   &kp H  HRM_J  HRM_K     HRM_L   HRM_SEMI  ,  &kp FSLH ,
+    &none  ,  &kp Q  &kp X  &kp C  &kp V  &kp B   ,   &kp Y  &kp M  &kp COMMA &kp DOT &kp P     ,  &none    ,
         LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH  ,   RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
   )>;
 };
@@ -27,13 +27,8 @@
 / {
   behaviors {
     // Swap out the standard dead key for a one-shot layer to override some of the keys
-    dead_key: dead_key {
-      compatible = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings = <&EZ_SL(ODK_LAYER)>, <&kp O>;
-      mods      = <(MOD_LSFT|MOD_RSFT)>;
-      keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
+    TWO_LEVEL_KEY(apos, &EZ_SL(ODK_LAYER), S_EXCL) // ' ! (1dk)
+    TWO_LEVEL_KEY(em_dash, &odk V, &odk B) // – — (en-dash, em-dash)
 
   #ifdef ENABLE_FANCY_DEAD_KEYS
     #define SHIFT_KEY &EZ_SK(LSHIFT)
@@ -59,10 +54,10 @@
     one_dead_key {
       display-name = "1dk";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
-        &trans  ,  &odk Q  &odk W  &odk E  &odk R  &kp Z   ,   &odk N  &kp Y    &odk I     &odk O   &odk P    ,  &trans ,
-        &trans  ,  &odk A  &odk S  &odk D  &odk F  &kp B   ,   &odk H  &odk J   &odk K     &odk L   &odk SEMI ,  &trans ,
-        &trans  ,  &odk Q  &odk Z  &odk C  &odk V  &trans  ,   &trans  &kp FSLH &odk COMMA &odk DOT &odk P    ,  &trans ,
-            &EZ_SL(ODK_SHIFT_LAYER) , &odk SPACE , &trans  ,   &trans , &odk SPACE , &trans
+        &trans  ,  &odk Q  &odk W  &odk E  &odk R   &kp Z   ,   &odk N  &kp Y    &odk I     &odk O   &odk P    ,  &trans ,
+        &trans  ,  &odk A  &odk S  &odk D  &odk F   &kp B   ,   &odk H  &odk J   &odk K     &odk L   &odk SEMI ,  &trans ,
+        &trans  ,  &odk Q  &odk Z  &odk C  &em_dash &trans  ,   &trans  &kp FSLH &odk COMMA &odk DOT &odk P    ,  &trans ,
+                          SHIFT_KEY , &odk SPACE , &trans  ,   &trans , &odk SPACE , &trans
       )>;
     };
 
