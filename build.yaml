@@ -60,9 +60,6 @@ include:
     artifact-name: totem_right
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-  - board: xiao_ble//zmk
-    shield: settings_reset
-    artifact-name: totem_settings_reset
 
   # Corne + nice!nano v2
   - board: nice_nano@2//zmk
@@ -75,9 +72,6 @@ include:
     artifact-name: corne_right
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-  - board: nice_nano@2//zmk
-    shield: settings_reset
-    artifact-name: corne_settings_reset
 
   # Sweep + nice!nano v2
   - board: nice_nano@2//zmk
@@ -90,9 +84,6 @@ include:
     artifact-name: sweep_right
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-  - board: nice_nano@2//zmk
-    shield: settings_reset
-    artifact-name: cradio_settings_reset
 
   # Lily58 + nice!nano v2
   - board: nice_nano@2//zmk
@@ -105,9 +96,6 @@ include:
     artifact-name: lily58_right
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-  - board: nice_nano@2//zmk
-    shield: settings_reset
-    artifact-name: lily58_settings_reset
 
   ###
   # Standalone Keyboards (onboard MCU)
@@ -143,3 +131,27 @@ include:
     artifact-name: glove80_right
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
+
+  ###
+  # Resets
+  ##
+
+  # Totem + XIAO BLE
+  - board: xiao_ble//zmk
+    shield: settings_reset
+    artifact-name: totem_settings_reset
+
+  # Corne + nice!nano v2
+  - board: nice_nano@2//zmk
+    shield: settings_reset
+    artifact-name: corne_settings_reset
+
+  # Sweep + nice!nano v2
+  - board: nice_nano@2//zmk
+    shield: settings_reset
+    artifact-name: cradio_settings_reset
+
+  # Lily58 + nice!nano v2
+  - board: nice_nano@2//zmk
+    shield: settings_reset
+    artifact-name: lily58_settings_reset
