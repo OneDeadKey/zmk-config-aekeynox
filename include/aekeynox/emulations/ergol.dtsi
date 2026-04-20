@@ -8,6 +8,13 @@
     TWO_LEVEL_KEY(dot,   S_DOT,   S_COLON)         // . :
     TWO_LEVEL_KEY(comma, S_COMMA, S_SEMI)          // , ;
   };
+  macros {
+    ellip: ellip {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&macro_tap S_DOT S_DOT S_DOT>;
+    };
+  };
 };
 
 
@@ -49,8 +56,18 @@
 
 
 /******************************************************************************
- * 1DK Layers (non-ASCII chars, host-agnostic)
+ * NumRow and 1DK Layers (non-ASCII chars, host-agnostic)
 ******************************************************************************/
+
+&num_row_layer {
+  display-name = "NumRow";
+  bindings = <SELENIUM_KEYMAP_BINDINGS(
+    &trans  ,  C_EURO  C_LGQT  C_RGQT  S_DLLR  S_PRCNT  ,   S_CARET S_AMPS  S_STAR  S_HASH  S_AT    ,  &trans ,
+    &trans  ,  S_N1    S_N2    S_N3    S_N4    S_N5     ,   S_N6    S_N7    S_N8    S_N9    S_N0    ,  &trans ,
+    &trans  ,  &none   &none   &none   &none   &none    ,   S_MINUS S_COMMA S_DOT   S_COLON S_FSLH  ,  &trans ,
+                      &trans , &kp RS(SPACE) , &trans   ,   &trans , &kp LS(SPACE) , &trans
+  )>;
+};
 
 / {
   keymap {
@@ -61,7 +78,7 @@
       bindings = <SELENIUM_KEYMAP_BINDINGS(
         &trans  ,  C_ACRC  C_CCDL  C_OE    C_OCRC  &trans   ,   &trans  C_MU    S_UNDER K_DIA   C_UCRC  ,  &trans ,
         &trans  ,  C_AGRV  C_EACU  C_EGRV  C_ECRC  C_NTLD   ,   S_LPAR  S_RPAR  C_ICRC  C_IDIA  C_UGRV  ,  &trans ,
-        &trans  ,  C_AE    &trans  &trans  &trans  &trans   ,   &trans  &trans  &trans  &trans  &trans  ,  &trans ,
+        &trans  ,  C_AE    C_SZ    &trans  &trans  &trans   ,   &ellip  &trans  &trans  &trans  &trans  ,  &trans ,
                                   &trans , S_SQT , &trans   ,   &trans , S_SQT , &trans
       )>;
     };

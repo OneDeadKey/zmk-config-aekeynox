@@ -8,6 +8,13 @@
     TWO_LEVEL_KEY(dot,   S_DOT,   S_COLON)         // . :
     TWO_LEVEL_KEY(slash, S_FSLH,  S_QMARK)         // / ?
   };
+  macros {
+    ellip: ellip {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&macro_tap S_DOT S_DOT S_DOT>;
+    };
+  };
 };
 
 
@@ -51,8 +58,18 @@
 
 
 /******************************************************************************
- * 1DK Layers (non-ASCII chars, host-agnostic)
+ * NumRow and 1DK Layers (non-ASCII chars, host-agnostic)
 ******************************************************************************/
+
+&num_row_layer {
+  display-name = "NumRow";
+  bindings = <SELENIUM_KEYMAP_BINDINGS(
+    &trans  ,  S_EXCL  S_AT    S_HASH  S_DLLR  S_PRCNT  ,   S_CARET S_AMPS  S_STAR  S_LPAR  S_RPAR  ,  &trans ,
+    &trans  ,  S_N1    S_N2    S_N3    S_N4    S_N5     ,   S_N6    S_N7    S_N8    S_N9    S_N0    ,  &trans ,
+    &trans  ,  &none   &none   &none   &none   &none    ,   S_MINUS S_COMMA S_DOT   S_COLON S_FSLH  ,  &trans ,
+                      &trans , &kp RS(SPACE) , &trans   ,   &trans , &kp LS(SPACE) , &trans
+  )>;
+};
 
 / {
   keymap {
@@ -63,7 +80,7 @@
       bindings = <SELENIUM_KEYMAP_BINDINGS(
         &trans  ,  C_AE    C_EACU  C_EGRV  C_OCRC  &trans   ,   &trans  C_UGRV  C_IDIA  C_OE    &trans  ,  &trans ,
         &trans  ,  C_AGRV  S_SZ    C_ECRC  S_MINUS &trans   ,   C_YCRC  C_UCRC  C_ICRC  C_OCRC  K_DIA   ,  &trans ,
-        &trans  ,  C_ACRC  C_MULT  C_CCDL  S_UNDER &trans   ,   &trans  C_NTLD  C_MU    &trans  &trans  ,  &trans ,
+        &trans  ,  C_ACRC  C_MULT  C_CCDL  S_UNDER &trans   ,   C_NTLD  C_MU    &trans  &ellip  &trans  ,  &trans ,
                                   K_ODKS , S_SQT , &trans   ,   &trans , S_SQT , &trans
       )>;
     };
@@ -74,7 +91,7 @@
       bindings = <SELENIUM_KEYMAP_BINDINGS(
         &trans  ,  SC_AE   SC_EACU SC_EGRV SC_OCRC &trans   ,   &trans  SC_UGRV SC_IDIA SC_OE   &trans  ,  &trans ,
         &trans  ,  SC_AGRV S_SZ    SC_ECRC &trans  &trans   ,   SC_YCRC SC_UCRC SC_ICRC SC_OCRC &none   ,  &trans ,
-        &trans  ,  SC_ACRC &trans  SC_CCDL &trans  &trans   ,   &trans  SC_NTLD &trans  &trans  &trans  ,  &trans ,
+        &trans  ,  SC_ACRC &trans  SC_CCDL &trans  &trans   ,   SC_NTLD &trans  &trans  &trans  &trans  ,  &trans ,
                                  &trans , &trans , &trans   ,   &trans , &trans , &trans
       )>;
     };

@@ -85,15 +85,19 @@
 #ifdef LINUX
   #define C_OE   &kp RA(K) // œ
   #define C_AE   &kp RA(X) // æ
+  #define C_SZ   &kp RA(S) // ß
   #define C_NTLD &kp N // unsupported
 #else
   #define C_OE   &digraph O E // unsupported
   #define C_AE   &digraph Q E // unsupported
+  #define C_SZ   &digraph S S // unsupported
   #define C_NTLD &digraph RA(N2) N // ñ
 #endif
 
 #define C_MU   &kp PIPE  // µ
 #define C_EURO &kp RA(E) // €
+#define C_LGQT &kp N3    // "
+#define C_RGQT &kp N3    // "
 
 // circumflex accent
 #define C_ACRC &digraph LBKT Q // â
