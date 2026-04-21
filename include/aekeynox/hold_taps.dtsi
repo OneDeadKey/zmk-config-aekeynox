@@ -195,6 +195,13 @@
 #define QUICK_TAP 200
 #endif
 
+#ifndef LOW_MEMORY_DEVICE
+  #define OMIT_IF_NO_REF /omit-if-no-ref/
+#else
+  #define OMIT_IF_NO_REF
+#endif
+
+
 #define EZ_SL(layer)  bsl (layer) (layer)
 #define EZ_SK(mod)    bsk (mod) (mod)
 #define EZ_LSK(mod)   lbsk (mod) (mod)
@@ -214,7 +221,7 @@
 
 / {
   behaviors {
-    hrm: homerow_mods {
+    OMIT_IF_NO_REF hrm: homerow_mods {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
       tapping-term-ms = <TAPPING_TERM>;
@@ -222,7 +229,7 @@
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
     };
-    sc: space_cadet { // same as lt, but with hold-preferred
+    OMIT_IF_NO_REF sc: space_cadet { // same as lt, but with hold-preferred
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
       tapping-term-ms = <SHORT_TAPPING_TERM>;
@@ -232,14 +239,14 @@
     };
 
     // like ZMK's sticky layer (sl) but with a more robust timing
-    osl: one_shot_layer {
+    OMIT_IF_NO_REF osl: one_shot_layer {
       compatible = "zmk,behavior-macro-one-param";
       #binding-cells = <1>;
       tap-ms = <0>;
       wait-ms = <0>;
       bindings = <&macro_param_1to1>, <&macro_tap &sl MACRO_PLACEHOLDER>;
     };
-    bsl: better_sticky_layer {
+    OMIT_IF_NO_REF bsl: better_sticky_layer {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
       tapping-term-ms = <TAPPING_TERM>;
@@ -248,14 +255,14 @@
     };
 
     // like ZMK's sticky key (sk) but with a more robust timing
-    osm: one_shot_modifier {
+    OMIT_IF_NO_REF osm: one_shot_modifier {
       compatible = "zmk,behavior-macro-one-param";
       #binding-cells = <1>;
       tap-ms = <0>;
       wait-ms = <0>;
       bindings = <&macro_param_1to1>, <&macro_tap &sk MACRO_PLACEHOLDER>;
     };
-    bsk: better_sticky_key {
+    OMIT_IF_NO_REF bsk: better_sticky_key {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
       tapping-term-ms = <TAPPING_TERM>;
@@ -264,21 +271,21 @@
     };
 
     // mod-morphs to restore Shift+Space and Ctrl+Backspace for certain keymaps
-    magic_backspace: magic_backspace {
+    OMIT_IF_NO_REF magic_backspace: magic_backspace {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
       bindings = <&sc NAV_LAYER BACKSPACE>, <&lt NAV_LAYER SPACE>;
       mods      = <MOD_LSFT>;
       keep-mods = <MOD_LSFT>;
     };
-    magic_space: magic_space {
+    OMIT_IF_NO_REF magic_space: magic_space {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
       bindings = <&lt NAV_LAYER SPACE>, <&sc NAV_LAYER BACKSPACE>;
       mods      = <MOD_LCTL>;
       keep-mods = <MOD_LCTL>;
     };
-    magic_backspace_34_keys: magic_backspace_34_keys {
+    OMIT_IF_NO_REF magic_backspace_34_keys: magic_backspace_34_keys {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
       bindings = <&sc HRM_LAYER BACKSPACE>, <&lt HRM_LAYER SPACE>;
@@ -289,14 +296,14 @@
     // AltGr support
 
     // Sym becomes Shift+AltGr when combined with exclusively Shift
-    sym_shift_altgr: sym_shift_altgr {
+    OMIT_IF_NO_REF sym_shift_altgr: sym_shift_altgr {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
       bindings = <&sym_shift_altgr_inner>, <&EZ_SL(SYMBOLS_LAYER)>;
       mods      = <(MOD_LCTL|MOD_RCTL|MOD_LGUI|MOD_RGUI|MOD_LALT)>;
       keep-mods = <(MOD_LCTL|MOD_RCTL|MOD_LGUI|MOD_RGUI|MOD_LALT)>;
     };
-    sym_shift_altgr_inner: sym_shift_altgr_inner {
+    OMIT_IF_NO_REF sym_shift_altgr_inner: sym_shift_altgr_inner {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
       bindings = <&EZ_SL(SYMBOLS_LAYER)>, <&EZ_SK(RALT)>;
@@ -306,7 +313,7 @@
 
     // go to base layer and press mod
 
-    lkp: goto_layer_then_keypress {
+    OMIT_IF_NO_REF lkp: goto_layer_then_keypress {
       compatible = "zmk,behavior-macro-one-param";
       wait-ms = <0>;
       tap-ms = <0>;
@@ -319,7 +326,7 @@
         <&macro_param_1to1>,
         <&macro_release &kp MACRO_PLACEHOLDER>;
     };
-    losm: goto_layer_then_osm {
+    OMIT_IF_NO_REF losm: goto_layer_then_osm {
       compatible = "zmk,behavior-macro-one-param";
       wait-ms = <0>;
       tap-ms = <0>;
@@ -329,7 +336,7 @@
         <&macro_param_1to1>,
         <&macro_tap &sk MACRO_PLACEHOLDER>;
     };
-    lbsk: bsk_on_other_layer {
+    OMIT_IF_NO_REF lbsk: bsk_on_other_layer {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
       tapping-term-ms = <TAPPING_TERM>;
@@ -338,14 +345,14 @@
     };
 
     // Fancy behaviors for one-handed Alt(+Shift)+{tab,backtick}
-    mhsc: space_cade_with_held_mods {
+    OMIT_IF_NO_REF mhsc: space_cade_with_held_mods {
       compatible = "zmk,behavior-mod-hold";
       #binding-cells = <2>;
       binding = <&sc>;
       mods-to-hold = <MOD_LALT>;
     };
 
-    vim_prev: vim_prev {
+    OMIT_IF_NO_REF vim_prev: vim_prev {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
       bindings = <&kp LA(LEFT)>, <&kp LS(GRAVE)>;
@@ -353,7 +360,7 @@
       keep-mods = <(MOD_LALT|MOD_LGUI)>;
     };
 
-    vim_next: vim_next {
+    OMIT_IF_NO_REF vim_next: vim_next {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
       bindings = <&kp LA(RIGHT)>, <&kp GRAVE>;
