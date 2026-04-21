@@ -5,6 +5,8 @@
   #include "settings.h"   // user settings
 #endif
 
+#include <dt-bindings/zmk/bt.h> // enable bluetooth behaviors
+
 #include "aliases.h"      // defines symbols and actions
 #include "bindings.h"     // default SELENIUM_KEYMAP_BINDINGS macro
 #include "mappings.dtsi"  // key mapping helpers and macros
