@@ -76,41 +76,122 @@
  * https://commons.wikimedia.org/wiki/File:KB_-_AZERTY_-_FR_-_Windows_-_FR.png
  */
 
+#define SA(key) RS(RA(key))
+
+// lowercase: é à è ù ç
 #define C_EACU &kp N2  // é
 #define C_AGRV &kp N0  // à
 #define C_EGRV &kp N7  // è
 #define C_UGRV &kp SQT // ù
 #define C_CCDL &kp N9  // ç
 
-#ifdef LINUX
-  #define C_OE   &kp RA(K) // œ
-  #define C_AE   &kp RA(X) // æ
-  #define C_SZ   &kp RA(S) // ß
-  #define C_NTLD &kp N // unsupported
+// uppercase: É À È Ù Ç
+#ifdef ENABLE_CP1252_ALT_CODES
+  #define SC_EACU CP1252_UPPERCASE_E_ACUTE
+  #define SC_AGRV CP1252_UPPERCASE_A_GRAVE
+  #define SC_EGRV CP1252_UPPERCASE_E_GRAVE
+  #define SC_UGRV CP1252_UPPERCASE_U_GRAVE
+  #define SC_CCDL CP1252_UPPERCASE_C_CEDILLA
 #else
-  #define C_OE   &digraph O E // unsupported
-  #define C_AE   &digraph Q E // unsupported
-  #define C_SZ   &digraph S S // unsupported
-  #define C_NTLD &digraph RA(N2) N // ñ
+  #define SC_EACU &kp LS(E)
+  #define SC_AGRV &kp LS(Q)
+  #define SC_EGRV &kp LS(E)
+  #define SC_UGRV &kp LS(U)
+  #define SC_CCDL &kp LS(C)
 #endif
 
-#define C_MU   &kp PIPE  // µ
-#define C_EURO &kp RA(E) // €
-#define C_LGQT &kp N3    // "
-#define C_RGQT &kp N3    // "
-
 // circumflex accent
-#define C_ACRC &digraph LBKT Q // â
-#define C_ECRC &digraph LBKT E // ê
-#define C_ICRC &digraph LBKT I // î
-#define C_OCRC &digraph LBKT O // ô
-#define C_UCRC &digraph LBKT U // û
-#define C_YCRC &digraph LBKT Y // ŷ
+#define  C_ACRC &digraph LBKT Q     // â
+#define SC_ACRC &digraph LBKT RS(Q) // Â
+#define  C_ECRC &digraph LBKT E     // ê
+#define SC_ECRC &digraph LBKT RS(E) // Ê
+#define  C_ICRC &digraph LBKT I     // î
+#define SC_ICRC &digraph LBKT RS(I) // Î
+#define  C_OCRC &digraph LBKT O     // ô
+#define SC_OCRC &digraph LBKT RS(O) // Ô
+#define  C_UCRC &digraph LBKT U     // û
+#define SC_UCRC &digraph LBKT RS(U) // Û
+#define  C_YCRC &digraph LBKT Y     // ŷ
+#define SC_YCRC &digraph LBKT RS(Y) // Ŷ
 
 // diaeresis
-#define C_ADIA &digraph LBRC Q // ä
-#define C_EDIA &digraph LBRC E // ë
-#define C_IDIA &digraph LBRC I // ï
-#define C_ODIA &digraph LBRC O // ö
-#define C_UDIA &digraph LBRC U // ü
-#define C_YDIA &digraph LBRC Y // ÿ
+#define  C_ADIA &digraph LBRC A     // ä
+#define SC_ADIA &digraph LBRC RS(A) // Ä
+#define  C_EDIA &digraph LBRC E     // ë
+#define SC_EDIA &digraph LBRC RS(E) // Ë
+#define  C_IDIA &digraph LBRC I     // ï
+#define SC_IDIA &digraph LBRC RS(I) // Ï
+#define  C_ODIA &digraph LBRC O     // ö
+#define SC_ODIA &digraph LBRC RS(O) // Ö
+#define  C_UDIA &digraph LBRC U     // ü
+#define SC_UDIA &digraph LBRC RS(U) // Ü
+#define  C_YDIA &digraph LBRC Y     // ÿ
+#define SC_YDIA &digraph LBRC RS(Y) // Ÿ
+
+// other special letters: œ, æ, ß, ñ
+#ifdef LINUX
+  #define  C_OE &kp RA(K) // œ
+  #define SC_OE &kp SA(K) // œ
+  #define  C_AE &kp RA(X) // æ
+  #define SC_AE &kp SA(X) // æ
+  #define  C_SZ &kp RA(S) // ß
+  #define SC_SZ &kp RA(S) // ß
+#elifdef MACOS
+  #define  C_OE &kp RA(O) // œ
+  #define SC_OE &kp SA(O) // œ
+  #define  C_AE &kp RA(Z) // æ
+  #define SC_AE &kp SA(Z) // æ
+  #define  C_SZ &digraph S S         // unsupported
+  #define SC_SZ &digraph LS(S) LS(S) // unsupported
+#elifdef ENABLE_CP1252_ALT_CODES
+  #define  C_OE CP1252_LOWERCASE_OE  // œ
+  #define SC_OE CP1252_UPPERCASE_OE  // Œ
+  #define  C_AE CP1252_LOWERCASE_AE  // æ
+  #define SC_AE CP1252_UPPERCASE_AE  // Æ
+  #define  C_SZ CP1252_LOWERCASE_SZ  // ß
+  #define SC_SZ CP1252_LOWERCASE_SZ  // ß
+#else
+  #define  C_OE &digraph O E         // unsupported
+  #define SC_OE &digraph LS(O) LS(E) // unsupported
+  #define  C_AE &digraph Q E         // unsupported
+  #define SC_AE &digraph LS(O) LS(E) // unsupported
+  #define  C_SZ &digraph S S         // unsupported
+  #define SC_SZ &digraph LS(S) LS(S) // unsupported
+#endif
+#if defined LINUX || defined MACOS
+  #define  C_NTLD &kp N     // unsupported
+  #define SC_NTLD &kp LS(N) // unsupported
+#else
+  #define  C_NTLD &digraph RA(N2) N     // ñ
+  #define SC_NTLD &digraph RA(N2) LS(N) // ñ
+#endif
+
+// punctuation
+#ifdef ENABLE_CP1252_ALT_CODES
+  #define C_LGQT  CP1252_LEFT_GUILLEMET     // «
+  #define C_RGQT  CP1252_RIGHT_GUILLEMET    // »
+  #define C_APOS  CP1252_RIGHT_SINGLE_QUOTE // ’
+  #define C_NDASH CP1252_EN_DASH            // –
+  #define C_MDASH CP1252_EM_DASH            // —
+  #define C_ELLIP CP1252_ELLIPSIS           // …
+  #define C_MDOT  CP1252_MIDDLE_DOT         // ·
+  #define C_NBSP  CP1252_NO_BREAK_SPACE
+#else
+  #define C_LGQT  &kp N3         // "
+  #define C_RGQT  &kp N3         // "
+  #define C_APOS  &kp N4         // '
+  #define C_NDASH &digraph N6 N6 // --
+  #define C_MDASH &digraph N6 N6 // --
+  #define C_ELLIP &ellipsis      // ...
+  #define C_MDOT  S_DOT          // .
+  #define C_NBSP  &kp LS(SPACE)
+#endif
+
+#define C_MICRO &kp PIPE  // µ
+#define C_EURO  &kp RA(E) // €
+
+#ifdef ENABLE_CP1252_ALT_CODES
+  #define C_MULT CP1252_MULTIPLICATION
+#else
+  #define C_MULT &kp X
+#endif

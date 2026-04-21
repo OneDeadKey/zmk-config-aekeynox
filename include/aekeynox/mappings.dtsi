@@ -11,8 +11,7 @@
   bindings                                              \
     = <&macro_tap key>                                  \
     , <&macro_pause_for_release>                        \
-    , <&macro_param_1to1>                               \
-    , <&kp MACRO_PLACEHOLDER>                           \
+    , <&macro_param_1to1 &kp MACRO_PLACEHOLDER>         \
     ;                                                   \
 };
 
@@ -27,8 +26,7 @@
     = <&macro_tap key>                                        \
     , <&macro_pause_for_release>                              \
     , <&macro_press &kp LSHIFT>                               \
-    , <&macro_param_1to1>                                     \
-    , <&kp MACRO_PLACEHOLDER>                                 \
+    , <&macro_param_1to1 &kp MACRO_PLACEHOLDER>               \
     , <&macro_release &kp LSHIFT>                             \
     ;                                                         \
 };
@@ -48,9 +46,95 @@
       #binding-cells = <2>;
       tap-ms = <0>;
       wait-ms = <0>;
-      bindings = <
-        &macro_param_1to1 &kp MACRO_PLACEHOLDER
-        &macro_param_2to1 &kp MACRO_PLACEHOLDER>;
+      bindings
+        = <&macro_param_1to1 &kp MACRO_PLACEHOLDER>
+        , <&macro_param_2to1 &kp MACRO_PLACEHOLDER>
+        ;
+    };
+    OMIT_IF_NO_REF ellipsis: ellipsis {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&macro_tap S_DOT S_DOT S_DOT>;
     };
   };
 };
+
+// Windows Alt-Code Inputs
+// There are three kinds of Alt-Codes:
+//  - Alt+[128-255]   = Code Page 437 (IBM/DOS)
+//  - Alt+[0128-0255] = Code Page 1252 (close to Latin-1)
+//  - Alt+[UTF8 dec.] = Unicode, but only works with MS Office
+// We use only CP1252. Full list: https://altcodeunicode.com/
+
+#ifdef ENABLE_CP1252_ALT_CODES
+/ {
+  macros {
+    alt01xx: alt01xx {
+      compatible = "zmk,behavior-macro-two-param";
+      #binding-cells = <2>;
+      tap-ms = <0>;
+      wait-ms = <0>;
+      bindings
+        = <&macro_press &kp LALT>
+        , <&macro_tap &kp KP_N0 &kp KP_N1>
+        , <&macro_param_1to1 &kp MACRO_PLACEHOLDER>
+        , <&macro_param_2to1 &kp MACRO_PLACEHOLDER>
+        , <&macro_release &kp LALT>
+        ;
+    };
+    alt02xx: alt02xx {
+      compatible = "zmk,behavior-macro-two-param";
+      #binding-cells = <2>;
+      tap-ms = <0>;
+      wait-ms = <0>;
+      bindings
+        = <&macro_press &kp LALT>
+        , <&macro_tap &kp KP_N0 &kp KP_N2>
+        , <&macro_param_1to1 &kp MACRO_PLACEHOLDER>
+        , <&macro_param_2to1 &kp MACRO_PLACEHOLDER>
+        , <&macro_release &kp LALT>
+        ;
+    };
+  };
+};
+
+#define CP1252_UPPERCASE_E_ACUTE   &alt02xx KP_N0 KP_N1 // É
+#define CP1252_UPPERCASE_A_GRAVE   &alt01xx KP_N9 KP_N2 // À
+#define CP1252_UPPERCASE_E_GRAVE   &alt02xx KP_N0 KP_N0 // È
+#define CP1252_UPPERCASE_U_GRAVE   &alt02xx KP_N1 KP_N7 // Ù
+#define CP1252_UPPERCASE_C_CEDILLA &alt01xx KP_N9 KP_N9 // Ç
+
+#define CP1252_LOWERCASE_OE        &alt01xx KP_N5 KP_N6 // œ
+#define CP1252_UPPERCASE_OE        &alt01xx KP_N4 KP_N0 // Œ
+#define CP1252_LOWERCASE_AE        &alt02xx KP_N3 KP_N0 // æ
+#define CP1252_UPPERCASE_AE        &alt01xx KP_N9 KP_N8 // Æ
+#define CP1252_LOWERCASE_SZ        &alt02xx KP_N2 KP_N3 // ß
+
+#define CP1252_LEFT_GUILLEMET      &alt01xx KP_N7 KP_N1 // «
+#define CP1252_RIGHT_GUILLEMET     &alt01xx KP_N8 KP_N7 // »
+#define CP1252_LOW_SINGLE_QUOTE    &alt01xx KP_N3 KP_N0 // ‚
+#define CP1252_LEFT_SINGLE_QUOTE   &alt01xx KP_N4 KP_N5 // ‘
+#define CP1252_RIGHT_SINGLE_QUOTE  &alt01xx KP_N4 KP_N6 // ’
+#define CP1252_LOW_DOUBLE_QUOTE    &alt01xx KP_N3 KP_N2 // „
+#define CP1252_LEFT_DOUBLE_QUOTE   &alt01xx KP_N4 KP_N7 // “
+#define CP1252_RIGHT_DOUBLE_QUOTE  &alt01xx KP_N4 KP_N8 // ”
+#define CP1252_EN_DASH             &alt01xx KP_N5 KP_N0 // –
+#define CP1252_EM_DASH             &alt01xx KP_N5 KP_N1 // —
+#define CP1252_ELLIPSIS            &alt01xx KP_N3 KP_N3 // …
+#define CP1252_MIDDLE_DOT          &alt01xx KP_N8 KP_N3 // ·
+#define CP1252_NO_BREAK_SPACE      &alt01xx KP_N6 KP_N0
+
+#define CP1252_NOT                 &alt01xx KP_N7 KP_N2 // ¬
+#define CP1252_DEGREE              &alt01xx KP_N7 KP_N6 // ¦
+#define CP1252_BROKEN_BAR          &alt01xx KP_N6 KP_N6 // °
+#define CP1252_DIVISION            &alt02xx KP_N4 KP_N7 // ÷
+#define CP1252_MULTIPLICATION      &alt02xx KP_N1 KP_N5 // ×
+#define CP1252_SUPERSCRIPT_ONE     &alt01xx KP_N8 KP_N5 // ¹
+#define CP1252_SUPERSCRIPT_TWO     &alt01xx KP_N7 KP_N8 // ²
+#define CP1252_SUPERSCRIPT_THREE   &alt01xx KP_N7 KP_N9 // ³
+#define CP1252_ONE_QUARTER         &alt01xx KP_N8 KP_N8 // ¼
+#define CP1252_ONE_HALF            &alt01xx KP_N8 KP_N9 // ½
+#define CP1252_THREE_QUARTERS      &alt01xx KP_N9 KP_N0 // ¾
+#define CP1252_MICRO               &alt01xx KP_N8 KP_N1 // µ
+
+#endif

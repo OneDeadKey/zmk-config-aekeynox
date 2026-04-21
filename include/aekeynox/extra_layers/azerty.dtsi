@@ -24,7 +24,7 @@
       display-name = "1dk";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
         &trans  ,  C_AGRV  C_EACU  C_EGRV  C_EURO  &trans   ,  &trans  C_UGRV  &trans  C_OE    &trans  ,  &trans   ,
-        &trans  ,  C_ACRC  &trans  C_ECRC  S_MINUS S_UNDER  ,  &trans  C_UCRC  C_ICRC  C_OCRC  C_MU    ,  &kp LBRC ,
+        &trans  ,  C_ACRC  &trans  C_ECRC  S_MINUS S_UNDER  ,  &trans  C_UCRC  C_ICRC  C_OCRC  C_MICRO ,  &kp LBRC ,
         &trans  ,  &trans  &trans  C_CCDL  S_LPAR  S_RPAR   ,  &trans  &trans  &trans  &trans  &trans  ,  &trans   ,
                                   &trans , S_SQT , &trans   ,  &trans , S_SQT , &trans
       )>;

@@ -163,10 +163,12 @@
 #define  C_THORN &kp RA(R) // Þ
 #define SC_THORN &kp SA(R) // þ
 #define  C_SZ    &kp RA(S) // ß
+#define SC_SZ    &kp RA(S) // ß
 
 // punctuation
 #define C_LSQT  &kp RA(N9)    // ‘
 #define C_RSQT  &kp RA(N0)    // ’
+#define C_APOS  &kp RA(N0)    // ’
 #define C_LDQT  &kp RA(LBRC)  // “
 #define C_RDQT  &kp RA(RBRC)  // ”
 #define C_LGQT  &kp RA(LBKT)  // «
@@ -175,6 +177,19 @@
 #define C_PAR   &kp RA(SEMI)  // ¶
 #define C_LCXE  &kp RA(N1)    // ¡
 #define C_KRAMQ &kp RA(FSLH)  // ¿
+#ifdef ENABLE_CP1252_ALT_CODES
+  #define C_NDASH CP1252_EN_DASH       // –
+  #define C_MDASH CP1252_EM_DASH       // —
+  #define C_ELLIP CP1252_ELLIPSIS      // …
+  #define C_MDOT  CP1252_MIDDLE_DOT    // ·
+  #define C_NBSP  CP1252_NO_BREAK_SPACE
+#else
+  #define C_NDASH &digraph MINUS MINUS // --
+  #define C_MDASH &digraph MINUS MINUS // --
+  #define C_ELLIP &ellipsis            // ...
+  #define C_MDOT  &kp DOT              // .
+  #define C_NBSP  &kp LS(SPACE)
+#endif
 
 // currencies
 #define C_CURR  &kp RA(N4)    // ¤
@@ -187,9 +202,9 @@
 #define C_TM    &kp SA(R)     // ™
 
 // math
+#define C_NOT   &kp RA(BSLH)  // ¬
 #define C_DEG   &kp SA(SEMI)  // °
 #define C_BPIPE &kp SA(BSLH)  // ¦
-#define C_NOT   &kp RA(BSLH)  // ¬
 #define C_DIV   &kp SA(EQUAL) // ÷
 #define C_MULT  &kp RA(EQUAL) // ×
 #define C_EXP1  &kp SA(N1)    // ¹
@@ -198,4 +213,4 @@
 #define C_QRT1  &kp RA(N6)    // ¼
 #define C_QRT2  &kp RA(N7)    // ½
 #define C_QRT3  &kp RA(N8)    // ¾
-#define C_MU    &kp RA(M)     // µ
+#define C_MICRO &kp RA(M)     // µ
