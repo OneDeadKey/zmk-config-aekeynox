@@ -1,7 +1,8 @@
 config ZMK_BEHAVIOR_MOD_HOLD
   bool
   default y
-    
+  depends on DT_HAS_ZMK_BEHAVIOR_MOD_HOLD_ENABLED
+
 config ZMK_BEHAVIOR_DEAD_KEY
   bool
   default y
