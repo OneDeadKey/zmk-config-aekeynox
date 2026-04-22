@@ -27,7 +27,6 @@
     )>;
   };
   #define K_DIA &kp LBRC // diaeresis
-  #define C_MULT &trans
 
 #elif defined KB_LAYOUT_QWERTY_INTL
 
@@ -51,13 +50,29 @@
  * NumRow and 1DK Layers (non-ASCII chars, host-agnostic)
 ******************************************************************************/
 
+#ifdef CP1252_ALT_CODES
+  #define C_MASC  CP1252_MASCULINE_ORDINAL
+  #define C_FEM   CP1252_FEMININE_ORDINAL
+  #define C_LODQT CP1252_LOW_DOUBLE_QUOTE
+  #define C_LDQT  CP1252_LEFT_DOUBLE_QUOTE
+  #define C_RDQT  CP1252_RIGHT_DOUBLE_QUOTE
+  #define C_CENT  CP1252_CENT
+#else
+  #define C_MASC  &none
+  #define C_FEM   &none
+  #define C_LODQT &none
+  #define C_LDQT  &none
+  #define C_RDQT  &none
+  #define C_CENT  &none
+#endif
+
 &num_row_layer {
   display-name = "NumRow";
   bindings = <SELENIUM_KEYMAP_BINDINGS(
-    &trans  ,  S_EXCL  S_AT    S_HASH  S_DLLR  S_PRCNT  ,   S_CARET S_AMPS  S_STAR  S_LPAR  S_RPAR  ,  &trans ,
+    &trans  ,  C_EURO  S_AT    S_HASH  S_DLLR  S_PRCNT  ,   S_CARET S_AMPS  S_STAR  S_LPAR  S_RPAR  ,  &trans ,
     &trans  ,  S_N1    S_N2    S_N3    S_N4    S_N5     ,   S_N6    S_N7    S_N8    S_N9    S_N0    ,  &trans ,
-    &trans  ,  &none   &none   &none   &none   &none    ,   S_MINUS S_COMMA S_DOT   S_COLON S_FSLH  ,  &trans ,
-                      &trans , &kp RS(SPACE) , &trans   ,   &trans , &kp LS(SPACE) , &trans
+    &trans  ,  C_LODQT C_LDQT  C_RDQT  C_CENT  C_DEG    ,   S_MINUS S_COMMA S_DOT   S_COLON S_FSLH  ,  &trans ,
+                             &trans , C_NBSP , &trans   ,   &trans , C_NBSP , &trans
   )>;
 };
 
@@ -69,9 +84,9 @@
       display-name = "1dk";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
         &trans  ,  C_AE    C_EACU  C_EGRV  C_OCRC  &trans   ,   &trans  C_UGRV  C_IDIA  C_OE    &trans  ,  &trans ,
-        &trans  ,  C_AGRV  C_SZ    C_ECRC  S_MINUS &trans   ,   C_YCRC  C_UCRC  C_ICRC  C_OCRC  K_DIA   ,  &trans ,
-        &trans  ,  C_ACRC  C_MULT  C_CCDL  S_UNDER &trans   ,   C_NTLD  C_MICRO &trans  C_ELLIP &trans  ,  &trans ,
-                 &EZ_SL(ODK_SHIFT_LAYER) , S_SQT , &trans   ,   &trans , S_SQT , &trans
+        &trans  ,  C_AGRV  C_SZ    C_ECRC  S_MINUS C_NDASH  ,   C_YCRC  C_UCRC  C_ICRC  C_OCRC  K_DIA   ,  &trans ,
+        &trans  ,  C_ACRC  C_MULT  C_CCDL  S_UNDER C_MDASH  ,   C_NTLD  C_MICRO C_MDOT  C_ELLIP &trans  ,  &trans ,
+                &EZ_SL(ODK_SHIFT_LAYER) , C_APOS , &trans   ,   &trans , C_APOS , &trans
       )>;
     };
 
@@ -79,8 +94,8 @@
       display-name = "1dkShift";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
         &trans  ,  SC_AE   SC_EACU SC_EGRV SC_OCRC &trans   ,   &trans  SC_UGRV SC_IDIA SC_OE   &trans  ,  &trans ,
-        &trans  ,  SC_AGRV SC_SZ   SC_ECRC &trans  &trans   ,   SC_YCRC SC_UCRC SC_ICRC SC_OCRC &none   ,  &trans ,
-        &trans  ,  SC_ACRC &trans  SC_CCDL &trans  &trans   ,   SC_NTLD &trans  &trans  &trans  &trans  ,  &trans ,
+        &trans  ,  SC_AGRV C_SZ    SC_ECRC C_FEM   &trans   ,   SC_YCRC SC_UCRC SC_ICRC SC_OCRC C_LCXE  ,  &trans ,
+        &trans  ,  SC_ACRC &trans  SC_CCDL &trans  &trans   ,   SC_NTLD C_MASC  C_BLLT  &trans  C_KRAMQ ,  &trans ,
                                  &trans , &trans , &trans   ,   &trans , &trans , &trans
       )>;
     };
