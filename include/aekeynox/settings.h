@@ -15,8 +15,8 @@
 // #define KB_LAYOUT_DVORAK
 // #define KB_LAYOUT_ERGOL
 // #define KB_LAYOUT_ERGLACE
-// #define KB_LAYOUT_QWERTY_INTL
-#define KB_LAYOUT_QWERTY_LAFAYETTE
+#define KB_LAYOUT_QWERTY_INTL
+// #define KB_LAYOUT_QWERTY_LAFAYETTE
 
 // Keyboard layouts and shortcuts may vary between Windows / macOS / Linux.
 // Uncomment one of the following lines if using a non-Windows host:
