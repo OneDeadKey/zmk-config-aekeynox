@@ -108,7 +108,16 @@
 #define CP1252_UPPERCASE_OE        &alt01xx KP_N4 KP_N0 // Œ
 #define CP1252_LOWERCASE_AE        &alt02xx KP_N3 KP_N0 // æ
 #define CP1252_UPPERCASE_AE        &alt01xx KP_N9 KP_N8 // Æ
+#define CP1252_LOWERCASE_ETH       &alt02xx KP_N4 KP_N0 // ð
+#define CP1252_UPPERCASE_ETH       &alt02xx KP_N0 KP_N8 // Ð
+#define CP1252_LOWERCASE_THORN     &alt02xx KP_N5 KP_N4 // þ
+#define CP1252_UPPERCASE_THORN     &alt02xx KP_N2 KP_N2 // Þ
 #define CP1252_LOWERCASE_SZ        &alt02xx KP_N2 KP_N3 // ß
+
+#define CP1252_INVERTED_XMARK      &alt01xx KP_N6 KP_N1 // ¡
+#define CP1252_INVERTED_QMARK      &alt01xx KP_N9 KP_N1 // ¿
+#define CP1252_FEMININE_ORDINAL    &alt01xx KP_N7 KP_N0 // ª
+#define CP1252_MASCULINE_ORDINAL   &alt01xx KP_N8 KP_N6 // º
 
 #define CP1252_LEFT_GUILLEMET      &alt01xx KP_N7 KP_N1 // «
 #define CP1252_RIGHT_GUILLEMET     &alt01xx KP_N8 KP_N7 // »
@@ -122,13 +131,17 @@
 #define CP1252_EM_DASH             &alt01xx KP_N5 KP_N1 // —
 #define CP1252_ELLIPSIS            &alt01xx KP_N3 KP_N3 // …
 #define CP1252_MIDDLE_DOT          &alt01xx KP_N8 KP_N3 // ·
+#define CP1252_BULLET              &alt01xx KP_N4 KP_N9 // •
+#define CP1252_SECTION             &alt01xx KP_N6 KP_N7 // §
+#define CP1252_PARAGRAPH           &alt01xx KP_N8 KP_N2 // ¶
 #define CP1252_NO_BREAK_SPACE      &alt01xx KP_N6 KP_N0
 
 #define CP1252_NOT                 &alt01xx KP_N7 KP_N2 // ¬
-#define CP1252_DEGREE              &alt01xx KP_N7 KP_N6 // ¦
-#define CP1252_BROKEN_BAR          &alt01xx KP_N6 KP_N6 // °
+#define CP1252_DEGREE              &alt01xx KP_N7 KP_N6 // °
+#define CP1252_BROKEN_BAR          &alt01xx KP_N6 KP_N6 // ¦
 #define CP1252_DIVISION            &alt02xx KP_N4 KP_N7 // ÷
 #define CP1252_MULTIPLICATION      &alt02xx KP_N1 KP_N5 // ×
+#define CP1252_PLUS_MINUS          &alt01xx KP_N7 KP_N7 // ±
 #define CP1252_SUPERSCRIPT_ONE     &alt01xx KP_N8 KP_N5 // ¹
 #define CP1252_SUPERSCRIPT_TWO     &alt01xx KP_N7 KP_N8 // ²
 #define CP1252_SUPERSCRIPT_THREE   &alt01xx KP_N7 KP_N9 // ³
@@ -136,5 +149,14 @@
 #define CP1252_ONE_HALF            &alt01xx KP_N8 KP_N9 // ½
 #define CP1252_THREE_QUARTERS      &alt01xx KP_N9 KP_N0 // ¾
 #define CP1252_MICRO               &alt01xx KP_N8 KP_N1 // µ
+
+#define CP1252_EURO                &alt01xx KP_N2 KP_N8 // €
+#define CP1252_CENT                &alt01xx KP_N6 KP_N2 // ¢
+#define CP1252_POUND               &alt01xx KP_N6 KP_N3 // £
+#define CP1252_CURRENCY            &alt01xx KP_N6 KP_N4 // ¤
+#define CP1252_YEN                 &alt01xx KP_N6 KP_N5 // ¥
+#define CP1252_COPYRIGHT           &alt01xx KP_N6 KP_N9 // ©
+#define CP1252_REGISTERED          &alt01xx KP_N7 KP_N4 // ®
+#define CP1252_TRADEMARK           &alt01xx KP_N5 KP_N3 // ™
 
 #endif
