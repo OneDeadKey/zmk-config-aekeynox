@@ -173,6 +173,7 @@
   #define C_NDASH CP1252_EN_DASH            // –
   #define C_MDASH CP1252_EM_DASH            // —
   #define C_ELLIP CP1252_ELLIPSIS           // …
+  #define C_BLLT  CP1252_BULLET             // •
   #define C_MDOT  CP1252_MIDDLE_DOT         // ·
   #define C_NBSP  CP1252_NO_BREAK_SPACE
 #else // unsupported
@@ -185,6 +186,7 @@
   #define C_NDASH &digraph N6 N6 // --
   #define C_MDASH &digraph N6 N6 // --
   #define C_ELLIP &ellipsis      // ...
+  #define C_BLLT  S_MINUS        // -
   #define C_MDOT  S_DOT          // .
   #define C_NBSP  &kp SPACE
 #endif
@@ -209,9 +211,7 @@
 #ifdef ENABLE_CP1252_ALT_CODES
   #define C_CENT  CP1252_CENT
   #define C_MULT  CP1252_MULTIPLICATION
-  #define C_BLLT  CP1252_BULLET
 #else
   #define C_CENT  &kp C
   #define C_MULT  &kp X
-  #define C_BLLT  S_MINUS
 #endif
