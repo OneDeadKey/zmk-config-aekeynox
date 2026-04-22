@@ -9,12 +9,12 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      # pin zmk commit, this is the tip of the `main` branch on 2026-03-30
-      # see https://github.com/Nuclear-Squid/zmk-keyboard-quacken/pull/49#issuecomment-4153385353
+      # Pin ZMK to the tip of the `main` branch on 2026-03-30.
+      # https://github.com/Nuclear-Squid/zmk-keyboard-quacken/pull/49#issuecomment-4153385353
       revision: c62da0e16646d10240ba29191bdbcb5611b3a1af
       import: app/west.yml
     - name: zmk-keyboard-quacken
-      remote: cfergeau
+      remote: NuclearSquid
       revision: zmk-main
     - name: zmk-config-totem
       remote: cfergeau
