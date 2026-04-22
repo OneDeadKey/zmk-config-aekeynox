@@ -9,14 +9,14 @@
 // Uncomment one of the following lines if using a non-QWERTY layout:
 // (this sets an appropriate Symbols layer and relevant keyboard shortcuts)
 
-#define KB_LAYOUT_AZERTY
+// #define KB_LAYOUT_AZERTY
 // #define KB_LAYOUT_BEPO
 // #define KB_LAYOUT_BEPOLAR
 // #define KB_LAYOUT_DVORAK
 // #define KB_LAYOUT_ERGOL
 // #define KB_LAYOUT_ERGLACE
 // #define KB_LAYOUT_QWERTY_INTL
-// #define KB_LAYOUT_QWERTY_LAFAYETTE
+#define KB_LAYOUT_QWERTY_LAFAYETTE
 
 // Keyboard layouts and shortcuts may vary between Windows / macOS / Linux.
 // Uncomment one of the following lines if using a non-Windows host:
@@ -33,8 +33,8 @@
 // Uncomment one of the following lines to enable layout emulation:
 
 // #define KB_EMULATION_DVORAK           // assumes the host is in QWERTY
-// #define KB_EMULATION_ERGOL            // assumes the host is in QWERTY-intl or AZERTY
-#define KB_EMULATION_QWERTY_LAFAYETTE // assumes the host is in QWERTY-intl or AZERTY
+#define KB_EMULATION_ERGOL            // assumes the host is in QWERTY-intl or AZERTY
+// #define KB_EMULATION_QWERTY_LAFAYETTE // assumes the host is in QWERTY-intl or AZERTY
 
 // [Experimental]
 // Uncomment the following line for an improved non-ASCII support on Windows:
