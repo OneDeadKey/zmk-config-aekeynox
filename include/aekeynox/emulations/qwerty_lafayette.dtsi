@@ -84,7 +84,7 @@
       display-name = "1dk";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
         &trans  ,  C_AE    C_EACU  C_EGRV  C_OCRC  &trans   ,   &trans  C_UGRV  C_IDIA  C_OE    &trans  ,  &trans ,
-        &trans  ,  C_AGRV  C_SZ    C_ECRC  S_MINUS C_NDASH  ,   C_YCRC  C_UCRC  C_ICRC  C_OCRC  K_DIA   ,  &trans ,
+        &trans  ,  C_AGRV  C_SZ    C_ECRC  S_MINUS C_NDASH  ,   &trans  C_UCRC  C_ICRC  C_OCRC  K_DIA   ,  &trans ,
         &trans  ,  C_ACRC  C_MULT  C_CCDL  S_UNDER C_MDASH  ,   C_NTLD  C_MICRO C_MDOT  C_ELLIP &trans  ,  &trans ,
                 &EZ_SL(ODK_SHIFT_LAYER) , C_APOS , &trans   ,   &trans , C_APOS , &trans
       )>;
@@ -94,7 +94,7 @@
       display-name = "1dkShift";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
         &trans  ,  SC_AE   SC_EACU SC_EGRV SC_OCRC &trans   ,   &trans  SC_UGRV SC_IDIA SC_OE   &trans  ,  &trans ,
-        &trans  ,  SC_AGRV C_SZ    SC_ECRC C_FEM   &trans   ,   SC_YCRC SC_UCRC SC_ICRC SC_OCRC C_LCXE  ,  &trans ,
+        &trans  ,  SC_AGRV C_SZ    SC_ECRC C_FEM   &trans   ,   &trans  SC_UCRC SC_ICRC SC_OCRC C_LCXE  ,  &trans ,
         &trans  ,  SC_ACRC &trans  SC_CCDL &trans  &trans   ,   SC_NTLD C_MASC  C_BLLT  &trans  C_KRAMQ ,  &trans ,
                                  &trans , &trans , &trans   ,   &trans , &trans , &trans
       )>;
