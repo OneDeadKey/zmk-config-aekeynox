@@ -69,7 +69,7 @@
       bindings = <SELENIUM_KEYMAP_BINDINGS(
         &trans  ,  C_ACRC  C_CCDL  C_OE    C_OCRC  &trans   ,   &trans  C_MICRO S_UNDER K_DIA   C_UCRC  ,  &trans ,
         &trans  ,  C_AGRV  C_EACU  C_EGRV  C_ECRC  C_NTLD   ,   S_LPAR  S_RPAR  C_ICRC  C_IDIA  C_UGRV  ,  &trans ,
-        &trans  ,  C_AE    C_SZ    &trans  C_NDASH C_MDASH  ,   C_ELLIP &trans  &trans  C_MDOT  &trans  ,  &trans ,
+        &trans  ,  C_AE    C_SZ    S_MINUS C_NDASH C_MDASH  ,   C_ELLIP C_MDOT  &trans  C_BLLT  &trans  ,  &trans ,
                 &EZ_SL(ODK_SHIFT_LAYER) , C_APOS , &trans   ,   &trans , C_APOS , &trans
       )>;
     };
@@ -77,9 +77,9 @@
     one_dead_key_shift {
       display-name = "1dkShift";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
-        &trans  ,  SC_ACRC SC_CCDL SC_OE   SC_OCRC &trans   ,   &trans  &trans  S_UNDER K_DIA   SC_UCRC  ,  &trans ,
+        &trans  ,  SC_ACRC SC_CCDL SC_OE   SC_OCRC &trans   ,   &trans  &trans  S_UNDER C_LCXE  SC_UCRC  ,  &trans ,
         &trans  ,  SC_AGRV SC_EACU SC_EGRV SC_ECRC SC_NTLD  ,   S_LPAR  S_RPAR  SC_ICRC SC_IDIA SC_UGRV  ,  &trans ,
-        &trans  ,  SC_AE   SC_SZ   &trans  &trans  &trans   ,   &trans  &trans  &trans  &trans  &trans   ,  &trans ,
+        &trans  ,  SC_AE   C_SZ    C_KRAMQ &trans  &trans   ,   &trans  &trans  &trans  &trans  &trans   ,  &trans ,
                                  &trans , &trans , &trans   ,   &trans , &trans , &trans
       )>;
     };
