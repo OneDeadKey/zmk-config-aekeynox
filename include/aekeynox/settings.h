@@ -3,11 +3,12 @@
 
 
 /******************************************************************************
- * Keyboard Layout
+ * Host Computer (keyboard layout and OS)
 ******************************************************************************/
 
-// Uncomment one of the following lines if using a non-QWERTY layout:
-// (this sets an appropriate Symbols layer and relevant keyboard shortcuts)
+// Uncomment one of the following lines if the host computer is configured with
+// a non-QWERTY keyboard layout. This is required to set an appropriate
+// 'Symbols' layer and relevant keyboard shortcuts in the 'Nav' layer.
 
 #define KB_LAYOUT_AZERTY
 // #define KB_LAYOUT_BEPO
@@ -18,33 +19,39 @@
 // #define KB_LAYOUT_QWERTY_INTL
 // #define KB_LAYOUT_QWERTY_LAFAYETTE
 
-// Keyboard layouts and shortcuts may vary between Windows / macOS / Linux.
-// Uncomment one of the following lines if using a non-Windows host:
+// Some keyboard layouts and shortcuts may vary between Windows / macOS / Linux.
+// Uncomment one of the following lines if the host computer doen't run Windows.
 
 // #define MACOS
 // #define LINUX
 
 
 /******************************************************************************
- * Keyboard Emulation
+ * Layout Emulation
 ******************************************************************************/
 
 // [Experimental]
-// Uncomment one of the following lines to enable layout emulation:
+// Uncomment one of the following lines to enable layout emulation,
+// i.e. to type in another keyboard layout than the host computer's.
+//  - Keymaps for QWERTY/English will work fine, as they're just a permutation
+//    of regular QWERTY keys.
+//  - Keymaps for other languages and host layouts are trickier, and provide a
+//    partial emulation only. QWERTY-intl hosts usually give the best results.
 
-// #define KB_EMULATION_DVORAK           // assumes the host is in QWERTY
-#define KB_EMULATION_ERGOL            // assumes the host is in QWERTY-intl or AZERTY
-// #define KB_EMULATION_QWERTY_LAFAYETTE // assumes the host is in QWERTY-intl or AZERTY
+// #define KB_EMULATION_DVORAK           // host: QWERTY
+#define KB_EMULATION_ERGOL            // host: QWERTY-intl or AZERTY
+// #define KB_EMULATION_QWERTY_LAFAYETTE // host: QWERTY-intl or AZERTY
 
 // [Experimental]
-// Uncomment the following line for an improved non-ASCII support on Windows:
-// (XXX this assumes NumLock is ON, does not work otherwise)
+// Uncomment the following line for an extended character support on Windows.
+// Useless on QWERTY/English keymaps or non-Windows hosts, recommended otherwise.
+// XXX This assumes NumLock is ON. It will not work otherwise.
 
 #define ENABLE_CP1252_ALT_CODES
 
 // [Experimental]
-// Uncomment the following line for an improved dead key support:
-// (only applies to some Hummingbird keymaps and layout emulations)
+// Uncomment the following line for an improved dead key support.
+// This only applies to some Hummingbird keymaps and layout emulations.
 
 #define ENABLE_FANCY_DEAD_KEYS
 
@@ -53,7 +60,7 @@
  * Hold-Taps
 ******************************************************************************/
 
-// Uncomment one of the following lines to pick your preferred hold-tap config:
+// Uncomment one of the following lines to pick your preferred hold-tap config.
 
 // #define HT_NONE
 // #define HT_THUMB_TAPS
@@ -108,7 +115,7 @@
 // Uncomment the following line to enable shift as a pinky HRM.
 // Useful for combined shortcuts, but NOT MEANT to type text!
 
-// #define HRM_SHIFT
+#define HRM_SHIFT
 
 // Uncomment the following line to swap Space and Backspace.
 // Beware: this increases the typing load of the left thumb.
