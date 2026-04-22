@@ -50,7 +50,7 @@
  * NumRow and 1DK Layers (non-ASCII chars, host-agnostic)
 ******************************************************************************/
 
-#ifdef CP1252_ALT_CODES
+#ifdef ENABLE_CP1252_ALT_CODES
   #define C_MASC  CP1252_MASCULINE_ORDINAL
   #define C_FEM   CP1252_FEMININE_ORDINAL
   #define C_LODQT CP1252_LOW_DOUBLE_QUOTE
