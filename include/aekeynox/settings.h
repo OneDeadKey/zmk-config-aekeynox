@@ -9,13 +9,13 @@
 // Uncomment one of the following lines if using a non-QWERTY layout:
 // (this sets an appropriate Symbols layer and relevant keyboard shortcuts)
 
-// #define KB_LAYOUT_AZERTY
+#define KB_LAYOUT_AZERTY
 // #define KB_LAYOUT_BEPO
 // #define KB_LAYOUT_BEPOLAR
 // #define KB_LAYOUT_DVORAK
 // #define KB_LAYOUT_ERGOL
 // #define KB_LAYOUT_ERGLACE
-#define KB_LAYOUT_QWERTY_INTL
+// #define KB_LAYOUT_QWERTY_INTL
 // #define KB_LAYOUT_QWERTY_LAFAYETTE
 
 // Keyboard layouts and shortcuts may vary between Windows / macOS / Linux.
@@ -46,7 +46,7 @@
 // Uncomment the following line for an improved dead key support:
 // (only applies to some Hummingbird keymaps and layout emulations)
 
-// #define ENABLE_FANCY_DEAD_KEYS
+#define ENABLE_FANCY_DEAD_KEYS
 
 
 /******************************************************************************
@@ -103,7 +103,7 @@
 // when entering the navigation layer, Alt will only be released when nav is
 // released. This enables one-handed alt-tabs, but may cause unwanted side effects.
 
-// #define ENABLE_MOD_HOLD_NAVIGATION
+#define ENABLE_MOD_HOLD_NAVIGATION
 
 // Uncomment the following line to enable shift as a pinky HRM.
 // Useful for combined shortcuts, but NOT MEANT to type text!
