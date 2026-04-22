@@ -35,7 +35,7 @@
   };
   #define K_DIA &kp LBRC // diaeresis
   #define K_ODKS &trans  // no 1dkShift layer
-  #define S_SZ   &trans
+  #define C_SZ   &trans
   #define C_MULT &trans
 
 #elif defined KB_LAYOUT_QWERTY_INTL
@@ -79,7 +79,7 @@
       display-name = "1dk";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
         &trans  ,  C_AE    C_EACU  C_EGRV  C_OCRC  &trans   ,   &trans  C_UGRV  C_IDIA  C_OE    &trans  ,  &trans ,
-        &trans  ,  C_AGRV  S_SZ    C_ECRC  S_MINUS &trans   ,   C_YCRC  C_UCRC  C_ICRC  C_OCRC  K_DIA   ,  &trans ,
+        &trans  ,  C_AGRV  C_SZ    C_ECRC  S_MINUS &trans   ,   C_YCRC  C_UCRC  C_ICRC  C_OCRC  K_DIA   ,  &trans ,
         &trans  ,  C_ACRC  C_MULT  C_CCDL  S_UNDER &trans   ,   C_NTLD  C_MU    &trans  &ellip  &trans  ,  &trans ,
                                   K_ODKS , S_SQT , &trans   ,   &trans , S_SQT , &trans
       )>;
@@ -90,7 +90,7 @@
       display-name = "1dkShift";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
         &trans  ,  SC_AE   SC_EACU SC_EGRV SC_OCRC &trans   ,   &trans  SC_UGRV SC_IDIA SC_OE   &trans  ,  &trans ,
-        &trans  ,  SC_AGRV S_SZ    SC_ECRC &trans  &trans   ,   SC_YCRC SC_UCRC SC_ICRC SC_OCRC &none   ,  &trans ,
+        &trans  ,  SC_AGRV C_SZ    SC_ECRC &trans  &trans   ,   SC_YCRC SC_UCRC SC_ICRC SC_OCRC &none   ,  &trans ,
         &trans  ,  SC_ACRC &trans  SC_CCDL &trans  &trans   ,   SC_NTLD &trans  &trans  &trans  &trans  ,  &trans ,
                                  &trans , &trans , &trans   ,   &trans , &trans , &trans
       )>;
