@@ -187,6 +187,7 @@
   #define C_NBSP  &kp LS(SPACE)
 #endif
 
+#define C_DEG   &kp UNDER // °
 #define C_MICRO &kp PIPE  // µ
 #define C_EURO  &kp RA(E) // €
 
