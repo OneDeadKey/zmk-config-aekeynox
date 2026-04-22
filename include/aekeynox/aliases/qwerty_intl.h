@@ -175,19 +175,29 @@
 #define C_LCXE  &kp RA(N1)    // ¡
 #define C_KRAMQ &kp RA(FSLH)  // ¿
 #ifdef ENABLE_CP1252_ALT_CODES
-  #define C_NDASH CP1252_EN_DASH       // –
-  #define C_MDASH CP1252_EM_DASH       // —
-  #define C_ELLIP CP1252_ELLIPSIS      // …
-  #define C_MDOT  CP1252_MIDDLE_DOT    // ·
-  #define C_BLLT  CP1252_BULLET        // •
+  #define C_LODQT CP1252_LOW_DOUBLE_QUOTE   // „
+  #define C_LDQT  CP1252_LEFT_DOUBLE_QUOTE  // “
+  #define C_RDQT  CP1252_RIGHT_DOUBLE_QUOTE // ”
+  #define C_NDASH CP1252_EN_DASH            // –
+  #define C_MDASH CP1252_EM_DASH            // —
+  #define C_ELLIP CP1252_ELLIPSIS           // …
+  #define C_BLLT  CP1252_BULLET             // •
+  #define C_MDOT  CP1252_MIDDLE_DOT         // ·
+  #define C_FEM   CP1252_FEMININE_ORDINAL   // ª
+  #define C_MASC  CP1252_MASCULINE_ORDINAL  // º
   #define C_NBSP  CP1252_NO_BREAK_SPACE
-#else
+#else // unsupported
+  #define C_LODQT &none
+  #define C_LDQT  &none
+  #define C_RDQT  &none
   #define C_NDASH &digraph MINUS MINUS // --
   #define C_MDASH &digraph MINUS MINUS // --
   #define C_ELLIP &ellipsis            // ...
-  #define C_MDOT  &kp DOT              // .
   #define C_BLLT  &kp MINUS            // -
-  #define C_NBSP  &kp LS(SPACE)
+  #define C_MDOT  &kp DOT              // .
+  #define C_FEM   &none
+  #define C_MASC  &none
+  #define C_NBSP  &kp SPACE
 #endif
 
 // currencies
