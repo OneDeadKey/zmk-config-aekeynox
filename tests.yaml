@@ -52,9 +52,9 @@ include:
   # Lafayette emulation on Azerty
   - board: quacken_flex/rp2040
     artifact-name: azerty_to_lafayette
-    cmake-args: -DDTS_EXTRA_CPP_FLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_AZERTY;-DKB_EMULATION_QWERTY_LAFAYETTE"
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_AZERTY;-DKB_EMULATION_QWERTY_LAFAYETTE"
 
   # Lafayette emulation on Qwerty-intl
   - board: quacken_flex/rp2040
     artifact-name: qwerty_intl_to_lafayette
-    cmake-args: -DDTS_EXTRA_CPP_FLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY_INTL;-DKB_EMULATION_QWERTY_LAFAYETTE"
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY_INTL;-DKB_EMULATION_QWERTY_LAFAYETTE"
