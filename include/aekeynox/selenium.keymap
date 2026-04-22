@@ -5,6 +5,7 @@
   #include "settings.h"   // user settings
 #endif
 
+#include "defaults.h"     // default options and safeguards
 #include "aliases.h"      // defines symbols and actions
 #include "bindings.h"     // default SELENIUM_KEYMAP_BINDINGS macro
 #include "mappings.dtsi"  // key mapping helpers and macros

@@ -1,12 +1,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-#ifndef LOW_MEMORY_DEVICE
-  #define OMIT_IF_NO_REF /omit-if-no-ref/
-#else
-  #define OMIT_IF_NO_REF
-#endif
-
 // Define a dead layer key
 // note: macro_pause_for_release might be useless
 #define DEAD_KEY(name, key) OMIT_IF_NO_REF name: name { \
