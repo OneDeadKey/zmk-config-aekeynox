@@ -135,39 +135,38 @@
   #define  C_AE &kp RA(X) // æ
   #define SC_AE &kp SA(X) // æ
   #define  C_SZ &kp RA(S) // ß
-  #define SC_SZ &kp RA(S) // ß
 #elifdef MACOS
   #define  C_OE &kp RA(O) // œ
   #define SC_OE &kp SA(O) // œ
   #define  C_AE &kp RA(Z) // æ
   #define SC_AE &kp SA(Z) // æ
-  #define  C_SZ &digraph S S         // unsupported
-  #define SC_SZ &digraph LS(S) LS(S) // unsupported
+  #define  C_SZ &kp RA(S) // ß
 #elifdef ENABLE_CP1252_ALT_CODES
-  #define  C_OE CP1252_LOWERCASE_OE  // œ
-  #define SC_OE CP1252_UPPERCASE_OE  // Œ
-  #define  C_AE CP1252_LOWERCASE_AE  // æ
-  #define SC_AE CP1252_UPPERCASE_AE  // Æ
-  #define  C_SZ CP1252_LOWERCASE_SZ  // ß
-  #define SC_SZ CP1252_LOWERCASE_SZ  // ß
-#else
-  #define  C_OE &digraph O E         // unsupported
-  #define SC_OE &digraph LS(O) LS(E) // unsupported
-  #define  C_AE &digraph Q E         // unsupported
-  #define SC_AE &digraph LS(O) LS(E) // unsupported
-  #define  C_SZ &digraph S S         // unsupported
-  #define SC_SZ &digraph LS(S) LS(S) // unsupported
+  #define  C_OE CP1252_LOWERCASE_OE // œ
+  #define SC_OE CP1252_UPPERCASE_OE // Œ
+  #define  C_AE CP1252_LOWERCASE_AE // æ
+  #define SC_AE CP1252_UPPERCASE_AE // Æ
+  #define  C_SZ CP1252_LOWERCASE_SZ // ß
+#else // unsupported
+  #define  C_OE &digraph O E
+  #define SC_OE &digraph LS(O) LS(E)
+  #define  C_AE &digraph Q E
+  #define SC_AE &digraph LS(O) LS(E)
+  #define  C_SZ &digraph S S
 #endif
 #if defined LINUX || defined MACOS
-  #define  C_NTLD &kp N     // unsupported
-  #define SC_NTLD &kp LS(N) // unsupported
+  #define  C_NTLD &kp N     // XXX
+  #define SC_NTLD &kp LS(N) // XXX
 #else
   #define  C_NTLD &digraph RA(N2) N     // ñ
   #define SC_NTLD &digraph RA(N2) LS(N) // ñ
 #endif
 
-// punctuation
+// punctuation (generic)
 #ifdef ENABLE_CP1252_ALT_CODES
+  #define C_LODQT CP1252_LOW_DOUBLE_QUOTE   // „
+  #define C_LDQT  CP1252_LEFT_DOUBLE_QUOTE  // “
+  #define C_RDQT  CP1252_RIGHT_DOUBLE_QUOTE // ”
   #define C_LGQT  CP1252_LEFT_GUILLEMET     // «
   #define C_RGQT  CP1252_RIGHT_GUILLEMET    // »
   #define C_APOS  CP1252_RIGHT_SINGLE_QUOTE // ’
@@ -176,7 +175,10 @@
   #define C_ELLIP CP1252_ELLIPSIS           // …
   #define C_MDOT  CP1252_MIDDLE_DOT         // ·
   #define C_NBSP  CP1252_NO_BREAK_SPACE
-#else
+#else // unsupported
+  #define C_LODQT &none
+  #define C_LDQT  &none
+  #define C_RDQT  &none
   #define C_LGQT  &kp N3         // "
   #define C_RGQT  &kp N3         // "
   #define C_APOS  &kp N4         // '
@@ -184,21 +186,32 @@
   #define C_MDASH &digraph N6 N6 // --
   #define C_ELLIP &ellipsis      // ...
   #define C_MDOT  S_DOT          // .
-  #define C_NBSP  &kp LS(SPACE)
+  #define C_NBSP  &kp SPACE
 #endif
 
+// punctuation (Spanish)
+#ifdef ENABLE_CP1252_ALT_CODES
+  #define C_LCXE  CP1252_INVERTED_XMARK     // ¡
+  #define C_KRAMQ CP1252_INVERTED_QMARK     // ¿
+  #define C_FEM   CP1252_FEMININE_ORDINAL   // ª
+  #define C_MASC  CP1252_MASCULINE_ORDINAL  // º
+#else // unsupported
+  #define C_LCXE  &none
+  #define C_KRAMQ &none
+  #define C_FEM   &none
+  #define C_MASC  &none
+#endif
+
+// math
 #define C_DEG   &kp UNDER // °
 #define C_MICRO &kp PIPE  // µ
 #define C_EURO  &kp RA(E) // €
-
 #ifdef ENABLE_CP1252_ALT_CODES
+  #define C_CENT  CP1252_CENT
   #define C_MULT  CP1252_MULTIPLICATION
   #define C_BLLT  CP1252_BULLET
-  #define C_LCXE  CP1252_INVERTED_XMARK
-  #define C_KRAMQ CP1252_INVERTED_QMARK
 #else
+  #define C_CENT  &kp C
   #define C_MULT  &kp X
   #define C_BLLT  S_MINUS
-  #define C_LCXE  &none
-  #define C_KRAMQ &none
 #endif
