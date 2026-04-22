@@ -26,22 +26,22 @@
  * Home Row
  */
 
-#if defined MACOS
-  #define H_S &hrm LALT
-  #define H_D &hrm LGUI
-  #define H_F &hrm LCTL
-  #define H_J &hrm RCTL
-  #define H_K &hrm RGUI
-  #define H_L &hrm LALT
+#ifdef MACOS
+  #define GUI_OPT LALT
+  #define CTL_CMD LGUI
+  #define ALT_CTL LCTL
 #else
-  // avoid right-hand modifiers on Windows and Linux (often remapped by the desktop)
-  #define H_S &hrm LGUI
-  #define H_D &hrm LCTL
-  #define H_F &hrm LALT
-  #define H_J &hrm LALT
-  #define H_K &hrm LCTL
-  #define H_L &hrm LGUI
+  #define GUI_OPT LGUI
+  #define CTL_CMD LCTL
+  #define ALT_CTL LALT
 #endif
+
+#define H_S &hrm GUI_OPT
+#define H_D &hrm CTL_CMD
+#define H_F &hrm ALT_CTL
+#define H_J &hrm ALT_CTL
+#define H_K &hrm CTL_CMD
+#define H_L &hrm GUI_OPT
 
 #ifdef HRM_SHIFT
   #define H_A    &hrm LSHIFT
@@ -103,22 +103,14 @@
 #endif
 
 #ifdef LHAND_SPACE
-  #if defined MACOS
-    #define LTHUMB_TT &hrm LGUI SPACE
-  #else
-    #define LTHUMB_TT &hrm LCTL SPACE
-  #endif
+  #define LTHUMB_TT  &hrm CTL_CMD SPACE
   #define RTHUMB_TT  &magic_backspace
   #define LTHUMB_HRM &lt NAV_LAYER SPACE
   #define RTHUMB_HRM &magic_backspace
   #define LTHUMB_S34 &lt NAV_LAYER SPACE
   #define RTHUMB_S34 &magic_backspace_34_keys
 #else
-  #if defined MACOS
-    #define LTHUMB_TT &mt LGUI BACKSPACE
-  #else
-    #define LTHUMB_TT &mt LCTL BACKSPACE
-  #endif
+  #define LTHUMB_TT  &hrm CTL_CMD BACKSPACE
   #define RTHUMB_TT  &magic_space
   #define LTHUMB_HRM NAV_SC NAV_LAYER BACKSPACE
   #define RTHUMB_HRM &lt NAV_LAYER SPACE
@@ -127,28 +119,17 @@
 #endif
 
 #ifdef HT_NONE
-  #if defined MACOS
-    #define LTHUMB_TUCK   &kp LALT
-    #define LTHUMB_HOME   &kp LGUI
-    #define LTHUMB_REACH  &kp LCTL
-  #else
-    #define LTHUMB_TUCK   &kp LALT
-    #define LTHUMB_HOME   &kp LCTL
-    #define LTHUMB_REACH  &kp LGUI
-  #endif
+  #define LTHUMB_TUCK   &kp ALT_CTL
+  #define LTHUMB_HOME   &kp CTL_CMD
+  #define LTHUMB_REACH  &kp GUI_OPT
   #define RTHUMB_REACH  &mo NAV_LAYER
   #define RTHUMB_HOME   &kp SPACE
   #define RTHUMB_TUCK   &mo SYMBOLS_LAYER
 #elifdef HT_THUMB_TAPS
   #define LTHUMB_TUCK   &EZ_SK(LSHIFT)
   #define LTHUMB_HOME   LTHUMB_TT
-  #if defined MACOS
-    #define LTHUMB_REACH  &mt LCTL REACH_TAP
-    #define RTHUMB_REACH  &mt LGUI ENTER
-  #else
-    #define LTHUMB_REACH  &mt LGUI REACH_TAP
-    #define RTHUMB_REACH  &mt LALT ENTER
-  #endif
+  #define LTHUMB_REACH  &mt GUI_OPT REACH_TAP
+  #define RTHUMB_REACH  &mt ALT_CTL ENTER
   #define RTHUMB_HOME   RTHUMB_TT
   #define RTHUMB_TUCK   &sym_shift_altgr
 #elifdef HT_HOME_ROW_MODS
