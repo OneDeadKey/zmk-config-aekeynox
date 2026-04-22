@@ -163,14 +163,11 @@
 #define  C_THORN &kp RA(R) // Þ
 #define SC_THORN &kp SA(R) // þ
 #define  C_SZ    &kp RA(S) // ß
-#define SC_SZ    &kp RA(S) // ß
 
 // punctuation
 #define C_LSQT  &kp RA(N9)    // ‘
 #define C_RSQT  &kp RA(N0)    // ’
 #define C_APOS  &kp RA(N0)    // ’
-#define C_LDQT  &kp RA(LBRC)  // “
-#define C_RDQT  &kp RA(RBRC)  // ”
 #define C_LGQT  &kp RA(LBKT)  // «
 #define C_RGQT  &kp RA(RBKT)  // »
 #define C_SECT  &kp SA(S)     // §
@@ -182,12 +179,14 @@
   #define C_MDASH CP1252_EM_DASH       // —
   #define C_ELLIP CP1252_ELLIPSIS      // …
   #define C_MDOT  CP1252_MIDDLE_DOT    // ·
+  #define C_BLLT  CP1252_BULLET        // •
   #define C_NBSP  CP1252_NO_BREAK_SPACE
 #else
   #define C_NDASH &digraph MINUS MINUS // --
   #define C_MDASH &digraph MINUS MINUS // --
   #define C_ELLIP &ellipsis            // ...
   #define C_MDOT  &kp DOT              // .
+  #define C_BLLT  &kp MINUS            // -
   #define C_NBSP  &kp LS(SPACE)
 #endif
 
