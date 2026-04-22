@@ -191,7 +191,13 @@
 #define C_EURO  &kp RA(E) // €
 
 #ifdef ENABLE_CP1252_ALT_CODES
-  #define C_MULT CP1252_MULTIPLICATION
+  #define C_MULT  CP1252_MULTIPLICATION
+  #define C_BLLT  CP1252_BULLET
+  #define C_LCXE  CP1252_INVERTED_XMARK
+  #define C_KRAMQ CP1252_INVERTED_QMARK
 #else
-  #define C_MULT &kp X
+  #define C_MULT  &kp X
+  #define C_BLLT  S_MINUS
+  #define C_LCXE  &none
+  #define C_KRAMQ &none
 #endif
