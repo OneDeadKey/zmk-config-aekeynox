@@ -86,7 +86,13 @@
 #define C_CCDL &kp N9  // ç
 
 // uppercase: É À È Ù Ç
-#ifdef ENABLE_CP1252_ALT_CODES
+#if defined LINUX || defined MACOS
+  #define SC_EACU &caps N2
+  #define SC_AGRV &caps N0
+  #define SC_EGRV &caps N7
+  #define SC_UGRV &caps SQT
+  #define SC_CCDL &caps N9
+#elif defined ENABLE_CP1252_ALT_CODES
   #define SC_EACU CP1252_UPPERCASE_E_ACUTE
   #define SC_AGRV CP1252_UPPERCASE_A_GRAVE
   #define SC_EGRV CP1252_UPPERCASE_E_GRAVE

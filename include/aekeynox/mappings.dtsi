@@ -41,6 +41,7 @@
 
 / {
   macros {
+
     OMIT_IF_NO_REF digraph: digraph {
       compatible = "zmk,behavior-macro-two-param";
       #binding-cells = <2>;
@@ -51,11 +52,25 @@
         , <&macro_param_2to1 &kp MACRO_PLACEHOLDER>
         ;
     };
+
     OMIT_IF_NO_REF ellipsis: ellipsis {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap S_DOT S_DOT S_DOT>;
     };
+
+    OMIT_IF_NO_REF caps: caps {
+      compatible = "zmk,behavior-macro-one-param";
+      #binding-cells = <1>;
+      tap-ms = <0>;
+      wait-ms = <0>;
+      bindings
+        = <&kp CAPS>
+        , <&macro_param_1to1 &kp MACRO_PLACEHOLDER>
+        , <&kp CAPS>
+        ;
+    };
+
   };
 };
 
@@ -69,6 +84,7 @@
 #ifdef ENABLE_CP1252_ALT_CODES
 / {
   macros {
+
     alt01xx: alt01xx {
       compatible = "zmk,behavior-macro-two-param";
       #binding-cells = <2>;
@@ -82,6 +98,7 @@
         , <&macro_release &kp LALT>
         ;
     };
+
     alt02xx: alt02xx {
       compatible = "zmk,behavior-macro-two-param";
       #binding-cells = <2>;
@@ -95,6 +112,7 @@
         , <&macro_release &kp LALT>
         ;
     };
+
   };
 };
 
