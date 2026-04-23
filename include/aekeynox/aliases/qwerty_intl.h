@@ -148,6 +148,9 @@
 #ifdef LINUX
   #define  C_OE  &kp RA(K) // œ
   #define SC_OE  &kp SA(K) // Œ
+#elifdef ENABLE_CP1252_ALT_CODES
+  #define  C_OE  CP1252_LOWERCASE_OE // œ
+  #define SC_OE  CP1252_UPPERCASE_OE // Œ
 #else
   #define  C_OE  &digraph O E
   #define SC_OE  &digraph LS(O) LS(E)
