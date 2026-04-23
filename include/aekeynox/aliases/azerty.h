@@ -136,10 +136,10 @@
 
 // other special letters: œ, æ, ß, ñ
 #ifdef LINUX
-  #define  C_OE &kp RA(K) // œ
-  #define SC_OE &kp SA(K) // œ
-  #define  C_AE &kp RA(X) // æ
-  #define SC_AE &kp SA(X) // æ
+  #define  C_OE &digraph O E
+  #define SC_OE &digraph LS(O) LS(E)
+  #define  C_AE &kp RA(Q) // æ
+  #define SC_AE &kp SA(Q) // æ
   #define  C_SZ &kp RA(S) // ß
 #elifdef MACOS
   #define  C_OE &kp RA(O) // œ
@@ -153,7 +153,7 @@
   #define  C_AE CP1252_LOWERCASE_AE // æ
   #define SC_AE CP1252_UPPERCASE_AE // Æ
   #define  C_SZ CP1252_LOWERCASE_SZ // ß
-#else // unsupported
+#else // Windows without alt-codes
   #define  C_OE &digraph O E
   #define SC_OE &digraph LS(O) LS(E)
   #define  C_AE &digraph Q E
@@ -168,27 +168,39 @@
   #define SC_NTLD &digraph RA(N2) LS(N) // ñ
 #endif
 
-// punctuation (generic)
-#ifdef ENABLE_CP1252_ALT_CODES
+// quote signs
+#ifdef LINUX
+  #define C_LODQT &kp RA(V) // „
+  #define C_LDQT  &kp RA(B) // “
+  #define C_RDQT  &kp RA(N) // ”
+  #define C_LGQT  &kp RA(W) // «
+  #define C_RGQT  &kp RA(X) // »
+  #define C_APOS  &kp SA(N) // ’
+#elifdef ENABLE_CP1252_ALT_CODES
   #define C_LODQT CP1252_LOW_DOUBLE_QUOTE   // „
   #define C_LDQT  CP1252_LEFT_DOUBLE_QUOTE  // “
   #define C_RDQT  CP1252_RIGHT_DOUBLE_QUOTE // ”
   #define C_LGQT  CP1252_LEFT_GUILLEMET     // «
   #define C_RGQT  CP1252_RIGHT_GUILLEMET    // »
   #define C_APOS  CP1252_RIGHT_SINGLE_QUOTE // ’
-  #define C_NDASH CP1252_EN_DASH            // –
-  #define C_MDASH CP1252_EM_DASH            // —
-  #define C_ELLIP CP1252_ELLIPSIS           // …
-  #define C_BLLT  CP1252_BULLET             // •
-  #define C_MDOT  CP1252_MIDDLE_DOT         // ·
-  #define C_NBSP  CP1252_NO_BREAK_SPACE
-#else // unsupported
+#else // macOS or Windows without alt-codes
   #define C_LODQT &none
   #define C_LDQT  &none
   #define C_RDQT  &none
-  #define C_LGQT  &kp N3         // "
-  #define C_RGQT  &kp N3         // "
-  #define C_APOS  &kp N4         // '
+  #define C_LGQT  &kp N3 // "
+  #define C_RGQT  &kp N3 // "
+  #define C_APOS  &kp N4 // '
+#endif
+
+// punctuation (generic)
+#ifdef ENABLE_CP1252_ALT_CODES
+  #define C_NDASH CP1252_EN_DASH    // –
+  #define C_MDASH CP1252_EM_DASH    // —
+  #define C_ELLIP CP1252_ELLIPSIS   // …
+  #define C_BLLT  CP1252_BULLET     // •
+  #define C_MDOT  CP1252_MIDDLE_DOT // ·
+  #define C_NBSP  CP1252_NO_BREAK_SPACE
+#else // unsupported
   #define C_NDASH &digraph N6 N6 // --
   #define C_MDASH &digraph N6 N6 // --
   #define C_ELLIP &ellipsis      // ...
@@ -198,12 +210,17 @@
 #endif
 
 // punctuation (Spanish)
-#ifdef ENABLE_CP1252_ALT_CODES
+#ifdef LINUX
+  #define C_LCXE  &kp SA(N1)
+  #define C_KRAMQ &kp SA(MINUS)
+  #define C_FEM   &none
+  #define C_MASC  &none
+#elifdef ENABLE_CP1252_ALT_CODES
   #define C_LCXE  CP1252_INVERTED_XMARK     // ¡
   #define C_KRAMQ CP1252_INVERTED_QMARK     // ¿
   #define C_FEM   CP1252_FEMININE_ORDINAL   // ª
   #define C_MASC  CP1252_MASCULINE_ORDINAL  // º
-#else // unsupported
+#else // macOS or Windows without alt-codes
   #define C_LCXE  &none
   #define C_KRAMQ &none
   #define C_FEM   &none
@@ -214,10 +231,13 @@
 #define C_DEG   &kp UNDER // °
 #define C_MICRO &kp PIPE  // µ
 #define C_EURO  &kp RA(E) // €
-#ifdef ENABLE_CP1252_ALT_CODES
-  #define C_CENT  CP1252_CENT
-  #define C_MULT  CP1252_MULTIPLICATION
-#else
+#ifdef LINUX
+  #define C_CENT  &kp RA(C)     // ¢
+  #define C_MULT  &kp SA(COMMA) // ×
+#elifdef ENABLE_CP1252_ALT_CODES
+  #define C_CENT  CP1252_CENT           // ¢
+  #define C_MULT  CP1252_MULTIPLICATION // ×
+#else // macOS or Windows without alt-codes
   #define C_CENT  &kp C
   #define C_MULT  &kp X
 #endif
