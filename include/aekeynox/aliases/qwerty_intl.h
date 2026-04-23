@@ -167,20 +167,28 @@
 #define SC_THORN &kp SA(R) // þ
 #define  C_SZ    &kp RA(S) // ß
 
-// punctuation
+// quote signs
 #define C_LSQT  &kp RA(N9)    // ‘
 #define C_RSQT  &kp RA(N0)    // ’
 #define C_APOS  &kp RA(N0)    // ’
 #define C_LGQT  &kp RA(LBKT)  // «
 #define C_RGQT  &kp RA(RBKT)  // »
-#define C_SECT  &kp SA(S)     // §
-#define C_PAR   &kp RA(SEMI)  // ¶
-#define C_LCXE  &kp RA(N1)    // ¡
-#define C_KRAMQ &kp RA(FSLH)  // ¿
-#ifdef ENABLE_CP1252_ALT_CODES
+#ifdef LINUX
+  #define C_LODQT &none
+  #define C_LDQT  &kp RA(LBRC)
+  #define C_RDQT  &kp RA(RBRC)
+#elifdef ENABLE_CP1252_ALT_CODES
   #define C_LODQT CP1252_LOW_DOUBLE_QUOTE   // „
   #define C_LDQT  CP1252_LEFT_DOUBLE_QUOTE  // “
   #define C_RDQT  CP1252_RIGHT_DOUBLE_QUOTE // ”
+#else
+  #define C_LODQT &none
+  #define C_LDQT  &none
+  #define C_RDQT  &none
+#endif
+
+// other punctuation signs
+#ifdef ENABLE_CP1252_ALT_CODES
   #define C_NDASH CP1252_EN_DASH            // –
   #define C_MDASH CP1252_EM_DASH            // —
   #define C_ELLIP CP1252_ELLIPSIS           // …
@@ -190,9 +198,6 @@
   #define C_MASC  CP1252_MASCULINE_ORDINAL  // º
   #define C_NBSP  CP1252_NO_BREAK_SPACE
 #else // unsupported
-  #define C_LODQT &none
-  #define C_LDQT  &none
-  #define C_RDQT  &none
   #define C_NDASH &digraph MINUS MINUS // --
   #define C_MDASH &digraph MINUS MINUS // --
   #define C_ELLIP &ellipsis            // ...
@@ -202,6 +207,10 @@
   #define C_MASC  &none
   #define C_NBSP  &kp SPACE
 #endif
+#define C_SECT  &kp SA(S)     // §
+#define C_PAR   &kp RA(SEMI)  // ¶
+#define C_LCXE  &kp RA(N1)    // ¡
+#define C_KRAMQ &kp RA(FSLH)  // ¿
 
 // currencies
 #define C_CURR  &kp RA(N4)    // ¤
