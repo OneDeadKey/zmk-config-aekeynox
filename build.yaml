@@ -131,3 +131,17 @@ include:
     artifact-name: glove80_right
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
+
+  ###
+  # Resets
+  ##
+
+  # XIAO BLE (Totem)
+  - board: xiao_ble//zmk
+    shield: settings_reset
+    artifact-name: totem_settings_reset
+
+  # nice!nano v2 (Corne, Sweep, Lily58)
+  - board: nice_nano@2//zmk
+    shield: settings_reset
+    artifact-name: corne_settings_reset

@@ -40,6 +40,9 @@ Your firmware will now be built automatically by GitHub’s CI:
 - unzip, pick the firmware matching your keeb
 - flash your keeb
 
+Note: if you encounter Bluetooth connection issues, flashing your keyboard with the appropriate `settings_reset` firmware might help. More info [here](https://zmk.dev/docs/troubleshooting/connection-issues)
+
+
 
 ## Configuration
 

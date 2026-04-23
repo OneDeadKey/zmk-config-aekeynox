@@ -11,6 +11,15 @@
 #include "mappings.dtsi"  // key mapping helpers and macros
 #include "hold_taps.dtsi" // defines thumb keys and homerow mods
 
+#include <dt-bindings/zmk/bt.h> // enable bluetooth behaviors
+#include <dt-bindings/zmk/outputs.h> // enable &out OUT_TOG
+
+/ {
+  behaviors {
+    TWO_LEVEL_KEY(switch , &out OUT_TOG, &bt BT_CLR)
+  };
+};
+
 /**
  * All keyboard layers are defined by blocks on a 42-key basis, as follows:
  *
@@ -110,9 +119,9 @@
     fn_media_layer: fn_media_layer {
       display-name = "FnMedia";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
-        &trans  ,  &kp F1  &kp F2  &kp F3  &kp F4  &none   ,   &none  &kp C_PREV  &kp C_VOL_UP  &kp C_BRI_UP   &kp SLCK      ,  &trans ,
-        &trans  ,  &kp F5  &kp F6  &kp F7  &kp F8  &none   ,   &none  H_J C_PP    H_K C_MUTE    H_L C_AL_LOCK  H_SEMI PSCRN  ,  &trans ,
-        &trans  ,  &kp F9  &kp F10 &kp F11 &kp F12 &none   ,   &none  &kp C_NEXT  &kp C_VOL_DN  &kp C_BRI_DN   &kp INS       ,  &trans ,
+        &trans  ,  &kp F1  &kp F2  &kp F3  &kp F4  &none   ,   &bt BT_NXT  &kp C_PREV  &kp C_VOL_UP  &kp C_BRI_UP   &kp SLCK   ,  &trans ,
+        &trans  ,  &kp F5  &kp F6  &kp F7  &kp F8  &none   ,   &switch  H_J C_PP    H_K C_MUTE    H_L C_AL_LOCK  H_SEMI PSCRN  ,  &trans ,
+        &trans  ,  &kp F9  &kp F10 &kp F11 &kp F12 &none   ,   &bt BT_PRV  &kp C_NEXT  &kp C_VOL_DN  &kp C_BRI_DN   &kp INS    ,  &trans ,
                            &trans , &trans , &bootloader   ,   &sys_reset , &trans , &studio_unlock
       )>;
     };
