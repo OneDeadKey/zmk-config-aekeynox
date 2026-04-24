@@ -5,11 +5,12 @@
   #include "settings.h"   // user settings
 #endif
 
-#include "defaults.h"     // default options and safeguards
-#include "aliases.h"      // defines symbols and actions
-#include "bindings.h"     // default SELENIUM_KEYMAP_BINDINGS macro
-#include "mappings.dtsi"  // key mapping helpers and macros
-#include "hold_taps.dtsi" // defines thumb keys and homerow mods
+#include "defaults.h"       // default options and safeguards
+#include "aliases.h"        // defines symbols and actions
+#include "bindings.h"       // default SELENIUM_KEYMAP_BINDINGS macro
+#include "half_layers.dtsi" // half layers for Nav and Fn/media
+#include "mappings.dtsi"    // key mapping helpers and macros
+#include "hold_taps.dtsi"   // defines thumb keys and homerow mods
 
 /**
  * All keyboard layers are defined by blocks on a 42-key basis, as follows:
@@ -49,7 +50,7 @@
         &trans  ,  &kp ESC  &kp HOME &kp UP   &kp END   &kp PG_UP   ,   &to BASE_LAYER S_N7  S_N8  S_N9  S_FSLH  ,  &trans ,
         &trans  ,  S_EQUAL  &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN   ,   S_MINUS        S_N4  S_N5  S_N6  S_N0    ,  &trans ,
         &trans  ,  S_MONEY  S_COLON  S_STAR   S_PLUS    S_PRCNT     ,   S_COMMA        S_N1  S_N2  S_N3  S_DOT   ,  &trans ,
-                 &trans , &sc NAV_NUM_LAYER BACKSPACE , &kp (TAB)   ,   &trans , &lt NAV_NUM_LAYER LS(SPACE) , &EZ_SL(SYMBOLS_LAYER)
+                     &trans , &sc NAV_LAYER BACKSPACE , &kp (TAB)   ,   &trans , &lt NAV_LAYER LS(SPACE) , &EZ_SL(SYMBOLS_LAYER)
       )>;
     };
 
@@ -68,30 +69,14 @@
     // 3. VimNav layer -- HJKL arrow cluster on the right hand
     //                 -- best used along with the NumRow layer
     //                 -- keyboard shortcuts on the left hand are adjusted to the OS layout (Ergol here)
-    vim_nav_layer: vim_nav_layer {
-      display-name = "VimNav";
-      bindings = <SELENIUM_KEYMAP_BINDINGS(
-        &trans  ,  &none    X_CTL_W  &vim_prev &vim_next &none     ,   &kp HOME &kp PG_DN &kp PG_UP &kp END   &kp DEL ,  &trans ,
-        &trans  ,  X_ALL    X_SAVE   X_SHTAB   &kp TAB   &none     ,   &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &none   ,  &trans ,
-        &trans  ,  X_UNDO   X_CUT    X_COPY    X_PASTE   X_REDO    ,   &none    &none     &none     &none     &none   ,  &trans ,
-            &kp CAPS , &sc FN_MEDIA_LAYER DEL , &mo NUM_ROW_LAYER ,   &trans ,  &mo FN_MEDIA_LAYER , &EZ_LSK(RALT)
+    navigation_layer: navigation_layer {
+      display-name = "Navigation";
+      bindings = <SELENIUM_LAYER_COMPOSE(NAV_LEFT, NAV_RIGHT,
+        &kp CAPS , &sc FN_MEDIA_LAYER DEL , &sc NUM_LAYER LS(TAB) , &sc NUM_LAYER ENTER , &lt FN_MEDIA_LAYER LS(SPACE) , &EZ_LSK(RALT)
       )>;
     };
 
-    // 4. NavNum layer -- inverted T arrow cluster on the left hand, numpad on the right hand
-    //                 -- can be the only extra layer you need if you're not too picky with number+symbols n-grams
-    //                 -- keyboard shortcuts on the left hand are adjusted to the OS layout (Ergol here)
-    nav_num_layer: nav_num_layer {
-      display-name = "NavNum";
-      bindings = <SELENIUM_KEYMAP_BINDINGS(
-        &trans  ,  &kp ESC  &kp HOME &kp UP   &kp END   &kp PG_UP   ,   &to NUM_LOCK_LAYER S_N7  S_N8  S_N9  S_FSLH  ,  &trans ,
-        &trans  ,  X_ALL    &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN   ,   S_MINUS            S_N4  S_N5  S_N6  S_N0    ,  &trans ,
-        &trans  ,  X_UNDO   X_CUT    X_COPY   X_PASTE   X_REDO      ,   S_COMMA            S_N1  S_N2  S_N3  S_DOT   ,  &trans ,
-                  &kp CAPS , &sc FN_MEDIA_LAYER DEL , &kp LS(TAB)   ,   &kp ESCAPE , &lt FN_MEDIA_LAYER LS(SPACE) , &EZ_LSK(RALT)
-      )>;
-    };
-
-    // 5. NumRow layer -- bring the numbers to the homerow, keep shift+numbers for shortcuts and symbols
+    // 4. NumRow layer -- bring the numbers to the homerow, keep shift+numbers for shortcuts and symbols
     //                 -- space becomes shift+space, which is a no-break space with some OS layouts (e.g. Ergol)
     //                 -- best used along with the VimNav layer
     num_row_layer: num_row_layer {
@@ -104,16 +89,13 @@
       )>;
     };
 
-    // 6. FnMedia layer -- F1..12 pad on the left hand, HRM on the right hand
+    // 5. FnMedia layer -- F1..12 pad on the left hand, HRM on the right hand
     //                  -- reset and bootloader reset on difficult thumb keys
     //                  -- could be completed with other rare keys
-    fn_media_layer: fn_media_layer {
-      display-name = "FnMedia";
-      bindings = <SELENIUM_KEYMAP_BINDINGS(
-        &trans  ,  &kp F1  &kp F2  &kp F3  &kp F4  &none   ,   &none  &kp C_NEXT  &kp C_VOL_UP  &kp C_BRI_UP   &kp SLCK      ,  &trans ,
-        &trans  ,  &kp F5  &kp F6  &kp F7  &kp F8  &none   ,   &none  H_J C_PP    H_K C_MUTE    H_L C_AL_LOCK  H_SEMI PSCRN  ,  &trans ,
-        &trans  ,  &kp F9  &kp F10 &kp F11 &kp F12 &none   ,   &none  &kp C_PREV  &kp C_VOL_DN  &kp C_BRI_DN   &kp INS       ,  &trans ,
-                           &trans , &bootloader , &trans   ,   &trans , &sys_reset , &studio_unlock
+    function_layer: function_layer {
+      display-name = "Function";
+      bindings = <SELENIUM_LAYER_COMPOSE(FN_LEFT, FN_RIGHT,
+        &trans , &bootloader , &trans , &trans , &sys_reset , &studio_unlock
       )>;
     };
 
