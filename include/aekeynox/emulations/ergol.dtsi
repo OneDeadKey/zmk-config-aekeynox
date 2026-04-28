@@ -7,6 +7,13 @@
     TWO_LEVEL_KEY(dash,  S_MINUS, S_QMARK)         // - ?
     TWO_LEVEL_KEY(dot,   S_DOT,   S_COLON)         // . :
     TWO_LEVEL_KEY(comma, S_COMMA, S_SEMI)          // , ;
+    no_break_space: no_break_space {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp SPACE>, <C_NBSP>;
+      mods      = <MOD_LSFT>;
+      keep-mods = <MOD_LSFT>;
+    };
   };
 };
 
