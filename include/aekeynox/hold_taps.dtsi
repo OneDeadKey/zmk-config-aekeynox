@@ -148,6 +148,15 @@
   #define RTHUMB_TUCK   RTHUMB_REACH
 #endif
 
+// nav_num layer thumb cluster
+#ifdef HT_TWO_THUMB_KEYS
+  #define NAV_LTHUMB_TUCK   &kp LS(TAB)
+  #define NAV_LTHUMB_REACH  &none
+#else
+  #define NAV_LTHUMB_TUCK   &kp CAPS
+  #define NAV_LTHUMB_REACH  &kp LS(TAB)
+#endif
+
 
 /**
  * Timing is Key!
