@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/raeedcho
     - name: rloutier
       url-base: https://github.com/rloutier
+    - name: rschenk
+      url-base: https://github.com/rschenk
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -29,6 +31,9 @@ manifest:
       revision: main
     - name: zmk-config-go60
       remote: rloutier
+      revision: main
+    - name: zmk-keyboard-re-gret
+      remote: rschenk
       revision: main
   self:
     path: config
