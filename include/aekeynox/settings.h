@@ -52,6 +52,8 @@
 // [Experimental]
 // Uncomment the following line for an improved dead key support.
 // This only applies to some Hummingbird keymaps and layout emulations.
+// XXX: Timing issues when nested in a hold-tap are known, see this issue:
+// https://github.com/OneDeadKey/zmk-config-aekeynox/issues/30
 
 // #define ENABLE_FANCY_DEAD_KEYS
 
