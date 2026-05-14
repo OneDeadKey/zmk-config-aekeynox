@@ -131,3 +131,14 @@ include:
     artifact-name: glove80_right
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
+
+  # Temper chocofi  + nice!nano v2
+  - board: nice_nano@2//zmk
+    shield: temper_left nice_view_adapter nice_view
+    artifact-name: temper_left
+  - board: nice_nano@2//zmk
+    shield: temper_right nice_view_adapter nice_view
+    artifact-name: temper_right
+  - board: nice_nano@2//zmk
+    shield: settings_reset
+    artifact-name: temper_reset
