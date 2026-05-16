@@ -1,5 +1,3 @@
-// https://github.com/pierrechevalier83/ferris/
-
 #define SELENIUM_KEYMAP_BINDINGS(LOUT1,  LROW1,  RROW1,  ROUT1, \
                                  LOUT2,  LROW2,  RROW2,  ROUT2, \
                                  LOUT3,  LROW3,  RROW3,  ROUT3, \
