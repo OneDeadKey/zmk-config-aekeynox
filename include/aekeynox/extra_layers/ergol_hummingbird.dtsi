@@ -65,7 +65,7 @@
         &trans  ,  &odk Q  &odk W  &odk E  &odk R   &kp Z   ,   &odk N  &kp Y    &odk I     &odk O   &odk P    ,  &trans ,
         &trans  ,  &odk A  &odk S  &odk D  &odk F   &kp B   ,   &odk H  &odk J   &odk K     &odk L   &odk SEMI ,  &trans ,
         &trans  ,  &odk Q  &odk Z  &odk C  &em_dash &trans  ,   &trans  &kp FSLH &odk COMMA &odk DOT &odk P    ,  &trans ,
-                           SHIFT_KEY , &odk SPACE , &dknum  ,   &dknum , &odk SPACE , &trans
+                               SHIFT_KEY , &dknum , &trans  ,   &trans , &odk SPACE , &trans
       )>;
     };
 
