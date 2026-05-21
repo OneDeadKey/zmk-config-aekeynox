@@ -45,7 +45,6 @@ Your firmware will now be built automatically by GitHub’s CI:
 Note: if you encounter Bluetooth connection issues, flashing your keyboard with the appropriate `settings_reset` firmware might help. More info [here](https://zmk.dev/docs/troubleshooting/connection-issues)
 
 
-
 ## Configuration
 
 ### `include/aekeynox/settings.h`
