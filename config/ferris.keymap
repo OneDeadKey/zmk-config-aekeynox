@@ -13,4 +13,8 @@
 // Ensure the 2TK flavor is selected.
 #define FOUR_THUMB_KEYS
 
+// This keyboard has limited memory (RAM and Flash).
+// Ensure memory-consuming features will be disabled.
+#define LOW_MEMORY_DEVICE
+
 #include <aekeynox/selenium.keymap>

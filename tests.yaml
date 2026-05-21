@@ -1,25 +1,28 @@
-# Keymap Checks: default keeb + command-line options
-
+# Keymap Checks
 include:
 
+  ###
+  # Keyboard Configurations
+  ##
+  
   # default config
   - board: quacken_flex/rp2040
-    artifact-name: tester_rp2040
+    artifact-name: default
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS"
 
   # Qwerty + Vim + hrm_shift
   - board: quacken_flex/rp2040
-    artifact-name: tester_rp2040_qwerty_vim_shift
+    artifact-name: qwerty_vim_shift
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DVIM_NAVIGATION;-DHRM_SHIFT"
 
   # Azerty + thumb-taps
   - board: quacken_flex/rp2040
-    artifact-name: tester_rp2040_azerty_tt
+    artifact-name: azerty_tt
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_AZERTY;-DHT_THUMB_TAPS"
 
   # Ergol + Hummingbird
   - board: quacken_flex/rp2040
-    artifact-name: tester_rp2040_ergol_hummingbird
+    artifact-name: ergol_hummingbird
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_ERGOL;-DHUMMINGBIRD"
 
   # Ensure the Ferris applies 2TK even when HRM is requested
@@ -27,27 +30,31 @@ include:
     artifact-name: ferris_hrm
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DHT_HOME_ROW_MODS"
 
+  ###
+  # Layout Emulations
+  ##
+  
   # Dvorak emulation on Qwerty
   - board: quacken_flex/rp2040
-    artifact-name: tester_qwerty_to_dvorak
+    artifact-name: qwerty_to_dvorak
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY;-DKB_EMULATION_DVORAK"
 
   # Ergol emulation on Azerty
   - board: quacken_flex/rp2040
-    artifact-name: tester_azerty_to_ergol
+    artifact-name: azerty_to_ergol
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_AZERTY;-DKB_EMULATION_ERGOL"
 
   # Ergol emulation on Qwerty-intl
   - board: quacken_flex/rp2040
-    artifact-name: tester_qwerty_intl_to_ergol
+    artifact-name: qwerty_intl_to_ergol
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY_INTL;-DKB_EMULATION_ERGOL"
 
   # Lafayette emulation on Azerty
   - board: quacken_flex/rp2040
     artifact-name: azerty_to_lafayette
-    cmake-args: -DDTS_EXTRA_CPP_FLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_AZERTY;-DKB_EMULATION_QWERTY_LAFAYETTE"
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_AZERTY;-DKB_EMULATION_QWERTY_LAFAYETTE"
 
   # Lafayette emulation on Qwerty-intl
   - board: quacken_flex/rp2040
     artifact-name: qwerty_intl_to_lafayette
-    cmake-args: -DDTS_EXTRA_CPP_FLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY_INTL;-DKB_EMULATION_QWERTY_LAFAYETTE"
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY_INTL;-DKB_EMULATION_QWERTY_LAFAYETTE"

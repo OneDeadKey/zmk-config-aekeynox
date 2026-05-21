@@ -10,7 +10,7 @@
 #define X_PASTE &kp CMD(V)
 #define X_REDO  &kp CMD(Y)
 
-#define X_CTL_W &kp RC(W)
+#define X_CTL_W &kp LC(W)
 #define X_SAVE  &kp CMD(S)
 #define X_ALL   &kp CMD(A)
 
@@ -148,12 +148,15 @@
 #ifdef LINUX
   #define  C_OE  &kp RA(K) // œ
   #define SC_OE  &kp SA(K) // Œ
+#elifdef ENABLE_CP1252_ALT_CODES
+  #define  C_OE  CP1252_LOWERCASE_OE // œ
+  #define SC_OE  CP1252_UPPERCASE_OE // Œ
 #else
   #define  C_OE  &digraph O E
   #define SC_OE  &digraph LS(O) LS(E)
 #endif
-#define  C_AE    &kp RA(X) // æ
-#define SC_AE    &kp SA(X) // Æ
+#define  C_AE    &kp RA(Z) // æ
+#define SC_AE    &kp SA(Z) // Æ
 #define  C_ARING &kp RA(W) // å
 #define SC_ARING &kp SA(W) // Å
 #define  C_OSTRK &kp RA(L) // ø
@@ -164,38 +167,71 @@
 #define SC_THORN &kp SA(R) // þ
 #define  C_SZ    &kp RA(S) // ß
 
-// punctuation
-#define C_LSQT  &kb RA(N9)    // ‘
-#define C_RSQT  &kb RA(N0)    // ’
-#define C_LDQT  &kb RA(LBRC)  // “
-#define C_RDQT  &kb RA(RBRC)  // ”
-#define C_LGQT  &kb RA(LBKT)  // «
-#define C_RGQT  &kb RA(RBKT)  // «
-#define C_SECT  &kb SA(S)     // §
-#define C_PAR   &kb RA(SEMI)  // ¶
-#define C_LCXE  &kb RA(N1)    // ¡
-#define C_KRAMQ &kb RA(FSLH)  // ¿
+// quote signs
+#define C_LSQT  &kp RA(N9)    // ‘
+#define C_RSQT  &kp RA(N0)    // ’
+#define C_APOS  &kp RA(N0)    // ’
+#define C_LGQT  &kp RA(LBKT)  // «
+#define C_RGQT  &kp RA(RBKT)  // »
+#ifdef LINUX
+  #define C_LODQT &none
+  #define C_LDQT  &kp RA(LBRC)
+  #define C_RDQT  &kp RA(RBRC)
+#elifdef ENABLE_CP1252_ALT_CODES
+  #define C_LODQT CP1252_LOW_DOUBLE_QUOTE   // „
+  #define C_LDQT  CP1252_LEFT_DOUBLE_QUOTE  // “
+  #define C_RDQT  CP1252_RIGHT_DOUBLE_QUOTE // ”
+#else
+  #define C_LODQT &none
+  #define C_LDQT  &none
+  #define C_RDQT  &none
+#endif
+
+// other punctuation signs
+#ifdef ENABLE_CP1252_ALT_CODES
+  #define C_NDASH CP1252_EN_DASH            // –
+  #define C_MDASH CP1252_EM_DASH            // —
+  #define C_ELLIP CP1252_ELLIPSIS           // …
+  #define C_BLLT  CP1252_BULLET             // •
+  #define C_MDOT  CP1252_MIDDLE_DOT         // ·
+  #define C_FEM   CP1252_FEMININE_ORDINAL   // ª
+  #define C_MASC  CP1252_MASCULINE_ORDINAL  // º
+  #define C_NBSP  CP1252_NO_BREAK_SPACE
+#else // unsupported
+  #define C_NDASH &digraph MINUS MINUS // --
+  #define C_MDASH &digraph MINUS MINUS // --
+  #define C_ELLIP &ellipsis            // ...
+  #define C_BLLT  &kp MINUS            // -
+  #define C_MDOT  &kp DOT              // .
+  #define C_FEM   &none
+  #define C_MASC  &none
+  #define C_NBSP  &kp SPACE
+#endif
+#define C_SECT  &kp SA(S)     // §
+#define C_PAR   &kp RA(SEMI)  // ¶
+#define C_LCXE  &kp RA(N1)    // ¡
+#define C_KRAMQ &kp RA(FSLH)  // ¿
 
 // currencies
-#define C_CURR  &kb RA(N4)    // ¤
-#define C_POUND &kb SA(N4)    // £
-#define C_EURO  &kb RA(N5)    // €
-#define C_YEN   &kb RA(MINUS) // ¥
-#define C_COPY  &kb RA(C)     // ©
-#define C_CENT  &kb SA(C)     // ¢
-#define C_RGSTR &kb RA(R)     // ®
-#define C_TM    &kb SA(R)     // ™
+#define C_CURR  &kp RA(N4)    // ¤
+#define C_POUND &kp SA(N4)    // £
+#define C_EURO  &kp RA(N5)    // €
+#define C_YEN   &kp RA(MINUS) // ¥
+#define C_COPY  &kp RA(C)     // ©
+#define C_CENT  &kp SA(C)     // ¢
+#define C_RGSTR &kp RA(R)     // ®
+#define C_TM    &kp SA(R)     // ™
 
 // math
-#define C_DEG   &kb SA(SEMI)  // °
-#define C_BPIPE &kb SA(BSLH)  // ¦
-#define C_NOT   &kb RA(BSLH)  // ¬
-#define C_DIV   &kb SA(EQUAL) // ÷
-#define C_MULT  &kb RA(EQUAL) // ×
-#define C_EXP1  &kb SA(N1)    // ¹
-#define C_EXP2  &kb RA(N2)    // ²
-#define C_EXP3  &kb RA(N3)    // ³
-#define C_QRT1  &kb RA(N6)    // ¼
-#define C_QRT2  &kb RA(N7)    // ½
-#define C_QRT3  &kb RA(N8)    // ¾
-#define C_MU    &kp RA(M)     // µ
+#define C_NOT   &kp RA(BSLH)  // ¬
+#define C_DEG   &kp SA(SEMI)  // °
+#define C_BPIPE &kp SA(BSLH)  // ¦
+#define C_DIV   &kp SA(EQUAL) // ÷
+#define C_MULT  &kp RA(EQUAL) // ×
+#define C_EXP1  &kp SA(N1)    // ¹
+#define C_EXP2  &kp RA(N2)    // ²
+#define C_EXP3  &kp RA(N3)    // ³
+#define C_QRT1  &kp RA(N6)    // ¼
+#define C_QRT2  &kp RA(N7)    // ½
+#define C_QRT3  &kp RA(N8)    // ¾
+#define C_MICRO &kp RA(M)     // µ

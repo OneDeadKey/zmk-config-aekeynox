@@ -3,9 +3,9 @@
 // PC / Mac
 
 #ifdef MACOS
-  #define CMD RG // Mac: Cmd key as main modifier
+  #define CMD LG // Mac: Cmd key as main modifier
 #else
-  #define CMD RC // PC: Ctrl key as main modifier
+  #define CMD LC // PC: Ctrl key as main modifier
 #endif
 
 // Keyboard Layout
