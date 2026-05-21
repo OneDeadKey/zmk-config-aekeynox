@@ -12,7 +12,7 @@
 #include <drivers/behavior.h>
 #include <dt-bindings/zmk/modifiers.h>
 #include <zmk/event_manager.h>
-#include <zmk/events/position_state_changed.h>
+#include <zmk/events/keycode_state_changed.h>
 #include <zmk/hid.h>
 
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
@@ -89,13 +89,13 @@ static const struct behavior_driver_api dead_key_driver_api = {
     .binding_released = on_dead_key_binding_released,
 };
 
-static int dead_key_position_state_changed_listener(const zmk_event_t *eh);
+static int dead_key_keycode_state_changed_listener(const zmk_event_t *eh);
 
-ZMK_LISTENER(behavior_dead_key, dead_key_position_state_changed_listener);
-ZMK_SUBSCRIPTION(behavior_dead_key, zmk_position_state_changed);
+ZMK_LISTENER(behavior_dead_key, dead_key_keycode_state_changed_listener);
+ZMK_SUBSCRIPTION(behavior_dead_key, zmk_keycode_state_changed);
 
-static int dead_key_position_state_changed_listener(const zmk_event_t *eh) {
-    struct zmk_position_state_changed *ev = as_zmk_position_state_changed(eh);
+static int dead_key_keycode_state_changed_listener(const zmk_event_t *eh) {
+    struct zmk_keycode_state_changed *ev = as_zmk_keycode_state_changed(eh);
     if (ev == NULL || !active_dead_key.is_down) {
         return ZMK_EV_EVENT_BUBBLE;
     }
@@ -113,8 +113,8 @@ static int dead_key_position_state_changed_listener(const zmk_event_t *eh) {
         #endif
     };
 
-    zmk_behavior_invoke_binding(&kp_binding, event, false);
     active_dead_key.is_down = false;
+    zmk_behavior_invoke_binding(&kp_binding, event, false);
 
     return ZMK_EV_EVENT_BUBBLE;
 }
