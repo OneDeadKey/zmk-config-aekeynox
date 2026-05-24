@@ -36,6 +36,10 @@
 };
 
 / {
+  behaviors {
+    TWO_LEVEL_KEY(bt_sel1_clr, &bt BT_SEL 1, &bt BT_CLR)
+  };
+
   macros {
 
     OMIT_IF_NO_REF digraph: digraph {

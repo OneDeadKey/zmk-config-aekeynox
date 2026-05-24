@@ -97,6 +97,14 @@ include:
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
 
+  # Temper chocofi  + nice!nano v2
+  - board: nice_nano@2//zmk
+    shield: temper_left nice_view_adapter nice_view
+    artifact-name: temper_left
+  - board: nice_nano@2//zmk
+    shield: temper_right nice_view_adapter nice_view
+    artifact-name: temper_right
+
   ###
   # Standalone Keyboards (onboard MCU)
   ##
@@ -132,11 +140,16 @@ include:
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
 
-  # Temper chocofi  + nice!nano v2
-  - board: nice_nano@2//zmk
-    shield: temper_left nice_view_adapter nice_view
-    artifact-name: temper_left
-  - board: nice_nano@2//zmk
-    shield: temper_right nice_view_adapter nice_view
-    artifact-name: temper_right
+  ###
+  # Resets
+  ##
 
+  # XIAO BLE (Totem)
+  - board: xiao_ble//zmk
+    shield: settings_reset
+    artifact-name: xiao_ble_settings_reset
+
+  # nice!nano v2 (Corne, Sweep, Lily58)
+  - board: nice_nano@2//zmk
+    shield: settings_reset
+    artifact-name: nice_nano_v2_settings_reset
