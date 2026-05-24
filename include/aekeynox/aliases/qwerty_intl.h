@@ -70,7 +70,7 @@
 
 #define SA(key) RS(RA(key))
 
-// acute accent + cedilla
+// acute accent
 #define  C_AACU &digraph SQT A     // á
 #define SC_AACU &digraph SQT RS(A) // Á
 #define  C_EACU &digraph SQT E     // é
@@ -83,8 +83,15 @@
 #define SC_UACU &digraph SQT RS(U) // Ú
 #define  C_YACU &digraph SQT Y     // ý
 #define SC_YACU &digraph SQT RS(Y) // Ý
-#define  C_CCDL &digraph SQT C     // ç
-#define SC_CCDL &digraph SQT RS(C) // ç
+
+// cedilla
+#ifdef LINUX
+  #define  C_CCDL &digraph SA(N5) C     // ç
+  #define SC_CCDL &digraph SA(N5) RS(C) // ç
+#else
+  #define  C_CCDL &digraph SQT C        // ç
+  #define SC_CCDL &digraph SQT RS(C)    // ç
+#endif
 
 // grave accent
 #define  C_AGRV &digraph GRAVE A     // à
