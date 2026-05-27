@@ -170,7 +170,7 @@
 // quote signs
 #define C_LSQT  &kp RA(N9)    // ‘
 #define C_RSQT  &kp RA(N0)    // ’
-#define C_APOS  &kp RA(N0)    // ’
+#define C_APOS  &kp SA(RBKT)    // ’
 #define C_LGQT  &kp RA(LBKT)  // «
 #define C_RGQT  &kp RA(RBKT)  // »
 #ifdef LINUX
