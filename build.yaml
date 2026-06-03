@@ -140,6 +140,14 @@ include:
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
 
+  # Go60
+  - board: go60_lh
+    artifact-name: go60_left
+    snippet: studio-rpc-usb-uart
+  - board: go60_rh
+    artifact-name: go60_right
+    snippet: studio-rpc-usb-uart
+
   ###
   # Resets
   ##
@@ -153,3 +161,4 @@ include:
   - board: nice_nano@2//zmk
     shield: settings_reset
     artifact-name: nice_nano_v2_settings_reset
+
