@@ -93,16 +93,35 @@
 
 
 /******************************************************************************
- * Other Options
+ * Half layers selection
 *****************************************************************************/
 
-// Uncomment the following line to split the NavNum layer in two:
-//  - one layer for vim-style navigation (right) and GUI shortcuts (left)
-//  - one layer for a full number row + easy access to Shift+Number
-//  + Escape under the left thumb (direct access)
-// Highly recommended for Vim users, obviously. :-)
+// Uncomment some of the following lines to customise the definitions of the
+// Navigation or Function layers. They are composed from two independant half
+// layers that you may pick and choose however you want.
 
-// #define VIM_NAVIGATION
+// #define NAV_LEFT  HL_ARROWS_ESDF
+// #define NAV_RIGHT HL_NUMPAD
+// #define FN_LEFT   HL_FUN_PAD
+// #define FN_RIGHT  HL_MEDIA
+
+// Uncomment some of the following lines to customise which layer the thumb
+// keys of the base layer will send you to.
+
+// #define L_LAYER_1 NAV_LAYER
+// #define L_LAYER_2 NAV_LAYER
+// #define R_LAYER_1 FN_MEDIA_LAYER
+// #define R_LAYER_2 FN_MEDIA_LAYER
+
+// Uncomment the following line to specify which layer contains the numbers,
+// so that transitions from the Navigation or Symbols layers work as expected.
+// XXX: Needs a better name
+
+// #define NUM_LAYER NAV_LAYER
+
+/******************************************************************************
+ * Other Options
+*****************************************************************************/
 
 // [Experimental]
 // Uncomment the following line to enable the "mod-hold behavior" on the left
@@ -121,3 +140,9 @@
 // Beware: this increases the typing load of the left thumb.
 
 // #define LEFT_HAND_SPACE
+
+// Swaps Tab for Escape on the base layer’s left-reach thumb key.
+// Highly recommended for Vim users and users of the `HL_CONTROL` half layer,
+// as it has quick access to Tab and Shift+Tab.
+
+// #define ENABLE_QUICK_ESCAPE
