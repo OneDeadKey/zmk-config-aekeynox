@@ -43,9 +43,15 @@
 #define H_K &hrm CTL_CMD
 #define H_L &hrm GUI_OPT
 
-#ifdef HRM_SHIFT
+#if defined HRM_SHIFT && defined PINKY_MOD_HOLD
+  #define H_A    &mhhrm LSHIFT
+  #define H_SEMI &mhhrm RSHIFT
+#elif defined HRM_SHIFT
   #define H_A    &hrm LSHIFT
   #define H_SEMI &hrm RSHIFT
+#elif defined PINKY_MOD_HOLD
+  #define H_A    &mhkp 0
+  #define H_SEMI &mhkp 0
 #else
   #define H_A    &kp
   #define H_SEMI &kp
@@ -326,6 +332,29 @@
       bindings = <&kp LA(RIGHT)>, <&kp GRAVE>;
       mods      = <(MOD_LALT|MOD_LGUI)>;
       keep-mods = <(MOD_LALT|MOD_LGUI)>;
+    };
+
+    OMIT_IF_NO_REF mh: raw_mod_hold {
+      compatible = "zmk,behavior-mod-hold";
+      #binding-cells = <2>;
+      binding = <&none>;
+      mods-to-hold = <(MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)>;
+    };
+
+    OMIT_IF_NO_REF mhkp: hrm_with_raw_mh_on_hold {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <TAPPING_TERM>;
+      quick-tap-ms = <QUICK_TAP>;
+      flavor = "tap-preferred";
+      bindings = <&mh>, <&kp>;
+    };
+
+    OMIT_IF_NO_REF mhhrm: hrm_with_held_mods {
+      compatible = "zmk,behavior-mod-hold";
+      #binding-cells = <2>;
+      binding = <&hrm>;
+      mods-to-hold = <(MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)>;
     };
   };
 };

@@ -117,6 +117,13 @@
 
 // #define HRM_SHIFT
 
+// [Experimental]
+// Uncomment the following line to enable a mod-hold behavior when holding
+// a pinky key. Useful for one-handed home row mods, when the modifier and
+// keycode ar on the same key (i.e. Ctrl + D)
+
+// #define PINKY_MOD_HOLD
+
 // Uncomment the following line to swap Space and Backspace.
 // Beware: this increases the typing load of the left thumb.
 
