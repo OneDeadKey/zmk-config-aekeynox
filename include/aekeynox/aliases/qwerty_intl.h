@@ -85,12 +85,12 @@
 #define SC_YACU &digraph SQT RS(Y) // Ý
 
 // cedilla
-#ifdef LINUX
-  #define  C_CCDL &digraph SA(N5) C     // ç
-  #define SC_CCDL &digraph SA(N5) RS(C) // ç
-#else
+#ifdef MACOS
   #define  C_CCDL &digraph SQT C        // ç
   #define SC_CCDL &digraph SQT RS(C)    // ç
+#else
+  #define  C_CCDL &kp RA(COMMA)  // ç
+  #define SC_CCDL &kp SA(COMMA)  // ç
 #endif
 
 // grave accent
