@@ -15,6 +15,7 @@ manifest:
       remote: zmkfirmware
       # Pin ZMK to the latest board fix of the `main` branch on 2026-06-13.
       # https://github.com/Nuclear-Squid/zmk-keyboard-quacken/pull/49#issuecomment-4153385353
+      # https://github.com/OneDeadKey/zmk-config-aekeynox/pull/67
       revision: 9917e2f1371d5bb051bf8eb782c1297db41d742b
       import: app/west.yml
     - name: zmk-keyboard-quacken
