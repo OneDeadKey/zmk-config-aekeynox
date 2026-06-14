@@ -1,0 +1,16 @@
+// https://github.com/rschenk/zmk-keyboard-re-gret
+
+#define SELENIUM_KEYMAP_BINDINGS(LOUT1,  LROW1,  RROW1,  ROUT1, \
+                                 LOUT2,  LROW2,  RROW2,  ROUT2, \
+                                 LOUT3,  LROW3,  RROW3,  ROUT3, \
+                                 LT1, LT2, LT3,  RT3, RT2, RT1) \
+      LROW1   RROW1 \
+      LROW2   RROW2 \
+      LROW3   RROW3 \
+    LT1 LT2   RT2 RT1
+
+// This keyboard has only two keys per thumb.
+// Ensure the 2TK flavor is selected.
+#define FOUR_THUMB_KEYS
+
+#include <aekeynox/selenium.keymap>

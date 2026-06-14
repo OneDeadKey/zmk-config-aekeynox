@@ -104,6 +104,13 @@ include:
     shield: temper_right nice_view_adapter nice_view
     artifact-name: temper_right
 
+  # Re-gret + XIAO RP2040
+  - board: xiao_rp2040//zmk
+    shield: re-gret
+    artifact-name: re-gret
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+
   ###
   # Standalone Keyboards (onboard MCU)
   ##
