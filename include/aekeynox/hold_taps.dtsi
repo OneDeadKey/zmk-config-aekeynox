@@ -266,9 +266,8 @@
     OMIT_IF_NO_REF sym_shift_altgr_inner: sym_shift_altgr_inner {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&EZ_SL(SYMBOLS_LAYER)>, <&EZ_SK(RALT)>;
-      mods      = <(MOD_LSFT|MOD_RSFT)>;
-      keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+      bindings = <&EZ_SL(SYMBOLS_LAYER)>, <&EZ_SK(RS(RALT))>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
     };
 
     // go to base layer and press mod
