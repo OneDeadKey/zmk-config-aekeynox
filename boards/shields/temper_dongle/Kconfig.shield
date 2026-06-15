@@ -1,0 +1,2 @@
+config SHIELD_TEMPER_DONGLE
+    def_bool $(shields_list_contains,temper_dongle)
