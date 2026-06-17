@@ -328,3 +328,41 @@
     };
   };
 };
+
+// Pavé num (NavNum/NumRow) : chiffre en tap, symbole rangée-num ErgoL en Shift.
+#if defined(KB_EMULATION_ERGOL) && defined(KB_LAYOUT_AZERTY)
+/ {
+  behaviors {
+    OMIT_IF_NO_REF nm1: nm1 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp LS(N1)>, <C_EURO>; };
+    OMIT_IF_NO_REF nm2: nm2 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp LS(N2)>, <C_LGQT>; };
+    OMIT_IF_NO_REF nm3: nm3 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp LS(N3)>, <C_RGQT>; };
+    OMIT_IF_NO_REF nm4: nm4 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp LS(N4)>, <S_DLLR>; };
+    OMIT_IF_NO_REF nm5: nm5 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp LS(N5)>, <S_PRCNT>; };
+    OMIT_IF_NO_REF nm6: nm6 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp LS(N6)>, <S_CARET>; };
+    OMIT_IF_NO_REF nm7: nm7 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp LS(N7)>, <S_AMPS>; };
+    OMIT_IF_NO_REF nm8: nm8 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp LS(N8)>, <S_STAR>; };
+    OMIT_IF_NO_REF nm9: nm9 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp LS(N9)>, <S_LPAR>; };
+    OMIT_IF_NO_REF nm0: nm0 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp LS(N0)>, <S_RPAR>; };
+  };
+};
+  #undef S_N1
+  #define S_N1 &nm1
+  #undef S_N2
+  #define S_N2 &nm2
+  #undef S_N3
+  #define S_N3 &nm3
+  #undef S_N4
+  #define S_N4 &nm4
+  #undef S_N5
+  #define S_N5 &nm5
+  #undef S_N6
+  #define S_N6 &nm6
+  #undef S_N7
+  #define S_N7 &nm7
+  #undef S_N8
+  #define S_N8 &nm8
+  #undef S_N9
+  #define S_N9 &nm9
+  #undef S_N0
+  #define S_N0 &nm0
+#endif
