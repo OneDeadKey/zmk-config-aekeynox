@@ -12,6 +12,8 @@ manifest:
       url-base: https://github.com/rloutier
     - name: rschenk
       url-base: https://github.com/rschenk
+    - name: niiico69
+      url-base: https://github.com/niiico69
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -34,6 +36,9 @@ manifest:
       revision: main
     - name: zmk-keyboard-re-gret
       remote: rschenk
+      revision: main
+    - name: zmk-keyboard-temper-dongle
+      remote: niiico69
       revision: main
   self:
     path: config

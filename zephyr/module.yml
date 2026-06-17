@@ -4,4 +4,3 @@ build:
   kconfig: Kconfig
   settings:
     dts_root: .
-    board_root: .
