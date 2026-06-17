@@ -333,16 +333,16 @@
 #if defined(KB_EMULATION_ERGOL) && defined(KB_LAYOUT_AZERTY)
 / {
   behaviors {
-    OMIT_IF_NO_REF nm1: nm1 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp LS(N1)>, <C_EURO>; };
-    OMIT_IF_NO_REF nm2: nm2 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp LS(N2)>, <C_LGQT>; };
-    OMIT_IF_NO_REF nm3: nm3 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp LS(N3)>, <C_RGQT>; };
-    OMIT_IF_NO_REF nm4: nm4 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp LS(N4)>, <S_DLLR>; };
-    OMIT_IF_NO_REF nm5: nm5 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp LS(N5)>, <S_PRCNT>; };
-    OMIT_IF_NO_REF nm6: nm6 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp LS(N6)>, <S_CARET>; };
-    OMIT_IF_NO_REF nm7: nm7 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp LS(N7)>, <S_AMPS>; };
-    OMIT_IF_NO_REF nm8: nm8 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp LS(N8)>, <S_STAR>; };
-    OMIT_IF_NO_REF nm9: nm9 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp LS(N9)>, <S_LPAR>; };
-    OMIT_IF_NO_REF nm0: nm0 { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; mods = <(MOD_LSFT|MOD_RSFT)>; bindings = <&kp LS(N0)>, <S_RPAR>; };
+    TWO_LEVEL_KEY(nm1, &kp LS(N1), C_EURO)
+    TWO_LEVEL_KEY(nm2, &kp LS(N2), C_LGQT)
+    TWO_LEVEL_KEY(nm3, &kp LS(N3), C_RGQT)
+    TWO_LEVEL_KEY(nm4, &kp LS(N4), S_DLLR)
+    TWO_LEVEL_KEY(nm5, &kp LS(N5), S_PRCNT)
+    TWO_LEVEL_KEY(nm6, &kp LS(N6), S_CARET)
+    TWO_LEVEL_KEY(nm7, &kp LS(N7), S_AMPS)
+    TWO_LEVEL_KEY(nm8, &kp LS(N8), S_STAR)
+    TWO_LEVEL_KEY(nm9, &kp LS(N9), S_LPAR)
+    TWO_LEVEL_KEY(nm0, &kp LS(N0), S_RPAR)
   };
 };
   #undef S_N1
