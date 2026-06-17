@@ -62,8 +62,13 @@
     OMIT_IF_NO_REF caps: caps {
       compatible = "zmk,behavior-macro-one-param";
       #binding-cells = <1>;
+#ifdef MACOS
+      tap-ms = <120>;  // macOS ignore un CapsLock trop bref (anti-rebond)
+      wait-ms = <40>;
+#else
       tap-ms = <0>;
       wait-ms = <0>;
+#endif
       bindings
         = <&kp CAPS>
         , <&macro_param_1to1 &kp MACRO_PLACEHOLDER>
