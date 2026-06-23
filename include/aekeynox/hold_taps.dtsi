@@ -357,3 +357,41 @@
     };
   };
 };
+
+// Pavé num (NavNum/NumRow) : chiffre en tap, symbole rangée-num ErgoL en Shift.
+#if defined(KB_EMULATION_ERGOL) && defined(KB_LAYOUT_AZERTY)
+/ {
+  behaviors {
+    TWO_LEVEL_KEY(nm1, &kp LS(N1), C_EURO)
+    TWO_LEVEL_KEY(nm2, &kp LS(N2), C_LGQT)
+    TWO_LEVEL_KEY(nm3, &kp LS(N3), C_RGQT)
+    TWO_LEVEL_KEY(nm4, &kp LS(N4), S_DLLR)
+    TWO_LEVEL_KEY(nm5, &kp LS(N5), S_PRCNT)
+    TWO_LEVEL_KEY(nm6, &kp LS(N6), S_CARET)
+    TWO_LEVEL_KEY(nm7, &kp LS(N7), S_AMPS)
+    TWO_LEVEL_KEY(nm8, &kp LS(N8), S_STAR)
+    TWO_LEVEL_KEY(nm9, &kp LS(N9), S_HASH)
+    TWO_LEVEL_KEY(nm0, &kp LS(N0), S_AT)
+  };
+};
+  #undef S_N1
+  #define S_N1 &nm1
+  #undef S_N2
+  #define S_N2 &nm2
+  #undef S_N3
+  #define S_N3 &nm3
+  #undef S_N4
+  #define S_N4 &nm4
+  #undef S_N5
+  #define S_N5 &nm5
+  #undef S_N6
+  #define S_N6 &nm6
+  #undef S_N7
+  #define S_N7 &nm7
+  #undef S_N8
+  #define S_N8 &nm8
+  #undef S_N9
+  #define S_N9 &nm9
+  #undef S_N0
+  #define S_N0 &nm0
+#endif
