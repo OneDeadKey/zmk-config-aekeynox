@@ -1,0 +1,66 @@
+#define ODK_LAYER        EXTRA_LAYERS_START_INDEX
+#define ODK_SHIFT_LAYER (EXTRA_LAYERS_START_INDEX + 1)
+
+#define SA(key) RS(RA(key))
+
+// Same as the default base layer, but [N] becomes 1DK.
+&base_layer {
+  display-name = "Base";
+  bindings = <
+    &kp TAB    &kp Q  &kp SQT &kp E  &kp R  &kp RBKT  &kp LBKT  &kp U  &kp I     &kp O   &kp P      &kp BACKSPACE
+    &kp ESCAPE HRM_A  HRM_S   HRM_D  HRM_F  &kp G     &kp H     HRM_J  HRM_K     HRM_L   HRM_SEMI   &kp ENTER
+    &kp LSHIFT &dash  &kp X   &kp C  &kp V  &kp B     &dead_key &kp M  &kp COMMA &kp DOT &kp FSLH   &kp RSHIFT
+           LTHUMB_TUCK  LTHUMB_HOME  LTHUMB_REACH     RTHUMB_REACH  RTHUMB_HOME  RTHUMB_TUCK
+  >;
+};
+
+/ {
+  behaviors {
+    dead_key: dead_key {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&EZ_SL(ODK_LAYER)>, <&kp N>;
+      mods      = <(MOD_LSFT|MOD_RSFT)>;
+      keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    dash: dash {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp N8>, <&kp Y>;
+      mods      = <(MOD_LSFT|MOD_RSFT)>;
+      keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+  };
+
+  macros {
+    DEAD_KEY(kpc, &kp Y)  // circumflex accent
+    DEAD_KEY_SHIFT(skpc, &kp Y)
+  };
+
+  // Extra layers defined specifically for this keymap, appended to the base keymap.
+  keymap {
+    compatible = "zmk,keymap";
+
+    one_dead_key {
+      display-name = "1dk";
+      bindings = <
+        &trans   &kpc A     &kpc S    &kpc D  &kpc R    &kp RA(R)    &trans     &trans        &trans  &trans  &trans   &trans
+        &trans   &kp Z      &kp RA(S) &kp W   &kp T     &kp NUBS     &kp BSLH   &trans        &trans  &kpc O  &trans   &trans
+        &trans   &kp RA(N1) &kpc X    S_UNDER &kp RA(V) &kp RA(A)    &kp RA(D)  &kp RA(GRAVE) &trans  &trans  &trans   &trans
+                           &EZ_SL(ODK_SHIFT_LAYER)  &kp N  &trans    &trans  &trans  &trans
+      >;
+    };
+
+    shifted_one_dead_key {
+      display-name = "1dkShift";
+      bindings = <
+        &trans   &skpc A   &skpc S   &skpc D   &skpc R   &kp SA(R)    &trans   &trans  &trans  &trans  &trans   &trans
+        &trans   &kp RS(Z) &kp SA(S) &kp RS(W) &kp RS(T) &kp PIPE2    &kp PIPE &trans  &trans  &skpc O &trans   &trans
+        &trans   &trans    &skpc X   &trans    &kp N5    &kp SA(A)    &trans   &trans  &trans  &trans  &trans   &trans
+                                     &trans    &trans    &trans       &trans   &trans  &trans
+      >;
+    };
+
+  };
+};
