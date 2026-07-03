@@ -151,9 +151,11 @@ include:
   - board: go60_lh
     artifact-name: go60_left
     snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: go60_rh
     artifact-name: go60_right
     snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
 
   ###
   # Resets
