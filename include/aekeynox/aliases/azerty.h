@@ -157,7 +157,7 @@
   #define  C_OE &digraph O E
   #define SC_OE &digraph LS(O) LS(E)
   #define  C_AE &digraph Q E
-  #define SC_AE &digraph LS(O) LS(E)
+  #define SC_AE &digraph LS(Q) LS(E)
   #define  C_SZ &digraph S S
 #endif
 #if defined LINUX || defined MACOS
