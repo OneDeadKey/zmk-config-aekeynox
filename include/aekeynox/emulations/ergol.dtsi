@@ -20,9 +20,9 @@
   &base_layer {
     display-name = "Base";
     bindings = <SELENIUM_KEYMAP_BINDINGS(
-      &none  ,  &kp A  &kp C  &kp O  &kp P  &kp Z   ,   &kp J  &kp SEMI &kp D  &apos  &kp Y     ,  &none ,
-      &none  ,  H_A Q  H_S S  H_D E  H_F N  &kp F   ,   &kp L  H_J R    H_K T  H_L I  H_SEMI U  ,  &none ,
-      &none  ,  &kp W  &kp X  &dash  &kp V  &kp B   ,   &dot   &kp H    &kp G  &comma &kp K     ,  &none ,
+      &kp TAB    ,  &kp A  &kp C  &kp O  &kp P  &kp Z   ,   &kp J  &kp SEMI &kp D  &apos  &kp Y     ,  &kp BACKSPACE ,
+      &kp ESCAPE ,  H_A Q  H_S S  H_D E  H_F N  &kp F   ,   &kp L  H_J R    H_K T  H_L I  H_SEMI U  ,  &kp ENTER     ,
+      &kp LSHIFT ,  &kp W  &kp X  &dash  &kp V  &kp B   ,   &dot   &kp H    &kp G  &comma &kp K     ,  &kp RSHIFT    ,
          LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH   ,   RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
     )>;
   };
@@ -54,9 +54,9 @@
 &num_row_layer {
   display-name = "NumRow";
   bindings = <SELENIUM_KEYMAP_BINDINGS(
-    &trans  ,  C_EURO  C_LGQT  C_RGQT  S_DLLR  S_PRCNT  ,   S_CARET S_AMPS  S_STAR  S_LPAR  S_RPAR  ,  &trans ,
-    &trans  ,  S_N1    S_N2    S_N3    S_N4    S_N5     ,   S_N6    S_N7    S_N8    S_N9    S_N0    ,  &trans ,
-    &trans  ,  C_LODQT C_LDQT  C_RDQT  C_CENT  C_DEG    ,   S_MINUS S_COMMA S_DOT   S_COLON S_FSLH  ,  &trans ,
+    &kp TAB    ,  C_EURO  C_LGQT  C_RGQT  S_DLLR  S_PRCNT  ,   S_CARET S_AMPS  S_STAR  S_LPAR  S_RPAR  ,  &kp BACKSPACE ,
+    &kp ESCAPE ,  S_N1    S_N2    S_N3    S_N4    S_N5     ,   S_N6    S_N7    S_N8    S_N9    S_N0    ,  &kp ENTER     ,
+    &kp LSHIFT ,  C_LODQT C_LDQT  C_RDQT  C_CENT  C_DEG    ,   S_MINUS S_COMMA S_DOT   S_COLON S_FSLH  ,  &kp RSHIFT    ,
                              &trans , C_NBSP , &trans   ,   &trans , C_NBSP , &trans
   )>;
 };
