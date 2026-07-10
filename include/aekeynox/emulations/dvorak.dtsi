@@ -1,8 +1,28 @@
+#if defined HT_HOME_ROW_MODS || defined HT_TWO_THUMB_KEYS
+  #define HRM_A    H_A A
+  #define HRM_O    H_S O
+  #define HRM_E    H_D E
+  #define HRM_U    H_F U
+  #define HRM_H    H_J H
+  #define HRM_T    H_K T
+  #define HRM_N    H_L N
+  #define HRM_S    H_SEMI S
+#else
+  #define HRM_A    &kp A
+  #define HRM_O    &kp O
+  #define HRM_E    &kp E
+  #define HRM_U    &kp U
+  #define HRM_H    &kp H
+  #define HRM_T    &kp T
+  #define HRM_N    &kp N
+  #define HRM_S    &kp S
+#endif
+
 &base_layer {
   display-name = "Base";
   bindings = <SELENIUM_KEYMAP_BINDINGS(
     &kp TAB    ,  &kp SQT  &kp COMMA &kp DOT &kp P  &kp Y   ,   &kp F  &kp G  &kp C  &kp R  &kp L     ,  &kp BACKSPACE ,
-    &kp ESCAPE ,  H_A A    H_S O     H_D E   H_F U  &kp I   ,   &kp D  H_J H  H_K T  H_L N  H_SEMI S  ,  &kp ENTER     ,
+    &kp ESCAPE ,  HRM_A    HRM_O     HRM_E   HRM_U  &kp I   ,   &kp D  HRM_H  HRM_T  HRM_N  HRM_S     ,  &kp ENTER     ,
     &kp LSHIFT ,  &kp SEMI &kp Q     &kp J   &kp K  &kp X   ,   &kp B  &kp M  &kp W  &kp V  &kp Z     ,  &kp RSHIFT    ,
              LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH   ,   RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
   )>;

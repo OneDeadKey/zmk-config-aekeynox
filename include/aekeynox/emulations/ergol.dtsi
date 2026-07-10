@@ -17,11 +17,31 @@
 
 #ifdef KB_LAYOUT_AZERTY
 
+  #if defined HT_HOME_ROW_MODS || defined HT_TWO_THUMB_KEYS
+    #define HRM_Q    H_A Q
+    #define HRM_S    H_S S
+    #define HRM_E    H_D E
+    #define HRM_N    H_F N
+    #define HRM_R    H_J R
+    #define HRM_T    H_K T
+    #define HRM_I    H_L I
+    #define HRM_U    H_SEMI U
+  #else
+    #define HRM_Q    &kp Q
+    #define HRM_S    &kp S
+    #define HRM_E    &kp E
+    #define HRM_N    &kp N
+    #define HRM_R    &kp R
+    #define HRM_T    &kp T
+    #define HRM_I    &kp I
+    #define HRM_U    &kp U
+  #endif
+
   &base_layer {
     display-name = "Base";
     bindings = <SELENIUM_KEYMAP_BINDINGS(
       &kp TAB    ,  &kp A  &kp C  &kp O  &kp P  &kp Z   ,   &kp J  &kp SEMI &kp D  &apos  &kp Y     ,  &kp BACKSPACE ,
-      &kp ESCAPE ,  H_A Q  H_S S  H_D E  H_F N  &kp F   ,   &kp L  H_J R    H_K T  H_L I  H_SEMI U  ,  &kp ENTER     ,
+      &kp ESCAPE ,  HRM_Q  HRM_S  HRM_E  HRM_N  &kp F   ,   &kp L  HRM_R    HRM_T  HRM_I  HRM_U     ,  &kp ENTER     ,
       &kp LSHIFT ,  &kp W  &kp X  &dash  &kp V  &kp B   ,   &dot   &kp H    &kp G  &comma &kp K     ,  &kp RSHIFT    ,
          LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH   ,   RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
     )>;
@@ -29,12 +49,31 @@
   #define K_DIA &kp LBRC // diaeresis
 
 #elif defined KB_LAYOUT_QWERTY_INTL
+  #if defined HT_HOME_ROW_MODS || defined HT_TWO_THUMB_KEYS
+    #define HRM_A    H_A A
+    #define HRM_S    H_S S
+    #define HRM_E    H_D E
+    #define HRM_N    H_F N
+    #define HRM_R    H_J R
+    #define HRM_T    H_K T
+    #define HRM_I    H_L I
+    #define HRM_U    H_SEMI U
+  #else
+    #define HRM_A    &kp A
+    #define HRM_S    &kp S
+    #define HRM_E    &kp E
+    #define HRM_N    &kp N
+    #define HRM_R    &kp R
+    #define HRM_T    &kp T
+    #define HRM_I    &kp I
+    #define HRM_U    &kp U
+  #endif
 
   &base_layer {
     display-name = "Base";
     bindings = <SELENIUM_KEYMAP_BINDINGS(
       &none  ,  &kp Q  &kp C  &kp O  &kp P  &kp W   ,   &kp J  &kp M  &kp D  &apos  &kp Y     ,  &none ,
-      &none  ,  H_A A  H_S S  H_D E  H_F N  &kp F   ,   &kp L  H_J R  H_K T  H_L I  H_SEMI U  ,  &none ,
+      &none  ,  HRM_A  HRM_S  HRM_E  HRM_N  &kp F   ,   &kp L  HRM_R  HRM_T  HRM_I  HRM_U     ,  &none ,
       &none  ,  &kp Z  &kp X  &dash  &kp V  &kp B   ,   &dot   &kp H  &kp G  &comma &kp K     ,  &none ,
          LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH   ,   RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
     )>;
