@@ -8,7 +8,7 @@
   #define HRM_L    H_L N
   #define HRM_SEMI H_SEMI S
 #else
-  #define HRM_A    &kp S
+  #define HRM_A    &kp A
   #define HRM_S    &kp O
   #define HRM_D    &kp E
   #define HRM_F    &kp U
