@@ -18,7 +18,7 @@
 #ifdef KB_LAYOUT_AZERTY
 
   #if defined HT_HOME_ROW_MODS || defined HT_TWO_THUMB_KEYS
-    #define HRM_A    H_A Q
+    #define HRM_Q    H_A Q
     #define HRM_S    H_S S
     #define HRM_D    H_D D
     #define HRM_F    H_F F
@@ -26,7 +26,7 @@
     #define HRM_K    H_K K
     #define HRM_L    H_L L
   #else
-    #define HRM_A    &kp Q
+    #define HRM_Q    &kp Q
     #define HRM_S    &kp S
     #define HRM_D    &kp D
     #define HRM_F    &kp F
@@ -39,7 +39,7 @@
     display-name = "Base";
     bindings = <SELENIUM_KEYMAP_BINDINGS(
       &kp TAB    ,  &kp A  &kp Z  &kp E  &kp R  &kp T   ,   &kp Y  &kp U    &kp I  &kp O  &kp P   ,  &kp BACKSPACE ,
-      &kp ESCAPE ,  HRM_A  HRM_S  HRM_D  HRM_F  &kp G   ,   &kp H  HRM_J    HRM_K  HRM_L  &apos   ,  &kp ENTER     ,
+      &kp ESCAPE ,  HRM_Q  HRM_S  HRM_D  HRM_F  &kp G   ,   &kp H  HRM_J    HRM_K  HRM_L  &apos   ,  &kp ENTER     ,
       &kp LSHIFT ,  &kp W  &kp X  &kp C  &kp V  &kp B   ,   &kp N  &kp SEMI &comma &dot   &slash  ,  &kp RSHIFT    ,
          LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH   ,   RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
     )>;
