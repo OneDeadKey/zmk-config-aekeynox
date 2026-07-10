@@ -62,6 +62,52 @@
 #define S_DOT   &kp LS(COMMA)
 #define S_MONEY &kp RA(E)
 
+// macOS "Français" (Apple) : rangée num + bas diffèrent du PC AZERTY.
+// Vérifié au Visualiseur de clavier. ponytail: couche Option ({}[]\|#@^`~ €) encore TODO (manque capture ⌥⇧).
+#ifdef MACOS
+  #undef  S_MINUS
+  #define S_MINUS &kp EQUAL      // "-" sur la touche = (PC: N6)
+  #undef  S_UNDER
+  #define S_UNDER &kp LS(EQUAL)  // "_"            (PC: N8)
+  #undef  S_EQUAL
+  #define S_EQUAL &kp FSLH       // "=" sur la touche /? (PC: EQUAL)
+  #undef  S_PLUS
+  #define S_PLUS  &kp LS(FSLH)   // "+"
+  #undef  S_EXCL
+  #define S_EXCL  &kp N8         // "!" sur N8     (PC: FSLH)
+  #undef  S_STAR
+  #define S_STAR  &kp LS(RBKT)   // "*" = Shift+$  (PC: BSLH)
+  // couche Option
+  #undef  S_LBRC
+  #define S_LBRC  &kp RA(N5)            // "{" = ⌥5
+  #undef  S_RBRC
+  #define S_RBRC  &kp RA(MINUS)         // "}" = ⌥-
+  #undef  S_LBKT
+  #define S_LBKT  &kp SA(N5)            // "[" = ⌥⇧5
+  #undef  S_RBKT
+  #define S_RBKT  &kp SA(MINUS)         // "]" = ⌥⇧-
+  #undef  S_PIPE
+  #define S_PIPE  &kp SA(L)             // "|" = ⌥⇧L
+  #undef  S_CARET
+  #define S_CARET &digraph LBKT SPACE   // "^" (touche morte) + espace
+  #undef  S_TILDE
+  #define S_TILDE &digraph RA(N) SPACE  // "~" = ⌥n (morte) + espace
+  #undef  S_LT
+  #define S_LT    &kp GRAVE             // "<"  (touche <> = GRAVE)
+  #undef  S_GT
+  #define S_GT    &kp LS(GRAVE)         // ">"
+  #undef  S_AT
+  #define S_AT    &kp NUBS              // "@"  (touche @# = NUBS)
+  #undef  S_HASH
+  #define S_HASH  &kp PIPE2             // "#" = ⇧@
+  #undef  S_BSLH
+  #define S_BSLH  &kp SA(DOT)           // "\" = ⌥⇧ sur ":"
+  #undef  S_MONEY
+  #define S_MONEY &kp RA(RBKT)          // "€" = ⌥$
+  #undef  S_GRAVE
+  #define S_GRAVE &digraph NUHS SPACE   // "`" morte (touche ISO après ù) + espace
+#endif
+
 // GRAVE and TILDE are no dead keys on Linux
 #ifdef LINUX
   #undef S_GRAVE
@@ -144,9 +190,9 @@
 #elifdef MACOS
   #define  C_OE &kp RA(O) // œ
   #define SC_OE &kp SA(O) // œ
-  #define  C_AE &kp RA(Z) // æ
-  #define SC_AE &kp SA(Z) // æ
-  #define  C_SZ &kp RA(S) // ß
+  #define  C_AE &kp RA(Q) // æ
+  #define SC_AE &kp SA(Q) // Æ 
+  #define  C_SZ &kp RA(B) // ß
 #elifdef ENABLE_CP1252_ALT_CODES
   #define  C_OE CP1252_LOWERCASE_OE // œ
   #define SC_OE CP1252_UPPERCASE_OE // Œ
@@ -160,9 +206,12 @@
   #define SC_AE &digraph LS(Q) LS(E)
   #define  C_SZ &digraph S S
 #endif
-#if defined LINUX || defined MACOS
+#ifdef LINUX
   #define  C_NTLD &kp N     // XXX
   #define SC_NTLD &kp LS(N) // XXX
+#elifdef MACOS
+  #define  C_NTLD &digraph RA(N) N     // ñ
+  #define SC_NTLD &digraph RA(N) LS(N) // Ñ
 #else
   #define  C_NTLD &digraph RA(N2) N     // ñ
   #define SC_NTLD &digraph RA(N2) LS(N) // ñ
@@ -183,7 +232,14 @@
   #define C_LGQT  CP1252_LEFT_GUILLEMET     // «
   #define C_RGQT  CP1252_RIGHT_GUILLEMET    // »
   #define C_APOS  CP1252_RIGHT_SINGLE_QUOTE // ’
-#else // macOS or Windows without alt-codes
+#elifdef MACOS
+  #define C_LODQT &none
+  #define C_LDQT  &none
+  #define C_RDQT  &none
+  #define C_LGQT  &kp RA(N7)     // « = ⌥7
+  #define C_RGQT  &kp SA(N7) // » = ⌥⇧7
+  #define C_APOS  &kp N4         // '
+#else // Windows without alt-codes
   #define C_LODQT &none
   #define C_LDQT  &none
   #define C_RDQT  &none
@@ -200,6 +256,13 @@
   #define C_BLLT  CP1252_BULLET     // •
   #define C_MDOT  CP1252_MIDDLE_DOT // ·
   #define C_NBSP  CP1252_NO_BREAK_SPACE
+#elifdef MACOS
+  #define C_MDASH &kp SA(EQUAL) // —
+  #define C_NDASH &kp RA(EQUAL)     // –
+  #define C_ELLIP &kp RA(COMMA)     // … (⌥;)
+  #define C_BLLT  &kp SA(COMMA) // •
+  #define C_MDOT  S_DOT             // .
+  #define C_NBSP  &kp RA (SPACE)
 #else // unsupported
   #define C_NDASH &digraph N6 N6 // --
   #define C_MDASH &digraph N6 N6 // --
@@ -221,16 +284,24 @@
   #define C_FEM   CP1252_FEMININE_ORDINAL   // ª
   #define C_MASC  CP1252_MASCULINE_ORDINAL  // º
 #else // macOS or Windows without alt-codes
-  #define C_LCXE  &none
-  #define C_KRAMQ &none
+  #define C_LCXE  &kp RA(8)     // ¡
+  #define C_KRAMQ &kp SA(M) // ¿
   #define C_FEM   &none
   #define C_MASC  &none
 #endif
 
 // math
 #define C_DEG   &kp UNDER // °
-#define C_MICRO &kp PIPE  // µ
-#define C_EURO  &kp RA(E) // €
+#ifdef MACOS
+  #define C_MICRO &kp RA(SEMI)  // µ
+#else
+  #define C_MICRO &kp PIPE      // µ
+#endif
+#ifdef MACOS
+  #define C_EURO &kp RA(RBKT) // € = ⌥$
+#else
+  #define C_EURO &kp RA(E)    // €
+#endif
 #ifdef LINUX
   #define C_CENT  &kp RA(C)     // ¢
   #define C_MULT  &kp SA(COMMA) // ×
