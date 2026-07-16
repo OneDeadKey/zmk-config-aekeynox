@@ -42,75 +42,75 @@ include:
   # => make sure the `board` field matches the MCU on your keyboard
   ##
 
-  # Quacken Zero + SparkFun RP2040
-  - board: sparkfun_pro_micro_rp2040//zmk
-    shield: quacken_zero
-    artifact-name: quacken_zero
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  # # Quacken Zero + SparkFun RP2040
+  # - board: sparkfun_pro_micro_rp2040//zmk
+  #   shield: quacken_zero
+  #   artifact-name: quacken_zero
+  #   snippet: studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
 
-  # Totem + XIAO BLE
-  - board: xiao_ble//zmk
-    shield: totem_left
-    artifact-name: totem_left
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
-  - board: xiao_ble//zmk
-    shield: totem_right
-    artifact-name: totem_right
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  # # Totem + XIAO BLE
+  # - board: xiao_ble//zmk
+  #   shield: totem_left
+  #   artifact-name: totem_left
+  #   snippet: studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
+  # - board: xiao_ble//zmk
+  #   shield: totem_right
+  #   artifact-name: totem_right
+  #   snippet: studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
 
-  # Corne + nice!nano v2
-  - board: nice_nano@2//zmk
-    shield: corne_left
-    artifact-name: corne_left
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
-  - board: nice_nano@2//zmk
-    shield: corne_right
-    artifact-name: corne_right
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  # # Corne + nice!nano v2
+  # - board: nice_nano@2//zmk
+  #   shield: corne_left
+  #   artifact-name: corne_left
+  #   snippet: studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
+  # - board: nice_nano@2//zmk
+  #   shield: corne_right
+  #   artifact-name: corne_right
+  #   snippet: studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
 
-  # Sweep + nice!nano v2
-  - board: nice_nano@2//zmk
-    shield: cradio_left
-    artifact-name: sweep_left
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
-  - board: nice_nano@2//zmk
-    shield: cradio_right
-    artifact-name: sweep_right
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  # # Sweep + nice!nano v2
+  # - board: nice_nano@2//zmk
+  #   shield: cradio_left
+  #   artifact-name: sweep_left
+  #   snippet: studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
+  # - board: nice_nano@2//zmk
+  #   shield: cradio_right
+  #   artifact-name: sweep_right
+  #   snippet: studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
 
-  # Lily58 + nice!nano v2
-  - board: nice_nano@2//zmk
-    shield: lily58_left
-    artifact-name: lily58_left
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
-  - board: nice_nano@2//zmk
-    shield: lily58_right
-    artifact-name: lily58_right
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  # # Lily58 + nice!nano v2
+  # - board: nice_nano@2//zmk
+  #   shield: lily58_left
+  #   artifact-name: lily58_left
+  #   snippet: studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
+  # - board: nice_nano@2//zmk
+  #   shield: lily58_right
+  #   artifact-name: lily58_right
+  #   snippet: studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
 
-  # Temper chocofi  + nice!nano v2
-  - board: nice_nano@2//zmk
-    shield: temper_left nice_view_adapter nice_view
-    artifact-name: temper_left
-  - board: nice_nano@2//zmk
-    shield: temper_right nice_view_adapter nice_view
-    artifact-name: temper_right
+  # # Temper chocofi  + nice!nano v2
+  # - board: nice_nano@2//zmk
+  #   shield: temper_left nice_view_adapter nice_view
+  #   artifact-name: temper_left
+  # - board: nice_nano@2//zmk
+  #   shield: temper_right nice_view_adapter nice_view
+  #   artifact-name: temper_right
 
-  # Re-gret + XIAO RP2040
-  - board: xiao_rp2040//zmk
-    shield: re-gret
-    artifact-name: re-gret
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  # # Re-gret + XIAO RP2040
+  # - board: xiao_rp2040//zmk
+  #   shield: re-gret
+  #   artifact-name: re-gret
+  #   snippet: studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
 
   ###
   # Standalone Keyboards (onboard MCU)
@@ -122,51 +122,51 @@ include:
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
 
-  # Ferris (STM32F072)
-  # Note: not enough memory for ZMK Studio
-  - board: ferris//zmk
-    artifact-name: ferris
+  # # Ferris (STM32F072)
+  # # Note: not enough memory for ZMK Studio
+  # - board: ferris//zmk
+  #   artifact-name: ferris
 
-  # Corneish Zen (nRF52840)
-  - board: corneish_zen_left//zmk
-    artifact-name: corneish_zen_left
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
-  - board: corneish_zen_right//zmk
-    artifact-name: corneish_zen_right
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  # # Corneish Zen (nRF52840)
+  # - board: corneish_zen_left//zmk
+  #   artifact-name: corneish_zen_left
+  #   snippet: studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
+  # - board: corneish_zen_right//zmk
+  #   artifact-name: corneish_zen_right
+  #   snippet: studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
 
-  # Glove80
-  - board: glove80_lh
-    artifact-name: glove80_left
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
-  - board: glove80_rh
-    artifact-name: glove80_right
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  # # Glove80
+  # - board: glove80_lh
+  #   artifact-name: glove80_left
+  #   snippet: studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
+  # - board: glove80_rh
+  #   artifact-name: glove80_right
+  #   snippet: studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
 
-  # Go60
-  - board: go60_lh
-    artifact-name: go60_left
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
-  - board: go60_rh
-    artifact-name: go60_right
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  # # Go60
+  # - board: go60_lh
+  #   artifact-name: go60_left
+  #   snippet: studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
+  # - board: go60_rh
+  #   artifact-name: go60_right
+  #   snippet: studio-rpc-usb-uart
+  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
 
-  ###
-  # Resets
-  ##
+  # ###
+  # # Resets
+  # ##
 
-  # XIAO BLE (Totem)
-  - board: xiao_ble//zmk
-    shield: settings_reset
-    artifact-name: xiao_ble_settings_reset
+  # # XIAO BLE (Totem)
+  # - board: xiao_ble//zmk
+  #   shield: settings_reset
+  #   artifact-name: xiao_ble_settings_reset
 
-  # nice!nano v2 (Corne, Sweep, Lily58)
-  - board: nice_nano@2//zmk
-    shield: settings_reset
-    artifact-name: nice_nano_v2_settings_reset
+  # # nice!nano v2 (Corne, Sweep, Lily58)
+  # - board: nice_nano@2//zmk
+  #   shield: settings_reset
+  #   artifact-name: nice_nano_v2_settings_reset
