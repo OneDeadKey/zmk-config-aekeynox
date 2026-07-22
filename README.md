@@ -27,7 +27,7 @@ This repository allows to build your firmware with GitHub Actions (GHA):
 
 1. [create a GitHub account](https://github.com/signup) if you don’t already have one
 2. [fork](https://github.com/OneDeadKey/zmk-config-aekeynox/fork) this repository
-3. On your fork’s GitHub page, visit the Actions tab to enable workflows — by default, they are disabled on newly created forks
+3. on your fork’s GitHub page, visit the Actions tab to enable workflows — by default, they are disabled on newly created forks
 4. set your configuration in [`include/aekeynox/settings.h`](#keymapssettingsh)<br>
    *(this step is **required** for non-QWERTY layouts)*
 5. make sure your keyboard is configured properly in [`build.yaml`](#buildyaml)<br>
