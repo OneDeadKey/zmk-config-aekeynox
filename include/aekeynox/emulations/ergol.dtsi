@@ -1,12 +1,37 @@
 #define ODK_LAYER        EXTRA_LAYERS_START_INDEX
 #define ODK_SHIFT_LAYER (EXTRA_LAYERS_START_INDEX + 1)
 
+
+
 / {
   behaviors {
     TWO_LEVEL_KEY(apos, &EZ_SL(ODK_LAYER), S_EXCL) // ' ! (1dk)
     TWO_LEVEL_KEY(dash,  S_MINUS, S_QMARK)         // - ?
     TWO_LEVEL_KEY(dot,   S_DOT,   S_COLON)         // . :
     TWO_LEVEL_KEY(comma, S_COMMA, S_SEMI)          // , ;
+    TWO_LEVEL_KEY(nbspace, &kp SPACE, C_NBSP)        // space non‐breaking space 
+    
+    OMIT_IF_NO_REF magic_backspace_emul: magic_backspace_emulation {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&sc NAV_LAYER BACKSPACE>, <&lt NAV_LAYER &nbspace>;
+      mods      = <MOD_LSFT>;
+      keep-mods = <MOD_LSFT>;
+    };
+    OMIT_IF_NO_REF magic_space_emul: magic_space_emulation {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&lt NAV_LAYER &nbspace>, <&sc NAV_LAYER BACKSPACE>;
+      mods      = <MOD_LCTL>;
+      keep-mods = <MOD_LCTL>;
+    };
+    OMIT_IF_NO_REF magic_backspace_34_keys_emul: magic_backspace_34_keys_emulation {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&sc HRM_LAYER BACKSPACE>, <&lt HRM_LAYER &nbspace>;
+      mods      = <MOD_LSFT>;
+      keep-mods = <MOD_LSFT>;
+    };
   };
 };
 
@@ -16,6 +41,34 @@
 ******************************************************************************/
 
 #ifdef KB_LAYOUT_AZERTY
+
+  #ifdef LHAND_SPACE
+    #undef LTHUMB_TT  
+    #undef RTHUMB_TT  
+    #undef LTHUMB_HRM 
+    #undef RTHUMB_HRM 
+    #undef LTHUMB_S34 
+    #undef RTHUMB_S34 
+    #define LTHUMB_TT  &hrm CTL_CMD &nbspace
+    #define RTHUMB_TT  &magic_backspace_emul
+    #define LTHUMB_HRM &lt NAV_LAYER &nbspace
+    #define RTHUMB_HRM &magic_backspace_emul
+    #define LTHUMB_S34 &lt NAV_LAYER &nbspace
+    #define RTHUMB_S34 &magic_backspace_34_keys_emul
+  #else
+    #undef RTHUMB_TT
+    #undef RTHUMB_HRM
+    #undef RTHUMB_S34
+    #define RTHUMB_TT  &magic_space_emul
+    #define RTHUMB_HRM &lt NAV_LAYER &nbspace
+    #define RTHUMB_S34 &lt S34_LAYER &nbspace
+  #endif
+  
+  #ifdef HT_NONE
+      #undef RTHUMB_HOME
+      #define RTHUMB_HOME &nbspace
+  #endif
+  
 
   &base_layer {
     display-name = "Base";
