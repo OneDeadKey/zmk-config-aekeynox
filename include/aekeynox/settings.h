@@ -10,7 +10,7 @@
 // a non-QWERTY keyboard layout. This is required to set an appropriate
 // 'Symbols' layer and relevant keyboard shortcuts in the 'Nav' layer.
 
- #define KB_LAYOUT_AZERTY
+// #define KB_LAYOUT_AZERTY
 // #define KB_LAYOUT_BEPO
 // #define KB_LAYOUT_BEPOLAR
 // #define KB_LAYOUT_DVORAK
@@ -39,7 +39,7 @@
 //    partial emulation only. QWERTY-intl hosts usually give the best results.
 
 // #define KB_EMULATION_DVORAK           // host: QWERTY
- #define KB_EMULATION_ERGOL            // host: QWERTY-intl or AZERTY
+// #define KB_EMULATION_ERGOL            // host: QWERTY-intl or AZERTY
 // #define KB_EMULATION_QWERTY_LAFAYETTE // host: QWERTY-intl or AZERTY
 
 // [Experimental]
@@ -47,7 +47,7 @@
 // Useless on QWERTY/English keymaps or non-Windows hosts, recommended otherwise.
 // XXX This assumes NumLock is ON. It will not work otherwise.
 
-#define ENABLE_CP1252_ALT_CODES
+// #define ENABLE_CP1252_ALT_CODES
 
 // [Experimental]
 // Uncomment the following line for an improved dead key support.
