@@ -47,7 +47,7 @@
 // Useless on QWERTY/English keymaps or non-Windows hosts, recommended otherwise.
 // XXX This assumes NumLock is ON. It will not work otherwise.
 
-// #define ENABLE_CP1252_ALT_CODES
+#define ENABLE_CP1252_ALT_CODES
 
 // [Experimental]
 // Uncomment the following line for an improved dead key support.
