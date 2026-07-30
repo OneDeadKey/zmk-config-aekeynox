@@ -293,14 +293,11 @@
 // math
 #define C_DEG   &kp UNDER // °
 #ifdef MACOS
-  #define C_MICRO &kp RA(SEMI)  // µ
+  #define C_MICRO &kp RA(SEMI) // µ
+  #define C_EURO  &kp RA(RBKT) // €
 #else
-  #define C_MICRO &kp PIPE      // µ
-#endif
-#ifdef MACOS
-  #define C_EURO &kp RA(RBKT) // € = ⌥$
-#else
-  #define C_EURO &kp RA(E)    // €
+  #define C_MICRO &kp PIPE     // µ
+  #define C_EURO  &kp RA(E)    // €
 #endif
 #ifdef LINUX
   #define C_CENT  &kp RA(C)     // ¢
