@@ -236,9 +236,9 @@
   #define C_LODQT &none
   #define C_LDQT  &none
   #define C_RDQT  &none
-  #define C_LGQT  &kp RA(N7)     // « = ⌥7
+  #define C_LGQT  &kp RA(N7) // « = ⌥7
   #define C_RGQT  &kp SA(N7) // » = ⌥⇧7
-  #define C_APOS  &kp N4         // '
+  #define C_APOS  &kp N4     // '
 #else // Windows without alt-codes
   #define C_LODQT &none
   #define C_LDQT  &none
