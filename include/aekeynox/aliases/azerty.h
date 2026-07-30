@@ -284,7 +284,7 @@
   #define C_FEM   CP1252_FEMININE_ORDINAL   // ª
   #define C_MASC  CP1252_MASCULINE_ORDINAL  // º
 #else // macOS or Windows without alt-codes
-  #define C_LCXE  &kp RA(8)     // ¡
+  #define C_LCXE  &kp RA(8) // ¡
   #define C_KRAMQ &kp SA(M) // ¿
   #define C_FEM   &none
   #define C_MASC  &none
