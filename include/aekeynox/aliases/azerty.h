@@ -258,10 +258,10 @@
   #define C_NBSP  CP1252_NO_BREAK_SPACE
 #elifdef MACOS
   #define C_MDASH &kp SA(EQUAL) // —
-  #define C_NDASH &kp RA(EQUAL)     // –
-  #define C_ELLIP &kp RA(COMMA)     // … (⌥;)
+  #define C_NDASH &kp RA(EQUAL) // –
+  #define C_ELLIP &kp RA(COMMA) // … (⌥;)
   #define C_BLLT  &kp SA(COMMA) // •
-  #define C_MDOT  S_DOT             // .
+  #define C_MDOT  S_DOT         // .
   #define C_NBSP  &kp RA (SPACE)
 #else // unsupported
   #define C_NDASH &digraph N6 N6 // --
