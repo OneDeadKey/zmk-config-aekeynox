@@ -191,7 +191,7 @@
   #define  C_OE &kp RA(O) // œ
   #define SC_OE &kp SA(O) // œ
   #define  C_AE &kp RA(Q) // æ
-  #define SC_AE &kp SA(Q) // Æ 
+  #define SC_AE &kp SA(Q) // Æ
   #define  C_SZ &kp RA(B) // ß
 #elifdef ENABLE_CP1252_ALT_CODES
   #define  C_OE CP1252_LOWERCASE_OE // œ
