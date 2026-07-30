@@ -63,7 +63,7 @@
       compatible = "zmk,behavior-macro-one-param";
       #binding-cells = <1>;
 #ifdef MACOS
-      tap-ms = <120>;  // macOS ignore un CapsLock trop bref (anti-rebond)
+      tap-ms = <120>;  // macOS ignores quick CapsLock presses (CapsLockDelay)
       wait-ms = <40>;
 #else
       tap-ms = <0>;
