@@ -62,8 +62,7 @@
 #define S_DOT   &kp LS(COMMA)
 #define S_MONEY &kp RA(E)
 
-// macOS "Français" (Apple) : rangée num + bas diffèrent du PC AZERTY.
-// Vérifié au Visualiseur de clavier. ponytail: couche Option ({}[]\|#@^`~ €) encore TODO (manque capture ⌥⇧).
+// "Apple AZERTY": the num row and the lower row differ from the French PC variant.
 #ifdef MACOS
   #undef  S_MINUS
   #define S_MINUS &kp EQUAL      // "-" sur la touche = (PC: N6)
