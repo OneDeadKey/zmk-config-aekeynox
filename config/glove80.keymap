@@ -7,7 +7,7 @@
     LOUT1     LROW1                                                          RROW1  ROUT1     \
     LOUT2     LROW2                                                          RROW2  ROUT2     \
     LOUT3     LROW3         &none  &none  &none  &none  &none  &none         RROW3  ROUT3     \
-    &kp LEFT  &kp RIGHT  LT1  LT2  LT3    &none  &none        RT3  RT2  RT1  &kp UP &kp DOWN  \
+    &none     &none  &none  &kp LEFT &kp RIGHT  LT1  LT2  LT3 RT3  RT2  RT1  &kp UP &kp DOWN  \
                                                  &none  &none  &none
 
 #include <aekeynox/selenium.keymap>
