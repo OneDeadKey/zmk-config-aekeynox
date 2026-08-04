@@ -1,3 +1,5 @@
+#include "hrm.h"
+
 &base_layer {
   display-name = "Base";
   bindings = <SELENIUM_KEYMAP_BINDINGS(
