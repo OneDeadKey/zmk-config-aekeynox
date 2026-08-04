@@ -23,7 +23,7 @@
     OMIT_IF_NO_REF ltsp: layer_tap_space { 
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
-      tapping-term-ms = <SHORT_TAPPING_TERM>;
+      tapping-term-ms = <TAPPING_TERM>;
       quick-tap-ms = <QUICK_TAP>;
       flavor = "tap-preferred";
       bindings = <&mo>, <&nbspace>;
