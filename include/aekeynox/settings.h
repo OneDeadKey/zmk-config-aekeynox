@@ -10,7 +10,7 @@
 // a non-QWERTY keyboard layout. This is required to set an appropriate
 // 'Symbols' layer and relevant keyboard shortcuts in the 'Nav' layer.
 
-#define KB_LAYOUT_AZERTY
+// #define KB_LAYOUT_AZERTY
 // #define KB_LAYOUT_BEPO
 // #define KB_LAYOUT_BEPOLAR
 // #define KB_LAYOUT_DVORAK
@@ -47,7 +47,7 @@
 // Useless on QWERTY/English keymaps or non-Windows hosts, recommended otherwise.
 // XXX This assumes NumLock is ON. It will not work otherwise.
 
-#define ENABLE_CP1252_ALT_CODES
+// #define ENABLE_CP1252_ALT_CODES
 
 // [Experimental]
 // Uncomment the following line for an improved dead key support.
@@ -102,7 +102,7 @@
 //  + Escape under the left thumb (direct access)
 // Highly recommended for Vim users, obviously. :-)
 
-#define VIM_NAVIGATION
+// #define VIM_NAVIGATION
 
 // [Experimental]
 // Uncomment the following line to enable the "mod-hold behavior" on the left
@@ -110,7 +110,7 @@
 // when entering the navigation layer, Alt will only be released when nav is
 // released. This enables one-handed alt-tabs, but may cause unwanted side effects.
 
-#define ENABLE_MOD_HOLD_NAVIGATION
+// #define ENABLE_MOD_HOLD_NAVIGATION
 
 // Uncomment the following line to enable shift as a pinky HRM.
 // Useful for combined shortcuts, but NOT MEANT to type text!
