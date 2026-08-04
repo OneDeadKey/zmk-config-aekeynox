@@ -17,6 +17,8 @@
  * Base Layer (host-specific)
 ******************************************************************************/
 
+#include "hrm.h"
+
 #ifdef KB_LAYOUT_AZERTY
 
   &base_layer {
