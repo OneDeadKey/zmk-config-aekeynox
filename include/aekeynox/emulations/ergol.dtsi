@@ -10,13 +10,14 @@
   };
 };
 
+#include "nbsp.dtsi"
+
 
 /******************************************************************************
  * Base Layer (host-specific)
 ******************************************************************************/
 
 #ifdef KB_LAYOUT_AZERTY
-  #include "nbsp.dtsi"
 
   &base_layer {
     display-name = "Base";
