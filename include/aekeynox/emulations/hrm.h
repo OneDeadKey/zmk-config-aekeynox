@@ -1,7 +1,7 @@
 // Disable home row modifiers when necessary:
 // this is just a hack to re-define the base keymap,
 // keeping the same syntax whether HRMs are enabled or not.
-#if defined HT_NONE or defined HT_THUMB_TAPS
+#if defined HT_NONE || defined HT_THUMB_TAPS
   #undef  H_A
   #define H_A &kp
   #undef  H_S
