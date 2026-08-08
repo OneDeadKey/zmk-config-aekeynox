@@ -25,6 +25,10 @@
   #error "Please select only up to one hold-tap configuration at a time"
 #endif
 
+#ifdef HUMMINGBIRD
+  #define ENABLE_HUMMINGBIRD_MODE
+#endif
+
 // Memory
 
 #ifdef LOW_MEMORY_DEVICE
