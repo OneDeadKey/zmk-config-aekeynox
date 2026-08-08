@@ -2,7 +2,6 @@
 # Supported hardware: https://zmk.dev/docs/hardware
 
 include:
-
   ###
   # Composite Keyboards (external MCU)
   #
@@ -170,3 +169,21 @@ include:
   - board: nice_nano@2//zmk
     shield: settings_reset
     artifact-name: nice_nano_v2_settings_reset
+
+  # Bad Temper BLE with dongle (aekeynox keymap)
+  # Distinct artifact-names: the dongle-mode halves are peripherals (CENTRAL=n),
+  # a different firmware from the nice_view temper_left/right central builds above.
+  - board: nice_nano@2//zmk
+    shield: temper_dongle
+    artifact-name: bad_temper_dongle
+  - board: nice_nano@2//zmk
+    shield: settings_reset
+    artifact-name: bad_temper_settings_reset
+  - board: nice_nano@2//zmk
+    shield: temper_left
+    artifact-name: bad_temper_left_peripheral
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+  - board: nice_nano@2//zmk
+    shield: temper_right
+    artifact-name: bad_temper_right_peripheral
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
