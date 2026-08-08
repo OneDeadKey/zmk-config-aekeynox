@@ -106,6 +106,12 @@ include:
     snippet: studio-rpc-usb-uart
     cmake-args: *cmake-args
 
+  # Hummingbird + XIAO RP2040
+  - board: xiao_rp2040//zmk
+    shield: hummingbird
+    artifact-name: hummingbird
+    snippet: studio-rpc-usb-uart
+    cmake-args: *cmake-args
 
   ###
   # Standalone Keyboards (onboard MCU)

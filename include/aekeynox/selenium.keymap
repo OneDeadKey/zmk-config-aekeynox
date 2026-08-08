@@ -162,6 +162,6 @@
   #include "extra_layers/transalp.dtsi"
 
 // Experimental ergol variant meant for Hummingbird-style keyboards
-#elif defined KB_LAYOUT_ERGOL && defined HUMMINGBIRD
+#elif defined KB_LAYOUT_ERGOL && defined ENABLE_HUMMINGBIRD_MODE
   #include "extra_layers/ergol_hummingbird.dtsi"
 #endif

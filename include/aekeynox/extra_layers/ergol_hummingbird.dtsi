@@ -5,9 +5,9 @@
 // Override the base layer to replace Ergo‑L’s OneDeadKey
 &base_layer {
   bindings = <SELENIUM_KEYMAP_BINDINGS(
-    &kp Z  ,  &kp Q  &kp W  &kp E  &kp R  &kp T   ,   &kp N  &kp U  &kp I     &apos   &kp P     ,  &kp FSLH ,
-    &kp Z  ,  &H4 A  &H3 S  &H2 D  &H1 F  &kp G   ,   &kp H  &H1 J  &H2 K     &H3 L   &H4 SEMI  ,  &kp FSLH ,
-    &none  ,  &kp Q  &kp X  &kp C  &kp V  &kp B   ,   &kp Y  &kp M  &kp COMMA &kp DOT &kp P     ,  &none    ,
+    &kp RTOP   ,  &kp Q  &kp W  &kp E  &kp R  &kp T   ,   &kp N  &kp U  &kp I     &apos   &kp P     ,  &kp RTOP   ,
+    &kp RHOME  ,  &H4 A  &H3 S  &H2 D  &H1 F  &kp G   ,   &kp H  &H1 J  &H2 K     &H3 L   &H4 SEMI  ,  &kp RHOME  ,
+    &kp LSHIFT ,  &kp Z  &kp X  &kp C  &kp V  &kp B   ,   &kp Y  &kp M  &kp COMMA &kp DOT &kp FSLH  ,  &kp RSHIFT ,
         LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH  ,   RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
   )>;
 };

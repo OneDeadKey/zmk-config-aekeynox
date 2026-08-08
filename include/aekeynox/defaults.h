@@ -33,6 +33,10 @@
   #error "Please select only one navigation style at a time"
 #endif
 
+#ifdef LESS_THAN_3X5_KEYS
+  #define ENABLE_HUMMINGBIRD_MODE
+#endif
+
 // Memory
 
 #ifdef LOW_MEMORY_DEVICE

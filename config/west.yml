@@ -26,8 +26,8 @@ manifest:
       # https://github.com/Nuclear-Squid/zmk-keyboard-quacken/pull/49#issuecomment-4153385353
       # https://github.com/OneDeadKey/zmk-config-aekeynox/pull/67
     - name: zmk
-      remote: zmkfirmware
-      revision: 9917e2f1371d5bb051bf8eb782c1297db41d742b
+      remote: NuclearSquid
+      revision: geometry_adaptations
       import: app/west.yml
 
       ###
