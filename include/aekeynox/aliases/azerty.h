@@ -62,49 +62,48 @@
 #define S_DOT   &kp LS(COMMA)
 #define S_MONEY &kp RA(E)
 
-// "Apple AZERTY": the num row and the lower row differ from the French PC variant.
+// "Apple AZERTY" differs significantly from the French PC variant
 #ifdef MACOS
   #undef  S_MINUS
-  #define S_MINUS &kp EQUAL      // "-" sur la touche = (PC: N6)
+  #define S_MINUS &kp EQUAL
   #undef  S_UNDER
-  #define S_UNDER &kp LS(EQUAL)  // "_"            (PC: N8)
+  #define S_UNDER &kp LS(EQUAL)
   #undef  S_EQUAL
-  #define S_EQUAL &kp FSLH       // "=" sur la touche /? (PC: EQUAL)
+  #define S_EQUAL &kp FSLH
   #undef  S_PLUS
-  #define S_PLUS  &kp LS(FSLH)   // "+"
+  #define S_PLUS  &kp LS(FSLH)
   #undef  S_EXCL
-  #define S_EXCL  &kp N8         // "!" sur N8     (PC: FSLH)
+  #define S_EXCL  &kp N8
   #undef  S_STAR
-  #define S_STAR  &kp LS(RBKT)   // "*" = Shift+$  (PC: BSLH)
-  // couche Option
+  #define S_STAR  &kp LS(RBKT)
   #undef  S_LBRC
-  #define S_LBRC  &kp RA(N5)            // "{" = ⌥5
+  #define S_LBRC  &kp RA(N5)
   #undef  S_RBRC
-  #define S_RBRC  &kp RA(MINUS)         // "}" = ⌥-
+  #define S_RBRC  &kp RA(MINUS)
   #undef  S_LBKT
-  #define S_LBKT  &kp SA(N5)            // "[" = ⌥⇧5
+  #define S_LBKT  &kp SA(N5)
   #undef  S_RBKT
-  #define S_RBKT  &kp SA(MINUS)         // "]" = ⌥⇧-
+  #define S_RBKT  &kp SA(MINUS)
   #undef  S_PIPE
-  #define S_PIPE  &kp SA(L)             // "|" = ⌥⇧L
+  #define S_PIPE  &kp SA(L)
   #undef  S_CARET
-  #define S_CARET &digraph LBKT SPACE   // "^" (touche morte) + espace
+  #define S_CARET &digraph LBKT SPACE
   #undef  S_TILDE
-  #define S_TILDE &digraph RA(N) SPACE  // "~" = ⌥n (morte) + espace
+  #define S_TILDE &digraph RA(N) SPACE
   #undef  S_LT
-  #define S_LT    &kp GRAVE             // "<"  (touche <> = GRAVE)
+  #define S_LT    &kp GRAVE
   #undef  S_GT
-  #define S_GT    &kp LS(GRAVE)         // ">"
+  #define S_GT    &kp LS(GRAVE)
   #undef  S_AT
-  #define S_AT    &kp NUBS              // "@"  (touche @# = NUBS)
+  #define S_AT    &kp NUBS
   #undef  S_HASH
-  #define S_HASH  &kp PIPE2             // "#" = ⇧@
+  #define S_HASH  &kp PIPE2
   #undef  S_BSLH
-  #define S_BSLH  &kp SA(DOT)           // "\" = ⌥⇧ sur ":"
+  #define S_BSLH  &kp SA(DOT)
   #undef  S_MONEY
-  #define S_MONEY &kp RA(RBKT)          // "€" = ⌥$
+  #define S_MONEY &kp RA(RBKT)
   #undef  S_GRAVE
-  #define S_GRAVE &digraph NUHS SPACE   // "`" morte (touche ISO après ù) + espace
+  #define S_GRAVE &digraph NUHS SPACE
 #endif
 
 // GRAVE and TILDE are no dead keys on Linux
