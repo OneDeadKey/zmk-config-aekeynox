@@ -26,7 +26,7 @@ manifest:
     - name: zmk-config-totem
       remote: cfergeau
       revision: zmk-module
-      # We rely on a fork of the original ZMK Temper module, as there are
+      # We rely on a fork of `raeedcho`'s ZMK Temper module, as there are
       # long-standing issues on the original repo that have never been fixed
       # (despite a couple of PRs being opened). More info here:
       # https://github.com/OneDeadKey/zmk-config-aekeynox/pull/101
