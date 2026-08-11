@@ -27,7 +27,7 @@ manifest:
       remote: cfergeau
       revision: zmk-module
     - name: temper-zmk-config
-      remote: raeedcho
+      remote: NuclearSquid
       revision: main
     - name: zmk-config-go60
       remote: rloutier
