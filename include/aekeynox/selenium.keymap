@@ -123,7 +123,11 @@
 };
 
 // Emulated layouts (experimental!)
-#ifdef KB_EMULATION_DVORAK
+#ifdef KB_EMULATION_COLEMAK
+  #include "emulations/colemak.dtsi"
+#elif defined KB_EMULATION_COLEMAK_DH
+  #include "emulations/colemak_dh.dtsi"
+#elif defined KB_EMULATION_DVORAK
   #include "emulations/dvorak.dtsi"
 #elif defined KB_EMULATION_ERGOL
   #include "emulations/ergol.dtsi"
