@@ -23,7 +23,7 @@
     display-name = "Base";
     bindings = <SELENIUM_KEYMAP_BINDINGS(
       &kp TAB    ,  &kp A  &kp Z  &kp E  &kp R  &kp T   ,   &kp Y  &kp U    &kp I  &kp O  &kp P   ,  &kp BACKSPACE ,
-      &kp ESCAPE ,  H_A Q  H_S S  H_D D  H_F F  &kp G   ,   &kp H  H_J J    H_K K  H_L L  &apos   ,  &kp ENTER     ,
+      &kp ESCAPE ,  &H4 Q  &H3 S  &H2 D  &H1 F  &kp G   ,   &kp H  &H1 J    &H2 K  &H3 L  &apos   ,  &kp ENTER     ,
       &kp LSHIFT ,  &kp W  &kp X  &kp C  &kp V  &kp B   ,   &kp N  &kp SEMI &comma &dot   &slash  ,  &kp RSHIFT    ,
          LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH   ,   RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
     )>;
@@ -36,7 +36,7 @@
     display-name = "Base";
     bindings = <SELENIUM_KEYMAP_BINDINGS(
       &kp TAB    ,  &kp Q  &kp W  &kp E  &kp R  &kp T   ,   &kp Y  &kp U  &kp I  &kp O  &kp P     ,  &kp BACKSPACE ,
-      &kp ESCAPE ,  H_A A  H_S S  H_D D  H_F F  &kp G   ,   &kp H  H_J J  H_K K  H_L L  &apos     ,  &kp ENTER     ,
+      &kp ESCAPE ,  &H4 A  &H3 S  &H2 D  &H1 F  &kp G   ,   &kp H  &H1 J  &H2 K  &H3 L  &apos     ,  &kp ENTER     ,
       &kp LSHIFT ,  &kp Z  &kp X  &kp C  &kp V  &kp B   ,   &kp N  &kp M  &comma &dot   &kp FSLH  ,  &kp RSHIFT    ,
          LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH   ,   RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
     )>;

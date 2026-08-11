@@ -36,47 +36,33 @@
   #define ALT_CTL LALT
 #endif
 
-#define H_S &hrm GUI_OPT
-#define H_D &hrm CTL_CMD
-#define H_F &hrm ALT_CTL
-#define H_J &hrm ALT_CTL
-#define H_K &hrm CTL_CMD
-#define H_L &hrm GUI_OPT
-
-#if defined HRM_SHIFT && defined PINKY_MOD_HOLD
-  #define H_A    &mhhrm LSHIFT
-  #define H_SEMI &mhhrm RSHIFT
-#elif defined HRM_SHIFT
-  #define H_A    &hrm LSHIFT
-  #define H_SEMI &hrm RSHIFT
-#elif defined PINKY_MOD_HOLD
-  #define H_A    &mhkp 0
-  #define H_SEMI &mhkp 0
-#else
-  #define H_A    &kp
-  #define H_SEMI &kp
-#endif
+// Unconditionnal Home row mods, needed by the fn/media layer, since combining
+// modifiers on the thumb-taps variant with this layer can be tricky.
+// Hopefully this issue can be cleanly resolved with mod-holds
+#define UH1 hrm GUI_OPT
+#define UH2 hrm CTL_CMD
+#define UH3 hrm ALT_CTL
+#define UH4 hrm LSHIFT
 
 #if defined HT_HOME_ROW_MODS || defined HT_TWO_THUMB_KEYS
-  #define HRM_A    H_A A
-  #define HRM_S    H_S S
-  #define HRM_D    H_D D
-  #define HRM_F    H_F F
-  #define HRM_J    H_J J
-  #define HRM_K    H_K K
-  #define HRM_L    H_L L
-  #define HRM_SEMI H_SEMI SEMI
+  #define H1 hrm GUI_OPT
+  #define H2 hrm CTL_CMD
+  #define H3 hrm ALT_CTL
 #else
-  #define HRM_A    &kp A
-  #define HRM_S    &kp S
-  #define HRM_D    &kp D
-  #define HRM_F    &kp F
-  #define HRM_J    &kp J
-  #define HRM_K    &kp K
-  #define HRM_L    &kp L
-  #define HRM_SEMI &kp SEMI
+  #define H1 kp
+  #define H2 kp
+  #define H3 kp
 #endif
 
+#if defined HRM_SHIFT && defined PINKY_MOD_HOLD
+  #define H4 mhhrm LSHIFT
+#elif defined HRM_SHIFT
+  #define H4 hrm LSHIFT
+#elif defined PINKY_MOD_HOLD
+  #define H4 mhkp 0
+#else
+  #define H4 kp
+#endif
 
 /**
  * Thumb Keys
