@@ -36,9 +36,9 @@
   #define ALT_CTL LALT
 #endif
 
-// Unconditionnal Home row mods, needed by the fn/media layer, since combining
+// Unconditionnal home row mods, needed by the fn/media layer, since combining
 // modifiers on the thumb-taps variant with this layer can be tricky.
-// Hopefully this issue can be cleanly resolved with mod-holds
+// Hopefully, this issue can be cleanly resolved with mod-holds someday.
 #define UH1 hrm GUI_OPT
 #define UH2 hrm CTL_CMD
 #define UH3 hrm ALT_CTL
