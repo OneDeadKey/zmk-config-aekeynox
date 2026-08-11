@@ -15,6 +15,13 @@
 #elifdef KB_LAYOUT_DVORAK
   #include "aliases/dvorak.h"
 
+#elifdef KB_LAYOUT_QWERTZ_DE
+  #include "aliases/qwertz_de.h"
+#elifdef KB_LAYOUT_QWERTZ_CH_DE
+  #include "aliases/qwertz_ch.h"
+#elifdef KB_LAYOUT_QWERTZ_CH_FR
+  #include "aliases/qwertz_ch.h"
+
 #elifdef KB_LAYOUT_AZERTY
   #define SHIFTED_NUMBERS
   #include "aliases/azerty.h"

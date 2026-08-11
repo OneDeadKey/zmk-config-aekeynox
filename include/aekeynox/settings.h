@@ -18,6 +18,9 @@
 // #define KB_LAYOUT_ERGLACE
 // #define KB_LAYOUT_QWERTY_INTL
 // #define KB_LAYOUT_QWERTY_LAFAYETTE
+// #define KB_LAYOUT_QWERTZ_DE
+// #define KB_LAYOUT_QWERTZ_CH_DE
+// #define KB_LAYOUT_QWERTZ_CH_FR
 
 // Some keyboard layouts and shortcuts may vary between Windows / macOS / Linux.
 // Uncomment one of the following lines if the host computer doen't run Windows.
@@ -25,9 +28,11 @@
 // #define MACOS
 // #define LINUX
 
-// By default, Ækeynox uses non-alphanumeric keys on the 6th columns:
+// By default, Ækeynox fits all layouts on a 3×10 grid, using a dead key (1dk)
+// for extra chars if necessary, and keeps the 6th columns for non-alpha keys:
 // Tab, Escape, Backspace, Enter.
-// Uncomment the following line to use these columns for alpha keys instead.
+// Uncomment the following line to use these 6th columns for alpha keys instead.
+// Warning: this also disables all 1dk layers.
 
 // #define USE_ALPHA_ON_OUTER_KEYS
 

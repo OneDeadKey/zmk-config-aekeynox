@@ -137,23 +137,27 @@
   };
 };
 
-// Emulated layouts (experimental!)
+// Emulated layouts (ASCII)
 #ifdef KB_EMULATION_COLEMAK
   #include "emulations/colemak.dtsi"
 #elif defined KB_EMULATION_COLEMAK_DH
   #include "emulations/colemak_dh.dtsi"
 #elif defined KB_EMULATION_DVORAK
   #include "emulations/dvorak.dtsi"
+
+// Emulated layouts (non-ASCII, experimental!)
 #elif defined KB_EMULATION_ERGOL
   #include "emulations/ergol.dtsi"
 #elif defined KB_EMULATION_QWERTY_LAFAYETTE
   #include "emulations/qwerty_lafayette.dtsi"
 
-// Some layouts require extra layers to fit on the Quacken.
+// Some layouts require extra layers to fit on a 3×10 grid
 #elif defined KB_LAYOUT_AZERTY
-  #include "extra_layers/azerty.dtsi"
+  #include "extra_layers/azerty_1dk.dtsi"
 #elif defined KB_LAYOUT_BEPO
-  #include "extra_layers/bepo.dtsi"
+  #include "extra_layers/bepolar.dtsi"
 #elif defined KB_LAYOUT_ERGOL && defined HUMMINGBIRD
   #include "extra_layers/ergol_hummingbird.dtsi"
+#elif (defined KB_LAYOUT_QWERTZ_DE || defined KB_LAYOUT_QWERTZ_CH_DE || defined KB_LAYOUT_QWERTZ_CH_FR)
+  #include "extra_layers/transalp.dtsi"
 #endif
