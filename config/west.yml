@@ -32,7 +32,7 @@ manifest:
       # https://github.com/OneDeadKey/zmk-config-aekeynox/pull/101
     - name: temper-zmk-config
       remote: NuclearSquid
-      revision: main
+      revision: aekeynox
     - name: zmk-config-go60
       remote: rloutier
       revision: main
