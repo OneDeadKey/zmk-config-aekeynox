@@ -54,7 +54,7 @@ manifest:
       revision: aekeynox
 
       # Go60: split nrf52840-based board
-      # A fork of Moergo's ZMK go60 module, to migrate it to ZMK main
+      # A fork of MoErgo's ZMK go60 module, to migrate it to ZMK main
     - name: zmk-config-go60
       remote: rloutier
       revision: 1bb1f847162f5ccec162c5ba6516d0c73b6a8c39
