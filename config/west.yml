@@ -53,7 +53,7 @@ manifest:
       remote: NuclearSquid
       revision: aekeynox
 
-      # Adds support for the `go60` (split nrf52840 board).
+      # Go60: split nrf52840 board
       # A fork of Moergo's ZMK go60 module, to migrate it to ZMK main
     - name: zmk-config-go60
       remote: rloutier
