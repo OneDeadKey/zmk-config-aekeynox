@@ -46,7 +46,7 @@ manifest:
       remote: cfergeau
       revision: 9677c2fd5af7cee784aafb1b52a25a33357336c2
 
-      # Temper: split promicro-compatible shield
+      # Temper: split ProMicro-compatible shield
       # A fork of `raeedcho`'s ZMK Temper module including long-standing patch proposals.
       # https://github.com/OneDeadKey/zmk-config-aekeynox/pull/101
     - name: temper-zmk-config
