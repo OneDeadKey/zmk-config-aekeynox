@@ -40,7 +40,7 @@ manifest:
       remote: NuclearSquid
       revision: aekeynox
 
-      # Totem: split xiao-compatible shield
+      # Totem: split XIAO-compatible shield
       # A fork of `GEIGEIGEIST`'s ZMK Totem module, to migrate it to ZMK main
     - name: zmk-config-totem
       remote: cfergeau
