@@ -1,3 +1,12 @@
+# For security and stability reasons, every external dependencies must be pinned.
+# This ensures maintainers are in control and are able to review changes before
+# applying them here.
+#
+# - For repos maintained by OneDeadKey or their members, we use an `aekeynox`
+#   branch as a stable release for the dependency.
+# - For any other repo, we pin the exact commit hash we need. Feel free to
+#   open a PR to update this hash if improvements are made.
+
 manifest:
   remotes:
     - name: zmkfirmware
@@ -22,10 +31,10 @@ manifest:
       import: app/west.yml
     - name: zmk-keyboard-quacken
       remote: NuclearSquid
-      revision: zmk-main
+      revision: aekeynox
     - name: zmk-config-totem
       remote: cfergeau
-      revision: zmk-module
+      revision: 9677c2fd5af7cee784aafb1b52a25a33357336c2
       # We rely on a fork of `raeedcho`'s ZMK Temper module, as there are
       # long-standing issues on the original repo that have never been fixed
       # (despite a couple of PRs being opened). More info here:
@@ -35,9 +44,9 @@ manifest:
       revision: aekeynox
     - name: zmk-config-go60
       remote: rloutier
-      revision: main
+      revision: 1bb1f847162f5ccec162c5ba6516d0c73b6a8c39
     - name: zmk-keyboard-re-gret
       remote: rschenk
-      revision: main
+      revision: 34ca1fc7dc6991475b0c20f2c8361598e7aaeaca
   self:
     path: config
