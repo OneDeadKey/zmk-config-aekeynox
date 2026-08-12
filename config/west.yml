@@ -7,8 +7,8 @@
 # - For any other repo, we pin the exact commit hash we need. Feel free to
 #   open a PR to update this hash if improvements are made.
 
-
 manifest:
+
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
