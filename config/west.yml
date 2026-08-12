@@ -15,8 +15,6 @@ manifest:
       url-base: https://github.com/cfergeau
     - name: NuclearSquid
       url-base: https://github.com/Nuclear-Squid
-    - name: raeedcho
-      url-base: https://github.com/raeedcho
     - name: rloutier
       url-base: https://github.com/rloutier
     - name: rschenk
