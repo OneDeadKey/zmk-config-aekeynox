@@ -1,0 +1,35 @@
+// hybrid Ergol/Lafayette NumRow
+&num_row_layer {
+  display-name = "NumRow";
+  bindings = <SELENIUM_KEYMAP_BINDINGS(
+    &kp TAB    ,  C_EURO  C_LGQT  C_RGQT  S_DLLR  S_PRCNT  ,   S_CARET S_AMPS  S_STAR  S_LPAR  S_RPAR  ,  &kp BACKSPACE ,
+    &kp ESCAPE ,  S_N1    S_N2    S_N3    S_N4    S_N5     ,   S_N6    S_N7    S_N8    S_N9    S_N0    ,  &kp ENTER     ,
+    &kp LSHIFT ,  C_LODQT C_LDQT  C_RDQT  C_CENT  C_DEG    ,   S_MINUS S_COMMA S_DOT   S_COLON S_FSLH  ,  &kp RSHIFT    ,
+                                &trans , C_NBSP , &trans   ,   &trans , C_NBSP , &trans
+  )>;
+};
+
+// hybrid Ergol/Lafayette NumPad
+/ {
+  behaviors {
+    TWO_LEVEL_KEY(nm1, S_N1, C_EURO)
+    TWO_LEVEL_KEY(nm2, S_N2, C_LGQT)
+    TWO_LEVEL_KEY(nm3, S_N3, C_RGQT)
+    TWO_LEVEL_KEY(nm4, S_N4, S_DLLR)
+    TWO_LEVEL_KEY(nm5, S_N5, S_PRCNT)
+    TWO_LEVEL_KEY(nm6, S_N6, S_CARET)
+    TWO_LEVEL_KEY(nm7, S_N7, S_AMPS)
+    TWO_LEVEL_KEY(nm8, S_N8, S_STAR)
+    TWO_LEVEL_KEY(nm9, S_N9, S_HASH)
+    TWO_LEVEL_KEY(nm0, S_N0, S_AT)
+  };
+};
+&nav_num_layer {
+  display-name = "NavNum";
+  bindings = <SELENIUM_KEYMAP_BINDINGS(
+    &trans  ,  &kp ESC  &kp HOME &kp UP   &kp END   &kp PG_UP   ,   &to NUM_LOCK_LAYER &nm7  &nm8  &nm9  S_FSLH  ,  &trans ,
+    &trans  ,  X_ALL    &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN   ,   S_MINUS            &nm4  &nm5  &nm6  &nm0    ,  &trans ,
+    &trans  ,  X_UNDO   X_CUT    X_COPY   X_PASTE   X_REDO      ,   S_COMMA            &nm1  &nm2  &nm3  S_DOT   ,  &trans ,
+  NAV_LTHUMB_TUCK , &sc FN_MEDIA_LAYER DEL , NAV_LTHUMB_REACH   ,   &kp ESCAPE , &lt FN_MEDIA_LAYER LS(SPACE) , &EZ_LSK(RALT)
+  )>;
+};

@@ -4,7 +4,7 @@ include:
   ###
   # Keyboard Configurations
   ##
-  
+
   # default config
   - board: quacken_flex/rp2040
     artifact-name: default
@@ -33,7 +33,17 @@ include:
   ###
   # Layout Emulations
   ##
-  
+
+  # Dvorak emulation on Qwerty
+  - board: quacken_flex/rp2040
+    artifact-name: qwerty_to_colemak
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY;-DKB_EMULATION_COLEMAK"
+
+  # Dvorak emulation on Qwerty
+  - board: quacken_flex/rp2040
+    artifact-name: qwerty_to_colemak_dh
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY;-DKB_EMULATION_COLEMAK_DH"
+
   # Dvorak emulation on Qwerty
   - board: quacken_flex/rp2040
     artifact-name: qwerty_to_dvorak

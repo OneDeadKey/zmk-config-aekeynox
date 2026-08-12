@@ -38,6 +38,8 @@
 //  - Keymaps for other languages and host layouts are trickier, and provide a
 //    partial emulation only. QWERTY-intl hosts usually give the best results.
 
+// #define KB_EMULATION_COLEMAK          // host: QWERTY
+// #define KB_EMULATION_COLEMAK_DH       // host: QWERTY
 // #define KB_EMULATION_DVORAK           // host: QWERTY
 // #define KB_EMULATION_ERGOL            // host: QWERTY-intl or AZERTY
 // #define KB_EMULATION_QWERTY_LAFAYETTE // host: QWERTY-intl or AZERTY
@@ -116,6 +118,13 @@
 // Useful for combined shortcuts, but NOT MEANT to type text!
 
 // #define HRM_SHIFT
+
+// [Experimental]
+// Uncomment the following line to enable a mod-hold behavior when holding
+// a pinky key. Useful for one-handed home row mods, when the modifier and
+// keycode ar on the same key (i.e. Ctrl + D)
+
+// #define PINKY_MOD_HOLD
 
 // Uncomment the following line to swap Space and Backspace.
 // Beware: this increases the typing load of the left thumb.

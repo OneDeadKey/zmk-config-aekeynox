@@ -39,7 +39,7 @@
       display-name = "Base";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
         &kp TAB    ,  &kp Q  &kp W  &kp E  &kp R  &kp T   ,   &kp Y  &kp U  &kp I     &kp O   &kp P     ,  &kp BACKSPACE ,
-        &kp ESCAPE ,  HRM_A  HRM_S  HRM_D  HRM_F  &kp G   ,   &kp H  HRM_J  HRM_K     HRM_L   HRM_SEMI  ,  &kp ENTER     ,
+        &kp ESCAPE ,  &H4 A  &H3 S  &H2 D  &H1 F  &kp G   ,   &kp H  &H1 J  &H2 K     &H3 L   &H4 SEMI  ,  &kp ENTER     ,
         &kp LSHIFT ,  &kp Z  &kp X  &kp C  &kp V  &kp B   ,   &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH  ,  &kp RSHIFT    ,
                LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH   ,   RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
       )>;
@@ -76,7 +76,7 @@
       bindings = <SELENIUM_KEYMAP_BINDINGS(
         &trans  ,  &none    X_CTL_W  &vim_prev &vim_next &none     ,   &kp HOME &kp PG_DN &kp PG_UP &kp END   &kp DEL ,  &trans ,
         &trans  ,  X_ALL    X_SAVE   X_SHTAB   &kp TAB   &none     ,   &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &none   ,  &trans ,
-        &trans  ,  X_UNDO   X_CUT    X_COPY    X_PASTE   X_REDO    ,   &none    &none     &none     &none     &none   ,  &trans ,
+        &trans  ,  X_UNDO   X_CUT    X_COPY    X_PASTE   X_REDO    ,   X_MSC_L  X_MSC_D   X_MSC_U   X_MSC_R   &none   ,  &trans ,
             &kp CAPS , &sc FN_MEDIA_LAYER DEL , &mo NUM_ROW_LAYER  ,   &trans ,  &mo FN_MEDIA_LAYER , &EZ_LSK(RALT)
       )>;
     };
@@ -113,10 +113,10 @@
     fn_media_layer: fn_media_layer {
       display-name = "FnMedia";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
-        &trans  ,  &kp F1  &kp F2  &kp F3  &kp F4  &none        ,   &bt BT_SEL 2  &kp C_NEXT  &kp C_VOL_UP  &kp C_BRI_UP   &kp SLCK      ,  &trans ,
-        &trans  ,  &kp F5  &kp F6  &kp F7  &kp F8  &out OUT_TOG ,   &bt_sel1_clr  H_J C_PP    H_K C_MUTE    H_L C_AL_LOCK  H_SEMI PSCRN  ,  &trans ,
-        &trans  ,  &kp F9  &kp F10 &kp F11 &kp F12 &none        ,   &bt BT_SEL 0  &kp C_PREV  &kp C_VOL_DN  &kp C_BRI_DN   &kp INS       ,  &trans ,
-                           &trans , &bootloader , &trans   ,   &trans , &sys_reset , &studio_unlock
+        &trans  ,  &kp F1  &kp F2  &kp F3  &kp F4  &none        ,   &bt BT_SEL 2  &kp C_NEXT  &kp C_VOL_UP  &kp C_BRI_UP   &kp SLCK    ,  &trans ,
+        &trans  ,  &kp F5  &kp F6  &kp F7  &kp F8  &out OUT_TOG ,   &bt_sel1_clr  &UH1 C_PP   &UH2 C_MUTE   &UH3 C_AL_LOCK &UH4 PSCRN  ,  &trans ,
+        &trans  ,  &kp F9  &kp F10 &kp F11 &kp F12 &none        ,   &bt BT_SEL 0  &kp C_PREV  &kp C_VOL_DN  &kp C_BRI_DN   &kp INS     ,  &trans ,
+                                &trans , &bootloader , &trans   ,   &trans , &sys_reset , &studio_unlock
       )>;
     };
 
@@ -124,7 +124,11 @@
 };
 
 // Emulated layouts (experimental!)
-#ifdef KB_EMULATION_DVORAK
+#ifdef KB_EMULATION_COLEMAK
+  #include "emulations/colemak.dtsi"
+#elif defined KB_EMULATION_COLEMAK_DH
+  #include "emulations/colemak_dh.dtsi"
+#elif defined KB_EMULATION_DVORAK
   #include "emulations/dvorak.dtsi"
 #elif defined KB_EMULATION_ERGOL
   #include "emulations/ergol.dtsi"

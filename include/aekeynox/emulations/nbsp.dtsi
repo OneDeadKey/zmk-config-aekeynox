@@ -1,0 +1,83 @@
+/ {
+  behaviors {
+    TWO_LEVEL_KEY(nbspace, &kp SPACE, C_NBSP)  // space, no‐break space 
+
+    OMIT_IF_NO_REF hrmsp: homerow_mods_space {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <TAPPING_TERM>;
+      quick-tap-ms = <QUICK_TAP>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&nbspace>;
+    };
+
+    OMIT_IF_NO_REF scsp: space_cadet_space {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <SHORT_TAPPING_TERM>;
+      quick-tap-ms = <QUICK_TAP>;
+      flavor = "hold-preferred";
+      bindings = <&mo>, <&nbspace>;
+    };
+
+    OMIT_IF_NO_REF ltsp: layer_tap_space { 
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <TAPPING_TERM>;
+      quick-tap-ms = <QUICK_TAP>;
+      flavor = "tap-preferred";
+      bindings = <&mo>, <&nbspace>;
+    };
+
+    OMIT_IF_NO_REF magic_backspace_emul: magic_backspace_emulation {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&sc NAV_LAYER BACKSPACE>, <&ltsp NAV_LAYER 0>;
+      mods      = <MOD_LSFT>;
+      keep-mods = <MOD_LSFT>;
+    };
+
+    OMIT_IF_NO_REF magic_space_emul: magic_space_emulation {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&ltsp NAV_LAYER 0>, <&sc NAV_LAYER BACKSPACE>;
+      mods      = <MOD_LCTL>;
+      keep-mods = <MOD_LCTL>;
+    };
+
+    OMIT_IF_NO_REF magic_backspace_34_keys_emul: magic_backspace_34_keys_emulation {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&sc HRM_LAYER BACKSPACE>, <&ltsp HRM_LAYER 0>;
+      mods      = <MOD_LSFT>;
+      keep-mods = <MOD_LSFT>;
+    };
+  };
+};
+
+#ifdef LHAND_SPACE
+  #undef LTHUMB_TT  
+  #undef RTHUMB_TT  
+  #undef LTHUMB_HRM 
+  #undef RTHUMB_HRM 
+  #undef LTHUMB_S34 
+  #undef RTHUMB_S34 
+  #define LTHUMB_TT  &hrmsp CTL_CMD 0
+  #define RTHUMB_TT  &magic_backspace_emul
+  #define LTHUMB_HRM &ltsp NAV_LAYER 0
+  #define RTHUMB_HRM &magic_backspace_emul
+  #define LTHUMB_S34 &ltsp NAV_LAYER 0
+  #define RTHUMB_S34 &magic_backspace_34_keys_emul
+#else
+  #undef RTHUMB_TT
+  #undef RTHUMB_HRM
+  #undef RTHUMB_S34
+  #define RTHUMB_TT  &magic_space_emul
+  #define RTHUMB_HRM &ltsp NAV_LAYER 0
+  #define RTHUMB_S34 &ltsp S34_LAYER 0
+#endif
+
+#ifdef HT_NONE
+  #undef RTHUMB_HOME
+  #define RTHUMB_HOME &nbspace
+#endif

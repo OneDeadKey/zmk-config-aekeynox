@@ -70,3 +70,12 @@
   #define X_PREV &kp LA(LEFT)
   #define X_NEXT &kp LA(RIGHT)
 #endif
+
+// Mouse Actions
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 25  // increase from the default 10 which is too slow
+#include <dt-bindings/zmk/pointing.h>
+
+#define X_MSC_L &msc SCRL_LEFT
+#define X_MSC_D &msc SCRL_DOWN
+#define X_MSC_U &msc SCRL_UP
+#define X_MSC_R &msc SCRL_RIGHT
