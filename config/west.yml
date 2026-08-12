@@ -34,8 +34,8 @@ manifest:
       # Community keyboards (not officially supported by ZMK)
       ##
 
-      # - Quacken_flex: unibody rp2040-based board
-      # - Quacken_zero: unibody ProMicro-compatible shield
+      # - Quacken Flex: unibody rp2040-based board
+      # - Quacken Zero: unibody ProMicro-compatible shield
     - name: zmk-keyboard-quacken
       remote: NuclearSquid
       revision: aekeynox
