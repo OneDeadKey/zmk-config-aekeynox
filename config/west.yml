@@ -30,26 +30,36 @@ manifest:
       revision: 9917e2f1371d5bb051bf8eb782c1297db41d742b
       import: app/west.yml
 
+      ###
+      # Community keyboards (not officially supported by ZMK)
+      ##
+
+      # - Quacken_flex: unibody rp2040-based board
+      # - Quacken_zero: unibody promicro-compatible shield
     - name: zmk-keyboard-quacken
       remote: NuclearSquid
       revision: aekeynox
 
+      # Totem: split xiao-compatible shield
+      # A fork of `GEIGEIGEIST`'s ZMK go60 module, to migrate it to ZMK main
     - name: zmk-config-totem
       remote: cfergeau
       revision: 9677c2fd5af7cee784aafb1b52a25a33357336c2
 
-      # We rely on a fork of `raeedcho`'s ZMK Temper module, as there are
-      # long-standing issues on the original repo that have never been fixed
-      # (despite a couple of PRs being opened). More info here:
+      # Temper: split promicro-compatible shield
+      # A fork of `raeedcho`'s ZMK Temper module including long-standing patch proposals.
       # https://github.com/OneDeadKey/zmk-config-aekeynox/pull/101
     - name: temper-zmk-config
       remote: NuclearSquid
       revision: aekeynox
 
+      # Adds support for the `go60` (split nrf52840 board).
+      # A fork of Moergo's ZMK go60 module, to migrate it to ZMK main
     - name: zmk-config-go60
       remote: rloutier
       revision: 1bb1f847162f5ccec162c5ba6516d0c73b6a8c39
 
+      # Re-gret: unibody xiao-compatible shield
     - name: zmk-keyboard-re-gret
       remote: rschenk
       revision: 34ca1fc7dc6991475b0c20f2c8361598e7aaeaca
