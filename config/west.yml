@@ -21,6 +21,7 @@ manifest:
       url-base: https://github.com/rloutier
     - name: rschenk
       url-base: https://github.com/rschenk
+
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -29,12 +30,15 @@ manifest:
       # https://github.com/OneDeadKey/zmk-config-aekeynox/pull/67
       revision: 9917e2f1371d5bb051bf8eb782c1297db41d742b
       import: app/west.yml
+
     - name: zmk-keyboard-quacken
       remote: NuclearSquid
       revision: aekeynox
+
     - name: zmk-config-totem
       remote: cfergeau
       revision: 9677c2fd5af7cee784aafb1b52a25a33357336c2
+
       # We rely on a fork of `raeedcho`'s ZMK Temper module, as there are
       # long-standing issues on the original repo that have never been fixed
       # (despite a couple of PRs being opened). More info here:
@@ -42,11 +46,14 @@ manifest:
     - name: temper-zmk-config
       remote: NuclearSquid
       revision: aekeynox
+
     - name: zmk-config-go60
       remote: rloutier
       revision: 1bb1f847162f5ccec162c5ba6516d0c73b6a8c39
+
     - name: zmk-keyboard-re-gret
       remote: rschenk
       revision: 34ca1fc7dc6991475b0c20f2c8361598e7aaeaca
+
   self:
     path: config
