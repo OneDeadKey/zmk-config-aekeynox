@@ -1,4 +1,4 @@
-# For security and stability reasons, every external dependencies must be pinned.
+# For security and stability reasons, every external dependency must be pinned.
 # This ensures maintainers are in control and are able to review changes before
 # applying them here.
 #
