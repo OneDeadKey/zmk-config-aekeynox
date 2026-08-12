@@ -59,7 +59,7 @@ manifest:
       remote: rloutier
       revision: 1bb1f847162f5ccec162c5ba6516d0c73b6a8c39
 
-      # Re-gret: unibody xiao-compatible shield
+      # Re-gret: unibody XIAO-compatible shield, 34 keys
     - name: zmk-keyboard-re-gret
       remote: rschenk
       revision: 34ca1fc7dc6991475b0c20f2c8361598e7aaeaca
