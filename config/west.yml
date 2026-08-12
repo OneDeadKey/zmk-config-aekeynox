@@ -41,7 +41,7 @@ manifest:
       revision: aekeynox
 
       # Totem: split xiao-compatible shield
-      # A fork of `GEIGEIGEIST`'s ZMK go60 module, to migrate it to ZMK main
+      # A fork of `GEIGEIGEIST`'s ZMK Totem module, to migrate it to ZMK main
     - name: zmk-config-totem
       remote: cfergeau
       revision: 9677c2fd5af7cee784aafb1b52a25a33357336c2
@@ -53,7 +53,7 @@ manifest:
       remote: NuclearSquid
       revision: aekeynox
 
-      # Go60: split nrf52840 board
+      # Go60: split nrf52840-based board
       # A fork of Moergo's ZMK go60 module, to migrate it to ZMK main
     - name: zmk-config-go60
       remote: rloutier
