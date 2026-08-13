@@ -39,15 +39,15 @@
 // Unconditionnal home row mods, needed by the fn/media layer, since combining
 // modifiers on the thumb-taps variant with this layer can be tricky.
 // Hopefully, this issue can be cleanly resolved with mod-holds someday.
-#define UH1 hrm GUI_OPT
+#define UH1 hrm ALT_CTL
 #define UH2 hrm CTL_CMD
-#define UH3 hrm ALT_CTL
+#define UH3 hrm GUI_OPT
 #define UH4 hrm LSHIFT
 
 #if defined HT_HOME_ROW_MODS || defined HT_TWO_THUMB_KEYS
-  #define H1 hrm GUI_OPT
+  #define H1 hrm ALT_CTL
   #define H2 hrm CTL_CMD
-  #define H3 hrm ALT_CTL
+  #define H3 hrm GUI_OPT
 #else
   #define H1 kp
   #define H2 kp

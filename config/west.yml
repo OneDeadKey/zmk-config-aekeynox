@@ -1,4 +1,14 @@
+# For security and stability reasons, every external dependency must be pinned.
+# This ensures maintainers are in control and are able to review changes before
+# applying them here.
+#
+# - For repos maintained by OneDeadKey or their members, we use an `aekeynox`
+#   branch as a stable release for the dependency.
+# - For any other repo, we pin the exact commit hash we need. Feel free to
+#   open a PR to update this hash if improvements are made.
+
 manifest:
+
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
@@ -6,43 +16,63 @@ manifest:
       url-base: https://github.com/cfergeau
     - name: NuclearSquid
       url-base: https://github.com/Nuclear-Squid
-    - name: raeedcho
-      url-base: https://github.com/raeedcho
     - name: rloutier
       url-base: https://github.com/rloutier
     - name: rschenk
       url-base: https://github.com/rschenk
     - name: niiico69
       url-base: https://github.com/niiico69
+
   projects:
-    - name: zmk
-      remote: zmkfirmware
       # Pin ZMK to the latest board fix of the `main` branch on 2026-06-13.
       # https://github.com/Nuclear-Squid/zmk-keyboard-quacken/pull/49#issuecomment-4153385353
       # https://github.com/OneDeadKey/zmk-config-aekeynox/pull/67
+    - name: zmk
+      remote: zmkfirmware
       revision: 9917e2f1371d5bb051bf8eb782c1297db41d742b
       import: app/west.yml
+
+      ###
+      # Community keyboards (not officially supported by ZMK)
+      ##
+
+      # Quacken Flex: unibody rp2040-based board
+      # Quacken Zero: unibody ProMicro-compatible shield
     - name: zmk-keyboard-quacken
       remote: NuclearSquid
-      revision: zmk-main
+      revision: aekeynox
+
+      # Totem: split XIAO-compatible shield
+      # A fork of `GEIGEIGEIST`'s ZMK Totem module, to migrate it to ZMK main
     - name: zmk-config-totem
       remote: cfergeau
-      revision: zmk-module
-      # We rely on a fork of `raeedcho`'s ZMK Temper module, as there are
-      # long-standing issues on the original repo that have never been fixed
-      # (despite a couple of PRs being opened). More info here:
+      revision: 9677c2fd5af7cee784aafb1b52a25a33357336c2
+
+      # Temper/Chocofi: split ProMicro-compatible shield
+      # A fork of `raeedcho`'s ZMK Temper module including long-standing patch proposals.
       # https://github.com/OneDeadKey/zmk-config-aekeynox/pull/101
     - name: temper-zmk-config
       remote: NuclearSquid
       revision: aekeynox
+
+      # Go60: split nrf52840-based board
+      # A fork of MoErgo's ZMK go60 module, to migrate it to ZMK main
     - name: zmk-config-go60
       remote: rloutier
-      revision: main
+      revision: 1bb1f847162f5ccec162c5ba6516d0c73b6a8c39
+
+      # Re-gret: unibody XIAO-compatible shield, 34 keys
     - name: zmk-keyboard-re-gret
       remote: rschenk
-      revision: main
+      revision: 34ca1fc7dc6991475b0c20f2c8361598e7aaeaca
+
+      ###
+      # Community USB/RF Dongles (not officially supported by ZMK)
+      ##
+
     - name: zmk-keyboard-temper-dongle
       remote: niiico69
       revision: main
+
   self:
     path: config
