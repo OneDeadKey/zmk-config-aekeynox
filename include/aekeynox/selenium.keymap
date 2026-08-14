@@ -93,11 +93,11 @@
       )>;
     };
 
-    // 5. Callum layer -- one-shot mods on the left hand, inverted T arrow cluster on the right hand
+    // 5. CalTee layer -- one-shot mods on the left hand, inverted T arrow cluster on the right hand
     //                 -- best used along with the NumRow layer
     //                 -- some keyboard shortcuts on the left hand are adjusted to the OS layout (Ergol here)
-    callum_layer: callum_layer {
-      display-name = "Callum";
+    cal_tee_layer: cal_tee_layer {
+      display-name = "CalTee";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
         &trans  ,  &vim_prev    &kp LS(TAB)  &kp TAB      &vim_next     &trans   ,   &kp PG_UP &kp HOME &kp UP   &kp END    &trans  ,  &trans ,
         &trans  ,  &EZ_SK(LSFT) &EZ_SK(LGUI) &EZ_SK(LCTL) &EZ_SK(LALT)  &trans   ,   &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT  &trans  ,  &trans ,
