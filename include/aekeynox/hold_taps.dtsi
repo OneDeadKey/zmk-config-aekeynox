@@ -45,7 +45,7 @@
 #define UH3 hrm GUI_OPT
 #define UH4 hrm LSHIFT
 
-#if defined HT_HOME_ROW_MODS || defined HT_TWO_THUMB_KEYS
+#ifdef ENABLE_HOME_ROW_MODS
   #define H1 hrm ALT_CTL
   #define H2 hrm CTL_CMD
   #define H3 hrm GUI_OPT
@@ -75,13 +75,13 @@
   #define NAV_SC &sc
 #endif
 
-#if defined HT_CALLUM_MODS || defined HT_CALLUM_MODS_2TK
+#ifdef CALLUM_NAVIGATION
   #define NAV_LAYER CALLUM_LAYER
   #define NUM_LAYER NUM_ROW_LAYER
   #define HRM_LAYER NUM_ROW_LAYER
   #define S34_LAYER NUM_ROW_LAYER
   #define REACH_TAP ESCAPE
-#elifdef VIM_NAVIGATION
+#elif defined VIM_NAVIGATION
   #define NAV_LAYER VIM_NAV_LAYER
   #define NUM_LAYER NUM_ROW_LAYER
   #define HRM_LAYER NUM_ROW_LAYER

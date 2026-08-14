@@ -66,10 +66,8 @@
 
 // #define HT_NONE
 // #define HT_THUMB_TAPS
-// #define HT_CALLUM_MODS     // (experimental)
 // #define HT_HOME_ROW_MODS   // (default behavior)
 // #define HT_TWO_THUMB_KEYS
-// #define HT_CALLUM_MODS_2TK // (experimental)
 
 // Timing is key! Keep the default value if unsure.
 // This defines how long (in ms) a hold-tap key with the "tap-preferred" flavor
@@ -107,6 +105,12 @@
 // Highly recommended for Vim users, obviously. :-)
 
 // #define VIM_NAVIGATION
+
+// [Experimental]
+// Uncomment the following line to enable the Callum variant of the previous
+// `VIM_NAVIGATION` option. Both options are mutually exclusive.
+
+// #define CALLUM_NAVIGATION
 
 // [Experimental]
 // Uncomment the following line to enable the "mod-hold behavior" on the left
