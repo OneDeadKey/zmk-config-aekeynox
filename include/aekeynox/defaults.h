@@ -29,6 +29,10 @@
   #define ENABLE_HOME_ROW_MODS
 #endif
 
+#if defined VIM_NAVIGATION + defined CALLUM_NAVIGATION > 1
+  #error "Please select only one navigation style at a time"
+#endif
+
 // Memory
 
 #ifdef LOW_MEMORY_DEVICE
