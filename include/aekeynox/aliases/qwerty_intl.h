@@ -71,85 +71,89 @@
 #define SA(key) RS(RA(key))
 
 // acute accent
-#define  C_AACU &digraph SQT A     // á
-#define SC_AACU &digraph SQT RS(A) // Á
-#define  C_EACU &digraph SQT E     // é
-#define SC_EACU &digraph SQT RS(E) // É
-#define  C_IACU &digraph SQT I     // í
-#define SC_IACU &digraph SQT RS(I) // Í
-#define  C_OACU &digraph SQT O     // ó
-#define SC_OACU &digraph SQT RS(O) // Ó
-#define  C_UACU &digraph SQT U     // ú
-#define SC_UACU &digraph SQT RS(U) // Ú
-#define  C_YACU &digraph SQT Y     // ý
-#define SC_YACU &digraph SQT RS(Y) // Ý
+#define D_ACUTE &digraph SQT
+#define  C_AACU D_ACUTE A     // á
+#define SC_AACU D_ACUTE RS(A) // Á
+#define  C_EACU D_ACUTE E     // é
+#define SC_EACU D_ACUTE RS(E) // É
+#define  C_IACU D_ACUTE I     // í
+#define SC_IACU D_ACUTE RS(I) // Í
+#define  C_OACU D_ACUTE O     // ó
+#define SC_OACU D_ACUTE RS(O) // Ó
+#define  C_UACU D_ACUTE U     // ú
+#define SC_UACU D_ACUTE RS(U) // Ú
+#define  C_YACU D_ACUTE Y     // ý
+#define SC_YACU D_ACUTE RS(Y) // Ý
 
 // cedilla
 #ifdef MACOS
-  #define  C_CCDL &digraph SQT C        // ç
-  #define SC_CCDL &digraph SQT RS(C)    // ç
+  #define  C_CCDL D_ACUTE C        // ç
+  #define SC_CCDL D_ACUTE RS(C)    // ç
 #else
   #define  C_CCDL &kp RA(COMMA)  // ç
   #define SC_CCDL &kp SA(COMMA)  // ç
 #endif
 
 // grave accent
-#define  C_AGRV &digraph GRAVE A     // à
-#define SC_AGRV &digraph GRAVE RS(A) // À
-#define  C_EGRV &digraph GRAVE E     // è
-#define SC_EGRV &digraph GRAVE RS(E) // È
-#define  C_IGRV &digraph GRAVE I     // ì
-#define SC_IGRV &digraph GRAVE RS(I) // Ì
-#define  C_OGRV &digraph GRAVE O     // ò
-#define SC_OGRV &digraph GRAVE RS(O) // Ò
-#define  C_UGRV &digraph GRAVE U     // ù
-#define SC_UGRV &digraph GRAVE RS(U) // Ù
-#define  C_YGRV &digraph GRAVE Y     // ỳ
-#define SC_YGRV &digraph GRAVE RS(Y) // Ỳ
+#define D_GRAVE &digraph GRAVE
+#define  C_AGRV D_GRAVE A     // à
+#define SC_AGRV D_GRAVE RS(A) // À
+#define  C_EGRV D_GRAVE E     // è
+#define SC_EGRV D_GRAVE RS(E) // È
+#define  C_IGRV D_GRAVE I     // ì
+#define SC_IGRV D_GRAVE RS(I) // Ì
+#define  C_OGRV D_GRAVE O     // ò
+#define SC_OGRV D_GRAVE RS(O) // Ò
+#define  C_UGRV D_GRAVE U     // ù
+#define SC_UGRV D_GRAVE RS(U) // Ù
+#define  C_YGRV D_GRAVE Y     // ỳ
+#define SC_YGRV D_GRAVE RS(Y) // Ỳ
 
 // circumflex accent
-#define  C_ACRC &digraph CARET A     // â
-#define SC_ACRC &digraph CARET RS(A) // Â
-#define  C_ECRC &digraph CARET E     // ê
-#define SC_ECRC &digraph CARET RS(E) // Ê
-#define  C_ICRC &digraph CARET I     // î
-#define SC_ICRC &digraph CARET RS(I) // Î
-#define  C_OCRC &digraph CARET O     // ô
-#define SC_OCRC &digraph CARET RS(O) // Ô
-#define  C_UCRC &digraph CARET U     // û
-#define SC_UCRC &digraph CARET RS(U) // Û
-#define  C_YCRC &digraph CARET Y     // ŷ
-#define SC_YCRC &digraph CARET RS(Y) // Ŷ
+#define  C_ACRC D_CIRCUMFLEX A     // â
+#define SC_ACRC D_CIRCUMFLEX RS(A) // Â
+#define  C_ECRC D_CIRCUMFLEX E     // ê
+#define SC_ECRC D_CIRCUMFLEX RS(E) // Ê
+#define  C_ICRC D_CIRCUMFLEX I     // î
+#define SC_ICRC D_CIRCUMFLEX RS(I) // Î
+#define  C_OCRC D_CIRCUMFLEX O     // ô
+#define SC_OCRC D_CIRCUMFLEX RS(O) // Ô
+#define  C_UCRC D_CIRCUMFLEX U     // û
+#define SC_UCRC D_CIRCUMFLEX RS(U) // Û
+#define  C_YCRC D_CIRCUMFLEX Y     // ŷ
+#define SC_YCRC D_CIRCUMFLEX RS(Y) // Ŷ
 
 // diaeresis
-#define  C_ADIA &digraph DQT A     // ä
-#define SC_ADIA &digraph DQT RS(A) // Ä
-#define  C_EDIA &digraph DQT E     // ë
-#define SC_EDIA &digraph DQT RS(E) // Ë
-#define  C_IDIA &digraph DQT I     // ï
-#define SC_IDIA &digraph DQT RS(I) // Ï
-#define  C_ODIA &digraph DQT O     // ö
-#define SC_ODIA &digraph DQT RS(O) // Ö
-#define  C_UDIA &digraph DQT U     // ü
-#define SC_UDIA &digraph DQT RS(U) // Ü
-#define  C_YDIA &digraph DQT Y     // ÿ
-#define SC_YDIA &digraph DQT RS(Y) // Ÿ
+#define D_DIAERESIS &digraph DQT
+#define  C_ADIA D_DIAERESIS A     // ä
+#define SC_ADIA D_DIAERESIS RS(A) // Ä
+#define  C_EDIA D_DIAERESIS E     // ë
+#define SC_EDIA D_DIAERESIS RS(E) // Ë
+#define  C_IDIA D_DIAERESIS I     // ï
+#define SC_IDIA D_DIAERESIS RS(I) // Ï
+#define  C_ODIA D_DIAERESIS O     // ö
+#define SC_ODIA D_DIAERESIS RS(O) // Ö
+#define  C_UDIA D_DIAERESIS U     // ü
+#define SC_UDIA D_DIAERESIS RS(U) // Ü
+#define  C_YDIA D_DIAERESIS Y     // ÿ
+#define SC_YDIA D_DIAERESIS RS(Y) // Ÿ
 
 // tilde
-#define  C_ATLD &digraph TILDE A     // ã
-#define SC_ATLD &digraph TILDE RS(A) // Ã
-#define  C_ETLD &digraph TILDE E     // ẽ
-#define SC_ETLD &digraph TILDE RS(E) // Ẽ
-#define  C_ITLD &digraph TILDE I     // ĩ
-#define SC_ITLD &digraph TILDE RS(I) // Ĩ
-#define  C_OTLD &digraph TILDE O     // õ
-#define SC_OTLD &digraph TILDE RS(O) // Õ
-#define  C_UTLD &digraph TILDE U     // ũ
-#define SC_UTLD &digraph TILDE RS(U) // Ũ
-#define  C_YTLD &digraph TILDE Y     // ỹ
-#define SC_YTLD &digraph TILDE RS(Y) // Ỹ
-#define  C_NTLD &digraph TILDE N     // ñ
-#define SC_NTLD &digraph TILDE RS(N) // Ñ
+#define D_TILDE &digraph TILDE
+#define  C_ATLD D_TILDE A     // ã
+#define SC_ATLD D_TILDE RS(A) // Ã
+#define  C_ETLD D_TILDE E     // ẽ
+#define SC_ETLD D_TILDE RS(E) // Ẽ
+#define  C_ITLD D_TILDE I     // ĩ
+#define SC_ITLD D_TILDE RS(I) // Ĩ
+#define  C_OTLD D_TILDE O     // õ
+#define SC_OTLD D_TILDE RS(O) // Õ
+#define  C_UTLD D_TILDE U     // ũ
+#define SC_UTLD D_TILDE RS(U) // Ũ
+#define  C_YTLD D_TILDE Y     // ỹ
+#define SC_YTLD D_TILDE RS(Y) // Ỹ
+#define  C_NTLD D_TILDE N     // ñ
+#define SC_NTLD D_TILDE RS(N) // Ñ
 
 // spectal letters
 #ifdef LINUX

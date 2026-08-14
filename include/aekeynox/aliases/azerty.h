@@ -151,32 +151,33 @@
 #endif
 
 // circumflex accent
-#define  C_ACRC &digraph LBKT Q     // â
-#define SC_ACRC &digraph LBKT RS(Q) // Â
-#define  C_ECRC &digraph LBKT E     // ê
-#define SC_ECRC &digraph LBKT RS(E) // Ê
-#define  C_ICRC &digraph LBKT I     // î
-#define SC_ICRC &digraph LBKT RS(I) // Î
-#define  C_OCRC &digraph LBKT O     // ô
-#define SC_OCRC &digraph LBKT RS(O) // Ô
-#define  C_UCRC &digraph LBKT U     // û
-#define SC_UCRC &digraph LBKT RS(U) // Û
-#define  C_YCRC &digraph LBKT Y     // ŷ
-#define SC_YCRC &digraph LBKT RS(Y) // Ŷ
+#define  C_ACRC D_CIRCUMFLEX Q     // â
+#define SC_ACRC D_CIRCUMFLEX RS(Q) // Â
+#define  C_ECRC D_CIRCUMFLEX E     // ê
+#define SC_ECRC D_CIRCUMFLEX RS(E) // Ê
+#define  C_ICRC D_CIRCUMFLEX I     // î
+#define SC_ICRC D_CIRCUMFLEX RS(I) // Î
+#define  C_OCRC D_CIRCUMFLEX O     // ô
+#define SC_OCRC D_CIRCUMFLEX RS(O) // Ô
+#define  C_UCRC D_CIRCUMFLEX U     // û
+#define SC_UCRC D_CIRCUMFLEX RS(U) // Û
+#define  C_YCRC D_CIRCUMFLEX Y     // ŷ
+#define SC_YCRC D_CIRCUMFLEX RS(Y) // Ŷ
 
 // diaeresis
-#define  C_ADIA &digraph LBRC A     // ä
-#define SC_ADIA &digraph LBRC RS(A) // Ä
-#define  C_EDIA &digraph LBRC E     // ë
-#define SC_EDIA &digraph LBRC RS(E) // Ë
-#define  C_IDIA &digraph LBRC I     // ï
-#define SC_IDIA &digraph LBRC RS(I) // Ï
-#define  C_ODIA &digraph LBRC O     // ö
-#define SC_ODIA &digraph LBRC RS(O) // Ö
-#define  C_UDIA &digraph LBRC U     // ü
-#define SC_UDIA &digraph LBRC RS(U) // Ü
-#define  C_YDIA &digraph LBRC Y     // ÿ
-#define SC_YDIA &digraph LBRC RS(Y) // Ÿ
+#define D_DIAERESIS &digraph LBRC
+#define  C_ADIA D_DIAERESIS A     // ä
+#define SC_ADIA D_DIAERESIS RS(A) // Ä
+#define  C_EDIA D_DIAERESIS E     // ë
+#define SC_EDIA D_DIAERESIS RS(E) // Ë
+#define  C_IDIA D_DIAERESIS I     // ï
+#define SC_IDIA D_DIAERESIS RS(I) // Ï
+#define  C_ODIA D_DIAERESIS O     // ö
+#define SC_ODIA D_DIAERESIS RS(O) // Ö
+#define  C_UDIA D_DIAERESIS U     // ü
+#define SC_UDIA D_DIAERESIS RS(U) // Ü
+#define  C_YDIA D_DIAERESIS Y     // ÿ
+#define SC_YDIA D_DIAERESIS RS(Y) // Ÿ
 
 // other special letters: œ, æ, ß, ñ
 #ifdef LINUX
@@ -204,16 +205,16 @@
   #define SC_AE &digraph LS(Q) LS(E)
   #define  C_SZ &digraph S S
 #endif
+
 #ifdef LINUX
-  #define  C_NTLD &kp N     // XXX
-  #define SC_NTLD &kp LS(N) // XXX
+  #define D_TILDE &kp
 #elifdef MACOS
-  #define  C_NTLD &digraph RA(N) N     // ñ
-  #define SC_NTLD &digraph RA(N) LS(N) // Ñ
+  #define D_TILDE &digraph RA(N)
 #else
-  #define  C_NTLD &digraph RA(N2) N     // ñ
-  #define SC_NTLD &digraph RA(N2) LS(N) // ñ
+  #define D_TILDE &digraph RA(N2)
 #endif
+#define  C_NTLD D_TILDE N     // ñ
+#define SC_NTLD D_TILDE LS(N) // Ñ
 
 // quote signs
 #ifdef LINUX
