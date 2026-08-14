@@ -66,8 +66,10 @@
 
 // #define HT_NONE
 // #define HT_THUMB_TAPS
-// #define HT_HOME_ROW_MODS  // (default behavior)
+// #define HT_CALLUM_MODS     // (experimental)
+// #define HT_HOME_ROW_MODS   // (default behavior)
 // #define HT_TWO_THUMB_KEYS
+// #define HT_CALLUM_MODS_2TK // (experimental)
 
 // Timing is key! Keep the default value if unsure.
 // This defines how long (in ms) a hold-tap key with the "tap-preferred" flavor

@@ -93,7 +93,20 @@
       )>;
     };
 
-    // 5. NumRow layer -- bring the numbers to the homerow, keep shift+numbers for shortcuts and symbols
+    // 5. Callum layer -- one-shot mods on the left hand, inverted T arrow cluster on the right hand
+    //                 -- best used along with the NumRow layer
+    //                 -- some keyboard shortcuts on the left hand are adjusted to the OS layout (Ergol here)
+    callum_layer: callum_layer {
+      display-name = "Callum";
+      bindings = <SELENIUM_KEYMAP_BINDINGS(
+        &trans  ,  &vim_prev    &kp LS(TAB)  &kp TAB      &vim_next     &trans   ,   &kp PG_UP &kp HOME &kp UP   &kp END    &trans  ,  &trans ,
+        &trans  ,  &EZ_SK(LSFT) &EZ_SK(LGUI) &EZ_SK(LCTL) &EZ_SK(LALT)  &trans   ,   &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT  &trans  ,  &trans ,
+        &trans  ,  X_UNDO       X_CUT        X_COPY       X_PASTE       X_REDO   ,   &trans    &trans   &trans   &trans     &trans  ,  &trans ,
+                          &kp CAPS , &sc FN_MEDIA_LAYER DEL , &mo NUM_ROW_LAYER  ,   &trans ,  &mo FN_MEDIA_LAYER , &EZ_LSK(RALT)
+      )>;
+    };
+
+    // 6. NumRow layer -- bring the numbers to the homerow, keep shift+numbers for shortcuts and symbols
     //                 -- space becomes shift+space, which is a no-break space with some OS layouts (e.g. Ergol)
     //                 -- best used along with the VimNav layer
     num_row_layer: num_row_layer {
@@ -106,7 +119,7 @@
       )>;
     };
 
-    // 6. FnMedia layer -- F1..12 pad on the left hand, HRM on the right hand
+    // 7. FnMedia layer -- F1..12 pad on the left hand, HRM on the right hand
     //                  -- reset and bootloader reset on difficult thumb keys
     //                  -- could be completed with other rare keys
     fn_media_layer: fn_media_layer {
