@@ -10,6 +10,12 @@
   };
 };
 
+#ifdef ENABLE_FANCY_DEAD_KEYS
+  #define ODK_SHIFT_KEY &EZ_SK(LSHIFT)
+#else
+  #define ODK_SHIFT_KEY &EZ_SL(ODK_SHIFT_LAYER)
+#endif
+
 #include "nbsp.dtsi"
 #include "ergol_num.dtsi"
 
@@ -63,7 +69,7 @@
         &trans  ,  C_ACRC  C_CCDL  C_OE    C_OCRC  &trans   ,   &trans  C_MICRO S_UNDER K_DIA   C_UCRC  ,  &trans ,
         &trans  ,  C_AGRV  C_EACU  C_EGRV  C_ECRC  C_NTLD   ,   S_LPAR  S_RPAR  C_ICRC  C_IDIA  C_UGRV  ,  &trans ,
         &trans  ,  C_AE    C_SZ    S_MINUS C_NDASH C_MDASH  ,   C_ELLIP C_MDOT  &trans  C_BLLT  &trans  ,  &trans ,
-                &EZ_SL(ODK_SHIFT_LAYER) , C_APOS , &trans   ,   &trans , C_APOS , &trans
+                          ODK_SHIFT_KEY , C_APOS , &trans   ,   &trans , C_APOS , &trans
       )>;
     };
 

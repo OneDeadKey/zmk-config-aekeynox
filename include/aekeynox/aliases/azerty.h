@@ -122,6 +122,51 @@
 
 #define SA(key) RS(RA(key))
 
+#ifdef ENABLE_FANCY_DEAD_KEYS
+  / {
+    behaviors {
+      crc: circumflex_accent {
+        compatible = "zmk,behavior-dead-key";
+        #binding-cells = <1>;
+        dead-key = <CARET>;
+      };
+
+      dia: diaeresis_accent {
+        compatible = "zmk,behavior-dead-key";
+        #binding-cells = <1>;
+        dead-key = <DQT>;
+      };
+
+      tld: tilde_accent {
+        compatible = "zmk,behavior-dead-key";
+        #binding-cells = <1>;
+        #ifdef MACOS
+          dead-key = <RA(N)>;
+        #else
+          dead-key = <RA(N2)>;
+        #endif
+      };
+    };
+  };
+  #define D_CIRCUMFLEX &crc
+  #define D_DIAERESIS  &dia
+  #ifdef LINUX
+    #define D_TILDE &kp
+  #else
+    #define D_TILDE &tld
+  #endif
+#else
+  #define D_CIRCUMFLEX &digraph LBKT
+  #define D_DIAERESIS  &digraph LBRC
+  #ifdef LINUX
+    #define D_TILDE &kp
+  #elif defined MACOS
+    #define D_TILDE &digraph RA(N)
+  #else
+    #define D_TILDE &digraph RA(N2)
+  #endif
+#endif
+
 // lowercase: é à è ù ç
 #define C_EACU &kp N2  // é
 #define C_AGRV &kp N0  // à
@@ -165,7 +210,6 @@
 #define SC_YCRC D_CIRCUMFLEX RS(Y) // Ŷ
 
 // diaeresis
-#define D_DIAERESIS &digraph LBRC
 #define  C_ADIA D_DIAERESIS A     // ä
 #define SC_ADIA D_DIAERESIS RS(A) // Ä
 #define  C_EDIA D_DIAERESIS E     // ë
@@ -206,13 +250,6 @@
   #define  C_SZ &digraph S S
 #endif
 
-#ifdef LINUX
-  #define D_TILDE &kp
-#elifdef MACOS
-  #define D_TILDE &digraph RA(N)
-#else
-  #define D_TILDE &digraph RA(N2)
-#endif
 #define  C_NTLD D_TILDE N     // ñ
 #define SC_NTLD D_TILDE LS(N) // Ñ
 

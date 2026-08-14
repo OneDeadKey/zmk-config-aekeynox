@@ -70,8 +70,54 @@
 
 #define SA(key) RS(RA(key))
 
+#ifdef ENABLE_FANCY_DEAD_KEYS
+  / {
+    behaviors {
+      acu: acute_accent {
+        compatible = "zmk,behavior-dead-key";
+        #binding-cells = <1>;
+        dead-key = <SQT>;
+      };
+
+      grv: grave_accent {
+        compatible = "zmk,behavior-dead-key";
+        #binding-cells = <1>;
+        dead-key = <GRAVE>;
+      };
+
+      crc: circumflex_accent {
+        compatible = "zmk,behavior-dead-key";
+        #binding-cells = <1>;
+        dead-key = <CARET>;
+      };
+
+      dia: diaeresis_accent {
+        compatible = "zmk,behavior-dead-key";
+        #binding-cells = <1>;
+        dead-key = <DQT>;
+      };
+
+      tld: tilde_accent {
+        compatible = "zmk,behavior-dead-key";
+        #binding-cells = <1>;
+        dead-key = <TILDE>;
+      };
+    };
+  };
+  #define D_ACUTE      &acu
+  #define D_GRAVE      &grv
+  #define D_CIRCUMFLEX &crc
+  #define D_DIAERESIS  &dia
+  #define D_TILDE      &tld
+#else
+  #define D_ACUTE      &digraph SQT
+  #define D_GRAVE      &digraph GRAVE
+  #define D_CIRCUMFLEX &digraph CARET
+  #define D_DIAERESIS  &digraph DQT
+  #define D_TILDE      &digraph TILDE
+#endif
+
 // acute accent
-#define D_ACUTE &digraph SQT
 #define  C_AACU D_ACUTE A     // á
 #define SC_AACU D_ACUTE RS(A) // Á
 #define  C_EACU D_ACUTE E     // é
@@ -95,7 +141,6 @@
 #endif
 
 // grave accent
-#define D_GRAVE &digraph GRAVE
 #define  C_AGRV D_GRAVE A     // à
 #define SC_AGRV D_GRAVE RS(A) // À
 #define  C_EGRV D_GRAVE E     // è
@@ -124,7 +169,6 @@
 #define SC_YCRC D_CIRCUMFLEX RS(Y) // Ŷ
 
 // diaeresis
-#define D_DIAERESIS &digraph DQT
 #define  C_ADIA D_DIAERESIS A     // ä
 #define SC_ADIA D_DIAERESIS RS(A) // Ä
 #define  C_EDIA D_DIAERESIS E     // ë
@@ -139,7 +183,6 @@
 #define SC_YDIA D_DIAERESIS RS(Y) // Ÿ
 
 // tilde
-#define D_TILDE &digraph TILDE
 #define  C_ATLD D_TILDE A     // ã
 #define SC_ATLD D_TILDE RS(A) // Ã
 #define  C_ETLD D_TILDE E     // ẽ
