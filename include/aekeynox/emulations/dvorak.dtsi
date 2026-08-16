@@ -4,6 +4,6 @@
     &kp LTOP   ,  &kp SQT  &kp COMMA &kp DOT &kp P  &kp Y   ,   &kp F  &kp G  &kp C  &kp R  &kp L  ,  &kp RTOP   ,
     &kp LHOME  ,  &H4 A    &H3 O     &H2 E   &H1 U  &kp I   ,   &kp D  &H1 H  &H2 T  &H3 N  &H4 S  ,  &kp RHOME  ,
     &kp LSHIFT ,  &kp SEMI &kp Q     &kp J   &kp K  &kp X   ,   &kp B  &kp M  &kp W  &kp V  &kp Z  ,  &kp RSHIFT ,
-             LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH   ,   RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
+                 LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH   ,   RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
   )>;
 };
