@@ -23,10 +23,10 @@
   &base_layer {
     display-name = "Base";
     bindings = <SELENIUM_KEYMAP_BINDINGS(
-      &kp TAB    ,  &kp A  &kp C  &kp O  &kp P  &kp Z   ,   &kp J  &kp SEMI &kp D  &apos  &kp Y  ,  &kp BACKSPACE ,
-      &kp ESCAPE ,  &H4 Q  &H3 S  &H2 E  &H1 N  &kp F   ,   &kp L  &H1 R    &H2 T  &H3 I  &H4 U  ,  &kp ENTER     ,
-      &kp LSHIFT ,  &kp W  &kp X  &dash  &kp V  &kp B   ,   &dot   &kp H    &kp G  &comma &kp K  ,  &kp RSHIFT    ,
-         LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH   ,   RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
+      &kp LTOP   ,  &kp A  &kp C  &kp O  &kp P  &kp Z   ,   &kp J  &kp SEMI &kp D  &apos  &kp Y  ,  &kp RTOP   ,
+      &kp LHOME  ,  &H4 Q  &H3 S  &H2 E  &H1 N  &kp F   ,   &kp L  &H1 R    &H2 T  &H3 I  &H4 U  ,  &kp RHOME  ,
+      &kp LSHIFT ,  &kp W  &kp X  &dash  &kp V  &kp B   ,   &dot   &kp H    &kp G  &comma &kp K  ,  &kp RSHIFT ,
+             LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH   ,   RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
     )>;
   };
   #define K_DIA &kp LBRC // diaeresis
@@ -36,10 +36,10 @@
   &base_layer {
     display-name = "Base";
     bindings = <SELENIUM_KEYMAP_BINDINGS(
-      &none  ,  &kp Q  &kp C  &kp O  &kp P  &kp W   ,   &kp J  &kp M  &kp D  &apos  &kp Y  ,  &none ,
-      &none  ,  &H4 A  &H3 S  &H2 E  &H1 N  &kp F   ,   &kp L  &H1 R  &H2 T  &H3 I  &H4 U  ,  &none ,
-      &none  ,  &kp Z  &kp X  &dash  &kp V  &kp B   ,   &dot   &kp H  &kp G  &comma &kp K  ,  &none ,
-         LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH   ,   RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
+      &kp LTOP   ,  &kp Q  &kp C  &kp O  &kp P  &kp W   ,   &kp J  &kp M  &kp D  &apos  &kp Y  ,  &kp RTOP   ,
+      &kp LHOME  ,  &H4 A  &H3 S  &H2 E  &H1 N  &kp F   ,   &kp L  &H1 R  &H2 T  &H3 I  &H4 U  ,  &kp RHOME  ,
+      &kp LSHIFT ,  &kp Z  &kp X  &dash  &kp V  &kp B   ,   &dot   &kp H  &kp G  &comma &kp K  ,  &kp RSHIFT ,
+             LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH   ,   RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
     )>;
   };
   #define K_DIA &kp DQT // diaeresis
