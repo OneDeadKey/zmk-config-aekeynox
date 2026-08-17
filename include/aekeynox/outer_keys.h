@@ -1,5 +1,5 @@
 // By default, use non-alpha keys on outer columns
-#ifndef USE_ALPHA_ON_6TH_COLUMNS
+#ifndef USE_ALPHA_ON_OUTER_KEYS
   #define LTOP  TAB
   #define LHOME ESCAPE
   #define RTOP  BACKSPACE

@@ -29,7 +29,7 @@
 // Tab, Escape, Backspace, Enter.
 // Uncomment the following line to use these columns for alpha keys instead.
 
-// #define USE_ALPHA_ON_6TH_COLUMNS
+// #define USE_ALPHA_ON_OUTER_KEYS
 
 
 /******************************************************************************
