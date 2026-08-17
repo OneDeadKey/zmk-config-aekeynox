@@ -27,6 +27,9 @@
 #define ODK_LAYER        EXTRA_LAYERS_START_INDEX
 #define ODK_SHIFT_LAYER (EXTRA_LAYERS_START_INDEX + 1)
 
+#define  K_ODKS    &mo ODK_SHIFT_LAYER  // Shift key in the 1dk layer
+#define SK_ODKS &EZ_SL(ODK_SHIFT_LAYER) // Shift key in the 1dk layer (sticky)
+
 // Override the standard base layer, to replace SEMI with a positional dead key (1dk).
 // The 3×10 grid contains no symbols, only key references.
 
@@ -57,8 +60,8 @@
       bindings = <SELENIUM_KEYMAP_BINDINGS(
         &trans  ,  C_AGRV  C_EACU  C_EGRV  S_MONEY C_CENT   ,   &trans  C_UGRV  C_IGRV  C_OGRV  &trans  ,  &trans ,
         &trans  ,  C_ADIA  C_SZ    C_EDIA  S_LPAR  S_RPAR   ,   &trans  C_UDIA  C_IDIA  C_ODIA  DK_CIR  ,  &trans ,
-        &trans  ,  C_YDIA  C_SILC  C_CCDL  S_QMARK S_EXCL   ,   &trans  C_MICRO &trans  &trans  C_NOT   ,  &trans ,
-                 &EZ_SL(ODK_SHIFT_LAYER) , S_SQT , &trans   ,   &trans , S_SQT , &trans
+        K_ODKS  ,  C_YDIA  C_SILC  C_CCDL  S_QMARK S_EXCL   ,   &trans  C_MICRO &trans  &trans  C_NOT   ,  K_ODKS ,
+                                 SK_ODKS , S_SQT , &trans   ,   &trans , S_SQT , &trans
       )>;
     };
 

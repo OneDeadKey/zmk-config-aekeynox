@@ -10,6 +10,9 @@
   };
 };
 
+#define  K_ODKS    &mo ODK_SHIFT_LAYER  // Shift key in the 1dk layer
+#define SK_ODKS &EZ_SL(ODK_SHIFT_LAYER) // Shift key in the 1dk layer (sticky)
+
 #include "nbsp.dtsi"
 #include "ergol_num.dtsi"
 
@@ -62,8 +65,8 @@
       bindings = <SELENIUM_KEYMAP_BINDINGS(
         &trans  ,  C_AE    C_EACU  C_EGRV  C_OCRC  &trans   ,   &trans  C_UGRV  C_IDIA  C_OE    &trans  ,  &trans ,
         &trans  ,  C_AGRV  C_SZ    C_ECRC  S_MINUS C_NDASH  ,   &trans  C_UCRC  C_ICRC  C_OCRC  K_DIA   ,  &trans ,
-        &trans  ,  C_ACRC  C_MULT  C_CCDL  S_UNDER C_MDASH  ,   C_NTLD  C_MICRO C_MDOT  C_ELLIP &trans  ,  &trans ,
-                &EZ_SL(ODK_SHIFT_LAYER) , C_APOS , &trans   ,   &trans , C_APOS , &trans
+        K_ODKS  ,  C_ACRC  C_MULT  C_CCDL  S_UNDER C_MDASH  ,   C_NTLD  C_MICRO C_MDOT  C_ELLIP &trans  ,  K_ODKS ,
+                                SK_ODKS , C_APOS , &trans   ,   &trans , C_APOS , &trans
       )>;
     };
 

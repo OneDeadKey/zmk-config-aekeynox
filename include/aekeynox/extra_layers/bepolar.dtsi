@@ -1,6 +1,9 @@
 #define ODK_LAYER        EXTRA_LAYERS_START_INDEX
 #define ODK_SHIFT_LAYER (EXTRA_LAYERS_START_INDEX + 1)
 
+#define  K_ODKS    &mo ODK_SHIFT_LAYER  // Shift key in the 1dk layer
+#define SK_ODKS &EZ_SL(ODK_SHIFT_LAYER) // Shift key in the 1dk layer (sticky)
+
 #define SA(key) RS(RA(key))
 
 // Override the default base layer to apply Bepolar over a Bepo host ([N] becomes 1DK).
@@ -46,8 +49,8 @@
       bindings = <SELENIUM_KEYMAP_BINDINGS(
         &trans , &kpc A     &kpc S    &kpc D  &kpc R    &kp RA(R)  ,   &trans     &trans        &trans  &trans  &trans , &trans ,
         &trans , &kp Z      &kp RA(S) &kp W   &kp T     &kp NUBS   ,   &kp BSLH   &trans        &trans  &kpc O  &trans , &trans ,
-        &trans , &kp RA(N1) &kpc X    S_UNDER &kp RA(V) &kp RA(A)  ,   &kp RA(D)  &kp RA(GRAVE) &trans  &trans  &trans , &trans ,
-                      &EZ_SL(ODK_SHIFT_LAYER) , &kp N , &trans     ,   &trans , &trans , &trans
+        K_ODKS , &kp RA(N1) &kpc X    S_UNDER &kp RA(V) &kp RA(A)  ,   &kp RA(D)  &kp RA(GRAVE) &trans  &trans  &trans , K_ODKS ,
+                                      SK_ODKS , &kp N , &trans     ,   &trans , &trans , &trans
       )>;
     };
 
