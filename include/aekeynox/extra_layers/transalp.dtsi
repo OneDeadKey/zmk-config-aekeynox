@@ -5,9 +5,9 @@
  * (Note that QWERTZ-ch natively supports these three languages.)
  *
  * Recommended layouts:
- *  - QWERTZ-ch, used in Switzerland, Luxembourg and Lichtenstein
+ *  - QWERTZ-ch, used in Switzerland, Luxembourg and Liechtenstein
  *  - QWERTZ-de, used in Germany and Austria
- *  - QWERTY-it, used in Italy (TODO)
+ *  - QWERTY-it, used in Italy
  *
  * Language-specific chars:
  *  - German: äöü (diaeresis), ß

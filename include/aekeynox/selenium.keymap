@@ -163,7 +163,7 @@
     #include "extra_layers/transat.dtsi"  // default for BR, ES, LATAM, PT
   #endif
 
-// Experimental ergol variant meant for Hummingbird-style keyboards
+// Experimental Ergol variant for Hummingbird-style keyboards
 #elif defined KB_LAYOUT_ERGOL && defined HUMMINGBIRD
   #include "extra_layers/ergol_hummingbird.dtsi"
 #endif

@@ -101,7 +101,7 @@ Activated by default on:
 
 - [x] QWERTZ-ch: Switzerland, Luxembourg, Liechtenstein
 - [x] QWERTZ-de: Germany, Austria
-- [ ] QWERTY-it: Italy
+- [x] QWERTY-it: Italy
 
 Suitable for:
 
