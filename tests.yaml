@@ -5,66 +5,85 @@ include:
   # Keyboard Configurations
   ##
 
-  # default config
+    # Default config
   - board: quacken_flex/rp2040
     artifact-name: default
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS"
 
-  # Qwerty + Vim + hrm_shift
+    # Qwerty + thumb-taps
+  - board: quacken_flex/rp2040
+    artifact-name: qwerty_tt
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DHT_THUMB_TAPS"
+
+    # Qwerty + Vim + hrm_shift
   - board: quacken_flex/rp2040
     artifact-name: qwerty_vim_shift
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DVIM_NAVIGATION;-DHRM_SHIFT"
 
-  # Azerty + thumb-taps
-  - board: quacken_flex/rp2040
-    artifact-name: azerty_tt
-    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_AZERTY;-DHT_THUMB_TAPS"
-
-  # Ergol + Hummingbird
+    # Ergol + Hummingbird
   - board: quacken_flex/rp2040
     artifact-name: ergol_hummingbird
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_ERGOL;-DHUMMINGBIRD"
 
-  # Ensure the Ferris applies 2TK even when HRM is requested
+    # Ensure the Ferris applies 2TK even when HRM is requested
   - board: ferris//zmk
     artifact-name: ferris_hrm
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DHT_HOME_ROW_MODS"
 
   ###
+  # Layout Adaptations
+  ##
+
+    # Azerty
+  - board: quacken_flex/rp2040
+    artifact-name: azerty
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_AZERTY"
+
+    # Bepo
+  - board: quacken_flex/rp2040
+    artifact-name: bepo
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_BEPO"
+
+    # Qwerty-intl
+  - board: quacken_flex/rp2040
+    artifact-name: qwerty_intl
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY_INTL;-DUSE_ALPHA_ON_OUTER_KEYS"
+
+  ###
   # Layout Emulations
   ##
 
-  # Dvorak emulation on Qwerty
+    # Colemak on Qwerty
   - board: quacken_flex/rp2040
     artifact-name: qwerty_to_colemak
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY;-DKB_EMULATION_COLEMAK"
 
-  # Dvorak emulation on Qwerty
+    # Colemak-DH on Qwerty
   - board: quacken_flex/rp2040
     artifact-name: qwerty_to_colemak_dh
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY;-DKB_EMULATION_COLEMAK_DH"
 
-  # Dvorak emulation on Qwerty
+    # Dvorak on Qwerty
   - board: quacken_flex/rp2040
     artifact-name: qwerty_to_dvorak
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY;-DKB_EMULATION_DVORAK"
 
-  # Ergol emulation on Azerty
+    # Ergol on Azerty
   - board: quacken_flex/rp2040
     artifact-name: azerty_to_ergol
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_AZERTY;-DKB_EMULATION_ERGOL"
 
-  # Ergol emulation on Qwerty-intl
+    # Ergol on Qwerty-intl
   - board: quacken_flex/rp2040
     artifact-name: qwerty_intl_to_ergol
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY_INTL;-DKB_EMULATION_ERGOL"
 
-  # Lafayette emulation on Azerty
+    # Lafayette on Azerty
   - board: quacken_flex/rp2040
     artifact-name: azerty_to_lafayette
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_AZERTY;-DKB_EMULATION_QWERTY_LAFAYETTE"
 
-  # Lafayette emulation on Qwerty-intl
+    # Lafayette on Qwerty-intl
   - board: quacken_flex/rp2040
     artifact-name: qwerty_intl_to_lafayette
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY_INTL;-DKB_EMULATION_QWERTY_LAFAYETTE"
