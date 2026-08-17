@@ -139,10 +139,10 @@ Recommended layouts: Brazilian, Latam, Portuguese, Spanish.
 Supported languages (specific diacritics beside `ñ`, `ç` and `áéíóú`):
 
 - Portuguese: `à`, `ã`, `õ`, `^` (+ `ü`, deprecated)
-- Catalan:       `è`, `ò`, `ï` (+ `ŀ`, not in CP1252)
+- Catalan:    `è`, `ò`, `ï` (+ `ŀ`, not in CP1252)
 - Aranese:    `à`, `è`, `ò`
-- Galician: none?
-- Basque: none
+- Galician:   none?
+- Basque:     none
 
 
 Programmer’s QWERTY
