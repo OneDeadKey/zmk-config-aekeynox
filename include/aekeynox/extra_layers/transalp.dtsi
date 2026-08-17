@@ -18,7 +18,7 @@
 #define ODK_LAYER        EXTRA_LAYERS_START_INDEX
 #define ODK_SHIFT_LAYER (EXTRA_LAYERS_START_INDEX + 1)
 
-// Standard base layer, but SEMI becomes a positional dead key (1dk).
+// Override the standard base layer, to replace SEMI with a positional dead key (1dk).
 // The 3×10 grid contains no symbols, only key references.
 
 &base_layer {

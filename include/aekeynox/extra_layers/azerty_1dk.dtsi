@@ -1,8 +1,7 @@
 #define DK_LAYER EXTRA_LAYERS_START_INDEX
 
-// Standard base layer, but SQT becomes a dead key
+// Override the standard base layer to replace SQT with a positional dead key.
 &base_layer {
-  display-name = "Base";
   bindings = <SELENIUM_KEYMAP_BINDINGS(
     &kp LTOP    ,  &kp Q &kp W &kp E &kp R &kp T  ,  &kp Y  &kp U  &kp I     &kp O   &kp P     ,  &kp RTOP   ,
     &kp LHOME   ,  &H4 A &H3 S &H2 D &H1 F &kp G  ,  &kp H  &H1 J  &H2 K     &H3 L   &H4 SEMI  ,  &dead_key  ,

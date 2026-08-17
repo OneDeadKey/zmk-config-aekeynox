@@ -4,7 +4,6 @@
 
 // Override the base layer to replace Ergo‑L’s OneDeadKey
 &base_layer {
-  display-name = "Base";
   bindings = <SELENIUM_KEYMAP_BINDINGS(
     &kp Z  ,  &kp Q  &kp W  &kp E  &kp R  &kp T   ,   &kp N  &kp U  &kp I     &apos   &kp P     ,  &kp FSLH ,
     &kp Z  ,  &H4 A  &H3 S  &H2 D  &H1 F  &kp G   ,   &kp H  &H1 J  &H2 K     &H3 L   &H4 SEMI  ,  &kp FSLH ,
@@ -15,7 +14,6 @@
 
 // Override the symbols layer to add a sticky layer to the missing symbols
 &symbols_layer {
-  display-name = "Symbols";
   bindings = <SELENIUM_KEYMAP_BINDINGS(
     &trans  ,  S_CARET S_LT    S_GT    S_DLLR  S_PRCNT     ,   S_AT    S_AMPS  S_STAR  S_SQT   S_GRAVE  ,  &trans ,
     &trans  ,  S_LBRC  S_LPAR  S_RPAR  S_RBRC  S_EQUAL     ,   S_BSLH  S_PLUS  S_MINUS S_FSLH  S_DQT    ,  &trans ,

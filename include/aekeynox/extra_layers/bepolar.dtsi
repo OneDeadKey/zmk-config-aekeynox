@@ -3,9 +3,8 @@
 
 #define SA(key) RS(RA(key))
 
-// Same as the default base layer, but [N] becomes 1DK.
+// Override the default base layer to apply Bepolar over a Bepo host ([N] becomes 1DK).
 &base_layer {
-  display-name = "Base";
   bindings = <SELENIUM_KEYMAP_BINDINGS(
     &kp LTOP   , &kp Q  &kp SQT &kp E  &kp R  &kp RBKT  ,   &kp LBKT  &kp U  &kp I     &kp O   &kp P     ,  &kp RTOP   ,
     &kp LHOME  , &H4 A  &H3 S   &H2 D  &H1 F  &kp G     ,   &kp H     &H1 J  &H2 K     &H3 L   &H4 SEMI  ,  &kp RHOME  ,
