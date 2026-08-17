@@ -7,7 +7,7 @@
  * Recommended layouts:
  *  - QWERTZ-ch, used in Switzerland, Luxembourg and Lichtenstein
  *  - QWERTZ-de, used in Germany and Austria
- *  - QWERTY-it, used in Italy
+ *  - QWERTY-it, used in Italy (TODO)
  *
  * Language-specific chars:
  *  - German: äöü (diaeresis), ß
