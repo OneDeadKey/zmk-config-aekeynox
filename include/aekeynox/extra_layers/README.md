@@ -84,7 +84,7 @@ Recommended layouts:
 
 - QWERTZ-ch: Switzerland, Luxembourg and Lichtenstein
 - QWERTZ-de: Germany, Austria
-- QWERTY-it: Italy
+- QWERTY-it: Italy (TODO)
 
 ```
     |---------------|---------------|  base
@@ -109,8 +109,8 @@ Recommended layouts:
 Supported languages:
 
 - German: `äöü` (diaeresis), `ß`
-- French: `é` (acute), `èàù` (grave), `ç` (cedilla), `âêîôû` (circumflex), `ëïüÿ` (diaeresis), `œ`, `æ`
-- Italian: `àèìòù` (grave), `é` (acute), `ő` (acute, rare), circumflex (rare)
+- French: `é` (acute), `èàù` (grave), `ç` (cedilla), `âêîôû` (circumflex), `ëïüÿ` (diaeresis)
+- Italian: `é` (acute), `àèìòù` (grave)
 
 ### Transat (TODO)
 

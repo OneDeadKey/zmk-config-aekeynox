@@ -12,7 +12,16 @@
  * Language-specific chars:
  *  - German: äöü (diaeresis), ß
  *  - French: é (acute), èàù (grave), ç (cedilla), âêîôû (circumflex), ëïüÿ (diaeresis), œ, æ
- *  - Italian: àèìòù (grave), é (acute), ő (acute, rare), circumflex (rare)
+ *  - Italian: é (acute), àèìòù (grave)
+ *
+ * Unsupported chars: (not supported by QWERTZ-de/AZERTY-fr/QWERTY-it, resp.)
+ *  - German: uppercase ß
+ *  - French: œ, æ
+ *  - Italian: ő, circumflex (rare / deprecated)
+ *  - advanced punctuation signs: „“, «», …, –—
+ *
+ * Some of this unsupported chars would be nice to have, and could be added
+ * with CP1252 or other OS-specific input methods.
 **/
 
 #define ODK_LAYER        EXTRA_LAYERS_START_INDEX
