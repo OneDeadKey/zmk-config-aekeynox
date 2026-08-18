@@ -1,4 +1,5 @@
-# Ækeynox
+Ækeynox
+====================================================================================================
 
 Reference ZMK implementation of the [Arsenik] and [Selenium] keymaps,
 with first-class support for non-QWERTY layouts.
@@ -20,8 +21,11 @@ with first-class support for non-QWERTY layouts.
 
 Customize your keymap once, and build it on all supported keebs.
 
+[Check the configuration guide.](include/aekeynox#readme)
 
-## In a Nutshell
+
+In a Nutshell
+----------------------------------------------------------------------------------------------------
 
 This repository allows to build your firmware with GitHub Actions (GHA):
 
@@ -49,32 +53,33 @@ with the `settings_reset` firmware matching your controller.
 More info [in the ZMK documentation](https://zmk.dev/docs/troubleshooting/connection-issues).
 
 
-## Configuration
+Configuration
+----------------------------------------------------------------------------------------------------
 
-### `include/aekeynox/settings.h`
+### Keymap Customization: [`include/aekeynox/`](include/aekeynox)
 
-This is where options can be safely selected. This file should be self-explanatory,
-but here are the main options:
+This is where your keymap options can be safely selected:
 
-- `KB_LAYOUT_*` must match the layout used on the host computer
-- `KB_EMULATION_*` activates a [layout emulation](#layout-emulation) (none by default)
-- `HT_*` selects the Selenium hold-tap flavor: [EZ], [TT], [HRM] (default), [2TK]
-- `VIM_NAVIGATION` enables the [Vim variant]
+- which keyboard layout you use:
+  - either by setting your keeb for the layout on the host computer
+  - or by [emulating a keyboard layout](include/aekeynox/emulations#readme)
+    on devices running the local default layout (computers, tablets, phones…)
 
-**Setting `KB_LAYOUT_*` is required when the host computer is not set in US QWERTY.**
-This setting is used to pick the proper file in `include/aekeynox/aliases`, which defines
-how all programming symbols and action shortcuts are done.
+- which hold-tap flavor you prefer:
+  - [HRM] is assumed by default, and is recommended for experienced users
+  - when unsure, you can go step-by-step and begin with [EZ] or [TT] before switching to [HRM]
 
-If unset, QWERTY is assumed, which **will** result in buggy `Symbols` and `Nav` layers
-when the host computer is configured for a different keyboard layout.
+- and all your personal options: Vim navigation, Callum mods…
 
-### `include/aekeynox/selenium.keymap`
+[Check the configuration guide.](include/aekeynox#readme)
 
-This file allows low-level customization.
+### Keyboard Descriptors: [`config/*.keymap`](config)
 
-See the [customizing ZMK](https://zmk.dev/docs/customization) documentation.
+This is where you can add a new keyboard, or redefine an existing keyboard.
 
-### `build.yaml`
+A few keyboards expose hardware-level options in `config/*.conf` files.
+
+### [`build.yaml`](build.yaml)
 
 This is the list of all keyboard firmware to build.
 
@@ -88,70 +93,35 @@ You might have to change the `board` field to match the micro-controller unit as
 
 If your keeb has an onboard controller, there’s nothing to configure.
 
-### `config/*.keymap`
 
-These are the keyboard descriptors. The folder name can be confusing, but that’s how ZMK works.
+Non-ASCII Layouts
+----------------------------------------------------------------------------------------------------
 
+Using non-ASCII layouts can be very frustrating on ergonomic keyboards. Many users opt for a 4×6
+model, thinking it will be easier to use, but these big keebs are only marginally simpler, and they
+break the holy 1DFH rule: *“1u Distance From Home”*. 3×6 and 3×5 keebs are much more comfortable,
+and just as easy with non-ASCII layouts.
 
-## Layout Emulation
+Ækeynox aims to support all major variants of AZERTY, QWERTY, QWERTZ and more.
+It has sane presets for European languages, relying on a simple concept:
 
-Using a non-QWERTY layout can be done in two ways:
+- the 3×10 grid is dedicated to the common AZERTY / QWERTY / QWERTZ basis, extra columns are
+  reserved for special keys (Escape, Enter…);
+- one key on the 3×10 grid (usually the rightmost key in the home row) is turned into a one-shot
+  layer key, to access all your language-specific chars;
+- Ækeynox already has several pre-defined extra layers, which have been carefully optimized to
+  match your language.
 
-- either by setting the host computer to use this layout, in which case `KB_LAYOUT_*` is enough
-  (see above);
-- or by letting the keyboard *emulate* a keyboard layout for a host using a default layout
-  — and that’s what `KB_EMULATION_*` is about.
+The idea comes from the [QWERTY-1dk](https://github.com/OneDeadKey/1dk) project, which has been used
+for almost a decade now.
+The result is much easier to use than any full-size European or Latin American layout.
 
-### ASCII Layouts
-
-Keyboard layouts that are optimized for English are just a rearrangement of QWERTY keys:
-Dvorak, Colemak, Workman, Sturdy… all these layouts can be perfectly emulated by the keyboard.
-
-To emulate Dvorak for QWERTY hosts, just uncomment this line in `include/aekeynox/settings.h`:
-
-```c
-#define KB_EMULATION_DVORAK
-```
-
-### Non-ASCII Layouts
-
-Emulating layouts designed for other languages is trickier.
-
-First, a keyboard layout with extended characters is required on the host computer.
-That’s our emulation target.
-
-- [QWERTY-intl] is a sane default for west-European languages. It’s available on every computer,
-  it just has to be enabled.
-- Local layouts (AZERTY, QWERTZ, non-US QWERTY variants…) are good emulation targets as well.
-  Not as versatile as QWERTY-intl, but they’re the local default.
-
-As an example, to emulate Ergol for AZERTY hosts, uncomment these two lines:
-
-```c
-#define KB_LAYOUT_AZERTY
-#define KB_EMULATION_ERGOL
-```
-
-Now, here’s the tricky part:
-these non-US layouts are likely to differ significantly across Windows, macOS, Linux.
-QWERTY-intl is probably the most consistent one, but it still comes with minor differences.
-
-By default, Ækeynox assumes the lowest common character subset, which is provided by Windows layouts.
-This ensures your keeb will work consistently across all major platforms. But unless you need your
-keyboard to be usable with *any* OS, you’ll have a better experience by activating OS-specific options:
-
-- either by selecting the `MACOS` or `LINUX` option, if that’s the targeted host OS;
-- or by selecting the `ENABLE_CP1252_ALT_CODES` option, which leverages Windows’ [Alt-Codes].
-
-The emulation of non-ASCII layouts is being actively developed.
-It’s already used as a daily driver by some of our European contributors.
-Feedback and patches are very welcome.
-
-[QWERTY-intl]: https://commons.wikimedia.org/wiki/File:KB_US-International.svg
-[Alt-Codes]:   https://altcodeunicode.com/
+- [Supported host layouts](include/aekeynox/aliases#readme)
+- [Proposed layout adaptations](include/aekeynox/extra_layers#readme)
 
 
-## Why the name?
+Why the name?
+----------------------------------------------------------------------------------------------------
 
 Any name containing `key` and easy to search would’ve been a good fit, but here’s Nox:
 

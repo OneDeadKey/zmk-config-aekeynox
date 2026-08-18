@@ -23,12 +23,11 @@ When possible, it’s placed on the `SEMI` key (QWERTY’s <kbd>;:</kbd> key).
 - [Layout-Specific Adaptations](#layout-specific-adaptations)
   - [AZERTY-1dk](#azerty-1dk-french)
   - [Bépolar](#bépolar-french)
+  - [Programmers’ QWERTY](#programmers-qwerty)
   - [Other Layouts](#other-layouts)
-- [Programmer’s QWERTY](#programmers-qwerty)
 - [Six-Column Configurations](#six-column-configurations)
   - [QWERTY-intl](#qwerty-intl)
   - [Non-ASCII Layouts](#non-ascii-layouts)
-- [Resources](#resources)
 
 
 Multilingual Adaptations
@@ -206,7 +205,7 @@ AZERTY-1dk replaces the <kbd>ù</kbd> key with <kbd>1dk</kbd>, on the 6th column
     |---------------|---------------|
 ```
 
-For a better alternative, see <https://qwerty-lafayette.org>.
+For a better alternative, see [QWERTY-Lafayette](https://qwerty-lafayette.org).
 It can be emulated by Ækeynox on any AZERTY or QWERTY-intl host.
 
 ### Bépolar (French)
@@ -235,23 +234,19 @@ that’s been designed *specifically* for ergonomic keyboards.
     |---------------|---------------|
 ```
 
-For a better alternative, see <https://ergol.org>.
+For a better alternative, see [Ergo‑L](https://ergol.org).
 It can be emulated by Ækeynox on any AZERTY or QWERTY-intl host.
 
-### Other Layouts
-
-Many other national layouts are still missing: Croatian, Hungarian, Turkish…
-
-If you use one of these layouts, please open a ticket and we’ll work something
-out.
-
-
-Programmer’s QWERTY
---------------------------------------------------------------------------------
+### Programmers’ QWERTY
 
 Many European languages in central or eastern Europe have a “Programmers’ QWERTY”
 variant, with a QWERTY-ANSI base layer and special chars in an secondary layer
 (often AltGr). This seems to be a natural fit for ergonomic keyboards.
+
+- [ ] QWERTY-cz: Czech Republic
+- [ ] QWERTY-hu: Hungary (101-key)
+- [ ] QWERTY-pl: Poland
+- [ ] QWERTY-ro: Romania
 
 However:
 
@@ -260,6 +255,22 @@ However:
 
 If you use such a layout, please open a ticket and we’ll propose a dedicated
 adaptation.
+
+### Other Layouts
+
+Many other national layouts are still missing, among which:
+
+- [ ] QWERTY-ca: Canada (Multilingual)
+- [ ] QWERTY-hr: Bosnia, Croatia, Serbia (+ Slovenia, almost identical)
+- [ ] QWERTY-pl: Poland (214)
+- [ ] QWERTY-tr: Turkey
+
+- [ ] QWERTZ-cz: Czech Republic
+- [ ] QWERTZ-hu: Hungary
+- [ ] QWERTZ-sk: Slovakia
+
+If you use one of these layouts, please open a ticket and we’ll work something
+out.
 
 
 Six-Column Configurations
@@ -308,10 +319,3 @@ customized to include it under the left pinky.
 
 We still (highly) recommend using a `1dk` layer instead (both `Nordic` and
 `Transalp` work fine with German); but *your keyboard, your rules!*
-
-
-Resources
---------------------------------------------------------------------------------
-
-- [kbdlayout.info](https://kbdlayout.info/) for Windows
-- [keyshorts.com](https://keyshorts.com/blogs/blog/37615873-how-to-identify-macbook-keyboard-localization#german) for macOS
