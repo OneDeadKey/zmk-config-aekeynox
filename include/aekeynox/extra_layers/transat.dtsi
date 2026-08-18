@@ -1,0 +1,119 @@
+#ifndef USE_ALPHA_ON_OUTER_KEYS
+
+/**
+ * This adds a dead key (1dk) to access all common chars for Spain, Portugal and LatAm.
+ *
+ * Recommended layouts:
+ *  - QWERTY-br,    used in Brazil
+ *  - QWERTY-latam, used in Latin America
+ *  - QWERTY-es,    used in Spain
+ *  - QWERTY-pt,    used in Portugal
+ *
+ * Language-specific chars (specific diacritics beside `ñ`, `ç` and `áéíóú`):
+ * - Portuguese: `à`, `ã`, `õ`, `^` (+ `ü`, deprecated)
+ * - Catalan:    `è`, `ò`, `ï`, `·`
+ * - Aranese:    `à`, `è`, `ò`
+ * - Galician:   none?
+ * - Basque:     none
+ *
+ * Unsupported chars:
+ *  - Catalan: `ŀ`, lnot in CP1252, using the middle dot instead (`l·l`)
+**/
+
+#define ODK_LAYER        EXTRA_LAYERS_START_INDEX
+#define ODK_SHIFT_LAYER (EXTRA_LAYERS_START_INDEX + 1)
+
+#define  K_ODKS    &mo ODK_SHIFT_LAYER  // Shift key in the 1dk layer
+#define SK_ODKS &EZ_SL(ODK_SHIFT_LAYER) // Shift key in the 1dk layer (sticky)
+
+// Override the standard base layer, to replace SEMI with a positional dead key (1dk).
+// The 3×10 grid contains no symbols, only key references.
+
+&base_layer {
+  bindings = <SELENIUM_KEYMAP_BINDINGS(
+    &kp LTOP    ,  &kp Q &kp W &kp E &kp R &kp T  ,  &kp Y  &kp U  &kp I     &kp O   &kp P             ,  &kp RTOP   ,
+    &kp LHOME   ,  &H4 A &H3 S &H2 D &H1 F &kp G  ,  &kp H  &H1 J  &H2 K     &H3 L   &EZ_SL(ODK_LAYER) ,  &kp RHOME  ,
+    &kp LSHIFT  ,  &kp Z &kp X &kp C &kp V &kp B  ,  &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH          ,  &kp RSHIFT ,
+        LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH  ,  RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
+  )>;
+};
+
+// Extra layers defined specifically for this keymap.
+// The 3×10 grid contains only symbols, no key references.
+
+// acute accents
+#define  C_AACU DEAD_ACUTE    A  // á
+#define SC_AACU DEAD_ACUTE LS(A) // Á
+#define  C_EACU DEAD_ACUTE    E  // é
+#define SC_EACU DEAD_ACUTE LS(E) // É
+#define  C_IACU DEAD_ACUTE    I  // í
+#define SC_IACU DEAD_ACUTE LS(I) // Í
+#define  C_OACU DEAD_ACUTE    O  // ó
+#define SC_OACU DEAD_ACUTE LS(O) // Ó
+#define  C_UACU DEAD_ACUTE    U  // ú
+#define SC_UACU DEAD_ACUTE LS(U) // Ú
+
+// grave accents
+#define  C_AGRV DEAD_GRAVE    A  // à
+#define SC_AGRV DEAD_GRAVE LS(A) // À
+#define  C_EGRV DEAD_GRAVE    E  // è
+#define SC_EGRV DEAD_GRAVE LS(E) // È
+#define  C_IGRV DEAD_GRAVE    I  // ì
+#define SC_IGRV DEAD_GRAVE LS(I) // Ì
+#define  C_OGRV DEAD_GRAVE    O  // ò
+#define SC_OGRV DEAD_GRAVE LS(O) // Ò
+#define  C_UGRV DEAD_GRAVE    U  // ù
+#define SC_UGRV DEAD_GRAVE LS(U) // Ù
+
+// diaeresis
+#define  C_ADIA DEAD_DIAERESIS    A  // ä
+#define SC_ADIA DEAD_DIAERESIS LS(A) // Ä
+#define  C_EDIA DEAD_DIAERESIS    E  // ë
+#define SC_EDIA DEAD_DIAERESIS LS(E) // Ë
+#define  C_IDIA DEAD_DIAERESIS    I  // ï
+#define SC_IDIA DEAD_DIAERESIS LS(I) // Ï
+#define  C_ODIA DEAD_DIAERESIS    O  // ö
+#define SC_ODIA DEAD_DIAERESIS LS(O) // Ö
+#define  C_UDIA DEAD_DIAERESIS    U  // ü
+#define SC_UDIA DEAD_DIAERESIS LS(U) // Ü
+
+/ {
+  keymap {
+    compatible = "zmk,keymap";
+
+    //  |---------------|---------------|
+    //  |    ª º é € ¢  |    ú í ó      |
+    //  |    à § è ( )  |  · ü ï ò ^    |
+    //  |    ã õ ç ? !  |  ñ µ     ¬    |
+    //  |---------------|---------------|
+
+    one_dead_key {
+      display-name = "1dk";
+      bindings = <SELENIUM_KEYMAP_BINDINGS(
+        &trans  ,  C_FEM   C_MASC  C_EACU  C_EURO  C_CENT   ,   &trans  C_UACU  C_IACU  C_OACU  &trans  ,  &trans ,
+        &trans  ,  C_AGRV  C_SILC  C_EGRV  S_LPAR  S_RPAR   ,   C_MDOT  C_UDIA  C_IDIA  C_OGRV  DK_CIR  ,  &trans ,
+        K_ODKS  ,  C_ATLD  C_OTLD  C_CCDL  S_QMARK S_EXCL   ,   C_NTLD  C_MICRO &trans  &trans  C_NOT   ,  K_ODKS ,
+                                 SK_ODKS , S_SQT , &trans   ,   &trans , S_SQT , &trans
+      )>;
+    };
+
+    //  |---------------|---------------|
+    //  |        É £    |    Ú Í Ó      |
+    //  |    À   È « »  |    Ü Ï Ò      |
+    //  |    Ã Õ Ç ¿ ¡  |  Ñ            |
+    //  |---------------|---------------|
+
+    one_dead_key_shift {
+      display-name = "1dkShift";
+      bindings = <SELENIUM_KEYMAP_BINDINGS(
+        &trans  ,  &trans  &trans  SC_EACU C_POUND &trans   ,   &trans  SC_UACU SC_IACU SC_OACU &trans  ,  &trans ,
+        &trans  ,  SC_AGRV &trans  SC_EGRV C_LGQT  C_RGQT   ,   &trans  SC_UDIA SC_IDIA SC_OGRV &trans  ,  &trans ,
+        &trans  ,  SC_ATLD SC_OTLD SC_CCDL C_KRAMQ C_LCXE   ,   SC_NTLD &trans  &trans  &trans  &trans  ,  &trans ,
+                                 &trans , &trans , &trans   ,   &trans , &trans , &trans
+      )>;
+    };
+
+  };
+};
+
+#endif // USE_ALPHA_ON_OUTER_KEYS

@@ -156,6 +156,8 @@
   #include "extra_layers/azerty_1dk.dtsi"
 #elif defined KB_LAYOUT_BEPO
   #include "extra_layers/bepolar.dtsi"
+#elif defined KB_LAYOUT_QWERTY_ES
+  #include "extra_layers/transat.dtsi"
 #elif defined KB_LAYOUT_QWERTZ_DE || defined KB_LAYOUT_QWERTZ_CH_DE || defined KB_LAYOUT_QWERTZ_CH_FR
   #include "extra_layers/transalp.dtsi"
 
