@@ -1,4 +1,5 @@
 #include <dt-bindings/zmk/keys.h>
+#include <zephyr/sys/util_macro.h>
 
 /**
  * Action Combos
@@ -66,20 +67,23 @@
  * OS_SELECT
  */
 
+#define OS_SELECT_OR_DEFAULT(behavior, default) \
+  COND_CODE_1(IS_EMPTY(behavior), (default), (behavior))
+
 #ifdef LINUX
-  #define OS_SELECT(i1, i2, i3, behavior) behavior
+  #define OS_SELECT(default, i2, i3, behavior) OS_SELECT_OR_DEFAULT(behavior, default)
 #elifdef MACOS
-  #define OS_SELECT(i1, i2, behavior, i4) behavior
+  #define OS_SELECT(default, i2, behavior, i4) OS_SELECT_OR_DEFAULT(behavior, default)
 #elifdef ENABLE_CP1252_ALT_CODES
-  #define OS_SELECT(i1, behavior, i3, i4) behavior
+  #define OS_SELECT(default, behavior, i3, i4) OS_SELECT_OR_DEFAULT(behavior, default)
 #else
   #define OS_SELECT(behavior, i2, i3, i4) behavior
 #endif
 
 #define DEAD_CIRCUMFLEX LBKT
 #define DEAD_DIAERESIS  LBRC
-#define DEAD_GRAVE OS_DEFINE(RA(N9), RA(N9), RA(N9), NUHS )
-#define DEAD_TILDE OS_DEFINE(RA(N2), RA(N2), RA(N2), RA(N))
+#define DEAD_GRAVE OS_DEFINE(RA(N9),       ,       , NUHS )
+#define DEAD_TILDE OS_DEFINE(RA(N2),       ,       , RA(N))
 
 #define DK_CIR &kp DEAD_CIRCUMFLEX
 #define DK_DIA &kp DEAD_DIAERESIS
@@ -94,28 +98,28 @@
 #define SA(key) RS(RA(key))
 
 //      symbol             default         CP1252          macOS           Linux
-#define S_CARET OS_SELECT( &kp RA(N9)    , &kp RA(N9)    , DI_CIR SPACE  , &kp RA(N9)    )
-#define S_LT    OS_SELECT( &kp NUBS      , &kp NUBS      , &kp GRAVE     , &kp NUBS      )
-#define S_GT    OS_SELECT( &kp PIPE2     , &kp PIPE2     , &kp TILDE     , &kp PIPE2     )
-#define S_AT    OS_SELECT( &kp RA(N0)    , &kp RA(N0)    , &kp NUBS      , &kp RA(N0)    )
-#define S_STAR  OS_SELECT( &kp BSLH      , &kp BSLH      , &kp RBRC      , &kp BSLH      )
-#define S_GRAVE OS_SELECT( DI_GRV SPACE  , DI_GRV SPACE  , DI_GRV SPACE  , &kp RA(N7)    )
+#define S_CARET OS_SELECT( &kp RA(N9)    ,               , DI_CIR SPACE  ,               )
+#define S_LT    OS_SELECT( &kp NUBS      ,               , &kp GRAVE     ,               )
+#define S_GT    OS_SELECT( &kp PIPE2     ,               , &kp TILDE     ,               )
+#define S_AT    OS_SELECT( &kp RA(N0)    ,               , &kp NUBS      ,               )
+#define S_STAR  OS_SELECT( &kp BSLH      ,               , &kp RBRC      ,               )
+#define S_GRAVE OS_SELECT( DI_GRV SPACE  ,               ,               , &kp RA(N7)    )
 
-#define S_LBRC  OS_SELECT( &kp RA(N4)    , &kp RA(N4)    , &kp RA(N5)    , &kp RA(N4)    )
-#define S_RBRC  OS_SELECT( &kp RA(EQUAL) , &kp RA(EQUAL) , &kp RA(MINUS) , &kp RA(EQUAL) )
-#define S_BSLH  OS_SELECT( &kp RA(N8)    , &kp RA(N8)    , &kp SA(DOT)   , &kp RA(N8)    )
-#define S_PLUS  OS_SELECT( &kp PLUS      , &kp PLUS      , &kp QMARK     , &kp PLUS      )
-#define S_MINUS OS_SELECT( &kp N6        , &kp N6        , &kp EQUAL     , &kp N6        )
+#define S_LBRC  OS_SELECT( &kp RA(N4)    ,               , &kp RA(N5)    ,               )
+#define S_RBRC  OS_SELECT( &kp RA(EQUAL) ,               , &kp RA(MINUS) ,               )
+#define S_BSLH  OS_SELECT( &kp RA(N8)    ,               , &kp SA(DOT)   ,               )
+#define S_PLUS  OS_SELECT( &kp PLUS      ,               , &kp QMARK     ,               )
+#define S_MINUS OS_SELECT( &kp N6        ,               , &kp EQUAL     ,               )
 
-#define S_TILDE OS_SELECT( DI_TLD SPACE  , DI_TLD SPACE  , DI_TLD SPACE  , &kp RA(N2)    )
-#define S_LBKT  OS_SELECT( &kp RA(N5)    , &kp RA(N5)    , &kp SA(N5)    , &kp RA(N5)    )
-#define S_RBKT  OS_SELECT( &kp RA(EQUAL) , &kp RA(EQUAL) , &kp SA(MINUS) , &kp RA(EQUAL) )
-#define S_UNDER OS_SELECT( &kp N8        , &kp N8        , &kp PLUS      , &kp N8        )
-#define S_HASH  OS_SELECT( &kp RA(N3)    , &kp RA(N3)    , &kp PIPE2     , &kp RA(N3)    )
-#define S_PIPE  OS_SELECT( &kp RA(N6)    , &kp RA(N6)    , &kp SA(L)     , &kp RA(N6)    )
-#define S_EXCL  OS_SELECT( &kp FSLH      , &kp FSLH      , &kp N8        , &kp FSLH      )
+#define S_TILDE OS_SELECT( DI_TLD SPACE  ,               ,               , &kp RA(N2)    )
+#define S_LBKT  OS_SELECT( &kp RA(N5)    ,               , &kp SA(N5)    ,               )
+#define S_RBKT  OS_SELECT( &kp RA(EQUAL) ,               , &kp SA(MINUS) ,               )
+#define S_UNDER OS_SELECT( &kp N8        ,               , &kp PLUS      ,               )
+#define S_HASH  OS_SELECT( &kp RA(N3)    ,               , &kp PIPE2     ,               )
+#define S_PIPE  OS_SELECT( &kp RA(N6)    ,               , &kp SA(L)     ,               )
+#define S_EXCL  OS_SELECT( &kp FSLH      ,               , &kp N8        ,               )
 
-#define S_MONEY OS_SELECT( &kp RA(E)     , &kp RA(E)     , &kp RA(RBKT)  , &kp RA(E)     )
+#define S_MONEY OS_SELECT( &kp RA(E)     ,               , &kp RA(RBKT)  ,               )
 
 
 /**
