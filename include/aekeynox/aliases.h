@@ -15,6 +15,8 @@
 #elifdef KB_LAYOUT_DVORAK
   #include "aliases/dvorak.h"
 
+#elifdef KB_LAYOUT_QWERTY_BR
+  #include "aliases/qwerty_br.h"
 #elifdef KB_LAYOUT_QWERTY_ES
   #include "aliases/qwerty_es.h"
 #elifdef KB_LAYOUT_QWERTY_LATAM

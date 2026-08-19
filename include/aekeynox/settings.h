@@ -7,7 +7,7 @@
 ******************************************************************************/
 
 // Uncomment one of the following lines if the host computer is configured with
-// a non-QWERTY keyboard layout. This is required to set an appropriate
+// a non-QWERTY-ANSI keyboard layout. This is required to set an appropriate
 // 'Symbols' layer and relevant keyboard shortcuts in the 'Nav' layer.
 
 // #define KB_LAYOUT_AZERTY
@@ -16,6 +16,7 @@
 // #define KB_LAYOUT_DVORAK
 // #define KB_LAYOUT_ERGOL
 // #define KB_LAYOUT_ERGLACE
+// #define KB_LAYOUT_QWERTY_BR
 // #define KB_LAYOUT_QWERTY_ES
 // #define KB_LAYOUT_QWERTY_INTL
 // #define KB_LAYOUT_QWERTY_LAFAYETTE
