@@ -112,7 +112,7 @@ Supported languages:
 - French: `é` (acute), `èàù` (grave), `ç` (cedilla), `âêîôû` (circumflex), `ëïüÿ` (diaeresis)
 - Italian: `é` (acute), `àèìòù` (grave)
 
-### Transat (TODO)
+### Transat
 
 Recommended layouts: Brazilian, Latam, Portuguese, Spanish.
 
@@ -124,7 +124,7 @@ Recommended layouts: Brazilian, Latam, Portuguese, Spanish.
     |---------------|---------------|
 
     |---------------|---------------|  1dk
-    |    ª º é € ¢  |  · ú í ó ¶    |
+    |    ª º é € ¢  |  · ú í ó      |
     |    à § è ( )  |  · ü ï ò ^    |
     |    ã õ ç ? !  |  ñ µ · · ·    |
     |---------------|---------------|
@@ -139,7 +139,7 @@ Recommended layouts: Brazilian, Latam, Portuguese, Spanish.
 Supported languages (specific diacritics beside `ñ`, `ç` and `áéíóú`):
 
 - Portuguese: `à`, `ã`, `õ`, `^` (+ `ü`, deprecated)
-- Catalan:    `è`, `ò`, `ï` (+ `ŀ`, not in CP1252)
+- Catalan:    `è`, `ò`, `ï`, `·`
 - Aranese:    `à`, `è`, `ò`
 - Galician:   none?
 - Basque:     none
