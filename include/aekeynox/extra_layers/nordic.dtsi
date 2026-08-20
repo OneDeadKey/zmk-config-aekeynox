@@ -1,0 +1,40 @@
+#include "1dk.dtsi"
+
+/ {
+  keymap {
+    compatible = "zmk,keymap";
+
+    //  |---------------|---------------|
+    //  |    ä æ € £ þ  |    ü   ö      |
+    //  |    å ß ð ( )  |        ø ´    |
+    //  |      §   ? !  |    µ          |
+    //  |---------------|---------------|
+
+    one_dead_key {
+      display-name = "1dk";
+      bindings = <SELENIUM_KEYMAP_BINDINGS(
+        &trans  ,  C_ADIA  C_AE    C_EURO  C_POUND C_THRN   ,   &trans  C_UDIA  &trans  C_ODIA  &trans  ,  &trans ,
+        &trans  ,  C_ARNG  C_SZ    C_ETH   S_LPAR  S_RPAR   ,   &trans  &trans  &trans  C_OSTR  DK_ACU  ,  &trans ,
+        K_ODKS  ,  &trans  C_SILC  &trans  S_QMARK S_EXCL   ,   &trans  C_MICRO &trans  &trans  &trans  ,  K_ODKS ,
+                                 SK_ODKS , S_SQT , &trans   ,   &trans , S_SQT , &trans
+      )>;
+    };
+
+    //  |---------------|---------------|
+    //  |    Ä Æ     Þ  |    Ü   Ö      |
+    //  |    Å   Ð      |        Ø      |
+    //  |               |               |
+    //  |---------------|---------------|
+
+    one_dead_key_shift {
+      display-name = "1dkShift";
+      bindings = <SELENIUM_KEYMAP_BINDINGS(
+        &trans  ,  SC_ADIA SC_AE   &trans  &trans  SC_THRN  ,   &trans  SC_UDIA &trans  SC_ODIA &trans  ,  &trans ,
+        &trans  ,  SC_ARNG &trans  SC_ETH  &trans  &trans   ,   &trans  &trans  &trans  SC_OSTR &trans  ,  &trans ,
+        &trans  ,  &trans  &trans  &trans  &trans  &trans   ,   &trans  &trans  &trans  &trans  &trans  ,  &trans ,
+                                 &trans , &trans , &trans   ,   &trans , &trans , &trans
+      )>;
+    };
+
+  };
+};
