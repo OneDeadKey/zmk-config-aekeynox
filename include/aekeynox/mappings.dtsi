@@ -127,6 +127,9 @@
 #define CP1252_UPPERCASE_U_GRAVE   &alt02xx KP_N1 KP_N7 // Ù
 #define CP1252_UPPERCASE_C_CEDILLA &alt01xx KP_N9 KP_N9 // Ç
 
+#define CP1252_LOWERCASE_O_STROKE  &alt02xx KP_N4 KP_N8 // ø
+#define CP1252_UPPERCASE_O_STROKE  &alt02xx KP_N1 KP_N6 // Ø
+
 #define CP1252_LOWERCASE_OE        &alt01xx KP_N5 KP_N6 // œ
 #define CP1252_UPPERCASE_OE        &alt01xx KP_N4 KP_N0 // Œ
 #define CP1252_LOWERCASE_AE        &alt02xx KP_N3 KP_N0 // æ
