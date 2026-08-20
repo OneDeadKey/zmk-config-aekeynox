@@ -20,15 +20,15 @@ When possible, it’s placed on the `SEMI` key (QWERTY’s <kbd>;:</kbd> key).
   - [Nordic](#nordic-todo) (Danish, Estonian, Faroese, Finnish, Icelandic, Norwegian, Swedish)
   - [Transalp](#transalp) (French, German, Italian)
   - [Transat](#transat-todo) (Portuguese, Spanish, Aranese, Basque, Catalan, Galician)
-- [Programmer’s QWERTY](#programmers-qwerty)
 - [Layout-Specific Adaptations](#layout-specific-adaptations)
   - [AZERTY-1dk](#azerty-1dk-french)
   - [Bépolar](#bépolar-french)
   - [Other Layouts](#other-layouts)
+- [Programmer’s QWERTY](#programmers-qwerty)
 - [Six-Column Configurations](#six-column-configurations)
   - [QWERTY-intl](#qwerty-intl)
   - [Non-US QWERTY and QWERTZ](#non-us-qwerty-and-qwertz)
-- [Ressources](#ressources)
+- [Resources](#resources)
 
 
 Multilingual Adaptations
@@ -37,12 +37,15 @@ Multilingual Adaptations
 Most West-European languages can be supported by three 1dk layers: Nordic,
 Transalp, Transat. They can be used either on QWERTY or QWERTZ.
 
-### Nordic (TODO)
+### Nordic
 
 Recommended layouts:
 
-- QWERTY: Denmark, Iceland, Norway, Sweden/Finland/Estonia
-- QWERTZ: Germany/Austria
+- [ ] QWERTY-dk: Denmark
+- [ ] QWERTY-is: Iceland
+- [ ] QWERTY-no: Norway
+- [ ] QWERTY-se: Sweden, Finland, Estonia (?)
+- [ ] QWERTZ-de: Germany, Austria
 
 ```
     |---------------|---------------|  base
@@ -66,10 +69,10 @@ Recommended layouts:
 
 Supported languages:
 
-- Swedish, Finnish, Estonian:  `å`, `ä`, `ö`
-- Danish, Norwegian:           `å`, `æ`, `ø`
-- Faroese:                     `å`, `æ`, `ø`, `ð`
-- Icelandic:                   `þ`, `æ`, `ö`, `ð`, `áéíóúý` (+ diaeresis?)
+- [ ] Swedish, Finnish, Estonian:  `å`, `ä`, `ö`
+- [ ] Danish, Norwegian:           `å`, `æ`, `ø`
+- [ ] Faroese:                     `å`, `æ`, `ø`, `ð`
+- [ ] Icelandic:                   `þ`, `æ`, `ö`, `ð`, `áéíóúý` (+ diaeresis?)
 
 This might be suitable for [Dutch](https://en.wikipedia.org/wiki/Dutch_orthography) as well:
 
@@ -82,9 +85,9 @@ This might be suitable for [Dutch](https://en.wikipedia.org/wiki/Dutch_orthograp
 
 Recommended layouts:
 
-- QWERTZ-ch: Switzerland, Luxembourg and Lichtenstein
-- QWERTZ-de: Germany, Austria
-- QWERTY-it: Italy (TODO)
+- [x] QWERTZ-ch: Switzerland, Luxembourg, Liechtenstein
+- [x] QWERTZ-de: Germany, Austria
+- [ ] QWERTY-it: Italy
 
 ```
     |---------------|---------------|  base
@@ -108,13 +111,18 @@ Recommended layouts:
 
 Supported languages:
 
-- German: `äöü` (diaeresis), `ß`
-- French: `é` (acute), `èàù` (grave), `ç` (cedilla), `âêîôû` (circumflex), `ëïüÿ` (diaeresis)
-- Italian: `é` (acute), `àèìòù` (grave)
+- [x] German: `äöü` (diaeresis), `ß`
+- [x] French: `é` (acute), `èàù` (grave), `ç` (cedilla), `âêîôû` (circumflex), `ëïüÿ` (diaeresis)
+- [x] Italian: `é` (acute), `àèìòù` (grave)
 
 ### Transat
 
-Recommended layouts: Brazilian, Latam, Portuguese, Spanish.
+Recommended layouts:
+
+- [x] QWERTY-br: Brazil
+- [x] QWERTY-latam: Latin America
+- [x] QWERTY-es: Spain
+- [x] QWERTY-pt: Portugal
 
 ```
     |---------------|---------------|  base
@@ -138,27 +146,11 @@ Recommended layouts: Brazilian, Latam, Portuguese, Spanish.
 
 Supported languages (specific diacritics beside `ñ`, `ç` and `áéíóú`):
 
-- Portuguese: `à`, `ã`, `õ`, `^` (+ `ü`, deprecated)
-- Catalan:    `è`, `ò`, `ï`, `·`
-- Aranese:    `à`, `è`, `ò`
-- Galician:   none?
-- Basque:     none
-
-
-Programmer’s QWERTY
---------------------------------------------------------------------------------
-
-Many European languages in central or eastern Europe have a “Programmer’s QWERTY”
-variant, with a QWERTY-ANSI base layer and special chars in an secondary layer
-(often AltGr). This seems to be a natural fit for ergonomic keyboards.
-
-However:
-
-- some of these layouts cannot fit on a 3×10 grid, and require an adaptation;
-- an option to replace the `SEMI` key by a dead AtlGr could be nice.
-
-If you use such a layout, please open a ticket and we’ll propose a dedicated
-adaptation.
+- [x] Portuguese: `à`, `ã`, `õ`, `^` (+ `ü`, deprecated)
+- [x] Catalan:    `è`, `ò`, `ï`, `·`
+- [x] Aranese:    `à`, `è`, `ò`
+- [x] Galician:   none (?)
+- [x] Basque:     none
 
 
 Layout-Specific Adaptations
@@ -232,6 +224,22 @@ If you use one of these layouts, please open a ticket and we’ll work something
 out.
 
 
+Programmer’s QWERTY
+--------------------------------------------------------------------------------
+
+Many European languages in central or eastern Europe have a “Programmer’s QWERTY”
+variant, with a QWERTY-ANSI base layer and special chars in an secondary layer
+(often AltGr). This seems to be a natural fit for ergonomic keyboards.
+
+However:
+
+- some of these layouts cannot fit on a 3×10 grid, and require an adaptation;
+- an option to replace the `SEMI` key by a dead AltGr could be nice.
+
+If you use such a layout, please open a ticket and we’ll propose a dedicated
+adaptation.
+
+
 Six-Column Configurations
 --------------------------------------------------------------------------------
 
@@ -274,11 +282,11 @@ With this, `ÖÄÜ` can now be accessed directly — though with a lateral exten
 of the pinky. `ẞ` is missing, but `/include/aekeynox/outer_keys.h` could be
 customized to include it under the left pinky.
 
-We still (highly) recommend using a `1dk` layer instead (both `nordic` and
-`transalp` work fine with German); but *your keyboard, your rules!*
+We still (highly) recommend using a `1dk` layer instead (both `Nordic` and
+`Transalp` work fine with German); but *your keyboard, your rules!*
 
 
-Ressources
+Resources
 --------------------------------------------------------------------------------
 
 - [kbdlayout.info](https://kbdlayout.info/) for Windows

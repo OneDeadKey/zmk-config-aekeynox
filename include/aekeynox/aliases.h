@@ -1,20 +1,39 @@
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
-// PC / Mac
 
+/**
+ * Non-Alpha Actions
+ */
+
+// Keyboard Actions
 #ifdef MACOS
-  #define CMD LG // Mac: Cmd key as main modifier
+  #define CMD LG               // Mac: Cmd key as main modifier
+  #define X_PREV &kp LG(LBKT)
+  #define X_NEXT &kp LG(RBKT)
 #else
-  #define CMD LC // PC: Ctrl key as main modifier
+  #define CMD LC               // PC: Ctrl key as main modifier
+  #define X_PREV &kp LA(LEFT)
+  #define X_NEXT &kp LA(RIGHT)
 #endif
+#define X_SHTAB &kp RS(TAB)
 
-// Keyboard Layout
+// Mouse Actions
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 25  // default=10 (too slow)
+#define X_MSC_L &msc SCRL_LEFT
+#define X_MSC_D &msc SCRL_DOWN
+#define X_MSC_U &msc SCRL_UP
+#define X_MSC_R &msc SCRL_RIGHT
 
-#ifdef KB_LAYOUT_QWERTY_INTL
-  #include "aliases/qwerty_intl.h"
-#elifdef KB_LAYOUT_DVORAK
-  #include "aliases/dvorak.h"
 
+/**
+ * Keyboard Layout
+ */
+
+// Non-US Layouts
+#ifdef KB_LAYOUT_AZERTY
+  #define SHIFTED_NUMBERS
+  #include "aliases/azerty.h"
 #elifdef KB_LAYOUT_QWERTY_BR
   #include "aliases/qwerty_br.h"
 #elifdef KB_LAYOUT_QWERTY_ES
@@ -23,31 +42,37 @@
   #include "aliases/qwerty_latam.h"
 #elifdef KB_LAYOUT_QWERTY_PT
   #include "aliases/qwerty_pt.h"
-#elifdef KB_LAYOUT_QWERTZ_DE
-  #include "aliases/qwertz_de.h"
 #elif defined KB_LAYOUT_QWERTZ_CH_DE || defined KB_LAYOUT_QWERTZ_CH_FR
   #include "aliases/qwertz_ch.h"
+#elifdef KB_LAYOUT_QWERTZ_DE
+  #include "aliases/qwertz_de.h"
 
-#elifdef KB_LAYOUT_AZERTY
-  #define SHIFTED_NUMBERS
-  #include "aliases/azerty.h"
-#elifdef KB_LAYOUT_QWERTY_LAFAYETTE
-  #include "aliases/qwerty_lafayette.h"
-#elifdef KB_LAYOUT_ERGOL
-  #include "aliases/ergol.h"
-#elifdef KB_LAYOUT_ERGLACE
-  #include "aliases/erglace.h"
+// Altenrative Layouts
 #elifdef KB_LAYOUT_BEPO
   #define SHIFTED_NUMBERS
   #include "aliases/bepo.h"
 #elifdef KB_LAYOUT_BEPOLAR
   #include "aliases/bepolar.h"
+#elifdef KB_LAYOUT_DVORAK
+  #include "aliases/dvorak.h"
+#elifdef KB_LAYOUT_ERGLACE
+  #include "aliases/erglace.h"
+#elifdef KB_LAYOUT_ERGOL
+  #include "aliases/ergol.h"
+#elifdef KB_LAYOUT_QWERTY_LAFAYETTE
+  #include "aliases/qwerty_lafayette.h"
 
+// US QWERTY
+#elifdef KB_LAYOUT_QWERTY_INTL
+  #include "aliases/qwerty_intl.h"
 #else
   #include "aliases/qwerty.h"
 #endif
 
-// Numbers
+
+/**
+ * Numbers
+ */
 
 #ifdef SHIFTED_NUMBERS
   #define S_N0  &kp LS(N0)
@@ -72,23 +97,3 @@
   #define S_N8  &kp N8
   #define S_N9  &kp N9
 #endif
-
-// Non-Alpha Actions
-
-#define X_SHTAB &kp RS(TAB)
-#ifdef MACOS
-  #define X_PREV &kp LG(LBKT)
-  #define X_NEXT &kp LG(RBKT)
-#else
-  #define X_PREV &kp LA(LEFT)
-  #define X_NEXT &kp LA(RIGHT)
-#endif
-
-// Mouse Actions
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 25  // increase from the default 10 which is too slow
-#include <dt-bindings/zmk/pointing.h>
-
-#define X_MSC_L &msc SCRL_LEFT
-#define X_MSC_D &msc SCRL_DOWN
-#define X_MSC_U &msc SCRL_UP
-#define X_MSC_R &msc SCRL_RIGHT
