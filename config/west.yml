@@ -20,6 +20,8 @@ manifest:
       url-base: https://github.com/rloutier
     - name: rschenk
       url-base: https://github.com/rschenk
+    - name: niiico69
+      url-base: https://github.com/niiico69
 
   projects:
       # Pin ZMK to the latest board fix of the `main` branch on 2026-06-13.
@@ -63,6 +65,14 @@ manifest:
     - name: zmk-keyboard-re-gret
       remote: rschenk
       revision: 34ca1fc7dc6991475b0c20f2c8361598e7aaeaca
+
+      ###
+      # Community USB/RF Dongles (not officially supported by ZMK)
+      ##
+
+    - name: zmk-keyboard-temper-dongle
+      remote: niiico69
+      revision: main
 
   self:
     path: config
