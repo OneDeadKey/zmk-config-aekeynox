@@ -1,4 +1,5 @@
-#include <dt-bindings/zmk/keys.h>
+// Bepo
+// https://bepo.fr
 
 /**
  * Action Combos

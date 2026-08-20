@@ -1,4 +1,5 @@
-#include <dt-bindings/zmk/keys.h>
+// Dvorak (US)
+// https://kbdlayout.info/00010409/
 
 /**
  * Action Combos

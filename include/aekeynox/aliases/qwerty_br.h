@@ -1,4 +1,5 @@
-#include <dt-bindings/zmk/keys.h>
+// Brazil (ABNT2)
+// https://kbdlayout.info/00010416/
 
 /**
  * Action Combos

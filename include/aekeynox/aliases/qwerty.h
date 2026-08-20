@@ -1,4 +1,5 @@
-#include <dt-bindings/zmk/keys.h>
+// United States (ANSI)
+// https://kbdlayout.info/00000409/
 
 /**
  * Action Combos

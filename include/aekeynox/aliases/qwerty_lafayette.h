@@ -1,4 +1,5 @@
-#include <dt-bindings/zmk/keys.h>
+// QWERTY-Lafayette
+// https://qwerty-lafayette.org
 
 /**
  * Action Combos

@@ -1,4 +1,21 @@
-#include <dt-bindings/zmk/keys.h>
+// Latin America
+// https://kbdlayout.info/0000080a/
+
+/**
+ * Dead Keys
+ */
+
+#define DK_ACU &kp LBKT     // acute
+#define DK_GRV &kp RA(BSLH) // grave
+#define DK_CIR &kp RA(SQT)  // circumflex
+#define DK_DIA &kp LBRC     // diaeresis
+#define DK_TLD &none        // tilde (unsupported)
+
+#define DEAD_ACUTE      &digraph LBKT
+#define DEAD_GRAVE      &digraph RA(BSLH)
+#define DEAD_CIRCUMFLEX &digraph RA(SQT)
+#define DEAD_DIAERESIS  &digraph LBRC
+#define DEAD_TILDE      &kp
 
 /**
  * Action Combos
@@ -61,23 +78,6 @@
 #define S_COMMA &kp COMMA
 #define S_DOT   &kp DOT
 #define S_MONEY &kp RA(E)
-
-
-/**
- * Dead Keys
- */
-
-#define DK_ACU &kp LBKT     // acute
-#define DK_GRV &kp RA(BSLH) // grave
-#define DK_CIR &kp RA(SQT)  // circumflex
-#define DK_DIA &kp LBRC     // diaeresis
-#define DK_TLD &none        // tilde (unsupported)
-
-#define DEAD_ACUTE      &digraph LBKT
-#define DEAD_GRAVE      &digraph RA(BSLH)
-#define DEAD_CIRCUMFLEX &digraph RA(SQT)
-#define DEAD_DIAERESIS  &digraph LBRC
-#define DEAD_TILDE      &kp
 
 /**
  * Non-ASCII Symbols

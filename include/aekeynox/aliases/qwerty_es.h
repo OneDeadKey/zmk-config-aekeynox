@@ -1,4 +1,30 @@
-#include <dt-bindings/zmk/keys.h>
+// Spain
+// https://kbdlayout.info/0000040a/
+
+/**
+ * Dead Keys
+ */
+
+#define DK_ACU &kp SQT  // acute
+#define DK_GRV &kp LBKT // grave
+#define DK_CIR &kp LBRC // circumflex
+#define DK_DIA &kp DQT  // diaeresis
+
+#define DEAD_ACUTE      &digraph SQT
+#define DEAD_GRAVE      &digraph LBKT
+#define DEAD_CIRCUMFLEX &digraph LBRC
+#define DEAD_DIAERESIS  &digraph DQT
+
+// tilde
+#ifdef LINUX
+  #define DEAD_TILDE &digraph RA(SEMI)
+  #define DK_TLD     &kp      RA(SEMI)
+  #define S_TILDE    &kp      RA(N4)
+#else
+  #define DEAD_TILDE &digraph RA(N4)
+  #define DK_TLD     &kp      RA(N4)
+  #define S_TILDE    DEAD_TILDE SPACE
+#endif
 
 /**
  * Action Combos
@@ -61,33 +87,6 @@
 #define S_COMMA &kp COMMA
 #define S_DOT   &kp DOT
 #define S_MONEY &kp RA(E)
-
-
-/**
- * Dead Keys
- */
-
-#define DK_ACU &kp SQT  // acute
-#define DK_GRV &kp LBKT // grave
-#define DK_CIR &kp LBRC // circumflex
-#define DK_DIA &kp DQT  // diaeresis
-
-#define DEAD_ACUTE      &digraph SQT
-#define DEAD_GRAVE      &digraph LBKT
-#define DEAD_CIRCUMFLEX &digraph LBRC
-#define DEAD_DIAERESIS  &digraph DQT
-
-// tilde
-#ifdef LINUX
-  #define DEAD_TILDE &digraph RA(SEMI)
-  #define DK_TLD     &kp      RA(SEMI)
-  #define S_TILDE    &kp      RA(N4)
-#else
-  #define DEAD_TILDE &digraph RA(N4)
-  #define DK_TLD     &kp      RA(N4)
-  #define S_TILDE    DEAD_TILDE SPACE
-#endif
-
 
 /**
  * Non-ASCII Symbols

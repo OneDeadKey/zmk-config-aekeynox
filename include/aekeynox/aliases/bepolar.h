@@ -1,4 +1,5 @@
-#include <dt-bindings/zmk/keys.h>
+// Bepolar
+// https://ergol.org/lafayette/#b%C3%A9polar
 
 /**
  * Action Combos

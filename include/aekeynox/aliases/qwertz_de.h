@@ -1,4 +1,5 @@
-#include <dt-bindings/zmk/keys.h>
+// Germany, Austria
+// https://kbdlayout.info/00000407/
 
 /**
  * Action Combos
@@ -13,6 +14,14 @@
 #define X_CTL_W &kp LC(W)
 #define X_SAVE  &kp CMD(S)
 #define X_ALL   &kp CMD(A)
+
+/**
+ * Dead Keys
+ */
+
+#define DK_CIR &kp GRAVE  // circumflex
+#define DK_ACU &kp EQUAL  // acute
+#define DK_GRV &kp PLUS   // grave
 
 /**
  * Arsenik Symbols:
@@ -61,16 +70,6 @@
 #define S_COMMA &kp COMMA
 #define S_DOT   &kp DOT
 #define S_MONEY &kp RA(E)
-
-
-/**
- * Dead Keys
- */
-
-#define DK_CIR &kp GRAVE  // circumflex
-#define DK_ACU &kp EQUAL  // acute
-#define DK_GRV &kp PLUS   // grave
-
 
 /**
  * Non-ASCII Symbols

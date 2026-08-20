@@ -1,4 +1,5 @@
-#include <dt-bindings/zmk/keys.h>
+// Erglace
+// https://ergol.org/erglace/
 
 /**
  * Action Combos

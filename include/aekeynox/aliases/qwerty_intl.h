@@ -1,4 +1,5 @@
-#include <dt-bindings/zmk/keys.h>
+// United States (International)
+// https://kbdlayout.info/00020409/
 
 /**
  * Action Combos
@@ -61,7 +62,6 @@
 #define S_COMMA &kp COMMA
 #define S_DOT   &kp DOT
 #define S_MONEY &kp DLLR
-
 
 /**
  * Non-ASCII Symbols

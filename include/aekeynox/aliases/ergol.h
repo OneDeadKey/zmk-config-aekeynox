@@ -1,4 +1,5 @@
-#include <dt-bindings/zmk/keys.h>
+// Ergo-L
+// https://ergol.org
 
 /**
  * Action Combos

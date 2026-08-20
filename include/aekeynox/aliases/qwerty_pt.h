@@ -1,4 +1,5 @@
-#include <dt-bindings/zmk/keys.h>
+// Portugal
+// https://kbdlayout.info/00000816/
 
 /**
  * Action Combos

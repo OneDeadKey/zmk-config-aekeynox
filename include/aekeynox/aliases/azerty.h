@@ -1,9 +1,11 @@
-#include <dt-bindings/zmk/keys.h>
-#include <zephyr/sys/util_macro.h>
+// France
+// https://kbdlayout.info/0000040c/
 
 /**
  * OS_SELECT
  */
+
+#include <zephyr/sys/util_macro.h>
 
 #define OS_SELECT_OR_DEFAULT(behavior, default) \
   COND_CODE_1(IS_EMPTY(behavior), (default), (behavior))
@@ -97,7 +99,6 @@
 
 /**
  * Non-ASCII Symbols
- * https://commons.wikimedia.org/wiki/File:KB_-_AZERTY_-_FR_-_Windows_-_FR.png
  */
 
 // lowercase: é à è ù ç
