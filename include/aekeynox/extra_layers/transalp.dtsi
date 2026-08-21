@@ -1,5 +1,7 @@
 #ifndef USE_ALPHA_ON_OUTER_KEYS
 
+#include "1dk.dtsi"
+
 /**
  * This adds a dead key (1dk) to access all common German/French/Italian chars.
  * (Note that QWERTZ-ch natively supports these three languages.)
@@ -23,27 +25,6 @@
  * Some of this unsupported chars would be nice to have, and could be added
  * with CP1252 or other OS-specific input methods.
 **/
-
-#define ODK_LAYER        EXTRA_LAYERS_START_INDEX
-#define ODK_SHIFT_LAYER (EXTRA_LAYERS_START_INDEX + 1)
-
-#define  K_ODKS    &mo ODK_SHIFT_LAYER  // Shift key in the 1dk layer
-#define SK_ODKS &EZ_SL(ODK_SHIFT_LAYER) // Shift key in the 1dk layer (sticky)
-
-// Override the standard base layer, to replace SEMI with a positional dead key (1dk).
-// The 3×10 grid contains no symbols, only key references.
-
-&base_layer {
-  bindings = <SELENIUM_KEYMAP_BINDINGS(
-    &kp LTOP    ,  &kp Q &kp W &kp E &kp R &kp T  ,  &kp Y  &kp U  &kp I     &kp O   &kp P             ,  &kp RTOP   ,
-    &kp LHOME   ,  &H4 A &H3 S &H2 D &H1 F &kp G  ,  &kp H  &H1 J  &H2 K     &H3 L   &EZ_SL(ODK_LAYER) ,  &kp RHOME  ,
-    &kp LSHIFT  ,  &kp Z &kp X &kp C &kp V &kp B  ,  &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH          ,  &kp RSHIFT ,
-        LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH  ,  RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
-  )>;
-};
-
-// Extra layers defined specifically for this keymap.
-// The 3×10 grid contains only symbols, no key references.
 
 / {
   keymap {
