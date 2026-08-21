@@ -41,3 +41,21 @@
 #else
   #define OMIT_IF_NO_REF
 #endif
+
+// Extra Layers
+
+#if !defined KB_EXTRA_LAYERS_TRANSALP \
+  && !defined KB_EXTRA_LAYERS_TRANSAT \
+  && !defined KB_EXTRA_LAYERS_NONE    \
+  && !defined KB_EXTRA_LAYERS_AUTO    \
+  // use the default extra layers if needed
+  #define KB_EXTRA_LAYERS_AUTO
+#endif
+
+// Outer Keys
+
+#if defined KB_EXTRA_LAYERS_NONE || \
+  (defined KB_EXTRA_LAYERS_AUTO && defined KB_LAYOUT_QWERTY_INTL)
+  // enable outer alpha keys if needed
+  #define USE_ALPHA_ON_OUTER_KEYS
+#endif

@@ -152,14 +152,16 @@
   #include "emulations/qwerty_lafayette.dtsi"
 
 // Some layouts require extra layers to fit on a 3×10 grid
-#elif defined KB_LAYOUT_AZERTY
-  #include "extra_layers/azerty_1dk.dtsi"
-#elif defined KB_LAYOUT_BEPO
-  #include "extra_layers/bepolar.dtsi"
-#elif defined KB_LAYOUT_QWERTY_BR || defined KB_LAYOUT_QWERTY_ES || defined KB_LAYOUT_QWERTY_LATAM || defined KB_LAYOUT_QWERTY_PT
-  #include "extra_layers/transat.dtsi"
-#elif defined KB_LAYOUT_QWERTZ_DE || defined KB_LAYOUT_QWERTZ_CH_DE || defined KB_LAYOUT_QWERTZ_CH_FR
-  #include "extra_layers/transalp.dtsi"
+#elif !defined KB_EXTRA_LAYERS_NONE
+  #if defined KB_LAYOUT_AZERTY
+    #include "extra_layers/azerty_1dk.dtsi"
+  #elif defined KB_LAYOUT_BEPO
+    #include "extra_layers/bepolar.dtsi"
+  #elif defined KB_EXTRA_LAYERS_TRANSALP
+    #include "extra_layers/transalp.dtsi" // default for CH, DE, IT
+  #elif defined KB_EXTRA_LAYERS_TRANSAT
+    #include "extra_layers/transat.dtsi"  // default for BR, ES, LATAM, PT
+  #endif
 
 // Experimental ergol variant meant for Hummingbird-style keyboards
 #elif defined KB_LAYOUT_ERGOL && defined HUMMINGBIRD

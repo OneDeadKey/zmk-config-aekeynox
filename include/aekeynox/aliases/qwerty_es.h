@@ -1,6 +1,10 @@
 // Spain
 // https://kbdlayout.info/0000040a/
 
+#ifdef KB_EXTRA_LAYERS_AUTO
+  #define KB_EXTRA_LAYERS_TRANSAT
+#endif
+
 /**
  * Dead Keys
  */

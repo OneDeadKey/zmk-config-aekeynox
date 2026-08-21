@@ -57,7 +57,7 @@ include:
     # QWERTY-intl (US-International)
   - board: quacken_flex/rp2040
     artifact-name: qwerty_intl
-    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY_INTL;-DUSE_ALPHA_ON_OUTER_KEYS"
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY_INTL"
 
     # QWERTY-latam (Latin America)
   - board: quacken_flex/rp2040

@@ -32,13 +32,24 @@
 // #define MACOS
 // #define LINUX
 
-// By default, Ækeynox fits all layouts on a 3×10 grid, using a dead key (1dk)
-// for extra chars if necessary, and keeps the 6th columns for non-alpha keys:
-// Tab, Escape, Backspace, Enter.
-// Uncomment the following line to use these 6th columns for alpha keys instead.
-// Warning: this also disables all 1dk layers.
 
-// #define USE_ALPHA_ON_OUTER_KEYS
+/******************************************************************************
+ * Extra Layers
+******************************************************************************/
+
+// By default, Ækeynox fits all non-ASCII layouts on a 3×10 grid by:
+//  - replacing the the semicolon key by a one-shot layer key (1dk)
+//  - adding two layers, 1dk and 1dkShift, containing all non-ASCII characters
+// These 1dk layers are defined by default to best match the requested layout,
+// but you can override them by uncommenting one of the lines below, e.g. to
+// use them along with QWERTY-intl.
+// Alternatively, you may uncomment the last line to use the outer columns
+// for 4 extra alpha keys instead of the default Tab, Escape, Backspace, Enter.
+
+// #define KB_EXTRA_LAYERS_AUTO      // default (recommended)
+// #define KB_EXTRA_LAYERS_TRANSALP  // default for CH, DE, IT
+// #define KB_EXTRA_LAYERS_TRANSAT   // default for BR, ES, LATAM, PT
+// #define KB_EXTRA_LAYERS_NONE      // disable all 1dk layers, use outer cols
 
 
 /******************************************************************************

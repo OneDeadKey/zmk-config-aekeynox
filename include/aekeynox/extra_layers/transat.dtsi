@@ -1,5 +1,3 @@
-#ifndef USE_ALPHA_ON_OUTER_KEYS
-
 #include "1dk.dtsi"
 
 /**
@@ -96,5 +94,3 @@
 
   };
 };
-
-#endif // USE_ALPHA_ON_OUTER_KEYS

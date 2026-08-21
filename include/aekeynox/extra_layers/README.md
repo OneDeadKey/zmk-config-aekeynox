@@ -27,7 +27,7 @@ When possible, it’s placed on the `SEMI` key (QWERTY’s <kbd>;:</kbd> key).
 - [Programmer’s QWERTY](#programmers-qwerty)
 - [Six-Column Configurations](#six-column-configurations)
   - [QWERTY-intl](#qwerty-intl)
-  - [Non-US QWERTY and QWERTZ](#non-us-qwerty-and-qwertz)
+  - [Non-ASCII Layouts](#non-ascii-layouts)
 - [Resources](#resources)
 
 
@@ -35,17 +35,30 @@ Multilingual Adaptations
 --------------------------------------------------------------------------------
 
 Most West-European languages can be supported by three 1dk layers: Nordic,
-Transalp, Transat. They can be used either on QWERTY or QWERTZ.
+Transalp, Transat. They can be used either on QWERTY or QWERTZ, they’re
+activated by default on relevant non-ASCII layouts, and they can be explicitly
+selected with one of the following definitions:
+
+- [ ] `KB_EXTRA_LAYERS_NORDIC`
+- [x] `KB_EXTRA_LAYERS_TRANSALP`
+- [x] `KB_EXTRA_LAYERS_TRANSAT`
+- [x] `KB_EXTRA_LAYERS_NONE`
 
 ### Nordic
 
-Recommended layouts:
+Activated by default on:
 
 - [ ] QWERTY-dk: Denmark
 - [ ] QWERTY-is: Iceland
 - [ ] QWERTY-no: Norway
 - [ ] QWERTY-se: Sweden, Finland, Estonia (?)
 - [ ] QWERTZ-de: Germany, Austria
+
+Suitable for:
+
+- [ ] QWERTY-intl
+- [ ] QWERTY-nl: Dutch
+- [ ] QWERTZ-de: German
 
 ```
     |---------------|---------------|  base
@@ -74,20 +87,25 @@ Supported languages:
 - [ ] Faroese:                     `å`, `æ`, `ø`, `ð`
 - [ ] Icelandic:                   `þ`, `æ`, `ö`, `ð`, `áéíóúý` (+ diaeresis?)
 
-This might be suitable for [Dutch](https://en.wikipedia.org/wiki/Dutch_orthography) as well:
+This is suitable for [Dutch] as well if `^` and `˝` are ignored:
 
 > Dutch uses the acute accent to mark stress and the diaeresis (trema) to
 > disambiguate diphthongs/triphthongs. Occasionally, other diacritics are used
-> in loanwords and native onomatopoeic words (e.g. circumflex and grave accent
-> for French loanwords).
+> in loanwords and native onomatopoeic words.
+
+[Dutch]: https://en.wikipedia.org/wiki/Dutch_orthography
 
 ### Transalp
 
-Recommended layouts:
+Activated by default on:
 
 - [x] QWERTZ-ch: Switzerland, Luxembourg, Liechtenstein
 - [x] QWERTZ-de: Germany, Austria
 - [ ] QWERTY-it: Italy
+
+Suitable for:
+
+- [x] QWERTY-intl
 
 ```
     |---------------|---------------|  base
@@ -117,12 +135,16 @@ Supported languages:
 
 ### Transat
 
-Recommended layouts:
+Activated by default on:
 
 - [x] QWERTY-br: Brazil
 - [x] QWERTY-latam: Latin America
 - [x] QWERTY-es: Spain
 - [x] QWERTY-pt: Portugal
+
+Suitable for:
+
+- [x] QWERTY-intl
 
 ```
     |---------------|---------------|  base
@@ -227,7 +249,7 @@ out.
 Programmer’s QWERTY
 --------------------------------------------------------------------------------
 
-Many European languages in central or eastern Europe have a “Programmer’s QWERTY”
+Many European languages in central or eastern Europe have a “Programmers’ QWERTY”
 variant, with a QWERTY-ANSI base layer and special chars in an secondary layer
 (often AltGr). This seems to be a natural fit for ergonomic keyboards.
 
@@ -243,14 +265,15 @@ adaptation.
 Six-Column Configurations
 --------------------------------------------------------------------------------
 
-The `USE_ALPHA_ON_OUTER_KEYS` option opens up another way to fit non-ASCII
-layouts on an ergonomic keyboard.
+On 3×6 keyboards, you could use four extra alpha keys on outer columns to fit
+some non-ASCII layouts.
+
 
 ### QWERTY-intl
 
-When using QWERTY-intl, you *want* to enable `USE_ALPHA_ON_OUTER_KEYS` to have a
-direct access to dead diacritics on the outer columns.
-Here’s the default configuration:
+When using QWERTY-intl without selecting a 1dk layer explicitly, these four
+extra keys are enabled to provide a direct access to dead diacritics on outer
+columns. Here’s the default configuration:
 
 ```
     |---------------|---------------|
@@ -263,12 +286,13 @@ Here’s the default configuration:
 Depending on your main language, you might want to adjust the position of these
 four extra keys in the `/include/aekeynox/outer_keys.h` file.
 
-### Non-US QWERTY and QWERTZ
+### Non-ASCII Layouts
 
-For other QWERTY and QWERTZ variants, the 6th column is kept on the right, while
-the 7th column is moved to the left.
+For AZERTY and other QWERTY and QWERTZ variants, you can force the use of these
+outer columns with the `KB_EXTRA_LAYERS_NONE` option: the 6th column is kept on
+the right, while the 7th column is moved to the left.
 
-As an example, QWERTZ-de works okay with `USE_ALPHA_ON_OUTER_KEYS`:
+As an example, QWERTZ-de works okay with `KB_EXTRA_LAYERS_NONE`:
 
 ```
     |---------------|---------------|

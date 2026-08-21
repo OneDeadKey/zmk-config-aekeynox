@@ -1,6 +1,10 @@
 // Portugal
 // https://kbdlayout.info/00000816/
 
+#ifdef KB_EXTRA_LAYERS_AUTO
+  #define KB_EXTRA_LAYERS_TRANSAT
+#endif
+
 /**
  * Action Combos
  */
