@@ -5,8 +5,8 @@
 // Override the base layer to replace Ergo‑L’s OneDeadKey
 &base_layer {
   bindings = <SELENIUM_KEYMAP_BINDINGS(
-    &kp RTOP   ,  &kp Q  &kp W  &kp E  &kp R  &kp T   ,   &kp N  &kp U  &kp I     &apos   &kp P     ,  &kp RTOP   ,
-    &kp RHOME  ,  &H4 A  &H3 S  &H2 D  &H1 F  &kp G   ,   &kp H  &H1 J  &H2 K     &H3 L   &H4 SEMI  ,  &kp RHOME  ,
+    &kp LTOP   ,  &kp Q  &kp W  &kp E  &kp R  &kp T   ,   &kp N  &kp U  &kp I     &apos   &kp P     ,  &kp RTOP   ,
+    &kp LHOME  ,  &H4 A  &H3 S  &H2 D  &H1 F  &kp G   ,   &kp H  &H1 J  &H2 K     &H3 L   &H4 SEMI  ,  &kp RHOME  ,
     &kp LSHIFT ,  &kp Z  &kp X  &kp C  &kp V  &kp B   ,   &kp Y  &kp M  &kp COMMA &kp DOT &kp FSLH  ,  &kp RSHIFT ,
         LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH  ,   RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
   )>;
@@ -62,7 +62,7 @@
       bindings = <SELENIUM_KEYMAP_BINDINGS(
         &trans  ,  &odk Q  &odk W  &odk E  &odk R   &kp Z   ,   &odk N  &kp Y    &odk I     &odk O   &odk P    ,  &trans ,
         &trans  ,  &odk A  &odk S  &odk D  &odk F   &kp B   ,   &odk H  &odk J   &odk K     &odk L   &odk SEMI ,  &trans ,
-        &trans  ,  &odk Q  &odk Z  &odk C  &em_dash &trans  ,   &trans  &kp FSLH &odk COMMA &odk DOT &odk P    ,  &trans ,
+        &trans  ,  &odk Z  &odk X  &odk C  &em_dash &trans  ,   &trans  &kp FSLH &odk COMMA &odk DOT &odk FSLH ,  &trans ,
                                SHIFT_KEY , &dknum , &trans  ,   &trans , &odk SPACE , &trans
       )>;
     };
@@ -72,7 +72,7 @@
       bindings = <SELENIUM_KEYMAP_BINDINGS(
         &trans  ,  &odks Q  &odks W  &odks E  &odks R  &kp LS(Z)   ,   &odks N  &kp LS(Y)    &odks I     &odks O   &odks P    ,  &trans ,
         &trans  ,  &odks A  &odks S  &odks D  &odks F  &kp LS(B)   ,   &odks H  &odks J      &odks K     &odks L   &odks SEMI ,  &trans ,
-        &trans  ,  &odks Q  &odks Z  &odks C  &odks V  &trans      ,   &trans   &kp LS(FSLH) &odks COMMA &odks DOT &odks P    ,  &trans ,
+        &trans  ,  &odks Z  &odks X  &odks C  &odks V  &trans      ,   &trans   &kp LS(FSLH) &odks COMMA &odks DOT &odks FSLH ,  &trans ,
                                 &trans , &odks SPACE , &trans      ,   &trans , &odks SPACE , &trans
       )>;
     };
