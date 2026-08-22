@@ -151,8 +151,11 @@
 #elif defined KB_EMULATION_QWERTY_LAFAYETTE
   #include "emulations/qwerty_lafayette.dtsi"
 
-// Some layouts require extra layers to fit on a 3×10 grid
+// Experimental Ergol variant for Hummingbird-style keyboards
+#elif defined KB_LAYOUT_ERGOL && defined HUMMINGBIRD
+  #include "extra_layers/ergol_hummingbird.dtsi"
 
+// Some layouts require extra layers to fit on a 3×10 grid
 #elif !defined KB_EXTRA_LAYERS_NONE
   #if defined KB_LAYOUT_AZERTY
     #include "extra_layers/azerty_1dk.dtsi"
@@ -163,8 +166,4 @@
   #elif defined KB_EXTRA_LAYERS_TRANSAT
     #include "extra_layers/transat.dtsi"  // default for BR, ES, LATAM, PT
   #endif
-
-// Experimental Ergol variant for Hummingbird-style keyboards
-#elif defined KB_LAYOUT_ERGOL && defined HUMMINGBIRD
-  #include "extra_layers/ergol_hummingbird.dtsi"
 #endif
