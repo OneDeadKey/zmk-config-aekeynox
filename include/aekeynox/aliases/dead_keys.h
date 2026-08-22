@@ -91,7 +91,7 @@
 #endif
 
 // tilde
-#ifdef DEAD_TILDE && DEAD_TILDE
+#if (defined DEAD_TILDE) && DEAD_TILDE
   #define  C_ATLD &digraph DEAD_TILDE    A  // ã
   #define SC_ATLD &digraph DEAD_TILDE RS(A) // Ã
   #define  C_ETLD &digraph DEAD_TILDE    E  // ẽ
