@@ -74,6 +74,11 @@ include:
     artifact-name: qwerty_latam
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY_LATAM"
 
+    # QWERTY-no (Norway)
+  - board: quacken_flex/rp2040
+    artifact-name: qwerty_no
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY_NO"
+
     # QWERTY-pt (Portugal)
   - board: quacken_flex/rp2040
     artifact-name: qwerty_pt
