@@ -110,14 +110,14 @@
 #define C_UGRV &kp SQT // ù
 #define C_CCDL &kp N9  // ç
 
-// uppercase: É Ç         ( default   , CP1252                     , macOS    , Linux    )
-#define SC_EACU OS_SELECT ( &kp LS(E) , CP1252_UPPERCASE_E_ACUTE   , &caps N2 , &caps N2 ) // É
-#define SC_CCDL OS_SELECT ( &kp LS(C) , CP1252_UPPERCASE_C_CEDILLA , &caps N9 , &caps N9 ) // Ç
-
-// uppercase: À È Ù       ( default   ,  ,, , macOS   , Linux     )
+// uppercase: À È Ù       ( default      ,, macOS     , Linux     )
 #define SC_AGRV OS_SELECT ( DI_GRV LS(A) ,, &caps N0  , &caps N0  ) // À
 #define SC_EGRV OS_SELECT ( DI_GRV LS(E) ,, &caps N7  , &caps N7  ) // È
 #define SC_UGRV OS_SELECT ( DI_GRV LS(U) ,, &caps SQT , &caps SQT ) // Ù
+
+// uppercase: É Ç         ( default   , CP1252                     , macOS    , Linux    )
+#define SC_EACU OS_SELECT ( &kp LS(E) , CP1252_UPPERCASE_E_ACUTE   , &caps N2 , &caps N2 ) // É
+#define SC_CCDL OS_SELECT ( &kp LS(C) , CP1252_UPPERCASE_C_CEDILLA , &caps N9 , &caps N9 ) // Ç
 
 // œ, æ, ß              ( default              , CP1252              , macOS     , Linux     )
 #define  C_OE OS_SELECT ( &digraph    O     E  , CP1252_LOWERCASE_OE , &kp RA(O) ,           ) // œ
