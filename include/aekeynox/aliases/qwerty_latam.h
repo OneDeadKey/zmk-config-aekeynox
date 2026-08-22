@@ -6,22 +6,6 @@
 #endif
 
 /**
- * Dead Keys
- */
-
-#define DK_ACU &kp LBKT     // acute
-#define DK_GRV &kp RA(BSLH) // grave
-#define DK_CIR &kp RA(SQT)  // circumflex
-#define DK_DIA &kp LBRC     // diaeresis
-#define DK_TLD &none        // tilde (unsupported)
-
-#define DEAD_ACUTE      &digraph LBKT
-#define DEAD_GRAVE      &digraph RA(BSLH)
-#define DEAD_CIRCUMFLEX &digraph RA(SQT)
-#define DEAD_DIAERESIS  &digraph LBRC
-#define DEAD_TILDE      &kp
-
-/**
  * Action Combos
  */
 
@@ -36,6 +20,17 @@
 #define X_ALL   &kp CMD(A)
 
 /**
+ * Dead Keys
+ */
+
+#define DEAD_ACUTE      LBKT
+#define DEAD_GRAVE      RA(BSLH)
+#define DEAD_CIRCUMFLEX RA(SQT)
+#define DEAD_DIAERESIS  LBRC
+
+#include "dead_keys.h"
+
+/**
  * Arsenik Symbols:
  *   ^<>$% @&*'`
  *   {()}= \+-/"
@@ -43,7 +38,7 @@
  */
 
 // first row
-#define S_CARET DEAD_CIRCUMFLEX SPACE
+#define S_CARET DI_CIR SPACE
 #define S_LT    &kp NUBS
 #define S_GT    &kp PIPE2
 #define S_DLLR  &kp LS(N4)
@@ -52,7 +47,7 @@
 #define S_AMPS  &kp LS(N6)
 #define S_STAR  &kp RBRC
 #define S_SQT   &kp MINUS
-#define S_GRAVE DEAD_GRAVE SPACE
+#define S_GRAVE DI_GRV SPACE
 
 // second row
 #define S_LBRC  &kp DQT
@@ -88,14 +83,14 @@
  */
 
 // tilde, cedilla
-#define  C_ATLD DEAD_TILDE    A  // ã
-#define SC_ATLD DEAD_TILDE LS(A) // Ã
-#define  C_OTLD DEAD_TILDE    O  // õ
-#define SC_OTLD DEAD_TILDE LS(O) // Õ
-#define  C_NTLD &kp SEMI         // ñ
-#define SC_NTLD &kp COLON        // Ñ
-#define  C_CCDL &kp    C  // unsupported
-#define SC_CCDL &kp LS(C) // unsupported
+#define  C_ATLD DI_TLD    A  // ã
+#define SC_ATLD DI_TLD LS(A) // Ã
+#define  C_OTLD DI_TLD    O  // õ
+#define SC_OTLD DI_TLD LS(O) // Õ
+#define  C_NTLD &kp SEMI     // ñ
+#define SC_NTLD &kp COLON    // Ñ
+#define  C_CCDL &kp    C     // unsupported
+#define SC_CCDL &kp LS(C)    // unsupported
 
 // Other symbols
 #ifdef ENABLE_CP1252_ALT_CODES
