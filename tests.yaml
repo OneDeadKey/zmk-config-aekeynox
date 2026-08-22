@@ -106,7 +106,7 @@ include:
     # Ergol on AZERTY
   - board: quacken_flex/rp2040
     artifact-name: azerty_to_ergol
-    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_AZERTY;-DKB_EMULATION_ERGOL"
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_AZERTY;-DKB_EMULATION_ERGOL;-DLINUX"
 
     # Ergol on QWERTY-intl
   - board: quacken_flex/rp2040
