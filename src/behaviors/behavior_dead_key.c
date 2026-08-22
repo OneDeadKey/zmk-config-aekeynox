@@ -11,6 +11,7 @@
 #include <zephyr/logging/log.h>
 #include <drivers/behavior.h>
 #include <dt-bindings/zmk/modifiers.h>
+#include <dt-bindings/zmk/hid_usage_pages.h>
 #include <zmk/event_manager.h>
 #include <zmk/events/keycode_state_changed.h>
 #include <zmk/hid.h>
@@ -28,6 +29,7 @@ struct behavior_dead_key_config {
 struct behavior_dead_key_data {
     uint32_t position;
     uint32_t dead_key;
+    uint32_t param1;
     bool is_down;
 };
 
@@ -53,6 +55,7 @@ static int on_dead_key_binding_pressed(
     active_dead_key = (struct behavior_dead_key_data) {
         .position = event.position,
         .dead_key = cfg->dead_key,
+        .param1 = binding->param1,
         .is_down = true,
     };
 
@@ -97,6 +100,11 @@ ZMK_SUBSCRIPTION(behavior_dead_key, zmk_keycode_state_changed);
 static int dead_key_keycode_state_changed_listener(const zmk_event_t *eh) {
     struct zmk_keycode_state_changed *ev = as_zmk_keycode_state_changed(eh);
     if (ev == NULL || !active_dead_key.is_down) {
+        return ZMK_EV_EVENT_BUBBLE;
+    }
+
+    const uint32_t kc = ZMK_HID_USAGE(HID_USAGE_KEY, ev->keycode);
+    if (kc == active_dead_key.dead_key || kc == active_dead_key.param1) {
         return ZMK_EV_EVENT_BUBBLE;
     }
 
