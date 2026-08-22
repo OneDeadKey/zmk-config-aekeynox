@@ -3,7 +3,7 @@
  */
 
 // acute accent
-#ifdef DEAD_ACUTE
+#ifdef DEAD_ACUTE && DEAD_ACUTE
   #define  C_AACU &digraph DEAD_ACUTE    A  // á
   #define SC_AACU &digraph DEAD_ACUTE RS(A) // Á
   #define  C_EACU &digraph DEAD_ACUTE    E  // é
@@ -25,7 +25,7 @@
 #endif
 
 // grave accent
-#ifdef DEAD_GRAVE
+#ifdef DEAD_GRAVE && DEAD_GRAVE
   #define  C_AGRV &digraph DEAD_GRAVE    A  // à
   #define SC_AGRV &digraph DEAD_GRAVE RS(A) // À
   #define  C_EGRV &digraph DEAD_GRAVE    E  // è
@@ -47,7 +47,7 @@
 #endif
 
 // circumflex accent
-#ifdef DEAD_CIRCUMFLEX
+#ifdef DEAD_CIRCUMFLEX && DEAD_CIRCUMFLEX
   #define  C_ACRC &digraph DEAD_CIRCUMFLEX    A  // â
   #define SC_ACRC &digraph DEAD_CIRCUMFLEX RS(A) // Â
   #define  C_ECRC &digraph DEAD_CIRCUMFLEX    E  // ê
@@ -69,7 +69,7 @@
 #endif
 
 // diaeresis
-#ifdef DEAD_DIAERESIS
+#ifdef DEAD_DIAERESIS && DEAD_DIAERESIS
   #define  C_ADIA &digraph DEAD_DIAERESIS    A  // ä
   #define SC_ADIA &digraph DEAD_DIAERESIS RS(A) // Ä
   #define  C_EDIA &digraph DEAD_DIAERESIS    E  // ë
@@ -91,7 +91,7 @@
 #endif
 
 // tilde
-#ifdef DEAD_TILDE
+#ifdef DEAD_TILDE && DEAD_TILDE
   #define  C_ATLD &digraph DEAD_TILDE    A  // ã
   #define SC_ATLD &digraph DEAD_TILDE RS(A) // Ã
   #define  C_ETLD &digraph DEAD_TILDE    E  // ẽ
