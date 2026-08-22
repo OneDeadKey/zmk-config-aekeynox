@@ -19,8 +19,8 @@
 // for this keyboard can be found here:
 // https://github.com/zmkfirmware/zmk/blob/main/app/boards/shields/hummingbird/hummingbird.overlay#L20-L30
 //
-// Note that this `redirection-table` table field is an addition made by the
-// fork of ZMK that we rely on.
+// Note that this `redirection-table` field is an addition made by the fork of
+// ZMK that we rely on.
 &matrix_transform0 {
   redirection-table = <
      0  1  2  3  4     5  6  7  8  9

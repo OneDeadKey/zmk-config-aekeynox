@@ -22,12 +22,14 @@ manifest:
       url-base: https://github.com/rschenk
 
   projects:
-      # Pin ZMK to the latest board fix of the `main` branch on 2026-06-13.
-      # https://github.com/Nuclear-Squid/zmk-keyboard-quacken/pull/49#issuecomment-4153385353
-      # https://github.com/OneDeadKey/zmk-config-aekeynox/pull/67
+      # We rely on a fork of ZMK for a couple of reasons:
+      # 1. to pin the version of ZMK, so we’re not caught off guard by breaking changes
+      # 2. to add some more advanced features that aren’t present upstream
+      #    (unmerged PRs, custom patches…)
+      # More info on the changes present can be found on the fork’s README page.
     - name: zmk
       remote: NuclearSquid
-      revision: geometry_adaptations
+      revision: aekeynox
       import: app/west.yml
 
       ###
