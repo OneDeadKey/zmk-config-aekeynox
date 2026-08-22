@@ -2,7 +2,7 @@
 
 // The fork of ZMK we rely on adds a redirection-table feature. This allows the
 // user to easilly adapt the keymap to non-standard key configurations. Here are
-// a handfull of examples for the more common use-cases (uncomment to activate them):
+// a handful of examples for the more common use-cases (uncomment to activate them):
 
 // "Swallow" config
 // &default_transform {
