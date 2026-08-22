@@ -48,12 +48,14 @@
   #include "aliases/qwerty_no.h"
 #elifdef KB_LAYOUT_QWERTY_PT
   #include "aliases/qwerty_pt.h"
+#elifdef KB_LAYOUT_QWERTY_SE
+  #include "aliases/qwerty_se.h"
 #elif defined KB_LAYOUT_QWERTZ_CH_DE || defined KB_LAYOUT_QWERTZ_CH_FR
   #include "aliases/qwertz_ch.h"
 #elifdef KB_LAYOUT_QWERTZ_DE
   #include "aliases/qwertz_de.h"
 
-// Altenrative Layouts
+// Alternative Layouts
 #elifdef KB_LAYOUT_BEPO
   #define SHIFTED_NUMBERS
   #include "aliases/bepo.h"
