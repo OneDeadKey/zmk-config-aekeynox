@@ -153,35 +153,35 @@
 
 // spectal letters
 #ifdef LINUX
-  #define  C_OE  &kp RA(K) // œ
-  #define SC_OE  &kp SA(K) // Œ
+  #define  C_OE &kp RA(K) // œ
+  #define SC_OE &kp SA(K) // Œ
 #elifdef ENABLE_CP1252_ALT_CODES
-  #define  C_OE  CP1252_LOWERCASE_OE // œ
-  #define SC_OE  CP1252_UPPERCASE_OE // Œ
+  #define  C_OE CP1252_LOWERCASE_OE // œ
+  #define SC_OE CP1252_UPPERCASE_OE // Œ
 #else
-  #define  C_OE  &digraph O E
-  #define SC_OE  &digraph LS(O) LS(E)
+  #define  C_OE &digraph O E
+  #define SC_OE &digraph LS(O) LS(E)
 #endif
-#define  C_AE    &kp RA(Z) // æ
-#define SC_AE    &kp SA(Z) // Æ
-#define  C_ARING &kp RA(W) // å
-#define SC_ARING &kp SA(W) // Å
-#define  C_OSTRK &kp RA(L) // ø
-#define SC_OSTRK &kp SA(L) // Ø
-#define  C_ETH   &kp RA(D) // ð
-#define SC_ETH   &kp SA(D) // Ð
-#define  C_THORN &kp RA(R) // Þ
-#define SC_THORN &kp SA(R) // þ
-#define  C_SZ    &kp RA(S) // ß
+#define  C_AE   &kp RA(Z) // æ
+#define SC_AE   &kp SA(Z) // Æ
+#define  C_ARNG &kp RA(W) // å
+#define SC_ARNG &kp SA(W) // Å
+#define  C_OSTR &kp RA(L) // ø
+#define SC_OSTR &kp SA(L) // Ø
+#define  C_ETH  &kp RA(D) // ð
+#define SC_ETH  &kp SA(D) // Ð
+#define  C_THRN &kp RA(R) // Þ
+#define SC_THRN &kp SA(R) // þ
+#define  C_SZ   &kp RA(S) // ß
 
 // quote signs
+#ifdef MACOS
+  #define C_APOS &kp SA(RBKT) // ’
+#else
+  #define C_APOS &kp RA(N0)   // ’
+#endif
 #define C_LSQT  &kp RA(N9)    // ‘
 #define C_RSQT  &kp RA(N0)    // ’
-#ifdef MACOS
-  #define C_APOS  &kp SA(RBKT)    // ’
-#else
-  #define C_APOS  &kp RA(N0)    // ’
-#endif
 #define C_LGQT  &kp RA(LBKT)  // «
 #define C_RGQT  &kp RA(RBKT)  // »
 #ifdef LINUX
