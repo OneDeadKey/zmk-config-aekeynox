@@ -85,16 +85,16 @@
 // cedilla
 #ifdef MACOS
   #define  C_CCDL &digraph SQT C     // ç
-  #define SC_CCDL &digraph SQT RS(C) // ç
+  #define SC_CCDL &digraph SQT RS(C) // Ç
 #else
-  #define  C_CCDL &kp RA(COMMA)  // ç
-  #define SC_CCDL &kp SA(COMMA)  // ç
+  #define  C_CCDL &kp RA(COMMA)      // ç
+  #define SC_CCDL &kp SA(COMMA)      // Ç
 #endif
 
 // spectal letters
 #ifdef LINUX
-  #define  C_OE  &kp RA(K) // œ
-  #define SC_OE  &kp SA(K) // Œ
+  #define  C_OE  &kp RA(K)           // œ
+  #define SC_OE  &kp SA(K)           // Œ
 #elifdef ENABLE_CP1252_ALT_CODES
   #define  C_OE  CP1252_LOWERCASE_OE // œ
   #define SC_OE  CP1252_UPPERCASE_OE // Œ

@@ -23,11 +23,17 @@
  * Dead Keys
  */
 
-#define DK_CIR &kp EQUAL     // circumflex
-#define DK_ACU &kp MINUS     // acute
-#define DK_GRV &kp PLUS      // grave
-#define DK_DIA &kp RBKT      // diaeresis
-#define DK_TLD &kp RA(EQUAL) // tilde
+#define DEAD_CIRCUMFLEX GRAVE
+// XXX: DEAD_ACUTE      cannot be defined:   `é` in the base layer
+// XXX: DEAD_GRAVE      cannot be defined:  `àè` in the base layer
+// XXX: DEAD_DIAERESIS  cannot be defined: `äöü` in the base layer
+#define DEAD_TILDE      RA(EQUAL)
+
+#include "dead_keys.h"
+
+#define DK_ACU &kp EQUAL // acute
+#define DK_GRV &kp PLUS  // grave
+#define DK_DIA &kp RBKT  // diaeresis
 
 /**
  * Arsenik Symbols:
@@ -37,7 +43,7 @@
  */
 
 // first row
-#define S_CARET &digraph EQUAL SPACE
+#define S_CARET DI_CIR SPACE
 #define S_LT    &kp NUBS
 #define S_GT    &kp PIPE2
 #define S_DLLR  &kp BSLH
@@ -61,7 +67,7 @@
 #define S_DQT   &kp LS(N2)
 
 // third row
-#define S_TILDE &digraph RA(EQUAL) SPACE
+#define S_TILDE DI_TLD SPACE
 #define S_LBKT  &kp RA(LBKT)
 #define S_RBKT  &kp RA(RBKT)
 #define S_UNDER &kp QMARK

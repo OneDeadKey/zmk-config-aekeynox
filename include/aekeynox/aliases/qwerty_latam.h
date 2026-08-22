@@ -30,6 +30,10 @@
 
 #include "dead_keys.h"
 
+// no dead tilde
+#define DI_TLD &kp
+#define DK_TLD &none
+
 /**
  * Arsenik Symbols:
  *   ^<>$% @&*'`

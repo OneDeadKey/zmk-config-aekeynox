@@ -26,17 +26,19 @@
 #ifdef LINUX
   #define DK_ACU &kp RA(COMMA) // acute
   #define DK_GRV &kp RA(BSLH)  // grave
-  #define DK_CIR &kp RA(PLUS)  // circumflex
   #define DK_CDL &kp RA(COLON) // cedilla
-  #define DK_DIA &kp RA(GT)    // diaeresis
+  #define DEAD_CIRCUMFLEX PLUS
+  #define DEAD_DIAERESIS  RA(GT)
 #else
   // QWERTY-it has no dead keys on Windows
   #define DK_ACU &none
   #define DK_GRV &none
-  #define DK_CIR &none
   #define DK_CDL &none
-  #define DK_DIA &none
+  #define DEAD_CIRCUMFLEX NULL
+  #define DEAD_DIAERESIS  NULL
 #endif
+
+#include "dead_keys.h"
 
 /**
  * Arsenik Symbols:
@@ -140,35 +142,6 @@
   #define SC_IGRV &digraph LS(I) MINUS // I'
   #define SC_OGRV &digraph LS(O) MINUS // O'
   #define SC_UGRV &digraph LS(U) MINUS // U'
-#endif
-
-// diaeresis
-#ifdef LINUX
-  #define  C_ADIA &digraph RA(GT)    A
-  #define SC_ADIA &digraph RA(GT) LS(A)
-  #define  C_EDIA &digraph RA(GT)    E
-  #define SC_EDIA &digraph RA(GT) LS(E)
-  #define  C_IDIA &digraph RA(GT)    I
-  #define SC_IDIA &digraph RA(GT) LS(I)
-  #define  C_ODIA &digraph RA(GT)    O
-  #define SC_ODIA &digraph RA(GT) LS(O)
-  #define  C_UDIA &digraph RA(GT)    U
-  #define SC_UDIA &digraph RA(GT) LS(U)
-  #define  C_YDIA &digraph RA(GT)    Y
-  #define SC_YDIA &digraph RA(GT) LS(Y)
-#else // unsupported
-  #define  C_ADIA &kp    A
-  #define SC_ADIA &kp LS(A)
-  #define  C_EDIA &kp    E
-  #define SC_EDIA &kp LS(E)
-  #define  C_IDIA &kp    I
-  #define SC_IDIA &kp LS(I)
-  #define  C_ODIA &kp    O
-  #define SC_ODIA &kp LS(O)
-  #define  C_UDIA &kp    U
-  #define SC_UDIA &kp LS(U)
-  #define  C_YDIA &kp    Y
-  #define SC_YDIA &kp LS(Y)
 #endif
 
 // other French and German chars

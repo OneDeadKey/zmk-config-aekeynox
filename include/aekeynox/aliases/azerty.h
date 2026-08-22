@@ -38,14 +38,16 @@
  * Dead Keys
  */
 
-#define DK_CIR            &kp      LBKT                               // dead circumflex
-#define DI_CIR            &digraph LBKT
-#define DK_DIA            &kp      LBRC                               // dead diaeresis
-#define DI_DIA            &digraph LBRC
-#define DK_GRV OS_SELECT( &kp      RA(N9) ,, &kp      NUHS  , &none ) // dead grave (n/a on Linux)
-#define DI_GRV OS_SELECT( &digraph RA(N9) ,, &digraph NUHS  , &kp   )
-#define DK_TLD OS_SELECT( &kp      RA(N2) ,, &kp      RA(N) , &none ) // dead tilde (n/a on Linux)
-#define DI_TLD OS_SELECT( &digraph RA(N2) ,, &digraph RA(N) , &kp   )
+#define DEAD_CIRCUMFLEX       LBKT
+#define DEAD_DIAERESIS        LBRC
+#define DEAD_TILDE OS_SELECT( RA(N2) ,, RA(N) , NULL ) // n/a on Linux
+
+#include "dead_keys.h"
+
+// dead grave (n/a on Linux) is handled manually, we don't want "dead_keys.h"
+// to define all grave accents while `àèù` are available in the base layer.
+#define DK_GRV OS_SELECT(      &kp RA(N9) ,,      &kp NUHS , &none )
+#define DI_GRV OS_SELECT( &digraph RA(N9) ,, &digraph NUHS , &kp   )
 
 /**
  * Arsenik Symbols:
@@ -108,44 +110,14 @@
 #define C_UGRV &kp SQT // ù
 #define C_CCDL &kp N9  // ç
 
-// uppercase: É À È Ù Ç   ( default   , CP1252                     , macOS     , Linux     )
-#define SC_EACU OS_SELECT ( &kp LS(E) , CP1252_UPPERCASE_E_ACUTE   , &caps N2  , &caps N2  ) // É
-#define SC_AGRV OS_SELECT ( &kp LS(A) , CP1252_UPPERCASE_A_GRAVE   , &caps N0  , &caps N0  ) // À
-#define SC_EGRV OS_SELECT ( &kp LS(E) , CP1252_UPPERCASE_E_GRAVE   , &caps N7  , &caps N7  ) // È
-#define SC_UGRV OS_SELECT ( &kp LS(U) , CP1252_UPPERCASE_U_GRAVE   , &caps SQT , &caps SQT ) // Ù
-#define SC_CCDL OS_SELECT ( &kp LS(C) , CP1252_UPPERCASE_C_CEDILLA , &caps N9  , &caps N9  ) // Ç
+// uppercase: À È Ù       ( default      ,, macOS     , Linux     )
+#define SC_AGRV OS_SELECT ( DI_GRV LS(A) ,, &caps N0  , &caps N0  ) // À
+#define SC_EGRV OS_SELECT ( DI_GRV LS(E) ,, &caps N7  , &caps N7  ) // È
+#define SC_UGRV OS_SELECT ( DI_GRV LS(U) ,, &caps SQT , &caps SQT ) // Ù
 
-// circumflex
-#define  C_ACRC DI_CIR    Q  // â
-#define SC_ACRC DI_CIR RS(Q) // Â
-#define  C_ECRC DI_CIR    E  // ê
-#define SC_ECRC DI_CIR RS(E) // Ê
-#define  C_ICRC DI_CIR    I  // î
-#define SC_ICRC DI_CIR RS(I) // Î
-#define  C_OCRC DI_CIR    O  // ô
-#define SC_OCRC DI_CIR RS(O) // Ô
-#define  C_UCRC DI_CIR    U  // û
-#define SC_UCRC DI_CIR RS(U) // Û
-#define  C_YCRC DI_CIR    Y  // ŷ
-#define SC_YCRC DI_CIR RS(Y) // Ŷ
-
-// diaeresis
-#define  C_ADIA DI_DIA    A  // ä
-#define SC_ADIA DI_DIA RS(A) // Ä
-#define  C_EDIA DI_DIA    E  // ë
-#define SC_EDIA DI_DIA RS(E) // Ë
-#define  C_IDIA DI_DIA    I  // ï
-#define SC_IDIA DI_DIA RS(I) // Ï
-#define  C_ODIA DI_DIA    O  // ö
-#define SC_ODIA DI_DIA RS(O) // Ö
-#define  C_UDIA DI_DIA    U  // ü
-#define SC_UDIA DI_DIA RS(U) // Ü
-#define  C_YDIA DI_DIA    Y  // ÿ
-#define SC_YDIA DI_DIA RS(Y) // Ÿ
-
-// tilde
-#define  C_NTLD DI_TLD    N  // ñ
-#define SC_NTLD DI_TLD LS(N) // Ñ
+// uppercase: É Ç         ( default   , CP1252                     , macOS    , Linux    )
+#define SC_EACU OS_SELECT ( &kp LS(E) , CP1252_UPPERCASE_E_ACUTE   , &caps N2 , &caps N2 ) // É
+#define SC_CCDL OS_SELECT ( &kp LS(C) , CP1252_UPPERCASE_C_CEDILLA , &caps N9 , &caps N9 ) // Ç
 
 // œ, æ, ß              ( default              , CP1252              , macOS     , Linux     )
 #define  C_OE OS_SELECT ( &digraph    O     E  , CP1252_LOWERCASE_OE , &kp RA(O) ,           ) // œ

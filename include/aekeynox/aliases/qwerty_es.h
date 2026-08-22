@@ -38,7 +38,7 @@
 #else
   #define DI_TLD &digraph RA(N4)
   #define DK_TLD      &kp RA(N4)
-  #define S_TILDE     DI_TLD SPACE
+  #define S_TILDE  DI_TLD SPACE
 #endif
 
 /**
@@ -49,7 +49,7 @@
  */
 
 // first row
-#define S_CARET &digraph DEAD_CIRCUMFLEX SPACE
+#define S_CARET DI_CIR SPACE
 #define S_LT    &kp NUBS
 #define S_GT    &kp PIPE2
 #define S_DLLR  &kp LS(N4)
@@ -58,7 +58,7 @@
 #define S_AMPS  &kp LS(N6)
 #define S_STAR  &kp RBRC
 #define S_SQT   &kp MINUS
-#define S_GRAVE &digraph DEAD_GRAVE SPACE
+#define S_GRAVE DI_GRV SPACE
 
 // second row
 #define S_LBRC  &kp RA(SQT)

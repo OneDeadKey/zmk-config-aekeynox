@@ -23,9 +23,13 @@
  * Dead Keys
  */
 
-#define DK_CIR &kp GRAVE  // circumflex
-#define DK_ACU &kp EQUAL  // acute
-#define DK_GRV &kp PLUS   // grave
+#define DEAD_CIRCUMFLEX GRAVE
+#define DEAD_ACUTE      EQUAL
+#define DEAD_GRAVE      PLUS
+// XXX: DEAD_DIAERESIS  cannot be defined: `äöü` in the base layer
+#define DEAD_TILDE      NULL
+
+#include "dead_keys.h"
 
 /**
  * Arsenik Symbols:
@@ -35,7 +39,7 @@
  */
 
 // first row
-#define S_CARET &digraph GRAVE SPACE
+#define S_CARET DI_CIR SPACE
 #define S_LT    &kp NUBS
 #define S_GT    &kp PIPE2
 #define S_DLLR  &kp LS(N4)
@@ -44,7 +48,7 @@
 #define S_AMPS  &kp LS(N6)
 #define S_STAR  &kp RBRC
 #define S_SQT   &kp BSLH
-#define S_GRAVE &digraph PLUS SPACE
+#define S_GRAVE DI_GRV SPACE
 
 // second row
 #define S_LBRC  &kp RA(N7)
@@ -87,20 +91,6 @@
 #define  C_UDIA &kp LBKT  // ü
 #define SC_UDIA &kp LBRC  // Ü
 #define  C_SZ   &kp MINUS // ß
-
-// French and Italian chars
-#define  C_EACU &digraph EQUAL    E  // é
-#define SC_EACU &digraph EQUAL LS(E) // É
-#define  C_AGRV &digraph PLUS     A  // à
-#define SC_AGRV &digraph PLUS  LS(A) // À
-#define  C_EGRV &digraph PLUS     E  // è
-#define SC_EGRV &digraph PLUS  LS(E) // È
-#define  C_IGRV &digraph PLUS     I  // ì
-#define SC_IGRV &digraph PLUS  LS(I) // Ì
-#define  C_OGRV &digraph PLUS     O  // ò
-#define SC_OGRV &digraph PLUS  LS(O) // Ò
-#define  C_UGRV &digraph PLUS     U  // ù
-#define SC_UGRV &digraph PLUS  LS(U) // Ù
 
 // Unsupported French chars
 #define  C_EDIA &kp    E             // ë

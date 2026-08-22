@@ -39,7 +39,7 @@
  */
 
 // first row
-#define S_CARET &digraph DEAD_CIRCUMFLEX SPACE
+#define S_CARET DI_CIR SPACE
 #define S_LT    &kp LT
 #define S_GT    &kp GT
 #define S_DLLR  &kp DLLR
@@ -48,7 +48,7 @@
 #define S_AMPS  &kp AMPS
 #define S_STAR  &kp STAR
 #define S_SQT   &kp GRAVE
-#define S_GRAVE &digraph DEAD_GRAVE SPACE
+#define S_GRAVE DI_GRV SPACE
 
 // second row
 #define S_LBRC  &kp RBRC
@@ -63,7 +63,7 @@
 #define S_DQT   &kp TILDE
 
 // third row
-#define S_TILDE &digraph DEAD_TILDE SPACE
+#define S_TILDE DI_TLD SPACE
 #define S_LBKT  &kp RBKT
 #define S_RBKT  &kp BSLH
 #define S_UNDER &kp UNDER
