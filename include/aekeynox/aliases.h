@@ -38,6 +38,8 @@
   #include "aliases/qwerty_br.h"
 #elifdef KB_LAYOUT_QWERTY_ES
   #include "aliases/qwerty_es.h"
+#elifdef KB_LAYOUT_QWERTY_IT
+  #include "aliases/qwerty_it.h"
 #elifdef KB_LAYOUT_QWERTY_LATAM
   #include "aliases/qwerty_latam.h"
 #elifdef KB_LAYOUT_QWERTY_PT

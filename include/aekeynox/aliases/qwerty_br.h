@@ -1,6 +1,10 @@
 // Brazil (ABNT2)
 // https://kbdlayout.info/00010416/
 
+#ifdef KB_EXTRA_LAYERS_AUTO
+  #define KB_EXTRA_LAYERS_TRANSAT
+#endif
+
 /**
  * Action Combos
  */

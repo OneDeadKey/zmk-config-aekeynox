@@ -1,6 +1,10 @@
 // Germany, Austria
 // https://kbdlayout.info/00000407/
 
+#ifdef KB_EXTRA_LAYERS_AUTO
+  #define KB_EXTRA_LAYERS_TRANSALP
+#endif
+
 /**
  * Action Combos
  */
