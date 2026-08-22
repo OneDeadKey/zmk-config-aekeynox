@@ -20,42 +20,6 @@
  *  - Catalan: `ŀ`, lnot in CP1252, using the middle dot instead (`l·l`)
 **/
 
-// acute accents
-#define  C_AACU DEAD_ACUTE    A  // á
-#define SC_AACU DEAD_ACUTE LS(A) // Á
-#define  C_EACU DEAD_ACUTE    E  // é
-#define SC_EACU DEAD_ACUTE LS(E) // É
-#define  C_IACU DEAD_ACUTE    I  // í
-#define SC_IACU DEAD_ACUTE LS(I) // Í
-#define  C_OACU DEAD_ACUTE    O  // ó
-#define SC_OACU DEAD_ACUTE LS(O) // Ó
-#define  C_UACU DEAD_ACUTE    U  // ú
-#define SC_UACU DEAD_ACUTE LS(U) // Ú
-
-// grave accents
-#define  C_AGRV DEAD_GRAVE    A  // à
-#define SC_AGRV DEAD_GRAVE LS(A) // À
-#define  C_EGRV DEAD_GRAVE    E  // è
-#define SC_EGRV DEAD_GRAVE LS(E) // È
-#define  C_IGRV DEAD_GRAVE    I  // ì
-#define SC_IGRV DEAD_GRAVE LS(I) // Ì
-#define  C_OGRV DEAD_GRAVE    O  // ò
-#define SC_OGRV DEAD_GRAVE LS(O) // Ò
-#define  C_UGRV DEAD_GRAVE    U  // ù
-#define SC_UGRV DEAD_GRAVE LS(U) // Ù
-
-// diaeresis
-#define  C_ADIA DEAD_DIAERESIS    A  // ä
-#define SC_ADIA DEAD_DIAERESIS LS(A) // Ä
-#define  C_EDIA DEAD_DIAERESIS    E  // ë
-#define SC_EDIA DEAD_DIAERESIS LS(E) // Ë
-#define  C_IDIA DEAD_DIAERESIS    I  // ï
-#define SC_IDIA DEAD_DIAERESIS LS(I) // Ï
-#define  C_ODIA DEAD_DIAERESIS    O  // ö
-#define SC_ODIA DEAD_DIAERESIS LS(O) // Ö
-#define  C_UDIA DEAD_DIAERESIS    U  // ü
-#define SC_UDIA DEAD_DIAERESIS LS(U) // Ü
-
 / {
   keymap {
     compatible = "zmk,keymap";

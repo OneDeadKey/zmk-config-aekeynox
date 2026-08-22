@@ -6,6 +6,20 @@
 #endif
 
 /**
+ * Action Combos
+ */
+
+#define X_UNDO  &kp CMD(Z)
+#define X_CUT   &kp CMD(X)
+#define X_COPY  &kp CMD(C)
+#define X_PASTE &kp CMD(V)
+#define X_REDO  &kp CMD(Y)
+
+#define X_CTL_W &kp LC(W)
+#define X_SAVE  &kp CMD(S)
+#define X_ALL   &kp CMD(A)
+
+/**
  * Dead Keys
  */
 
@@ -23,20 +37,6 @@
   #define DK_CDL &none
   #define DK_DIA &none
 #endif
-
-/**
- * Action Combos
- */
-
-#define X_UNDO  &kp CMD(Z)
-#define X_CUT   &kp CMD(X)
-#define X_COPY  &kp CMD(C)
-#define X_PASTE &kp CMD(V)
-#define X_REDO  &kp CMD(Y)
-
-#define X_CTL_W &kp LC(W)
-#define X_SAVE  &kp CMD(S)
-#define X_ALL   &kp CMD(A)
 
 /**
  * Arsenik Symbols:
