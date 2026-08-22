@@ -121,11 +121,40 @@
   };
 };
 
+#define CP1252_LOWERCASE_A_ACUTE   &alt02xx KP_N2 KP_N5 // á
+#define CP1252_UPPERCASE_A_ACUTE   &alt02xx KP_N0 KP_N1 // Á
+#define CP1252_LOWERCASE_E_ACUTE   &alt02xx KP_N3 KP_N3 // é
 #define CP1252_UPPERCASE_E_ACUTE   &alt02xx KP_N0 KP_N1 // É
-#define CP1252_UPPERCASE_A_GRAVE   &alt01xx KP_N9 KP_N2 // À
-#define CP1252_UPPERCASE_E_GRAVE   &alt02xx KP_N0 KP_N0 // È
-#define CP1252_UPPERCASE_U_GRAVE   &alt02xx KP_N1 KP_N7 // Ù
+#define CP1252_LOWERCASE_I_ACUTE   &alt02xx KP_N3 KP_N7 // í
+#define CP1252_UPPERCASE_I_ACUTE   &alt02xx KP_N0 KP_N5 // Í
+#define CP1252_LOWERCASE_O_ACUTE   &alt02xx KP_N4 KP_N3 // ó
+#define CP1252_UPPERCASE_O_ACUTE   &alt02xx KP_N1 KP_N1 // Ó
+#define CP1252_LOWERCASE_U_ACUTE   &alt02xx KP_N5 KP_N0 // ú
+#define CP1252_UPPERCASE_U_ACUTE   &alt02xx KP_N1 KP_N8 // Ú
+
+#define CP1252_LOWERCASE_C_CEDILLA &alt02xx KP_N3 KP_N1 // ç
 #define CP1252_UPPERCASE_C_CEDILLA &alt01xx KP_N9 KP_N9 // Ç
+
+#define CP1252_LOWERCASE_A_GRAVE   &alt02xx KP_N2 KP_N4 // à
+#define CP1252_UPPERCASE_A_GRAVE   &alt01xx KP_N9 KP_N2 // À
+#define CP1252_LOWERCASE_E_GRAVE   &alt02xx KP_N3 KP_N2 // è
+#define CP1252_UPPERCASE_E_GRAVE   &alt02xx KP_N0 KP_N0 // È
+#define CP1252_LOWERCASE_I_GRAVE   &alt02xx KP_N3 KP_N6 // í
+#define CP1252_UPPERCASE_I_GRAVE   &alt02xx KP_N0 KP_N4 // Í
+#define CP1252_LOWERCASE_O_GRAVE   &alt02xx KP_N4 KP_N2 // ò
+#define CP1252_UPPERCASE_O_GRAVE   &alt02xx KP_N1 KP_N0 // Ò
+#define CP1252_LOWERCASE_U_GRAVE   &alt02xx KP_N4 KP_N9 // ù
+#define CP1252_UPPERCASE_U_GRAVE   &alt02xx KP_N1 KP_N7 // Ù
+
+#define CP1252_LOWERCASE_O_STROKE  &alt02xx KP_N4 KP_N8 // ø
+#define CP1252_UPPERCASE_O_STROKE  &alt02xx KP_N1 KP_N6 // Ø
+
+#define CP1252_LOWERCASE_A_TILDE   &alt02xx KP_N2 KP_N7 // ã
+#define CP1252_UPPERCASE_A_TILDE   &alt01xx KP_N9 KP_N5 // Ã
+#define CP1252_LOWERCASE_N_TILDE   &alt02xx KP_N4 KP_N1 // ñ
+#define CP1252_UPPERCASE_N_TILDE   &alt02xx KP_N0 KP_N9 // Ñ
+#define CP1252_LOWERCASE_O_TILDE   &alt02xx KP_N4 KP_N5 // õ
+#define CP1252_UPPERCASE_O_TILDE   &alt02xx KP_N1 KP_N9 // Õ
 
 #define CP1252_LOWERCASE_OE        &alt01xx KP_N5 KP_N6 // œ
 #define CP1252_UPPERCASE_OE        &alt01xx KP_N4 KP_N0 // Œ

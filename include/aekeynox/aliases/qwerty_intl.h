@@ -16,6 +16,18 @@
 #define X_ALL   &kp CMD(A)
 
 /**
+ * Dead Keys
+ */
+
+#define DEAD_ACUTE      SQT
+#define DEAD_GRAVE      GRAVE
+#define DEAD_TILDE      TILDE
+#define DEAD_CIRCUMFLEX CARET
+#define DEAD_DIAERESIS  DQT
+
+#include "dead_keys.h"
+
+/**
  * Arsenik Symbols:
  *   ^<>$% @&*'`
  *   {()}= \+-/"
@@ -70,86 +82,14 @@
 
 #define SA(key) RS(RA(key))
 
-// acute accent
-#define  C_AACU &digraph SQT A     // á
-#define SC_AACU &digraph SQT RS(A) // Á
-#define  C_EACU &digraph SQT E     // é
-#define SC_EACU &digraph SQT RS(E) // É
-#define  C_IACU &digraph SQT I     // í
-#define SC_IACU &digraph SQT RS(I) // Í
-#define  C_OACU &digraph SQT O     // ó
-#define SC_OACU &digraph SQT RS(O) // Ó
-#define  C_UACU &digraph SQT U     // ú
-#define SC_UACU &digraph SQT RS(U) // Ú
-#define  C_YACU &digraph SQT Y     // ý
-#define SC_YACU &digraph SQT RS(Y) // Ý
-
 // cedilla
 #ifdef MACOS
-  #define  C_CCDL &digraph SQT C        // ç
-  #define SC_CCDL &digraph SQT RS(C)    // ç
+  #define  C_CCDL &digraph SQT C     // ç
+  #define SC_CCDL &digraph SQT RS(C) // ç
 #else
   #define  C_CCDL &kp RA(COMMA)  // ç
   #define SC_CCDL &kp SA(COMMA)  // ç
 #endif
-
-// grave accent
-#define  C_AGRV &digraph GRAVE A     // à
-#define SC_AGRV &digraph GRAVE RS(A) // À
-#define  C_EGRV &digraph GRAVE E     // è
-#define SC_EGRV &digraph GRAVE RS(E) // È
-#define  C_IGRV &digraph GRAVE I     // ì
-#define SC_IGRV &digraph GRAVE RS(I) // Ì
-#define  C_OGRV &digraph GRAVE O     // ò
-#define SC_OGRV &digraph GRAVE RS(O) // Ò
-#define  C_UGRV &digraph GRAVE U     // ù
-#define SC_UGRV &digraph GRAVE RS(U) // Ù
-#define  C_YGRV &digraph GRAVE Y     // ỳ
-#define SC_YGRV &digraph GRAVE RS(Y) // Ỳ
-
-// circumflex accent
-#define  C_ACRC &digraph CARET A     // â
-#define SC_ACRC &digraph CARET RS(A) // Â
-#define  C_ECRC &digraph CARET E     // ê
-#define SC_ECRC &digraph CARET RS(E) // Ê
-#define  C_ICRC &digraph CARET I     // î
-#define SC_ICRC &digraph CARET RS(I) // Î
-#define  C_OCRC &digraph CARET O     // ô
-#define SC_OCRC &digraph CARET RS(O) // Ô
-#define  C_UCRC &digraph CARET U     // û
-#define SC_UCRC &digraph CARET RS(U) // Û
-#define  C_YCRC &digraph CARET Y     // ŷ
-#define SC_YCRC &digraph CARET RS(Y) // Ŷ
-
-// diaeresis
-#define  C_ADIA &digraph DQT A     // ä
-#define SC_ADIA &digraph DQT RS(A) // Ä
-#define  C_EDIA &digraph DQT E     // ë
-#define SC_EDIA &digraph DQT RS(E) // Ë
-#define  C_IDIA &digraph DQT I     // ï
-#define SC_IDIA &digraph DQT RS(I) // Ï
-#define  C_ODIA &digraph DQT O     // ö
-#define SC_ODIA &digraph DQT RS(O) // Ö
-#define  C_UDIA &digraph DQT U     // ü
-#define SC_UDIA &digraph DQT RS(U) // Ü
-#define  C_YDIA &digraph DQT Y     // ÿ
-#define SC_YDIA &digraph DQT RS(Y) // Ÿ
-
-// tilde
-#define  C_ATLD &digraph TILDE A     // ã
-#define SC_ATLD &digraph TILDE RS(A) // Ã
-#define  C_ETLD &digraph TILDE E     // ẽ
-#define SC_ETLD &digraph TILDE RS(E) // Ẽ
-#define  C_ITLD &digraph TILDE I     // ĩ
-#define SC_ITLD &digraph TILDE RS(I) // Ĩ
-#define  C_OTLD &digraph TILDE O     // õ
-#define SC_OTLD &digraph TILDE RS(O) // Õ
-#define  C_UTLD &digraph TILDE U     // ũ
-#define SC_UTLD &digraph TILDE RS(U) // Ũ
-#define  C_YTLD &digraph TILDE Y     // ỹ
-#define SC_YTLD &digraph TILDE RS(Y) // Ỹ
-#define  C_NTLD &digraph TILDE N     // ñ
-#define SC_NTLD &digraph TILDE RS(N) // Ñ
 
 // spectal letters
 #ifdef LINUX
@@ -175,13 +115,13 @@
 #define  C_SZ    &kp RA(S) // ß
 
 // quote signs
+#ifdef MACOS
+  #define C_APOS &kp SA(RBKT) // ’
+#else
+  #define C_APOS &kp RA(N0)   // ’
+#endif
 #define C_LSQT  &kp RA(N9)    // ‘
 #define C_RSQT  &kp RA(N0)    // ’
-#ifdef MACOS
-  #define C_APOS  &kp SA(RBKT)    // ’
-#else
-  #define C_APOS  &kp RA(N0)    // ’
-#endif
 #define C_LGQT  &kp RA(LBKT)  // «
 #define C_RGQT  &kp RA(RBKT)  // »
 #ifdef LINUX
