@@ -40,7 +40,7 @@
 
 #define DEAD_CIRCUMFLEX       LBKT
 #define DEAD_DIAERESIS        LBRC
-#define DEAD_TILDE OS_SELECT( RA(N2) ,, RA(N) , NULL ) // n/a on Linux
+#define DEAD_TILDE OS_SELECT( RA(N2) ,, RA(N) , 0 ) // n/a on Linux
 
 #include "dead_keys.h"
 
