@@ -30,12 +30,14 @@
  * Keyboard Layout
  */
 
-// Non-US Layouts
+// Non-ASCII Layouts
 #ifdef KB_LAYOUT_AZERTY
   #define SHIFTED_NUMBERS
   #include "aliases/azerty.h"
 #elifdef KB_LAYOUT_QWERTY_BR
   #include "aliases/qwerty_br.h"
+#elifdef KB_LAYOUT_QWERTY_DK
+  #include "aliases/qwerty_dk.h"
 #elifdef KB_LAYOUT_QWERTY_ES
   #include "aliases/qwerty_es.h"
 #elifdef KB_LAYOUT_QWERTY_IT
