@@ -2,23 +2,27 @@
 // https://github.com/OneDeadKey/selenium
 
 // Standard ZMK headers
-#include <behaviors.dtsi>         // standard behaviors defined by ZMK
-#include <dt-bindings/zmk/keys.h> // human-readable keycodes and modifiers
-#include <dt-bindings/zmk/bt.h>   // bluetooth behaviors (see fn/media layer)
+#include <behaviors.dtsi>              // standard behaviors defined by ZMK
+#include <dt-bindings/zmk/keys.h>      // human-readable keycodes and modifiers
+#include <dt-bindings/zmk/bt.h>        // bluetooth behaviors (see fn/media layer)
+#include <dt-bindings/zmk/pointing.h>  // mouse keys, movement and scroll
 
 // Community module headers
 #include <behaviors/mod-hold.dtsi> // Provides helper macros for the mod-hold behavior
 #include <behaviors/dead-key.dtsi> // Provides helper macros for the dead-key behavior
+#include <dt-bindings/zmk/oskey.h> // Bindings for oskey OS ids and placeholder params
+#include <behaviors/oskey.dtsi>    // Provides helper macros for the oskey behavior,
+                                   // along with a manual OS selector
 
 #ifndef CI_IGNORE_USER_SETTINGS
   #include "settings.h"   // user settings
 #endif
 
 #include "defaults.h"     // default options and safeguards
+#include "hold_taps.dtsi" // defines thumb keys and homerow mods
 #include "aliases.h"      // defines symbols and actions
 #include "bindings.h"     // default SELENIUM_KEYMAP_BINDINGS macro
 #include "mappings.dtsi"  // key mapping helpers and macros
-#include "hold_taps.dtsi" // defines thumb keys and homerow mods
 #include "outer_keys.h"   // defines outer keys on the 6th columns
 
 
@@ -134,9 +138,9 @@
     fn_media_layer: fn_media_layer {
       display-name = "FnMedia";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
-        &trans  ,  &kp F1  &kp F2  &kp F3  &kp F4  &none   ,   &bt BT_SEL 2  &kp C_NEXT  &kp C_VOL_UP  &kp C_BRI_UP   &kp SLCK    ,  &trans ,
-        &trans  ,  &kp F5  &kp F6  &kp F7  &kp F8  &none   ,   &bt_sel1_clr  &UH1 C_PP   &UH2 C_MUTE   &UH3 C_AL_LOCK &UH4 PSCRN  ,  &trans ,
-        &trans  ,  &kp F9  &kp F10 &kp F11 &kp F12 &none   ,   &bt BT_SEL 0  &kp C_PREV  &kp C_VOL_DN  &kp C_BRI_DN   &kp INS     ,  &trans ,
+        &trans  ,  &kp F1  &kp F2  &kp F3  &kp F4  &os_sel_win_uns   ,   &bt BT_SEL 2  &kp C_NEXT  &kp C_VOL_UP  &kp C_BRI_UP   &kp SLCK    ,  &trans ,
+        &trans  ,  &kp F5  &kp F6  &kp F7  &kp F8  &os_sel_mac_ios   ,   &bt_sel1_clr  &UH1 C_PP   &UH2 C_MUTE   &UH3 C_AL_LOCK &UH4 PSCRN  ,  &trans ,
+        &trans  ,  &kp F9  &kp F10 &kp F11 &kp F12 &os_sel OS_LIN    ,   &bt BT_SEL 0  &kp C_PREV  &kp C_VOL_DN  &kp C_BRI_DN   &kp INS     ,  &trans ,
                            &trans , &bootloader , &trans   ,   &trans , &sys_reset , &studio_unlock
       )>;
     };

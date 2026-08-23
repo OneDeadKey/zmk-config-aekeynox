@@ -1,0 +1,467 @@
+/**
+ * Acute Accent
+ */
+
+#ifndef DI_ACU
+#define DI_ACU &kp
+#define DK_ACU &none
+#endif
+
+/ {
+  behaviors {
+    //           , default      ,, Windows (CP1252)         ,,
+    OSKEY( c_aacu, DI_ACU    A  ,, CP1252_LOWERCASE_A_ACUTE ,, )
+    OSKEY(sc_aacu, DI_ACU RS(A) ,, CP1252_UPPERCASE_A_ACUTE ,, )
+    OSKEY( c_eacu, DI_ACU    E  ,, CP1252_LOWERCASE_E_ACUTE ,, )
+    OSKEY(sc_eacu, DI_ACU RS(E) ,, CP1252_UPPERCASE_E_ACUTE ,, )
+    OSKEY( c_iacu, DI_ACU    I  ,, CP1252_LOWERCASE_I_ACUTE ,, )
+    OSKEY(sc_iacu, DI_ACU RS(I) ,, CP1252_UPPERCASE_I_ACUTE ,, )
+    OSKEY( c_oacu, DI_ACU    O  ,, CP1252_LOWERCASE_O_ACUTE ,, )
+    OSKEY(sc_oacu, DI_ACU RS(O) ,, CP1252_UPPERCASE_O_ACUTE ,, )
+    OSKEY( c_uacu, DI_ACU    U  ,, CP1252_LOWERCASE_U_ACUTE ,, )
+    OSKEY(sc_uacu, DI_ACU RS(U) ,, CP1252_UPPERCASE_U_ACUTE ,, )
+    OSKEY( c_yacu, DI_ACU    Y  ,, CP1252_LOWERCASE_Y_ACUTE ,, )
+    OSKEY(sc_yacu, DI_ACU RS(Y) ,, CP1252_UPPERCASE_Y_ACUTE ,, )
+  };
+};
+
+#ifndef  C_AACU
+#define  C_AACU  &c_aacu
+#endif
+#ifndef SC_AACU
+#define SC_AACU &sc_aacu
+#endif
+#ifndef  C_EACU
+#define  C_EACU  &c_eacu
+#endif
+#ifndef SC_EACU
+#define SC_EACU &sc_eacu
+#endif
+#ifndef  C_IACU
+#define  C_IACU  &c_iacu
+#endif
+#ifndef SC_IACU
+#define SC_IACU &sc_iacu
+#endif
+#ifndef  C_OACU
+#define  C_OACU  &c_oacu
+#endif
+#ifndef SC_OACU
+#define SC_OACU &sc_oacu
+#endif
+#ifndef  C_UACU
+#define  C_UACU  &c_uacu
+#endif
+#ifndef SC_UACU
+#define SC_UACU &sc_uacu
+#endif
+#ifndef  C_YACU
+#define  C_YACU  &c_yacu
+#endif
+#ifndef SC_YACU
+#define SC_YACU &sc_yacu
+#endif
+
+// Unavailable CP1252 codes
+#ifndef  C_LACU
+#define  C_LACU DI_ACU L
+#endif
+#ifndef SC_LACU
+#define SC_LACU DI_ACU RS(L)
+#endif
+#ifndef  C_RACU
+#define  C_RACU DI_ACU R
+#endif
+#ifndef SC_RACU
+#define SC_RACU DI_ACU RS(R)
+#endif
+
+/**
+ * Grave Accent
+ */
+
+#ifndef DI_GRV
+#define DI_GRV &kp
+#define DK_GRV &none
+#endif
+
+/ {
+  behaviors {
+    //           , default      ,, Windows (CP1252)         ,,
+    OSKEY( c_agrv, DI_GRV    A  ,, CP1252_LOWERCASE_A_GRAVE ,, )
+    OSKEY(sc_agrv, DI_GRV RS(A) ,, CP1252_UPPERCASE_A_GRAVE ,, )
+    OSKEY( c_egrv, DI_GRV    E  ,, CP1252_LOWERCASE_E_GRAVE ,, )
+    OSKEY(sc_egrv, DI_GRV RS(E) ,, CP1252_UPPERCASE_E_GRAVE ,, )
+    OSKEY( c_igrv, DI_GRV    I  ,, CP1252_LOWERCASE_I_GRAVE ,, )
+    OSKEY(sc_igrv, DI_GRV RS(I) ,, CP1252_UPPERCASE_I_GRAVE ,, )
+    OSKEY( c_ogrv, DI_GRV    O  ,, CP1252_LOWERCASE_O_GRAVE ,, )
+    OSKEY(sc_ogrv, DI_GRV RS(O) ,, CP1252_UPPERCASE_O_GRAVE ,, )
+    OSKEY( c_ugrv, DI_GRV    U  ,, CP1252_LOWERCASE_U_GRAVE ,, )
+    OSKEY(sc_ugrv, DI_GRV RS(U) ,, CP1252_UPPERCASE_U_GRAVE ,, )
+  };
+};
+
+#ifndef  C_AGRV
+#define  C_AGRV  &c_agrv
+#endif
+#ifndef SC_AGRV
+#define SC_AGRV &sc_agrv
+#endif
+#ifndef  C_EGRV
+#define  C_EGRV  &c_egrv
+#endif
+#ifndef SC_EGRV
+#define SC_EGRV &sc_egrv
+#endif
+#ifndef  C_IGRV
+#define  C_IGRV  &c_igrv
+#endif
+#ifndef SC_IGRV
+#define SC_IGRV &sc_igrv
+#endif
+#ifndef  C_OGRV
+#define  C_OGRV  &c_ogrv
+#endif
+#ifndef SC_OGRV
+#define SC_OGRV &sc_ogrv
+#endif
+#ifndef  C_UGRV
+#define  C_UGRV  &c_ugrv
+#endif
+#ifndef SC_UGRV
+#define SC_UGRV &sc_ugrv
+#endif
+
+// Unavailable CP1252 codes
+#ifndef  C_YGRV
+#define  C_YGRV DI_GRV    Y
+#endif
+#ifndef SC_YGRV
+#define SC_YGRV DI_GRV RS(Y)
+#endif
+
+/**
+ * Circumflex Accent
+ */
+
+#ifndef DI_CIR
+#define DI_CIR &kp
+#define DK_CIR &none
+#endif
+
+/ {
+  behaviors {
+    //           , default      ,, Windows (CP1252)              ,,
+    OSKEY( c_acir, DI_CIR    A  ,, CP1252_LOWERCASE_A_CIRCUMFLEX ,, )
+    OSKEY(sc_acir, DI_CIR RS(A) ,, CP1252_UPPERCASE_A_CIRCUMFLEX ,, )
+    OSKEY( c_ecir, DI_CIR    E  ,, CP1252_LOWERCASE_E_CIRCUMFLEX ,, )
+    OSKEY(sc_ecir, DI_CIR RS(E) ,, CP1252_UPPERCASE_E_CIRCUMFLEX ,, )
+    OSKEY( c_icir, DI_CIR    I  ,, CP1252_LOWERCASE_I_CIRCUMFLEX ,, )
+    OSKEY(sc_icir, DI_CIR RS(I) ,, CP1252_UPPERCASE_I_CIRCUMFLEX ,, )
+    OSKEY( c_ocir, DI_CIR    O  ,, CP1252_LOWERCASE_O_CIRCUMFLEX ,, )
+    OSKEY(sc_ocir, DI_CIR RS(O) ,, CP1252_UPPERCASE_O_CIRCUMFLEX ,, )
+    OSKEY( c_ucir, DI_CIR    U  ,, CP1252_LOWERCASE_U_CIRCUMFLEX ,, )
+    OSKEY(sc_ucir, DI_CIR RS(U) ,, CP1252_UPPERCASE_U_CIRCUMFLEX ,, )
+  };
+};
+
+#ifndef  C_ACIR
+#define  C_ACIR  &c_acir
+#endif
+#ifndef SC_ACIR
+#define SC_ACIR &sc_acir
+#endif
+#ifndef  C_ECIR
+#define  C_ECIR  &c_ecir
+#endif
+#ifndef SC_ECIR
+#define SC_ECIR &sc_ecir
+#endif
+#ifndef  C_ICIR
+#define  C_ICIR  &c_icir
+#endif
+#ifndef SC_ICIR
+#define SC_ICIR &sc_icir
+#endif
+#ifndef  C_OCIR
+#define  C_OCIR  &c_ocir
+#endif
+#ifndef SC_OCIR
+#define SC_OCIR &sc_ocir
+#endif
+#ifndef  C_UCIR
+#define  C_UCIR  &c_ucir
+#endif
+#ifndef SC_UCIR
+#define SC_UCIR &sc_ucir
+#endif
+
+// Unavailable CP1252 codes
+#ifndef  C_YCIR
+#define  C_YCIR DI_CIR    Y
+#endif
+#ifndef SC_YCIR
+#define SC_YCIR DI_CIR RS(Y)
+#endif
+
+/**
+ * Diaeresis
+ */
+
+#ifndef DI_DIA
+#define DI_DIA &kp
+#define DK_DIA &none
+#endif
+
+/ {
+  behaviors {
+    //           , default      ,, Windows (CP1252)             ,,
+    OSKEY( c_acir, DI_DIA    A  ,, CP1252_LOWERCASE_A_DIAERESIS ,, )
+    OSKEY(sc_acir, DI_DIA RS(A) ,, CP1252_UPPERCASE_A_DIAERESIS ,, )
+    OSKEY( c_ecir, DI_DIA    E  ,, CP1252_LOWERCASE_E_DIAERESIS ,, )
+    OSKEY(sc_ecir, DI_DIA RS(E) ,, CP1252_UPPERCASE_E_DIAERESIS ,, )
+    OSKEY( c_icir, DI_DIA    I  ,, CP1252_LOWERCASE_I_DIAERESIS ,, )
+    OSKEY(sc_icir, DI_DIA RS(I) ,, CP1252_UPPERCASE_I_DIAERESIS ,, )
+    OSKEY( c_ocir, DI_DIA    O  ,, CP1252_LOWERCASE_O_DIAERESIS ,, )
+    OSKEY(sc_ocir, DI_DIA RS(O) ,, CP1252_UPPERCASE_O_DIAERESIS ,, )
+    OSKEY( c_ucir, DI_DIA    U  ,, CP1252_LOWERCASE_U_DIAERESIS ,, )
+    OSKEY(sc_ucir, DI_DIA RS(U) ,, CP1252_UPPERCASE_U_DIAERESIS ,, )
+    OSKEY( c_ycir, DI_DIA    Y  ,, CP1252_LOWERCASE_Y_DIAERESIS ,, )
+    OSKEY(sc_ycir, DI_DIA RS(Y) ,, CP1252_UPPERCASE_Y_DIAERESIS ,, )
+  };
+};
+
+#ifndef  C_ADIA
+#define  C_ADIA  &c_acir
+#endif
+#ifndef SC_ADIA
+#define SC_ADIA &sc_acir
+#endif
+#ifndef  C_EDIA
+#define  C_EDIA  &c_ecir
+#endif
+#ifndef SC_EDIA
+#define SC_EDIA &sc_ecir
+#endif
+#ifndef  C_IDIA
+#define  C_IDIA  &c_icir
+#endif
+#ifndef SC_IDIA
+#define SC_IDIA &sc_icir
+#endif
+#ifndef  C_ODIA
+#define  C_ODIA  &c_ocir
+#endif
+#ifndef SC_ODIA
+#define SC_ODIA &sc_ocir
+#endif
+#ifndef  C_UDIA
+#define  C_UDIA  &c_ucir
+#endif
+#ifndef SC_UDIA
+#define SC_UDIA &sc_ucir
+#endif
+#ifndef  C_YDIA
+#define  C_YDIA  &c_ucir
+#endif
+#ifndef SC_YDIA
+#define SC_YDIA &sc_ucir
+#endif
+
+/**
+ * Tilde
+ */
+
+#ifndef DI_TLD
+#define DI_TLD &kp
+#define DK_TLD &none
+#endif
+
+/ {
+  behaviors {
+    //           , default      ,, Windows (CP1252)         ,,
+    OSKEY( c_atld, DI_TLD    A  ,, CP1252_LOWERCASE_A_TILDE ,, )
+    OSKEY(sc_atld, DI_TLD RS(A) ,, CP1252_UPPERCASE_A_TILDE ,, )
+    OSKEY( c_otld, DI_TLD    O  ,, CP1252_LOWERCASE_O_TILDE ,, )
+    OSKEY(sc_otld, DI_TLD RS(O) ,, CP1252_UPPERCASE_O_TILDE ,, )
+    OSKEY( c_ntld, DI_TLD    N  ,, CP1252_LOWERCASE_N_TILDE ,, )
+    OSKEY(sc_ntld, DI_TLD RS(N) ,, CP1252_UPPERCASE_N_TILDE ,, )
+  };
+};
+
+#ifndef  C_ATLD
+#define  C_ATLD  &c_atld
+#endif
+#ifndef SC_ATLD
+#define SC_ATLD &sc_atld
+#endif
+#ifndef  C_OTLD
+#define  C_OTLD  &c_otld
+#endif
+#ifndef SC_OTLD
+#define SC_OTLD &sc_otld
+#endif
+#ifndef  C_NTLD
+#define  C_NTLD  &c_ntld
+#endif
+#ifndef SC_NTLD
+#define SC_NTLD &sc_ntld
+#endif
+
+// Unavailable CP1252 codes
+#ifndef  C_ETLD
+#define  C_ETLD DI_TLD E
+#endif
+#ifndef SC_ETLD
+#define SC_ETLD DI_TLD RS(E)
+#endif
+#ifndef  C_ITLD
+#define  C_ITLD DI_TLD I
+#endif
+#ifndef SC_ITLD
+#define SC_ITLD DI_TLD RS(I)
+#endif
+#ifndef  C_UTLD
+#define  C_UTLD DI_TLD U
+#endif
+#ifndef SC_UTLD
+#define SC_UTLD DI_TLD RS(U)
+#endif
+#ifndef  C_YTLD
+#define  C_YTLD DI_TLD Y
+#endif
+#ifndef SC_YTLD
+#define SC_YTLD DI_TLD RS(Y)
+#endif
+
+/**
+ * Cedilla
+ */
+
+#ifndef DI_CDL
+#define DI_CDL &kp
+#define DK_CDL &none
+#endif
+
+/ {
+  behaviors {
+    //           , default      ,, Windows (CP1252)           ,,
+    OSKEY( c_ccdl, DI_CDL    C  ,, CP1252_LOWERCASE_C_CEDILLA ,, )
+    OSKEY(sc_ccdl, DI_CDL RS(C) ,, CP1252_UPPERCASE_C_CEDILLA ,, )
+  };
+};
+
+#ifndef  C_CCDL
+#define  C_CCDL  &c_ccdl
+#endif
+#ifndef SC_CCDL
+#define SC_CCDL &sc_ccdl
+#endif
+
+/**
+ * Caron
+ */
+
+#ifndef DI_CAR
+#define DI_CAR &kp
+#define DK_CAR &none
+#endif
+
+/ {
+  behaviors {
+    //           , default      ,, Windows (CP1252)         ,,
+    OSKEY( c_scar, DI_CAR    S  ,, CP1252_LOWERCASE_S_CARON ,, )
+    OSKEY(sc_scar, DI_CAR RS(S) ,, CP1252_UPPERCASE_S_CARON ,, )
+    OSKEY( c_zcar, DI_CAR    Z  ,, CP1252_LOWERCASE_Z_CARON ,, )
+    OSKEY(sc_zcar, DI_CAR RS(Z) ,, CP1252_UPPERCASE_Z_CARON ,, )
+  };
+};
+
+#ifndef  C_SCAR
+#define  C_SCAR  &c_scar
+#endif
+#ifndef SC_SCAR
+#define SC_SCAR &sc_scar
+#endif
+#ifndef  C_ZCAR
+#define  C_ZCAR  &c_zcar
+#endif
+#ifndef SC_ZCAR
+#define SC_ZCAR &sc_zcar
+#endif
+
+// Unavailable CP1252 codes
+#ifndef  C_CCAR
+#define  C_CCAR DI_CAR C
+#endif
+#ifndef SC_CCAR
+#define SC_CCAR DI_CAR RS(C)
+#endif
+#ifndef  C_DCAR
+#define  C_DCAR DI_CAR D
+#endif
+#ifndef SC_DCAR
+#define SC_DCAR DI_CAR RS(D)
+#endif
+#ifndef  C_ECAR
+#define  C_ECAR DI_CAR E
+#endif
+#ifndef SC_ECAR
+#define SC_ECAR DI_CAR RS(E)
+#endif
+#ifndef  C_LCAR
+#define  C_LCAR DI_CAR L
+#endif
+#ifndef SC_LCAR
+#define SC_LCAR DI_CAR RS(L)
+#endif
+#ifndef  C_NCAR
+#define  C_NCAR DI_CAR N
+#endif
+#ifndef SC_NCAR
+#define SC_NCAR DI_CAR RS(N)
+#endif
+#ifndef  C_RCAR
+#define  C_RCAR DI_CAR R
+#endif
+#ifndef SC_RCAR
+#define SC_RCAR DI_CAR RS(R)
+#endif
+#ifndef  C_TCAR
+#define  C_TCAR DI_CAR T
+#endif
+#ifndef SC_TCAR
+#define SC_TCAR DI_CAR RS(T)
+#endif
+
+/**
+ * Ring Above
+ */
+
+#ifndef DI_RNG
+#define DI_RNG &kp
+#define DK_RNG &none
+#endif
+
+/ {
+  behaviors {
+    //           , default      ,, Windows (CP1252)        ,,
+    OSKEY( c_arng, DI_RNG    A  ,, CP1252_LOWERCASE_A_RING ,, )
+    OSKEY(sc_arng, DI_RNG RS(A) ,, CP1252_UPPERCASE_A_RING ,, )
+  };
+};
+
+#ifndef  C_ARNG
+#define  C_ARNG  &c_arng
+#endif
+#ifndef SC_ARNG
+#define SC_ARNG &sc_arng
+#endif
+
+// Unavailable CP1252 codes
+#ifndef  C_URNG
+#define  C_URNG DI_RNG U
+#endif
+#ifndef SC_URNG
+#define SC_URNG DI_RNG RS(U)
+#endif
