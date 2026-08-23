@@ -8,6 +8,38 @@
 #else
   #define DI_ACU &kp
   #define DK_ACU &none
+  #ifdef ENABLE_CP1252_ALT_CODES
+    #ifndef  C_AACU
+    #define  C_AACU CP1252_LOWERCASE_A_ACUTE
+    #endif
+    #ifndef SC_AACU
+    #define SC_AACU CP1252_UPPERCASE_A_ACUTE
+    #endif
+    #ifndef  C_EACU
+    #define  C_EACU CP1252_LOWERCASE_E_ACUTE
+    #endif
+    #ifndef SC_EACU
+    #define SC_EACU CP1252_UPPERCASE_E_ACUTE
+    #endif
+    #ifndef  C_IACU
+    #define  C_IACU CP1252_LOWERCASE_I_ACUTE
+    #endif
+    #ifndef SC_IACU
+    #define SC_IACU CP1252_UPPERCASE_I_ACUTE
+    #endif
+    #ifndef  C_OACU
+    #define  C_OACU CP1252_LOWERCASE_O_ACUTE
+    #endif
+    #ifndef SC_OACU
+    #define SC_OACU CP1252_UPPERCASE_O_ACUTE
+    #endif
+    #ifndef  C_UACU
+    #define  C_UACU CP1252_LOWERCASE_U_ACUTE
+    #endif
+    #ifndef SC_UACU
+    #define SC_UACU CP1252_UPPERCASE_U_ACUTE
+    #endif
+  #endif
 #endif
 
 #ifndef  C_AACU
@@ -58,6 +90,38 @@
 #else
   #define DI_GRV &kp
   #define DK_GRV &none
+  #ifdef ENABLE_CP1252_ALT_CODES
+    #ifndef  C_AGRV
+    #define  C_AGRV CP1252_LOWERCASE_A_GRAVE
+    #endif
+    #ifndef SC_AGRV
+    #define SC_AGRV CP1252_UPPERCASE_A_GRAVE
+    #endif
+    #ifndef  C_EGRV
+    #define  C_EGRV CP1252_LOWERCASE_E_GRAVE
+    #endif
+    #ifndef SC_EGRV
+    #define SC_EGRV CP1252_UPPERCASE_E_GRAVE
+    #endif
+    #ifndef  C_IGRV
+    #define  C_IGRV CP1252_LOWERCASE_I_GRAVE
+    #endif
+    #ifndef SC_IGRV
+    #define SC_IGRV CP1252_UPPERCASE_I_GRAVE
+    #endif
+    #ifndef  C_OGRV
+    #define  C_OGRV CP1252_LOWERCASE_O_GRAVE
+    #endif
+    #ifndef SC_OGRV
+    #define SC_OGRV CP1252_UPPERCASE_O_GRAVE
+    #endif
+    #ifndef  C_UGRV
+    #define  C_UGRV CP1252_LOWERCASE_U_GRAVE
+    #endif
+    #ifndef SC_UGRV
+    #define SC_UGRV CP1252_UPPERCASE_U_GRAVE
+    #endif
+  #endif
 #endif
 
 #ifndef  C_AGRV
@@ -107,6 +171,9 @@
 #else
   #define DI_CIR &kp
   #define DK_CIR &none
+  #ifdef ENABLE_CP1252_ALT_CODES
+    // TODO
+  #endif
 #endif
 
 #ifndef  C_ACRC
@@ -156,6 +223,9 @@
 #else
   #define DI_DIA &kp
   #define DK_DIA &none
+  #ifdef ENABLE_CP1252_ALT_CODES
+    // TODO
+  #endif
 #endif
 
 #ifndef  C_ADIA
@@ -199,12 +269,32 @@
  * Tilde
  */
 
-#ifdef DEAD_TILDE
+#if (defined DEAD_TILDE) && DEAD_TILDE
   #define DI_TLD &digraph DEAD_TILDE
   #define DK_TLD &kp DEAD_TILDE
 #else
   #define DI_TLD &kp
   #define DK_TLD &none
+  #ifdef ENABLE_CP1252_ALT_CODES
+    #ifndef  C_ATLD
+    #define  C_ATLD CP1252_LOWERCASE_A_TILDE
+    #endif
+    #ifndef SC_ATLD
+    #define SC_ATLD CP1252_UPPERCASE_A_TILDE
+    #endif
+    #ifndef  C_OTLD
+    #define  C_OTLD CP1252_LOWERCASE_O_TILDE
+    #endif
+    #ifndef SC_OTLD
+    #define SC_OTLD CP1252_UPPERCASE_O_TILDE
+    #endif
+    #ifndef  C_NTLD
+    #define  C_NTLD CP1252_LOWERCASE_N_TILDE
+    #endif
+    #ifndef SC_NTLD
+    #define SC_NTLD CP1252_UPPERCASE_N_TILDE
+    #endif
+  #endif
 #endif
 
 #ifndef  C_ATLD
@@ -254,12 +344,20 @@
  * Cedilla
  */
 
-#ifdef DEAD_CEDILLA
+#if (defined DEAD_CEDILLA) && DEAD_CEDILLA
   #define DI_CDL &digraph DEAD_CEDILLA
   #define DK_CDL &kp DEAD_CEDILLA
 #else
   #define DI_CDL &kp
   #define DK_CDL &none
+  #ifdef ENABLE_CP1252_ALT_CODES
+    #ifndef  C_OCDL
+    #define  C_OCDL CP1252_LOWERCASE_C_CEDILLA
+    #endif
+    #ifndef SC_OCDL
+    #define SC_OCDL CP1252_UPPERCASE_C_CEDILLA
+    #endif
+  #endif
 #endif
 
 #ifndef  C_OCDL
