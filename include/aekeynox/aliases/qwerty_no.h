@@ -97,10 +97,10 @@
   #define SC_ETH  &kp LS(D)
   #define  C_SZ   &digraph S S
 #endif
-#define  C_AE   &kp SEMI  // æ
-#define SC_AE   &kp COLON // Æ
-#define  C_OSTR &kp SQT   // ø
-#define SC_OSTR &kp DQT   // Ø
+#define  C_AE   &kp SQT   // æ
+#define SC_AE   &kp DQT   // Æ
+#define  C_OSTR &kp SEMI  // ø
+#define SC_OSTR &kp COLON // Ø
 #define  C_ARNG &kp LBKT  // å
 #define SC_ARNG &kp LBRC  // Å
 
