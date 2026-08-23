@@ -1,5 +1,5 @@
 // United States (International)
-// https://kbdlayout.info/00020409/
+// https://kbdlayout.info/kbdusx
 
 /**
  * Action Combos

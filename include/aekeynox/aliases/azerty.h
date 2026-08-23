@@ -1,5 +1,5 @@
 // France
-// https://kbdlayout.info/0000040c/
+// https://kbdlayout.info/kbdfr
 
 /**
  * OS_SELECT

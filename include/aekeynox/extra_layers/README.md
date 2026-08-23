@@ -46,15 +46,15 @@ selected with one of the following definitions:
 
 Activated by default on:
 
-- [x] QWERTY-dk: Denmark
-- [ ] QWERTY-is: Iceland
-- [x] QWERTY-no: Norway
-- [x] QWERTY-se: Sweden, Finland
+- [x] [QWERTY-dk]: Denmark
+- [ ] [QWERTY-is]: Iceland
+- [x] [QWERTY-no]: Norway
+- [x] [QWERTY-se]: Sweden, Finland
 
 Suitable for:
 
-- [x] QWERTY-intl
-- [x] QWERTZ-de: Germany, Austria
+- [x] [QWERTY-intl]
+- [x] [QWERTZ-de]: Germany, Austria
 
 ```
     |---------------|---------------|  base
@@ -96,13 +96,13 @@ This is suitable for [Dutch] as well if `^` and `˝` are ignored:
 
 Activated by default on:
 
-- [x] QWERTZ-ch: Switzerland, Luxembourg, Liechtenstein
-- [x] QWERTZ-de: Germany, Austria
-- [x] QWERTY-it: Italy
+- [x] [QWERTZ-ch]: Switzerland, Luxembourg, Liechtenstein
+- [x] [QWERTZ-de]: Germany, Austria
+- [x] [QWERTY-it]: Italy
 
 Suitable for:
 
-- [x] QWERTY-intl
+- [x] [QWERTY-intl]
 
 ```
     |---------------|---------------|  base
@@ -134,14 +134,14 @@ Supported languages:
 
 Activated by default on:
 
-- [x] QWERTY-br: Brazil
-- [x] QWERTY-latam: Latin America
-- [x] QWERTY-es: Spain
-- [x] QWERTY-pt: Portugal
+- [x] [QWERTY-br]: Brazil
+- [x] [QWERTY-latam]: Latin America
+- [x] [QWERTY-es]: Spain
+- [x] [QWERTY-pt]: Portugal
 
 Suitable for:
 
-- [x] QWERTY-intl
+- [x] [QWERTY-intl]
 
 ```
     |---------------|---------------|  base
@@ -177,7 +177,7 @@ Layout-Specific Adaptations
 
 ### AZERTY-1dk (French)
 
-AZERTY is arguably one of the worst keyboard layouts ever made: the <kbd>A</kbd>
+[AZERTY] is arguably one of the worst keyboard layouts ever made: <kbd>A</kbd>
 is not on the home row, the dot and the numbers require <kbd>Shift</kbd>,
 accented chars on the numbers’ row…
 
@@ -208,7 +208,7 @@ It can be emulated by Ækeynox on any AZERTY or QWERTY-intl host.
 
 ### Bépolar (French)
 
-Bépo is a Dvorak-like layout for French, which has explicitly excluded ergonomic
+[Bépo] is a Dvorak-like layout for French, which has explicitly excluded ergonomic
 keyboards from the very beginning of its development. Bépolar is a Bépo variant
 that’s been designed *specifically* for ergonomic keyboards.
 
@@ -262,7 +262,6 @@ Many other national layouts are still missing, among which:
 - [ ] QWERTY-hr: Bosnia, Croatia, Serbia (+ Slovenia, almost identical)
 - [ ] QWERTY-pl: Poland (214)
 - [ ] QWERTY-tr: Turkey
-
 - [ ] QWERTZ-cz: Czech Republic
 - [ ] QWERTZ-hu: Hungary
 - [ ] QWERTZ-sk: Slovakia
@@ -317,3 +316,22 @@ customized to include it under the left pinky.
 
 We still (highly) recommend using a `1dk` layer instead (both `Nordic` and
 `Transalp` work fine with German); but *your keyboard, your rules!*
+
+[AZERTY]:       https://kbdlayout.info/kbdfr
+[Bépo]:         https://kbdlayout.info/kbdfrnb
+[Dvorak]:       https://kbdlayout.info/kbddv
+[QWERTY]:       https://kbdlayout.info/kbdus
+[QWERTY-br]:    https://kbdlayout.info/kbdbr
+[QWERTY-dk]:    https://kbdlayout.info/kbdda
+[QWERTY-es]:    https://kbdlayout.info/kbdsp
+[QWERTY-intl]:  https://kbdlayout.info/kbdusx
+[QWERTY-is]:    https://kbdlayout.info/kbdic
+[QWERTY-it]:    https://kbdlayout.info/kbdit142
+[QWERTY-latam]: https://kbdlayout.info/kbdla
+[QWERTY-no]:    https://kbdlayout.info/kbdno
+[QWERTY-no]:    https://kbdlayout.info/kbdsp
+[QWERTY-no]:    https://kbdlayout.info/kbdus
+[QWERTY-pt]:    https://kbdlayout.info/kbdpo
+[QWERTY-se]:    https://kbdlayout.info/kbdse
+[QWERTZ-ch]:    https://kbdlayout.info/kbdsg
+[QWERTZ-de]:    https://kbdlayout.info/kbdgr

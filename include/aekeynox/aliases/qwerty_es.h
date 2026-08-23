@@ -1,5 +1,5 @@
 // Spain
-// https://kbdlayout.info/0000040a/
+// https://kbdlayout.info/kbdsp
 
 #ifdef KB_EXTRA_LAYERS_AUTO
   #define KB_EXTRA_LAYERS_TRANSAT

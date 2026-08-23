@@ -1,5 +1,5 @@
 // Portugal
-// https://kbdlayout.info/00000816/
+// https://kbdlayout.info/kbdpo
 
 #ifdef KB_EXTRA_LAYERS_AUTO
   #define KB_EXTRA_LAYERS_TRANSAT

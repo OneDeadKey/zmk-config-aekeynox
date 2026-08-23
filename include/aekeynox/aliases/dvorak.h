@@ -1,5 +1,5 @@
 // Dvorak (US)
-// https://kbdlayout.info/00010409/
+// https://kbdlayout.info/kbddv
 
 /**
  * Action Combos

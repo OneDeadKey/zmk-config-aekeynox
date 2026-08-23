@@ -1,5 +1,5 @@
-// Bepolar
-// https://ergol.org/lafayette/#b%C3%A9polar
+// Bépolar
+// https://ergol.org/lafayette/#bépolar
 
 /**
  * Action Combos

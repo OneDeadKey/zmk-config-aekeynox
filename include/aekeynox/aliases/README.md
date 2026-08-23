@@ -24,47 +24,73 @@ Supported Layouts
 this starts with layouts that have a dedicated Apple keyboard, plus a couple
 others:
 
-| ☑  | Layout ID                | Used in…                          | Variant     |
-|:--:|--------------------------|-----------------------------------|-------------|
-| ✅ | `KB_LAYOUT_QWERTY`       | United States                     |
-| ✅ | `KB_LAYOUT_QWERTY_INTL`  | United States / International     |
+| ☑  | Layout ID              | Used in…                          | Variant     |
+|:--:|------------------------|-----------------------------------|-------------|
+| ✅ | [`KB_LAYOUT_QWERTY`]       | United States                     |
+| ✅ | [`KB_LAYOUT_QWERTY_INTL`]  | United States / International     |
 |    |
-| ✅ | `KB_LAYOUT_AZERTY`       | France                            |
+| ✅ | [`KB_LAYOUT_AZERTY`]       | France                            |
 | 💡 | `KB_LAYOUT_AZERTY_BE`    | Belgium                           |
 |    |
-| ✅ | `KB_LAYOUT_QWERTY_BR`    | Brazil                            |
+| ✅ | [`KB_LAYOUT_QWERTY_BR`]    | Brazil                            |
 | 💡 | `KB_LAYOUT_QWERTY_CA`    | Canada                            | Multilingual
 | 💡 | `KB_LAYOUT_QWERTY_CZ`    | Czech Republic                    | Programmers
-| ✅ | `KB_LAYOUT_QWERTY_DK`    | Denmark                           |
-| ✅ | `KB_LAYOUT_QWERTY_ES`    | Spain                             |
+| ✅ | [`KB_LAYOUT_QWERTY_DK`]    | Denmark                           |
+| ✅ | [`KB_LAYOUT_QWERTY_ES`]    | Spain                             |
 | 💡 | `KB_LAYOUT_QWERTY_HR`    | Bosnia, Croatia, Serbia, Slovenia |
 | 💡 | `KB_LAYOUT_QWERTY_HU`    | Hungary                           | 101-key
-| ✅ | `KB_LAYOUT_QWERTY_IT`    | Italy                             | 142
-| 🚧 | `KB_LAYOUT_QWERTY_IS`    | Iceland                           |
-| ✅ | `KB_LAYOUT_QWERTY_LATAM` | Latin America                     |
+| ✅ | [`KB_LAYOUT_QWERTY_IT`]    | Italy                             | 142
+| 🚧 | [`KB_LAYOUT_QWERTY_IS`]    | Iceland                           |
+| ✅ | [`KB_LAYOUT_QWERTY_LATAM`] | Latin America                     |
 | 💡 | `KB_LAYOUT_QWERTY_NL`    | Netherlands                       |
-| ✅ | `KB_LAYOUT_QWERTY_NO`    | Norway                            |
+| ✅ | [`KB_LAYOUT_QWERTY_NO`]    | Norway                            |
 | 💡 | `KB_LAYOUT_QWERTY_PL`    | Poland                            | Programmers
-| ✅ | `KB_LAYOUT_QWERTY_PT`    | Portugal                          |
+| ✅ | [`KB_LAYOUT_QWERTY_PT`]    | Portugal                          |
 | 💡 | `KB_LAYOUT_QWERTY_RO`    | Romania                           | Standard
-| ✅ | `KB_LAYOUT_QWERTY_SE`    | Sweden, Finland                   |
+| ✅ | [`KB_LAYOUT_QWERTY_SE`]    | Sweden, Finland                   |
 | 💡 | `KB_LAYOUT_QWERTY_TR`    | Turkey                            |
 |    |
-| ✅ | `KB_LAYOUT_QWERTZ_CH_DE` | Switzerland                       | German
-| ✅ | `KB_LAYOUT_QWERTZ_CH_FR` | Switzerland                       | French
+| ✅ | [`KB_LAYOUT_QWERTZ_CH_DE`] | Switzerland, Luxembourg           | German
+| ✅ | [`KB_LAYOUT_QWERTZ_CH_FR`] | Switzerland, Luxembourg           | French
 | 💡 | `KB_LAYOUT_QWERTZ_CZ`    | Czech Republic                    |
-| ✅ | `KB_LAYOUT_QWERTZ_DE`    | Germany, Austria                  |
+| ✅ | [`KB_LAYOUT_QWERTZ_DE`]    | Germany, Austria                  |
 | 💡 | `KB_LAYOUT_QWERTZ_HU`    | Hungary                           |
 | 💡 | `KB_LAYOUT_QWERTZ_SK`    | Slovakia                          |
 
 Ækeynox also aims to support a few alternative layouts, especially the non-ASCII
 ones:
 
-- [x] KB_LAYOUT_BEPO
-- [x] KB_LAYOUT_DVORAK
-- [x] KB_LAYOUT_ERGOL
-- [x] KB_LAYOUT_QWERTY_LAFAYETTE
-- [ ] KB_LAYOUT_NEO
+- [x] [`KB_LAYOUT_BEPO`]
+- [x] [`KB_LAYOUT_DVORAK`]
+- [x] [`KB_LAYOUT_ERGOL`]
+- [ ] [`KB_LAYOUT_NEO`]
+- [x] [`KB_LAYOUT_QWERTY_LAFAYETTE`]
+
+[`KB_LAYOUT_AZERTY`]:       https://kbdlayout.info/kbdfr
+[`KB_LAYOUT_BEPO`]:         https://kbdlayout.info/kbdfrnb
+[`KB_LAYOUT_DVORAK`]:       https://kbdlayout.info/kbddv
+[`KB_LAYOUT_QWERTY`]:       https://kbdlayout.info/kbdus
+[`KB_LAYOUT_QWERTY_BR`]:    https://kbdlayout.info/kbdbr
+[`KB_LAYOUT_QWERTY_DK`]:    https://kbdlayout.info/kbdda
+[`KB_LAYOUT_QWERTY_ES`]:    https://kbdlayout.info/kbdsp
+[`KB_LAYOUT_QWERTY_INTL`]:  https://kbdlayout.info/kbdusx
+[`KB_LAYOUT_QWERTY_IT`]:    https://kbdlayout.info/kbdit142
+[`KB_LAYOUT_QWERTY_IS`]:    https://kbdlayout.info/kbdic
+[`KB_LAYOUT_QWERTY_LATAM`]: https://kbdlayout.info/kbdla
+[`KB_LAYOUT_QWERTY_NO`]:    https://kbdlayout.info/kbdno
+[`KB_LAYOUT_QWERTY_NO`]:    https://kbdlayout.info/kbdsp
+[`KB_LAYOUT_QWERTY_NO`]:    https://kbdlayout.info/kbdus
+[`KB_LAYOUT_QWERTY_PT`]:    https://kbdlayout.info/kbdpo
+[`KB_LAYOUT_QWERTY_SE`]:    https://kbdlayout.info/kbdse
+[`KB_LAYOUT_QWERTZ_CH_DE`]: https://kbdlayout.info/kbdsg
+[`KB_LAYOUT_QWERTZ_CH_FR`]: https://kbdlayout.info/kbdsf
+[`KB_LAYOUT_QWERTZ_DE`]:    https://kbdlayout.info/kbdgr
+
+[`KB_LAYOUT_ERGOL`]:            https://ergol.org
+[`KB_LAYOUT_ERGLACE`]:          https://ergol.org/erglace
+[`KB_LAYOUT_BEPOLAR`]:          https://ergol.org/lafayette/bépolar
+[`KB_LAYOUT_QWERTY_LAFAYETTE`]: https://qwerty-lafayette.org
+[`KB_LAYOUT_NEO`]:              https://neo-layout.org
 
 
 OS-Specific Considerations
@@ -82,7 +108,7 @@ to an Android device is considered as a Windows keyboard.
 
 The main limitation is that these layouts support fewer non-ASCII characters
 than their macOS or Linux counterparts. Some layouts even lack letters that are
-part of the local alphabet, e.g. `Œ` (French ) for AZERTY, `ŀ` (Catalan) for
+part of the local alphabet, e.g. `Œ` (French) for AZERTY, `ŀ` (Catalan) for
 QWERTY-es, uppercase accented chars for AZERTY and QWERTY-it…
 
 Some of the missing chars for Western European languages can be accessed by

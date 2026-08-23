@@ -1,5 +1,6 @@
 // Switzerland
-// https://kbdlayout.info/00000807/
+// https://kbdlayout.info/kbdsg (German)
+// https://kbdlayout.info/kbdsf (French)
 
 #ifdef KB_EXTRA_LAYERS_AUTO
   #define KB_EXTRA_LAYERS_TRANSALP

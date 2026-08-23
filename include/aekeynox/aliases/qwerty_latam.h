@@ -1,5 +1,5 @@
 // Latin America
-// https://kbdlayout.info/0000080a/
+// https://kbdlayout.info/kbdla
 
 #ifdef KB_EXTRA_LAYERS_AUTO
   #define KB_EXTRA_LAYERS_TRANSAT

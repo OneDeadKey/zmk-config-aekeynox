@@ -1,5 +1,5 @@
 // United States (ANSI)
-// https://kbdlayout.info/00000409/
+// https://kbdlayout.info/kbdus
 
 /**
  * Action Combos
