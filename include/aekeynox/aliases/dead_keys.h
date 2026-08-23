@@ -475,3 +475,30 @@
 #ifndef SC_ZCAR
 #define SC_ZCAR DI_CAR RS(Z)
 #endif
+
+/**
+ * Ring Above
+ */
+
+#if (defined DEAD_ABOVE_RING) && DEAD_ABOVE_RING
+  #define DI_RNG &digraph DEAD_ABOVE_RING
+  #define DK_RNG &kp DEAD_ABOVE_RING
+#else
+  #define DI_RNG &kp
+  #define DK_RNG &none
+  #ifdef ENABLE_CP1252_ALT_CODES
+    #ifndef  C_ARNG
+    #define  C_ARNG CP1252_LOWERCASE_A_RING
+    #endif
+    #ifndef SC_ARNG
+    #define SC_ARNG CP1252_UPPERCASE_A_RING
+    #endif
+  #endif
+#endif
+
+#ifndef  C_ARNG
+#define  C_ARNG DI_RNG A
+#endif
+#ifndef SC_ARNG
+#define SC_ARNG DI_RNG RS(A)
+#endif

@@ -29,6 +29,13 @@
 #define DEAD_CIRCUMFLEX RBRC
 #define DEAD_TILDE      RA(RBKT)
 
+#define  C_AE   &kp SEMI  // æ
+#define SC_AE   &kp COLON // Æ
+#define  C_OSTR &kp SQT   // ø
+#define SC_OSTR &kp DQT   // Ø
+#define  C_ARNG &kp LBKT  // å
+#define SC_ARNG &kp LBRC  // Å
+
 #include "dead_keys.h"
 
 /**
@@ -97,12 +104,6 @@
   #define SC_ETH  &kp LS(D)
   #define  C_SZ   &digraph S S
 #endif
-#define  C_AE   &kp SEMI  // æ
-#define SC_AE   &kp COLON // Æ
-#define  C_OSTR &kp SQT   // ø
-#define SC_OSTR &kp DQT   // Ø
-#define  C_ARNG &kp LBKT  // å
-#define SC_ARNG &kp LBRC  // Å
 
 // Other symbols
 #ifdef ENABLE_CP1252_ALT_CODES

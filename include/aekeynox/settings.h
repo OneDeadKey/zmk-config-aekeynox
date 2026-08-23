@@ -18,6 +18,7 @@
 // #define KB_LAYOUT_ERGLACE
 // #define KB_LAYOUT_QWERTY_BR
 // #define KB_LAYOUT_QWERTY_DK
+// #define KB_LAYOUT_QWERTY_EE
 // #define KB_LAYOUT_QWERTY_ES
 // #define KB_LAYOUT_QWERTY_FI
 // #define KB_LAYOUT_QWERTY_INTL

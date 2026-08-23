@@ -36,6 +36,7 @@ others:
 | 💡 | `KB_LAYOUT_QWERTY_CA`    | Canada                            | Multilingual
 | 💡 | `KB_LAYOUT_QWERTY_CZ`    | Czech Republic                    | Programmers
 | ✅ | [`KB_LAYOUT_QWERTY_DK`]    | Denmark                           |
+| ✅ | [`KB_LAYOUT_QWERTY_EE`]    | Estonia                           |
 | ✅ | [`KB_LAYOUT_QWERTY_ES`]    | Spain                             |
 | 💡 | `KB_LAYOUT_QWERTY_HR`    | Bosnia, Croatia, Serbia, Slovenia |
 | 💡 | `KB_LAYOUT_QWERTY_HU`    | Hungary                           | 101-key
@@ -72,6 +73,7 @@ ones:
 [`KB_LAYOUT_QWERTY`]:       https://kbdlayout.info/kbdus
 [`KB_LAYOUT_QWERTY_BR`]:    https://kbdlayout.info/kbdbr
 [`KB_LAYOUT_QWERTY_DK`]:    https://kbdlayout.info/kbdda
+[`KB_LAYOUT_QWERTY_EE`]:    https://kbdlayout.info/kbdest
 [`KB_LAYOUT_QWERTY_ES`]:    https://kbdlayout.info/kbdsp
 [`KB_LAYOUT_QWERTY_INTL`]:  https://kbdlayout.info/kbdusx
 [`KB_LAYOUT_QWERTY_IT`]:    https://kbdlayout.info/kbdit142

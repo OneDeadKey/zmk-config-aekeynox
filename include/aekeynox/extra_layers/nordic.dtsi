@@ -1,10 +1,11 @@
 #include "1dk.dtsi"
 
 /**
- * This adds a dead key (1dk) to access all common Scandinavian chars.
+ * This adds a dead key (1dk) to access all common Scandinavian and Finnic chars.
  *
  * Activated by default on:
  *  - QWERTY-dk, used in Denmark
+ *  - QWERTY-ee, used in Estonia
  *  - QWERTY-no, used in Norway
  *  - QWERTY-se, used in Sweden and Finland
  *
@@ -15,7 +16,9 @@
  * Language-specific chars:
  *  - Swedish, Finnish:  `å`, `ä`, `ö`
  *  - Danish, Norwegian: `å`, `æ`, `ø`
+ *  - Estonian:          `õ`, `äöü`, `šž`
  *  - Faroese(?):        `å`, `æ`, `ø`, `ð` (?)
+ *  - German:            `ß`, `äöü`
  *  - Icelandic(?):      `þ`, `æ`, `ö`, `ð`, `áéíóúý` (+ diaeresis?)
  *
  * These Danish-like layouts would be nice to have:
@@ -23,10 +26,15 @@
  *  - QWERTY-??: Greenland (is there any Kalaallisut support on Linux?)
  *  - QWERTY-is: Iceland
  *
- * These Finno-Samic layouts would be nice to have as well:
- *  - QWERTY-ee: Estonia
+ * Samic layouts would be nice to have as well:
  *  - QWERTY-no-sami: Norway + Sami extenstions
  *  - QWERTY-se-sami: Sweden + Sami extenstions
+ *
+ * This is suitable for [Dutch] as well if `^` and `˝` are ignored:
+ * > Dutch uses the acute accent to mark stress and the diaeresis (trema) to
+ * > disambiguate diphthongs/triphthongs. Occasionally, other diacritics are
+ * > used in loanwords and native onomatopoeic words.
+ * https://en.wikipedia.org/wiki/Dutch_orthography
 **/
 
 / {
@@ -34,33 +42,33 @@
     compatible = "zmk,keymap";
 
     //  |---------------|---------------|
-    //  |    ä æ € £ þ  |    ü   ö      |
-    //  |    å ß ð ( )  |        ø ´    |
-    //  |      §   ? !  |    µ          |
+    //  |    å æ € £ þ  |    ü õ ö      |
+    //  |    ä š ð ( )  |        ø ´    |
+    //  |    ž ß § ? !  |    µ          |
     //  |---------------|---------------|
 
     one_dead_key {
       display-name = "1dk";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
-        &trans  ,  C_ADIA  C_AE    C_EURO  C_POUND C_THRN   ,   &trans  C_UDIA  &trans  C_ODIA  &trans  ,  &trans ,
-        &trans  ,  C_ARNG  C_SZ    C_ETH   S_LPAR  S_RPAR   ,   &trans  &trans  &trans  C_OSTR  DK_ACU  ,  &trans ,
-        K_ODKS  ,  &trans  C_SILC  &trans  S_QMARK S_EXCL   ,   &trans  C_MICRO &trans  &trans  &trans  ,  K_ODKS ,
+        &trans  ,  C_ARNG  C_AE    C_EURO  C_POUND C_THRN   ,   &trans  C_UDIA  C_OTLD  C_ODIA  &trans  ,  &trans ,
+        &trans  ,  C_ADIA  C_SCAR  C_ETH   S_LPAR  S_RPAR   ,   &trans  &trans  &trans  C_OSTR  DK_ACU  ,  &trans ,
+        K_ODKS  ,  C_ZCAR  C_SZ    C_SILC  S_QMARK S_EXCL   ,   &trans  C_MICRO &trans  &trans  &trans  ,  K_ODKS ,
                                  SK_ODKS , S_SQT , &trans   ,   &trans , S_SQT , &trans
       )>;
     };
 
     //  |---------------|---------------|
-    //  |    Ä Æ     Þ  |    Ü   Ö      |
-    //  |    Å   Ð      |        Ø      |
-    //  |               |               |
+    //  |    Å Æ     Þ  |    Ü Õ Ö      |
+    //  |    Ä Š Ð      |        Ø      |
+    //  |    Ž          |               |
     //  |---------------|---------------|
 
     one_dead_key_shift {
       display-name = "1dkShift";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
-        &trans  ,  SC_ADIA SC_AE   &trans  &trans  SC_THRN  ,   &trans  SC_UDIA &trans  SC_ODIA &trans  ,  &trans ,
-        &trans  ,  SC_ARNG &trans  SC_ETH  &trans  &trans   ,   &trans  &trans  &trans  SC_OSTR &trans  ,  &trans ,
-        &trans  ,  &trans  &trans  &trans  &trans  &trans   ,   &trans  &trans  &trans  &trans  &trans  ,  &trans ,
+        &trans  ,  SC_ARNG SC_AE   &trans  &trans  SC_THRN  ,   &trans  SC_UDIA SC_OTLD SC_ODIA &trans  ,  &trans ,
+        &trans  ,  SC_ADIA SC_SCAR SC_ETH  &trans  &trans   ,   &trans  &trans  &trans  SC_OSTR &trans  ,  &trans ,
+        &trans  ,  SC_ZCAR &trans  &trans  &trans  &trans   ,   &trans  &trans  &trans  &trans  &trans  ,  &trans ,
                                  &trans , &trans , &trans   ,   &trans , &trans , &trans
       )>;
     };

@@ -17,7 +17,7 @@ to represent it.
 When possible, it’s placed on the `SEMI` key (QWERTY’s <kbd>;:</kbd> key).
 
 - [Multilingual Adaptations](#multilingual-adaptations)
-  - [Nordic](#nordic-todo) (Danish, Faroese, Finnish, Icelandic, Norwegian, Swedish)
+  - [Nordic](#nordic-todo) (Danish, Estonian, Faroese, Finnish, Icelandic, Norwegian, Swedish)
   - [Transalp](#transalp) (French, German, Italian)
   - [Transat](#transat-todo) (Portuguese, Spanish, Aranese, Basque, Catalan, Galician)
 - [Layout-Specific Adaptations](#layout-specific-adaptations)
@@ -47,6 +47,7 @@ selected with one of the following definitions:
 Activated by default on:
 
 - [x] [QWERTY-dk]: Denmark
+- [x] [QWERTY-ee]: Estonia
 - [ ] [QWERTY-is]: Iceland
 - [x] [QWERTY-no]: Norway
 - [x] [QWERTY-se]: Sweden, Finland
@@ -54,6 +55,7 @@ Activated by default on:
 Suitable for:
 
 - [x] [QWERTY-intl]
+- [ ] [QWERTY-nl]: Netherlands (but `^` and `˝` are missing)
 - [x] [QWERTZ-de]: Germany, Austria
 
 ```
@@ -64,15 +66,15 @@ Suitable for:
     |---------------|---------------|
 
     |---------------|---------------|  1dk
-    |    ä æ € £ þ  |    ü   ö      |
-    |    å ß ð ( )  |        ø ´    |
-    |      §   ? !  |    µ          |
+    |    å æ € £ þ  |    ü õ ö      |
+    |    ä š ð ( )  |        ø ´    |
+    |    ž ß § ? !  |    µ          |
     |---------------|---------------|
 
     |---------------|---------------|  1dkShift
-    |    Ä Æ     Þ  |    Ü   Ö      |
-    |    Å   Ð      |        Ø      |
-    |               |               |
+    |    Å Æ     Þ  |    Ü Õ Ö      |
+    |    Ä Š Ð      |        Ø      |
+    |    Ž          |               |
     |---------------|---------------|
 ```
 
@@ -80,17 +82,10 @@ Supported languages:
 
 - [x] Swedish, Finnish:  `å`, `ä`, `ö`
 - [x] Danish, Norwegian: `å`, `æ`, `ø`
+- [x] Estonian:          `õ`, `äöü`, `šž`
 - [x] Faroese:           `å`, `æ`, `ø`, `ð`
 - [x] German:            `ß`, `äöü`
 - [x] Icelandic:         `þ`, `æ`, `ö`, `ð`, `áéíóúý`
-
-This is suitable for [Dutch] as well if `^` and `˝` are ignored:
-
-> Dutch uses the acute accent to mark stress and the diaeresis (trema) to
-> disambiguate diphthongs/triphthongs. Occasionally, other diacritics are used
-> in loanwords and native onomatopoeic words.
-
-[Dutch]: https://en.wikipedia.org/wiki/Dutch_orthography
 
 ### Transalp
 
@@ -323,6 +318,7 @@ We still (highly) recommend using a `1dk` layer instead (both `Nordic` and
 [QWERTY]:       https://kbdlayout.info/kbdus
 [QWERTY-br]:    https://kbdlayout.info/kbdbr
 [QWERTY-dk]:    https://kbdlayout.info/kbdda
+[QWERTY-ee]:    https://kbdlayout.info/kbdest
 [QWERTY-es]:    https://kbdlayout.info/kbdsp
 [QWERTY-intl]:  https://kbdlayout.info/kbdusx
 [QWERTY-is]:    https://kbdlayout.info/kbdic
@@ -330,6 +326,7 @@ We still (highly) recommend using a `1dk` layer instead (both `Nordic` and
 [QWERTY-latam]: https://kbdlayout.info/kbdla
 [QWERTY-no]:    https://kbdlayout.info/kbdno
 [QWERTY-no]:    https://kbdlayout.info/kbdsp
+[QWERTY-nl]:    https://kbdlayout.info/kbdne
 [QWERTY-no]:    https://kbdlayout.info/kbdus
 [QWERTY-pt]:    https://kbdlayout.info/kbdpo
 [QWERTY-se]:    https://kbdlayout.info/kbdse

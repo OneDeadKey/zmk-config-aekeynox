@@ -1,5 +1,5 @@
-// Sweden
-// https://kbdlayout.info/kbdse
+// Estonia
+// https://kbdlayout.info/kbdest
 
 #ifdef KB_EXTRA_LAYERS_AUTO
   #define KB_EXTRA_LAYERS_NORDIC
@@ -23,18 +23,35 @@
  * Diacritics
  */
 
-#define DEAD_ACUTE      EQUAL
-#define DEAD_GRAVE      PLUS
-#define DEAD_DIAERESIS  RBKT
-#define DEAD_CIRCUMFLEX RBRC
-#define DEAD_TILDE      RA(RBKT)
+#define DEAD_ACUTE EQUAL
+#define DEAD_GRAVE PLUS
+#define DEAD_CARON GRAVE
+#define DEAD_TILDE TILDE
 
-#define  C_ARNG &kp LBKT  // å
-#define SC_ARNG &kp LBRC  // Å
+#define SA(key) RS(RA(key))
+
+#ifdef LINUX
+  #define S_CARET     &kp RA(SQT)
+  #define DEAD_CIRCUMFLEX SA(SQT)
+  #define DEAD_DIAERESIS  RA(LBKT)
+  #define DEAD_ABOVE_RING SA(LBKT)
+#else
+  #define S_CARET     &kp SA(SQT)
+  #define DEAD_CIRCUMFLEX RA(SQT)
+#endif
+
 #define  C_ADIA &kp SQT   // ä
 #define SC_ADIA &kp DQT   // Ä
 #define  C_ODIA &kp SEMI  // ö
 #define SC_ODIA &kp COLON // Ö
+#define  C_UDIA &kp LBKT  // ü
+#define SC_UDIA &kp LBRC  // Ü
+#define  C_OTLD &kp RBKT  // õ
+#define SC_OTLD &kp RBRC  // Õ
+#define  C_SCAR &kp RA(S) // č
+#define SC_SCAR &kp SA(S) // Č
+#define  C_ZCAR &kp RA(Z) // ž
+#define SC_ZCAR &kp SA(Z) // Ž
 
 #include "dead_keys.h"
 
@@ -46,7 +63,7 @@
  */
 
 // first row
-#define S_CARET DI_CIR SPACE
+// XXX: S_CARET is OS-specific
 #define S_LT    &kp NUBS
 #define S_GT    &kp PIPE2
 #define S_DLLR  &kp RA(N4)
@@ -100,7 +117,6 @@
   #define SC_THRN CP1252_UPPERCASE_THORN    // Þ
   #define  C_ETH  CP1252_LOWERCASE_ETH      // ð
   #define SC_ETH  CP1252_UPPERCASE_ETH      // Ð
-  #define  C_SZ   CP1252_LOWERCASE_SZ       // ß
 #else
   #define  C_AE    C_ADIA
   #define SC_AE   SC_ADIA
@@ -110,18 +126,33 @@
   #define SC_THRN &kp LS(T)
   #define  C_ETH  &kp    D
   #define SC_ETH  &kp LS(D)
-  #define  C_SZ   &digraph S S
+#endif
+
+// ß, «»
+#ifdef LINUX
+  #define C_SZ   &kp RA(W)  // ß
+  #define C_LGQT &kp SA(X)  // «
+  #define C_RGQT &kp RA(X)  // »
+#elifdef ENABLE_CP1252_ALT_CODES
+  #define C_SZ   CP1252_LOWERCASE_SZ    // ß
+  #define C_LGQT CP1252_LEFT_GUILLEMET  // «
+  #define C_RGQT CP1252_RIGHT_GUILLEMET // »
+#else
+  #define C_SZ   &digraph S S
+  #define C_LGQT &kp S_DQT
+  #define C_RGQT &kp S_DQT
 #endif
 
 // Other symbols
 #ifdef ENABLE_CP1252_ALT_CODES
-  #define C_CENT  CP1252_CENT    // ¢
-  #define C_DEG   CP1252_DEGREE  // °
+  #define C_CENT  CP1252_CENT   // ¢
+  #define C_DEG   CP1252_DEGREE // °
+  #define C_MICRO CP1252_MICRO  // µ
 #else
   #define C_CENT  &none
   #define C_DEG   &none
+  #define C_MICRO &none
 #endif
-#define C_EURO  &kp RA(E)  // €
-#define C_POUND &kp RA(N3) // £
-#define C_SILC  &kp GRAVE  // §
-#define C_MICRO &kp RA(M)  // µ
+#define C_EURO  &kp RA(E)    // €
+#define C_POUND &kp RA(N3)   // £
+#define C_SILC  &kp RA(RBKT) // §
