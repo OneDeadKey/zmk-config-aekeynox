@@ -3,7 +3,7 @@
 /**
  * This adds a dead key (1dk) to access all common chars for Spain, Portugal and LatAm.
  *
- * Recommended layouts:
+ * Activated by default on:
  *  - QWERTY-br,    used in Brazil
  *  - QWERTY-latam, used in Latin America
  *  - QWERTY-es,    used in Spain

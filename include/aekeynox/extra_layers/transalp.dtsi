@@ -4,7 +4,7 @@
  * This adds a dead key (1dk) to access all common German/French/Italian chars.
  * (Note that QWERTZ-ch natively supports these three languages.)
  *
- * Recommended layouts:
+ * Activated by default on:
  *  - QWERTZ-ch, used in Switzerland, Luxembourg and Liechtenstein
  *  - QWERTZ-de, used in Germany and Austria
  *  - QWERTY-it, used in Italy

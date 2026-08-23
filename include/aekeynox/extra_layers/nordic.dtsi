@@ -1,5 +1,34 @@
 #include "1dk.dtsi"
 
+/**
+ * This adds a dead key (1dk) to access all common Scandinavian chars.
+ *
+ * Activated by default on:
+ *  - QWERTY-dk, used in Denmark
+ *  - QWERTY-no, used in Norway
+ *  - QWERTY-se, used in Sweden and Finland
+ *
+ * Should be compatible with:
+ *  - QWERTY-intl
+ *  - QWERTZ-de, used in Germany and Austria
+ *
+ * Language-specific chars:
+ *  - Swedish, Finnish:  `å`, `ä`, `ö`
+ *  - Danish, Norwegian: `å`, `æ`, `ø`
+ *  - Faroese(?):        `å`, `æ`, `ø`, `ð` (?)
+ *  - Icelandic(?):      `þ`, `æ`, `ö`, `ð`, `áéíóúý` (+ diaeresis?)
+ *
+ * These Danish-like layouts would be nice to have:
+ *  - QWERTY-fo: Faroe (69k speakers)
+ *  - QWERTY-??: Greenland (is there any Kalaallisut support on Linux?)
+ *  - QWERTY-is: Iceland
+ *
+ * These Finno-Samic layouts would be nice to have as well:
+ *  - QWERTY-ee: Estonia
+ *  - QWERTY-no-sami: Norway + Sami extenstions
+ *  - QWERTY-se-sami: Sweden + Sami extenstions
+**/
+
 / {
   keymap {
     compatible = "zmk,keymap";

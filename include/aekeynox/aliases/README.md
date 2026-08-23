@@ -35,7 +35,7 @@ others:
 | ✅ | `KB_LAYOUT_QWERTY_BR`    | Brazil                            |
 | 💡 | `KB_LAYOUT_QWERTY_CA`    | Canada                            | Multilingual
 | 💡 | `KB_LAYOUT_QWERTY_CZ`    | Czech Republic                    | Programmers
-| 🚧 | `KB_LAYOUT_QWERTY_DK`    | Denmark                           |
+| ✅ | `KB_LAYOUT_QWERTY_DK`    | Denmark                           |
 | ✅ | `KB_LAYOUT_QWERTY_ES`    | Spain                             |
 | 💡 | `KB_LAYOUT_QWERTY_HR`    | Bosnia, Croatia, Serbia, Slovenia |
 | 💡 | `KB_LAYOUT_QWERTY_HU`    | Hungary                           | 101-key
@@ -43,11 +43,11 @@ others:
 | 🚧 | `KB_LAYOUT_QWERTY_IS`    | Iceland                           |
 | ✅ | `KB_LAYOUT_QWERTY_LATAM` | Latin America                     |
 | 💡 | `KB_LAYOUT_QWERTY_NL`    | Netherlands                       |
-| 🚧 | `KB_LAYOUT_QWERTY_NO`    | Norway                            |
+| ✅ | `KB_LAYOUT_QWERTY_NO`    | Norway                            |
 | 💡 | `KB_LAYOUT_QWERTY_PL`    | Poland                            | Programmers
 | ✅ | `KB_LAYOUT_QWERTY_PT`    | Portugal                          |
 | 💡 | `KB_LAYOUT_QWERTY_RO`    | Romania                           | Standard
-| 🚧 | `KB_LAYOUT_QWERTY_SE`    | Sweden, Finland                   |
+| ✅ | `KB_LAYOUT_QWERTY_SE`    | Sweden, Finland                   |
 | 💡 | `KB_LAYOUT_QWERTY_TR`    | Turkey                            |
 |    |
 | ✅ | `KB_LAYOUT_QWERTZ_CH_DE` | Switzerland                       | German

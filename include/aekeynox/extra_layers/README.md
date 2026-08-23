@@ -17,7 +17,7 @@ to represent it.
 When possible, it’s placed on the `SEMI` key (QWERTY’s <kbd>;:</kbd> key).
 
 - [Multilingual Adaptations](#multilingual-adaptations)
-  - [Nordic](#nordic-todo) (Danish, Estonian, Faroese, Finnish, Icelandic, Norwegian, Swedish)
+  - [Nordic](#nordic-todo) (Danish, Faroese, Finnish, Icelandic, Norwegian, Swedish)
   - [Transalp](#transalp) (French, German, Italian)
   - [Transat](#transat-todo) (Portuguese, Spanish, Aranese, Basque, Catalan, Galician)
 - [Layout-Specific Adaptations](#layout-specific-adaptations)
@@ -38,26 +38,23 @@ Transalp, Transat. They can be used either on QWERTY or QWERTZ, they’re
 activated by default on relevant non-ASCII layouts, and they can be explicitly
 selected with one of the following definitions:
 
-- [ ] `KB_EXTRA_LAYERS_NORDIC`
+- [x] `KB_EXTRA_LAYERS_NORDIC`
 - [x] `KB_EXTRA_LAYERS_TRANSALP`
 - [x] `KB_EXTRA_LAYERS_TRANSAT`
-- [x] `KB_EXTRA_LAYERS_NONE`
 
 ### Nordic
 
 Activated by default on:
 
-- [ ] QWERTY-dk: Denmark
+- [x] QWERTY-dk: Denmark
 - [ ] QWERTY-is: Iceland
-- [ ] QWERTY-no: Norway
-- [ ] QWERTY-se: Sweden, Finland, Estonia (?)
-- [ ] QWERTZ-de: Germany, Austria
+- [x] QWERTY-no: Norway
+- [x] QWERTY-se: Sweden, Finland
 
 Suitable for:
 
-- [ ] QWERTY-intl
-- [ ] QWERTY-nl: Dutch
-- [ ] QWERTZ-de: German
+- [x] QWERTY-intl
+- [x] QWERTZ-de: Germany, Austria
 
 ```
     |---------------|---------------|  base
@@ -68,23 +65,24 @@ Suitable for:
 
     |---------------|---------------|  1dk
     |    ä æ € £ þ  |    ü   ö      |
-    |    å § ð ( )  |        ø ´    |
-    |          ? !  |    µ          |
+    |    å ß ð ( )  |        ø ´    |
+    |      §   ? !  |    µ          |
     |---------------|---------------|
 
     |---------------|---------------|  1dkShift
     |    Ä Æ     Þ  |    Ü   Ö      |
-    |    Å § Ð      |        Ø      |
+    |    Å   Ð      |        Ø      |
     |               |               |
     |---------------|---------------|
 ```
 
 Supported languages:
 
-- [ ] Swedish, Finnish, Estonian:  `å`, `ä`, `ö`
-- [ ] Danish, Norwegian:           `å`, `æ`, `ø`
-- [ ] Faroese:                     `å`, `æ`, `ø`, `ð`
-- [ ] Icelandic:                   `þ`, `æ`, `ö`, `ð`, `áéíóúý` (+ diaeresis?)
+- [x] Swedish, Finnish:  `å`, `ä`, `ö`
+- [x] Danish, Norwegian: `å`, `æ`, `ø`
+- [x] Faroese:           `å`, `æ`, `ø`, `ð`
+- [x] German:            `ß`, `äöü`
+- [x] Icelandic:         `þ`, `æ`, `ö`, `ð`, `áéíóúý`
 
 This is suitable for [Dutch] as well if `^` and `˝` are ignored:
 
@@ -160,12 +158,12 @@ Suitable for:
 
     |---------------|---------------|  1dkShift
     |        É £    |    Ú Í Ó      |
-    |    À   È      |    Ü Ï Ò      |
+    |    À   È « »  |    Ü Ï Ò      |
     |    Ã Õ Ç ¿ ¡  |  Ñ            |
     |---------------|---------------|
 ```
 
-Supported languages (specific diacritics beside `ñ`, `ç` and `áéíóú`):
+Specific diacritics beside `ñ`, `ç` and `áéíóú`:
 
 - [x] Portuguese: `à`, `ã`, `õ`, `^` (+ `ü`, deprecated)
 - [x] Catalan:    `è`, `ò`, `ï`, `·`
