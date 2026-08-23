@@ -25,6 +25,14 @@
 #define DEAD_CIRCUMFLEX CARET
 #define DEAD_DIAERESIS  DQT
 
+#ifdef MACOS
+  #define  C_CCDL &digraph SQT C     // ç
+  #define SC_CCDL &digraph SQT RS(C) // Ç
+#else
+  #define  C_CCDL &kp RA(COMMA)      // ç
+  #define SC_CCDL &kp SA(COMMA)      // Ç
+#endif
+
 #include "dead_keys.h"
 
 /**
@@ -81,15 +89,6 @@
  */
 
 #define SA(key) RS(RA(key))
-
-// cedilla
-#ifdef MACOS
-  #define  C_CCDL &digraph SQT C     // ç
-  #define SC_CCDL &digraph SQT RS(C) // Ç
-#else
-  #define  C_CCDL &kp RA(COMMA)      // ç
-  #define SC_CCDL &kp SA(COMMA)      // Ç
-#endif
 
 // spectal letters
 #ifdef LINUX
