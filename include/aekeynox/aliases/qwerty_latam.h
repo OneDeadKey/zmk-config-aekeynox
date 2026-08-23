@@ -20,7 +20,7 @@
 #define X_ALL   &kp CMD(A)
 
 /**
- * Dead Keys
+ * Diacritics
  */
 
 #define DEAD_ACUTE      LBKT
@@ -29,10 +29,6 @@
 #define DEAD_DIAERESIS  LBRC
 
 #include "dead_keys.h"
-
-// no dead tilde
-#define DI_TLD &kp
-#define DK_TLD &none
 
 /**
  * Arsenik Symbols:

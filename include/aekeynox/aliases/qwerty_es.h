@@ -20,7 +20,7 @@
 #define X_ALL   &kp CMD(A)
 
 /**
- * Dead Keys
+ * Diacritics
  */
 
 #define DEAD_ACUTE      SQT
@@ -28,18 +28,20 @@
 #define DEAD_CIRCUMFLEX LBRC
 #define DEAD_DIAERESIS  DQT
 
-#include "dead_keys.h"
-
-// tilde
 #ifdef LINUX
-  #define DI_TLD &digraph RA(SEMI)
-  #define DK_TLD      &kp RA(SEMI)
-  #define S_TILDE     &kp RA(N4)
+  #define DEAD_TILDE RA(SEMI)
+  #define S_TILDE    &kp RA(N4)
 #else
-  #define DI_TLD &digraph RA(N4)
-  #define DK_TLD      &kp RA(N4)
-  #define S_TILDE  DI_TLD SPACE
+  #define DEAD_TILDE RA(N4)
+  #define S_TILDE    &digraph DEAD_TILDE SPACE
 #endif
+
+#define  C_NTLD &kp SEMI  // ñ
+#define SC_NTLD &kp COLON // Ñ
+#define  C_CCDL &kp BSLH  // ç
+#define SC_CCDL &kp PIPE  // Ç
+
+#include "dead_keys.h"
 
 /**
  * Arsenik Symbols:
@@ -93,17 +95,6 @@
  * Non-ASCII Symbols
  */
 
-// tilde, cedilla
-#define  C_ATLD DI_TLD    A  // ã
-#define SC_ATLD DI_TLD LS(A) // Ã
-#define  C_OTLD DI_TLD    O  // õ
-#define SC_OTLD DI_TLD LS(O) // Õ
-#define  C_NTLD &kp SEMI     // ñ
-#define SC_NTLD &kp COLON    // Ñ
-#define  C_CCDL &kp BSLH     // ç
-#define SC_CCDL &kp PIPE     // Ç
-
-// Other symbols
 #ifdef ENABLE_CP1252_ALT_CODES
   #define C_LGQT  CP1252_LEFT_GUILLEMET  // «
   #define C_RGQT  CP1252_RIGHT_GUILLEMET // »
@@ -119,6 +110,7 @@
   #define C_DEG   &none
   #define C_SILC  &none
 #endif
+
 #ifdef ENABLE_CP1252_ALT_CODES
   #define C_POUND CP1252_POUND   // £
 #elifdef LINUX

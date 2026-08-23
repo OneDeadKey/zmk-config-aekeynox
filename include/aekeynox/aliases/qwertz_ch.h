@@ -20,20 +20,42 @@
 #define X_ALL   &kp CMD(A)
 
 /**
- * Dead Keys
+ * Diacritics
  */
 
 #define DEAD_CIRCUMFLEX GRAVE
-// XXX: DEAD_ACUTE      cannot be defined:   `é` in the base layer
-// XXX: DEAD_GRAVE      cannot be defined:  `àè` in the base layer
-// XXX: DEAD_DIAERESIS  cannot be defined: `äöü` in the base layer
+#define DEAD_ACUTE      EQUAL
+#define DEAD_GRAVE      PLUS
+#define DEAD_DIAERESIS  RBKT
 #define DEAD_TILDE      RA(EQUAL)
 
-#include "dead_keys.h"
+// Main French/German letters
+#ifdef KB_LAYOUT_QWERTZ_CH_FR
+  #define C_EACU &kp SEMI  // é
+  #define C_AGRV &kp SQT   // à
+  #define C_EGRV &kp LBKT  // è
+  #define C_ODIA &kp COLON // ö
+  #define C_ADIA &kp DQT   // ä
+  #define C_UDIA &kp LBRC  // ü
+#else
+  #define C_ODIA &kp SEMI  // ö
+  #define C_ADIA &kp SQT   // ä
+  #define C_UDIA &kp LBKT  // ü
+  #define C_EACU &kp COLON // é
+  #define C_AGRV &kp DQT   // à
+  #define C_EGRV &kp LBRC  // è
+#endif
+#define C_CCDL &kp LS(N4)  // ç
+#define C_SZ &digraph S S  // ss
 
-#define DK_ACU &kp EQUAL // acute
-#define DK_GRV &kp PLUS  // grave
-#define DK_DIA &kp RBKT  // diaeresis
+// Unsupported French chars
+#define SC_CCDL &kp LS(C)
+#define  C_OE   &digraph    O     E
+#define SC_OE   &digraph LS(O) LS(E)
+#define  C_AE   &digraph    A     E
+#define SC_AE   &digraph LS(A) LS(E)
+
+#include "dead_keys.h"
 
 /**
  * Arsenik Symbols:
@@ -87,55 +109,6 @@
  * Non-ASCII Symbols
  */
 
-// Main French/German letters
-#ifdef KB_LAYOUT_QWERTZ_CH_FR
-  #define C_EACU &kp SEMI  // é
-  #define C_AGRV &kp SQT   // à
-  #define C_EGRV &kp LBKT  // è
-  #define C_ODIA &kp COLON // ö
-  #define C_ADIA &kp DQT   // ä
-  #define C_UDIA &kp LBRC  // ü
-#else
-  #define C_ODIA &kp SEMI  // ö
-  #define C_ADIA &kp SQT   // ä
-  #define C_UDIA &kp LBKT  // ü
-  #define C_EACU &kp COLON // é
-  #define C_AGRV &kp DQT   // à
-  #define C_EGRV &kp LBRC  // è
-#endif
-#define C_CCDL &kp LS(N4)  // ç
-#define C_SZ &digraph S S  // ss
-
-// Other accented vowels used in French and Italian
-#define C_IGRV &digraph PLUS I
-#define C_OGRV &digraph PLUS O
-#define C_UGRV &digraph PLUS U
-#define C_EDIA &digraph RBKT E
-#define C_IDIA &digraph RBKT I
-#define C_YDIA &digraph RBKT Y
-
-// Uppercase accented letters all require a dead key
-#define SC_EACU &digraph MINUS LS(E)
-#define SC_ADIA &digraph RBKT  LS(A)
-#define SC_EDIA &digraph RBKT  LS(E)
-#define SC_IDIA &digraph RBKT  LS(I)
-#define SC_ODIA &digraph RBKT  LS(O)
-#define SC_UDIA &digraph RBKT  LS(U)
-#define SC_YDIA &digraph RBKT  LS(Y)
-#define SC_AGRV &digraph PLUS  LS(A)
-#define SC_EGRV &digraph PLUS  LS(E)
-#define SC_IGRV &digraph PLUS  LS(I)
-#define SC_OGRV &digraph PLUS  LS(O)
-#define SC_UGRV &digraph PLUS  LS(U)
-
-// Unsupported French chars
-#define SC_CCDL &kp LS(C)
-#define  C_OE   &digraph    O     E
-#define SC_OE   &digraph LS(O) LS(E)
-#define  C_AE   &digraph    A     E
-#define SC_AE   &digraph LS(A) LS(E)
-
-// Other symbols
 #define C_MICRO &kp U // unsupported
 #define C_POUND &kp PIPE
 #define C_CENT  &kp RA(N8)

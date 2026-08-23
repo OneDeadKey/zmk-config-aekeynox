@@ -20,14 +20,21 @@
 #define X_ALL   &kp CMD(A)
 
 /**
- * Dead Keys
+ * Diacritics
  */
 
 #define DEAD_CIRCUMFLEX GRAVE
 #define DEAD_ACUTE      EQUAL
 #define DEAD_GRAVE      PLUS
-// XXX: DEAD_DIAERESIS  cannot be defined: `äöü` in the base layer
-#define DEAD_TILDE      NULL
+
+// ö ä ü ß
+#define  C_ODIA &kp SEMI  // ö
+#define SC_ODIA &kp COLON // Ö
+#define  C_ADIA &kp SQT   // ä
+#define SC_ADIA &kp DQT   // Ä
+#define  C_UDIA &kp LBKT  // ü
+#define SC_UDIA &kp LBRC  // Ü
+#define  C_SZ   &kp MINUS // ß
 
 #include "dead_keys.h"
 
@@ -83,22 +90,7 @@
  * Non-ASCII Symbols
  */
 
-// ö ä ü ß
-#define  C_ODIA &kp SEMI  // ö
-#define SC_ODIA &kp COLON // Ö
-#define  C_ADIA &kp SQT   // ä
-#define SC_ADIA &kp DQT   // Ä
-#define  C_UDIA &kp LBKT  // ü
-#define SC_UDIA &kp LBRC  // Ü
-#define  C_SZ   &kp MINUS // ß
-
 // Unsupported French chars
-#define  C_EDIA &kp    E             // ë
-#define SC_EDIA &kp LS(E)            // Ë
-#define  C_IDIA &kp    I             // ï
-#define SC_IDIA &kp LS(I)            // Ï
-#define  C_YDIA &kp    Y             // ÿ
-#define SC_YDIA &kp LS(Y)            // Ÿ
 #define  C_CCDL &kp    C             // ç
 #define SC_CCDL &kp LS(C)            // Ç
 #define  C_OE   &digraph    O     E  // œ

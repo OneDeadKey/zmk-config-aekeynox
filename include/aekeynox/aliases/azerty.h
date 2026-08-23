@@ -35,19 +35,31 @@
 #define X_ALL   &kp CMD(Q)
 
 /**
- * Dead Keys
+ * Diacritics
  */
 
 #define DEAD_CIRCUMFLEX       LBKT
 #define DEAD_DIAERESIS        LBRC
 #define DEAD_TILDE OS_SELECT( RA(N2) ,, RA(N) , NULL ) // n/a on Linux
+#define DEAD_GRAVE OS_SELECT( RA(N9) ,, NUHS  , NULL ) // n/a on Linux
+
+// lowercase: é à è ù ç
+#define C_EACU &kp N2  // é
+#define C_AGRV &kp N0  // à
+#define C_EGRV &kp N7  // è
+#define C_UGRV &kp SQT // ù
+#define C_CCDL &kp N9  // ç
+
+// uppercase: À È Ù       ( default      ,, macOS     , Linux     )
+#define SC_AGRV OS_SELECT ( DI_GRV LS(A) ,, &caps N0  , &caps N0  ) // À
+#define SC_EGRV OS_SELECT ( DI_GRV LS(E) ,, &caps N7  , &caps N7  ) // È
+#define SC_UGRV OS_SELECT ( DI_GRV LS(U) ,, &caps SQT , &caps SQT ) // Ù
+
+// uppercase: É Ç         ( default   , CP1252                     , macOS    , Linux    )
+#define SC_EACU OS_SELECT ( &kp LS(E) , CP1252_UPPERCASE_E_ACUTE   , &caps N2 , &caps N2 ) // É
+#define SC_CCDL OS_SELECT ( &kp LS(C) , CP1252_UPPERCASE_C_CEDILLA , &caps N9 , &caps N9 ) // Ç
 
 #include "dead_keys.h"
-
-// dead grave (n/a on Linux) is handled manually, we don't want "dead_keys.h"
-// to define all grave accents while `àèù` are available in the base layer.
-#define DK_GRV OS_SELECT(      &kp RA(N9) ,,      &kp NUHS , &none )
-#define DI_GRV OS_SELECT( &digraph RA(N9) ,, &digraph NUHS , &kp   )
 
 /**
  * Arsenik Symbols:
@@ -102,22 +114,6 @@
 /**
  * Non-ASCII Symbols
  */
-
-// lowercase: é à è ù ç
-#define C_EACU &kp N2  // é
-#define C_AGRV &kp N0  // à
-#define C_EGRV &kp N7  // è
-#define C_UGRV &kp SQT // ù
-#define C_CCDL &kp N9  // ç
-
-// uppercase: À È Ù       ( default      ,, macOS     , Linux     )
-#define SC_AGRV OS_SELECT ( DI_GRV LS(A) ,, &caps N0  , &caps N0  ) // À
-#define SC_EGRV OS_SELECT ( DI_GRV LS(E) ,, &caps N7  , &caps N7  ) // È
-#define SC_UGRV OS_SELECT ( DI_GRV LS(U) ,, &caps SQT , &caps SQT ) // Ù
-
-// uppercase: É Ç         ( default   , CP1252                     , macOS    , Linux    )
-#define SC_EACU OS_SELECT ( &kp LS(E) , CP1252_UPPERCASE_E_ACUTE   , &caps N2 , &caps N2 ) // É
-#define SC_CCDL OS_SELECT ( &kp LS(C) , CP1252_UPPERCASE_C_CEDILLA , &caps N9 , &caps N9 ) // Ç
 
 // œ, æ, ß              ( default              , CP1252              , macOS     , Linux     )
 #define  C_OE OS_SELECT ( &digraph    O     E  , CP1252_LOWERCASE_OE , &kp RA(O) ,           ) // œ

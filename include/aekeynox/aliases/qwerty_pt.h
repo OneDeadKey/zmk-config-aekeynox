@@ -20,7 +20,7 @@
 #define X_ALL   &kp CMD(A)
 
 /**
- * Dead Keys
+ * Diacritics
  */
 
 #define DEAD_ACUTE      RBKT
@@ -28,6 +28,9 @@
 #define DEAD_TILDE      BSLH
 #define DEAD_CIRCUMFLEX PIPE
 #define DEAD_DIAERESIS  RA(LBKT)
+
+#define  C_CCDL &kp SEMI  // ç
+#define SC_CCDL &kp COLON // Ç
 
 #include "dead_keys.h"
 
@@ -83,11 +86,6 @@
  * Non-ASCII Symbols
  */
 
-// cedilla
-#define  C_CCDL &kp SEMI  // ç
-#define SC_CCDL &kp COLON // Ç
-
-// Other symbols
 #ifdef ENABLE_CP1252_ALT_CODES
   #define C_KRAMQ CP1252_INVERTED_QMARK // ¿
   #define C_LCXE  CP1252_INVERTED_XMARK // ¡
@@ -105,6 +103,7 @@
   #define C_MICRO &none
   #define C_DEG   &none
 #endif
+
 #define C_LGQT  &kp EQUAL  // «
 #define C_RGQT  &kp PLUS   // »
 #define C_FEM   &kp DQT    // ª
