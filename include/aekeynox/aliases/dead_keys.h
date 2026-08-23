@@ -360,9 +360,9 @@
   #endif
 #endif
 
-#ifndef  C_OCDL
-#define  C_OCDL DI_CDL    C  // ç
+#ifndef  C_CCDL
+#define  C_CCDL DI_CDL    C  // ç
 #endif
-#ifndef SC_OCDL
-#define SC_OCDL DI_CDL RS(C) // Ç
+#ifndef SC_CCDL
+#define SC_CCDL DI_CDL RS(C) // Ç
 #endif

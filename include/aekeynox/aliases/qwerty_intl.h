@@ -16,7 +16,7 @@
 #define X_ALL   &kp CMD(A)
 
 /**
- * Dead Keys
+ * Diacritics
  */
 
 #define DEAD_ACUTE      SQT
