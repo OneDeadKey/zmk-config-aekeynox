@@ -29,7 +29,7 @@ struct behavior_dead_key_config {
 struct behavior_dead_key_data {
     uint32_t position;
     uint32_t dead_key;
-    uint32_t param1;
+    uint32_t base_letter;
     bool is_down;
 };
 
@@ -55,7 +55,7 @@ static int on_dead_key_binding_pressed(
     active_dead_key = (struct behavior_dead_key_data) {
         .position = event.position,
         .dead_key = cfg->dead_key,
-        .param1 = binding->param1,
+        .base_letter = binding->param1,
         .is_down = true,
     };
 
@@ -104,7 +104,7 @@ static int dead_key_keycode_state_changed_listener(const zmk_event_t *eh) {
     }
 
     const uint32_t kc = ZMK_HID_USAGE(HID_USAGE_KEY, ev->keycode);
-    if (kc == active_dead_key.dead_key || kc == active_dead_key.param1) {
+    if (kc == active_dead_key.dead_key || kc == active_dead_key.base_letter) {
         return ZMK_EV_EVENT_BUBBLE;
     }
 
