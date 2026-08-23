@@ -243,9 +243,9 @@
 #ifndef SC_YTLD
 #define SC_YTLD DI_TLD RS(Y) // Ỹ
 #endif
-#ifndef  C_YTLD
+#ifndef  C_NTLD
 #define  C_NTLD DI_TLD    N  // ñ
 #endif
-#ifndef SC_YTLD
+#ifndef SC_NTLD
 #define SC_NTLD DI_TLD RS(N) // Ñ
 #endif
