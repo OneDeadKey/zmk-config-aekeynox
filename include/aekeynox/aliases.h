@@ -1,20 +1,10 @@
-#include <dt-bindings/zmk/pointing.h>
-
+#include "aliases/cp1252.dtsi"
 
 /**
  * Non-Alpha Actions
  */
 
 // Keyboard Actions
-#ifdef MACOS
-  #define CMD LG               // Mac: Cmd key as main modifier
-  #define X_PREV &kp LG(LBKT)
-  #define X_NEXT &kp LG(RBKT)
-#else
-  #define CMD LC               // PC: Ctrl key as main modifier
-  #define X_PREV &kp LA(LEFT)
-  #define X_NEXT &kp LA(RIGHT)
-#endif
 #define X_SHTAB &kp RS(TAB)
 
 // Mouse Actions

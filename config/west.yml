@@ -47,6 +47,12 @@ manifest:
       remote: NuclearSquid
       revision: aekeynox
 
+      # Enables OS-specific behaviors, used to set the HRM order on macOS
+      # devices, and ensure aliases are consistent across OSes
+    - name: oskey
+      remote: NuclearSquid
+      revision: aekeynox
+
       ###
       # Community keyboards (not officially supported by ZMK)
       ##
