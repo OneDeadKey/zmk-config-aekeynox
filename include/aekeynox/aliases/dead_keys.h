@@ -249,3 +249,22 @@
 #ifndef SC_NTLD
 #define SC_NTLD DI_TLD RS(N) // Ñ
 #endif
+
+/**
+ * Cedilla
+ */
+
+#ifdef DEAD_CEDILLA
+  #define DI_CDL &digraph DEAD_CEDILLA
+  #define DK_CDL &kp DEAD_CEDILLA
+#else
+  #define DI_CDL &kp
+  #define DK_CDL &none
+#endif
+
+#ifndef  C_OCDL
+#define  C_OCDL DI_CDL    C  // ç
+#endif
+#ifndef SC_OCDL
+#define SC_OCDL DI_CDL RS(C) // Ç
+#endif
