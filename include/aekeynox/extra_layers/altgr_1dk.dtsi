@@ -1,0 +1,55 @@
+/**
+ * This adds a dead key (1dk) for Programmers' QWERTY variants.
+**/
+
+#define ODK_LAYER        EXTRA_LAYERS_START_INDEX
+#define ODK_SHIFT_LAYER (EXTRA_LAYERS_START_INDEX + 1)
+
+#define  K_ODKS    &mo ODK_SHIFT_LAYER  // Shift key in the 1dk layer
+#define SK_ODKS &EZ_SL(ODK_SHIFT_LAYER) // Shift key in the 1dk layer (sticky)
+
+/ {
+  behaviors {
+    TWO_LEVEL_KEY(odk, &EZ_SL(ODK_LAYER), &EZ_SL(ODK_SHIFT_LAYER))
+  };
+};
+
+// Override the standard base layer to replace SEMI with a dead AltGr key.
+
+#define SA(key) RS(RA(key))
+
+&base_layer {
+  bindings = <SELENIUM_KEYMAP_BINDINGS(
+    &kp LTOP    ,  &kp Q &kp W &kp E &kp R &kp T  ,  &kp Y  &kp U  &kp I     &kp O   &kp P     ,  &kp RTOP   ,
+    &kp LHOME   ,  &H4 A &H3 S &H2 D &H1 F &kp G  ,  &kp H  &H1 J  &H2 K     &H3 L   &odk      ,  &kp RHOME  ,
+    &kp LSHIFT  ,  &kp Z &kp X &kp C &kp V &kp B  ,  &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH  ,  &kp RSHIFT ,
+        LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH  ,  RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
+  )>;
+};
+
+/ {
+  keymap {
+    compatible = "zmk,keymap";
+
+    one_dead_key {
+      display-name = "1dk";
+      bindings = <SELENIUM_KEYMAP_BINDINGS(
+        &trans  ,  &kp RA(Q) &kp RA(W) &kp RA(E) &kp RA(R) &kp RA(T)  ,  &kp RA(Y)  &kp RA(U)  &kp RA(I)     &kp RA(O)   &kp RA(P)     ,  &trans ,
+        &trans  ,  &kp RA(A) &kp RA(S) &kp RA(D) &kp RA(F) &kp RA(G)  ,  &kp RA(H)  &kp RA(J)  &kp RA(K)     &kp RA(L)   S_SEMI        ,  &trans ,
+        &trans  ,  &kp RA(Z) &kp RA(X) &kp RA(C) &kp RA(V) &kp RA(B)  ,  &kp RA(N)  &kp RA(M)  &kp RA(COMMA) &kp RA(DOT) &kp RA(FSLH)  ,  &trans ,
+                                          SK_ODKS , S_SEMI , &trans   ,   &trans , S_SEMI , &trans
+      )>;
+    };
+
+    one_dead_key_shift {
+      display-name = "1dkShift";
+      bindings = <SELENIUM_KEYMAP_BINDINGS(
+        &trans  ,  &kp SA(Q) &kp SA(W) &kp SA(E) &kp SA(R) &kp SA(T)  ,  &kp SA(Y)  &kp SA(U)  &kp SA(I)     &kp SA(O)   &kp SA(P)     ,  &trans ,
+        &trans  ,  &kp SA(A) &kp SA(S) &kp SA(D) &kp SA(F) &kp SA(G)  ,  &kp SA(H)  &kp SA(J)  &kp SA(K)     &kp SA(L)   S_COLON       ,  &trans ,
+        &trans  ,  &kp SA(Z) &kp SA(X) &kp SA(C) &kp SA(V) &kp SA(B)  ,  &kp SA(N)  &kp SA(M)  &kp SA(COMMA) &kp SA(DOT) &kp SA(FSLH)  ,  &trans ,
+                                          &trans , S_COLON , &trans   ,   &trans , S_COLON , &trans
+      )>;
+    };
+
+  };
+};

@@ -161,11 +161,13 @@
     #include "extra_layers/azerty_1dk.dtsi"
   #elif defined KB_LAYOUT_BEPO
     #include "extra_layers/bepolar.dtsi"
+  #elif defined KB_EXTRA_LAYERS_ALTGR
+    #include "extra_layers/altgr_1dk.dtsi" // default for LV, PL, RO
   #elif defined KB_EXTRA_LAYERS_NORDIC
-    #include "extra_layers/nordic.dtsi"   // default for DK, NO, SE
+    #include "extra_layers/nordic.dtsi"    // default for DK, NO, SE
   #elif defined KB_EXTRA_LAYERS_TRANSALP
-    #include "extra_layers/transalp.dtsi" // default for CH, DE, IT
+    #include "extra_layers/transalp.dtsi"  // default for CH, DE, IT
   #elif defined KB_EXTRA_LAYERS_TRANSAT
-    #include "extra_layers/transat.dtsi"  // default for BR, ES, LATAM, PT
+    #include "extra_layers/transat.dtsi"   // default for BR, ES, LATAM, PT
   #endif
 #endif

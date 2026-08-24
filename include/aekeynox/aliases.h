@@ -72,11 +72,11 @@
 #elifdef KB_LAYOUT_QWERTY_LAFAYETTE
   #include "aliases/qwerty_lafayette.h"
 
-// US QWERTY
+// US QWERTY (+ programmers' variants)
 #elifdef KB_LAYOUT_QWERTY_INTL
   #include "aliases/qwerty_intl.h"
 #else
-  #include "aliases/qwerty.h"
+  #include "aliases/qwerty.h" // includes LV, PL, RO
 #endif
 
 

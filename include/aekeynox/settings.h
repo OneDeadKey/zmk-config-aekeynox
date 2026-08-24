@@ -55,6 +55,7 @@
 // for 4 extra alpha keys instead of the default Tab, Escape, Backspace, Enter.
 
 // #define KB_EXTRA_LAYERS_AUTO      // default (recommended)
+// #define KB_EXTRA_LAYERS_ALTGR     // default for LV, PL, RO
 // #define KB_EXTRA_LAYERS_TRANSALP  // default for CH, DE, IT
 // #define KB_EXTRA_LAYERS_TRANSAT   // default for BR, ES, LATAM, PT
 // #define KB_EXTRA_LAYERS_NONE      // disable all 1dk layers, use outer cols
