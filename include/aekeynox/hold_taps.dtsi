@@ -125,14 +125,14 @@
   #define RTHUMB_HOME   &kp SPACE
   #define RTHUMB_TUCK   &mo SYMBOLS_LAYER
 #elifdef HT_THUMB_TAPS
-  #define LTHUMB_TUCK   &EZ_SK(LSHIFT)
+  #define LTHUMB_TUCK   &shift_caps
   #define LTHUMB_HOME   LTHUMB_TT
   #define LTHUMB_REACH  &mt GUI_OPT REACH_TAP
   #define RTHUMB_REACH  &mt ALT_CTL ENTER
   #define RTHUMB_HOME   RTHUMB_TT
   #define RTHUMB_TUCK   &sym_shift_altgr
 #elif defined HT_HOME_ROW_MODS || defined HT_CALLUM_MODS
-  #define LTHUMB_TUCK   &EZ_SK(LSHIFT)
+  #define LTHUMB_TUCK   &shift_caps
   #define LTHUMB_HOME   LTHUMB_HRM
   #define LTHUMB_REACH  &sc HRM_LAYER REACH_TAP
   #define RTHUMB_REACH  &sc HRM_LAYER ENTER
@@ -152,7 +152,7 @@
   #define NAV_LTHUMB_TUCK   &kp LS(TAB)
   #define NAV_LTHUMB_REACH  &none
 #else
-  #define NAV_LTHUMB_TUCK   &kp CAPS
+  #define NAV_LTHUMB_TUCK   &EZ_SK(LSHIFT)
   #define NAV_LTHUMB_REACH  &kp LS(TAB)
 #endif
 
@@ -229,6 +229,14 @@
       bindings = <&kp>, <&osm>;
       hold-while-undecided-linger;
       hold-while-undecided;
+    };
+
+    // mod‐morph to have Capslock on double‐tap Shift
+    OMIT_IF_NO_REF shift_caps: shift_caps {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings  = <&EZ_SK(LSHIFT)>, <&kp CAPS>;
+      mods      = <(MOD_LSFT)>;
     };
 
     // mod-morphs to restore Shift+Space and Ctrl+Backspace for certain keymaps
