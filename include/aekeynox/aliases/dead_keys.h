@@ -481,6 +481,12 @@
 #ifndef SC_ECAR
 #define SC_ECAR DI_CAR RS(E)
 #endif
+#ifndef  C_NCAR
+#define  C_NCAR DI_CAR N
+#endif
+#ifndef SC_NCAR
+#define SC_NCAR DI_CAR RS(N)
+#endif
 #ifndef  C_RCAR
 #define  C_RCAR DI_CAR R
 #endif

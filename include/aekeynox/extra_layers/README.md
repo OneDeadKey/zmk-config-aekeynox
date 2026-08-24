@@ -305,24 +305,22 @@ QWERTZ-cz-1dk replaces the <kbd>ů</kbd> key with <kbd>1dk</kbd>:
     |---------------|---------------|  1dk
     |    € ě é ř ť  |  ž ú í ó      |
     |    á š ď đ    |    ů   ł      |
-    |    ý ß č      |               |
+    |    ý ß č      |  ň            |
     |---------------|---------------|
 
     |---------------|---------------|  1dkShift
     |      Ě É Ř Ť  |  Ž Ú Í Ó      |
     |    Á Š Ď Đ    |    Ů   Ł      |
-    |    Ý § Č      |               |
+    |    Ý § Č      |  Ň            |
     |---------------|---------------|
 ```
 
-- 1dk is a dead acute accent on vowels (á, é, ý, ú, í, ó)
-- 1dk is a dead caron/háček on consonants (ř, ť, š, ď, ž, č)
+- 1dk is a dead acute accent on vowels (á, é, í, ó, ú, ý)
+- 1dk is a dead caron/háček on consonants (č, ď, ň, ř, š, ť, ž)
 - 1dk is a dead ring below U (ů)
 - exception: ě (caron/háček) left to E
 
 ### Other Layouts
-
-- [ ] [`KB_LAYOUT_QWERTZ_CZ`]: Czech Republic
 
 Many other national layouts are still missing, among which:
 

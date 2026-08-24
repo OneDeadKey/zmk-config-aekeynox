@@ -2,8 +2,8 @@
 
 /**
  * This adds a dead key (1dk) to access all common Czech chars:
- *  - 1dk is a dead acute accent on vowels (á, é, ý, ú, í, ó)
- *  - 1dk is a dead caron/háček on consonants (ř, ť, š, ď, ž, č)
+ *  - 1dk is a dead acute accent on vowels (á, é, í, ó, ú, ý)
+ *  - 1dk is a dead caron/háček on consonants (č, ď, ň, ř, š, ť, ž)
  *  - 1dk is a dead ring below U (ů)
  *  - exception: ě (caron/háček) left to E
 **/
@@ -15,7 +15,7 @@
     //  |---------------|---------------|
     //  |    € ě é ř ť  |  ž ú í ó      |
     //  |    á š ď đ    |    ů   ł      |
-    //  |    ý ß č      |               |
+    //  |    ý ß č      |  ň            |
     //  |---------------|---------------|
 
     one_dead_key {
@@ -23,7 +23,7 @@
       bindings = <SELENIUM_KEYMAP_BINDINGS(
         &trans  ,  C_EURO  C_ECAR  C_EACU  C_RCAR  C_TCAR   ,   C_ZCAR  C_UACU  C_IACU  C_OACU  &trans  ,  &trans ,
         &trans  ,  C_AACU  C_SCAR  C_DCAR  C_DSTR  &trans   ,   &trans  C_URNG  &trans  C_LSTR  &none   ,  &trans ,
-        K_ODKS  ,  C_YACU  C_SZ    C_CCAR  &trans  &trans   ,   &trans  &trans  &trans  &trans  &trans  ,  K_ODKS ,
+        K_ODKS  ,  C_YACU  C_SZ    C_CCAR  &trans  &trans   ,   C_NCAR  &trans  &trans  &trans  &trans  ,  K_ODKS ,
                                  SK_ODKS , S_SQT , &trans   ,   &trans , S_SQT , &trans
       )>;
     };
@@ -31,7 +31,7 @@
     //  |---------------|---------------|
     //  |      Ě É Ř Ť  |  Ž Ú Í Ó      |
     //  |    Á Š Ď Đ    |    Ů   Ł      |
-    //  |    Ý § Č      |               |
+    //  |    Ý § Č      |  Ň            |
     //  |---------------|---------------|
 
     one_dead_key_shift {
@@ -39,7 +39,7 @@
       bindings = <SELENIUM_KEYMAP_BINDINGS(
         &trans  ,  &trans  SC_ECAR SC_EACU SC_RCAR SC_TCAR  ,   SC_ZCAR SC_UACU SC_IACU SC_OACU  &trans  ,  &trans ,
         &trans  ,  SC_AACU SC_SCAR SC_DCAR SC_DSTR &trans   ,   &trans  SC_URNG &trans  SC_LSTR &none   ,  &trans ,
-        &trans  ,  SC_YACU &trans  SC_CCAR &trans  &trans   ,   &trans  &trans  &trans  &trans  &trans  ,  &trans ,
+        &trans  ,  SC_YACU &trans  SC_CCAR &trans  &trans   ,   SC_NCAR &trans  &trans  &trans  &trans  ,  &trans ,
                                  &trans , &trans , &trans   ,   &trans , &trans , &trans
       )>;
     };
