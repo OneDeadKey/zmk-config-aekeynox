@@ -463,11 +463,41 @@
   #endif
 #endif
 
+#ifndef  C_CCAR
+#define  C_CCAR DI_CAR C
+#endif
+#ifndef SC_CCAR
+#define SC_CCAR DI_CAR RS(C)
+#endif
+#ifndef  C_DCAR
+#define  C_DCAR DI_CAR D
+#endif
+#ifndef SC_DCAR
+#define SC_DCAR DI_CAR RS(D)
+#endif
+#ifndef  C_ECAR
+#define  C_ECAR DI_CAR E
+#endif
+#ifndef SC_ECAR
+#define SC_ECAR DI_CAR RS(E)
+#endif
+#ifndef  C_RCAR
+#define  C_RCAR DI_CAR R
+#endif
+#ifndef SC_RCAR
+#define SC_RCAR DI_CAR RS(R)
+#endif
 #ifndef  C_SCAR
 #define  C_SCAR DI_CAR S
 #endif
 #ifndef SC_SCAR
 #define SC_SCAR DI_CAR RS(S)
+#endif
+#ifndef  C_TCAR
+#define  C_TCAR DI_CAR T
+#endif
+#ifndef SC_TCAR
+#define SC_TCAR DI_CAR RS(T)
 #endif
 #ifndef  C_ZCAR
 #define  C_ZCAR DI_CAR Z
@@ -501,4 +531,10 @@
 #endif
 #ifndef SC_ARNG
 #define SC_ARNG DI_RNG RS(A)
+#endif
+#ifndef  C_URNG
+#define  C_URNG DI_RNG U
+#endif
+#ifndef SC_URNG
+#define SC_URNG DI_RNG RS(U)
 #endif

@@ -55,7 +55,7 @@ others:
 |    |
 | ✅ | [`KB_LAYOUT_QWERTZ_CH_DE`] | Switzerland, Luxembourg           | German
 | ✅ | [`KB_LAYOUT_QWERTZ_CH_FR`] | Switzerland, Luxembourg           | French
-| 🚧 | [`KB_LAYOUT_QWERTZ_CZ`]    | Czech Republic                    |
+| ✅ | [`KB_LAYOUT_QWERTZ_CZ`]    | Czech Republic                    |
 | ✅ | [`KB_LAYOUT_QWERTZ_DE`]    | Germany, Austria                  |
 | 🚧 | [`KB_LAYOUT_QWERTZ_HU`]    | Hungary                           |
 | ❌ | [`KB_LAYOUT_QWERTZ_PL`]    | Poland                            | 214

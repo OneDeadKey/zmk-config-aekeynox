@@ -114,6 +114,11 @@ include:
     artifact-name: qwertz_ch_de
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTZ_CH_DE"
 
+    # QWERTZ-cz (Czech Republic)
+  - board: quacken_flex/rp2040
+    artifact-name: qwertz_cz
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTZ_CZ"
+
     # QWERTZ-de (Germany)
   - board: quacken_flex/rp2040
     artifact-name: qwertz_de

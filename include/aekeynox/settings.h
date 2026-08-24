@@ -30,6 +30,7 @@
 // #define KB_LAYOUT_QWERTY_PT         // Portugal
 // #define KB_LAYOUT_QWERTY_RO         // Romania (Programmers)
 // #define KB_LAYOUT_QWERTY_SE         // Sweden, Finland
+// #define KB_LAYOUT_QWERTZ_CZ         // Czech Republic
 // #define KB_LAYOUT_QWERTZ_DE         // Germany, Austria
 // #define KB_LAYOUT_QWERTZ_CH_DE      // Switzerland (German)
 // #define KB_LAYOUT_QWERTZ_CH_FR      // Switzerland (French)
