@@ -146,3 +146,14 @@
 #define C_MULT  OS_SELECT ( &kp X     , CP1252_MULTIPLICATION ,               , &kp SA(COMMA) ) // ×
 #define C_MICRO OS_SELECT ( &kp PIPE  ,                       , &kp RA(SEMI)  ,               ) // µ
 #define C_DEG               &kp UNDER                                                           // °
+
+/**
+* Caps-Word
+*/
+
+#define CAPS_WORD_SHIFT_LIST \
+    Q  W  E  R  T    Y  U  I  O  P \
+    A  S  D  F  G    H  J  K  L  SEMI \
+    Z  X  C  V  B    N
+
+#define CAPS_WORD_CONTINUE_LIST N1 N4 N6 N7 N8 N9 N0 SQT

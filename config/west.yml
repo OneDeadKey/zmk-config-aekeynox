@@ -29,7 +29,7 @@ manifest:
       # More info on the changes present can be found on the fork’s README page.
     - name: zmk
       remote: NuclearSquid
-      revision: aekeynox
+      revision: caps-word  # XXX: don’t forget to switch back to aekeynox before merging
       import: app/west.yml
 
       ###

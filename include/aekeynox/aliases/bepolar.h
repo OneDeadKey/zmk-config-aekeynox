@@ -62,3 +62,14 @@
 #define S_COMMA &kp G
 #define S_DOT   &kp V
 #define S_MONEY &kp LS(BSLH)
+
+/**
+* Caps-Word
+*/
+
+#define CAPS_WORD_SHIFT_LIST \
+    Q  W  E  R  T    Y  U  I  O  P \
+    A  S  D  F  G    H  J  K  L  SEMI \
+    Z  X  C  V  B    N  M  COMMA  DOT  FSLH
+
+#define CAPS_WORD_CONTINUE_LIST

@@ -74,3 +74,14 @@
     };
   };
 };
+
+/**
+* Caps-Word
+*/
+
+#define CAPS_WORD_SHIFT_LIST \
+         Q  W  E  R  T       U    I    O   P    LBKT RBKT \
+         A  S  D  F       H  J    K    L   SEMI SQT  BSLH \
+    NUBS Z  X  C     B       M  COMMA DOT  FSLH
+
+#define CAPS_WORD_CONTINUE_LIST Y N

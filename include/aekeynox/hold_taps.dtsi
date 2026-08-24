@@ -235,7 +235,7 @@
     OMIT_IF_NO_REF shift_caps: shift_caps {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings  = <&EZ_SK(LSHIFT)>, <&kp CAPS>;
+      bindings  = <&EZ_SK(LSHIFT)>, <&caps_word>;
       mods      = <(MOD_LSFT)>;
     };
 
