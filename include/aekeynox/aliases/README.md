@@ -34,7 +34,7 @@ others:
 |    |
 | ✅ | [`KB_LAYOUT_QWERTY_BR`]    | Brazil                            |
 | 💡 | [`KB_LAYOUT_QWERTY_CA`]    | Canada                            | Multilingual
-| ❌ | [`KB_LAYOUT_QWERTY_CZ`]    | Czech Republic                    | Programmers
+| ❌ | [`KB_LAYOUT_QWERTY_CZ`]    | Czechia                           | Programmers
 | ✅ | [`KB_LAYOUT_QWERTY_DK`]    | Denmark                           |
 | ✅ | [`KB_LAYOUT_QWERTY_EE`]    | Estonia                           |
 | ✅ | [`KB_LAYOUT_QWERTY_ES`]    | Spain                             |
@@ -55,7 +55,7 @@ others:
 |    |
 | ✅ | [`KB_LAYOUT_QWERTZ_CH_DE`] | Switzerland, Luxembourg           | German
 | ✅ | [`KB_LAYOUT_QWERTZ_CH_FR`] | Switzerland, Luxembourg           | French
-| ✅ | [`KB_LAYOUT_QWERTZ_CZ`]    | Czech Republic                    |
+| ✅ | [`KB_LAYOUT_QWERTZ_CZ`]    | Czechia                           |
 | ✅ | [`KB_LAYOUT_QWERTZ_DE`]    | Germany, Austria                  |
 | 🚧 | [`KB_LAYOUT_QWERTZ_HU`]    | Hungary                           |
 | ❌ | [`KB_LAYOUT_QWERTZ_PL`]    | Poland                            | 214

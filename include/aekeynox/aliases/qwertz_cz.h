@@ -1,4 +1,4 @@
-// Czech Republic
+// Czechia
 // https://kbdlayout.info/kbdcz
 
 /**
@@ -43,7 +43,7 @@
 // ů
 #define C_URNG &kp SEMI
 
-// đ, ł, ß
+// đł, ß
 #define  C_DSTR &kp RA(S)
 #define SC_DSTR &kp RA(D)
 #define  C_LSTR &kp RA(K)

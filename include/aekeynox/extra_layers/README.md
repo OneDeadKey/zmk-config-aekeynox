@@ -22,7 +22,7 @@ When possible, it’s placed on the `SEMI` key (QWERTY’s <kbd>;:</kbd> key).
   - [Transat](#transat): Brazil, Latin America, Spain, Portugal
 - [Programmers’ QWERTY](#programmers-qwerty)
   - [Recommended](#recommended): Latvia, Poland, Romania
-  - [Not Recommended](#not-recommended): Czech Republic, Lithuania
+  - [Not Recommended](#not-recommended): Czechia, Lithuania
 - [Layout-Specific Adaptations](#layout-specific-adaptations)
   - [AZERTY-1dk](#azerty-1dk)
   - [Bépolar](#bépolar)
@@ -204,7 +204,7 @@ When `KB_LAYOUT_*` *is* specified, the semicolon (`SEMI`) becomes a dead key:
 On these layouts, special chars are in the number row, which is a pain with
 compact keyboards:
 
-- [ ] [`KB_LAYOUT_QWERTY_CZ`]: Czech Republic
+- [ ] [`KB_LAYOUT_QWERTY_CZ`]: Czechia
 - [ ] [`KB_LAYOUT_QWERTY_LT`]: Lithuania
 
 Specific adaptations would be required.
@@ -291,7 +291,7 @@ It can be [emulated by Ækeynox] on any AZERTY or QWERTY-intl host.
 
 ### QWERTZ-cz-1dk
 
-- [x] [`KB_LAYOUT_QWERTZ_CZ`]: Czech Republic
+- [x] [`KB_LAYOUT_QWERTZ_CZ`]: Czechia
 
 QWERTZ-cz-1dk replaces the <kbd>ů</kbd> key with <kbd>1dk</kbd>:
 
