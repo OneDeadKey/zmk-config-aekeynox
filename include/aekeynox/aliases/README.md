@@ -1,4 +1,4 @@
-Layout Aliasess
+Layout Aliases
 ================================================================================
 
 Every Ækeynox firmware is built for a specific host keyboard layout, i.e. the
@@ -24,42 +24,44 @@ Supported Layouts
 this starts with layouts that have a dedicated Apple keyboard, plus a couple
 others:
 
-| ☑  | Layout ID              | Used in…                          | Variant     |
-|:--:|------------------------|-----------------------------------|-------------|
+| ☑  | Layout ID                  | Used in…                          | Variant   |
+|:--:|----------------------------|-----------------------------------|-----------|
 | ✅ | [`KB_LAYOUT_QWERTY`]       | United States                     |
 | ✅ | [`KB_LAYOUT_QWERTY_INTL`]  | United States / International     |
 |    |
 | ✅ | [`KB_LAYOUT_AZERTY`]       | France                            |
-| 💡 | `KB_LAYOUT_AZERTY_BE`    | Belgium                           |
+| 💡 | [`KB_LAYOUT_AZERTY_BE`]    | Belgium                           |
 |    |
 | ✅ | [`KB_LAYOUT_QWERTY_BR`]    | Brazil                            |
-| 💡 | `KB_LAYOUT_QWERTY_CA`    | Canada                            | Multilingual
-| 💡 | `KB_LAYOUT_QWERTY_CZ`    | Czech Republic                    | Programmers
+| 💡 | [`KB_LAYOUT_QWERTY_CA`]    | Canada                            | Multilingual
+| ❌ | [`KB_LAYOUT_QWERTY_CZ`]    | Czech Republic                    | Programmers
 | ✅ | [`KB_LAYOUT_QWERTY_DK`]    | Denmark                           |
 | ✅ | [`KB_LAYOUT_QWERTY_EE`]    | Estonia                           |
 | ✅ | [`KB_LAYOUT_QWERTY_ES`]    | Spain                             |
-| 💡 | `KB_LAYOUT_QWERTY_HR`    | Bosnia, Croatia, Serbia, Slovenia |
-| 💡 | `KB_LAYOUT_QWERTY_HU`    | Hungary                           | 101-key
+| 🚧 | [`KB_LAYOUT_QWERTY_HR`]    | Bosnia, Croatia, Serbia, Slovenia |
+| ❌ | [`KB_LAYOUT_QWERTY_HU`]    | Hungary                           | 101-key
 | ✅ | [`KB_LAYOUT_QWERTY_IT`]    | Italy                             | 142
 | 🚧 | [`KB_LAYOUT_QWERTY_IS`]    | Iceland                           |
 | ✅ | [`KB_LAYOUT_QWERTY_LATAM`] | Latin America                     |
-| 💡 | `KB_LAYOUT_QWERTY_NL`    | Netherlands                       |
+| ✅ | [`KB_LAYOUT_QWERTY_LV`]    | Latvia                            | Programmers
+| 💡 | [`KB_LAYOUT_QWERTY_LT`]    | Lithuania                         |
+| 💡 | [`KB_LAYOUT_QWERTY_NL`]    | Netherlands                       |
 | ✅ | [`KB_LAYOUT_QWERTY_NO`]    | Norway                            |
-| 💡 | `KB_LAYOUT_QWERTY_PL`    | Poland                            | Programmers
+| ✅ | [`KB_LAYOUT_QWERTY_PL`]    | Poland                            | Programmers
 | ✅ | [`KB_LAYOUT_QWERTY_PT`]    | Portugal                          |
-| 💡 | `KB_LAYOUT_QWERTY_RO`    | Romania                           | Standard
+| ✅ | [`KB_LAYOUT_QWERTY_RO`]    | Romania                           | Programmers
 | ✅ | [`KB_LAYOUT_QWERTY_SE`]    | Sweden, Finland                   |
-| 💡 | `KB_LAYOUT_QWERTY_TR`    | Turkey                            |
+| 💡 | [`KB_LAYOUT_QWERTY_TR`]    | Turkey                            |
 |    |
 | ✅ | [`KB_LAYOUT_QWERTZ_CH_DE`] | Switzerland, Luxembourg           | German
 | ✅ | [`KB_LAYOUT_QWERTZ_CH_FR`] | Switzerland, Luxembourg           | French
-| 💡 | `KB_LAYOUT_QWERTZ_CZ`    | Czech Republic                    |
+| 🚧 | [`KB_LAYOUT_QWERTZ_CZ`]    | Czech Republic                    |
 | ✅ | [`KB_LAYOUT_QWERTZ_DE`]    | Germany, Austria                  |
-| 💡 | `KB_LAYOUT_QWERTZ_HU`    | Hungary                           |
-| 💡 | `KB_LAYOUT_QWERTZ_SK`    | Slovakia                          |
+| 🚧 | [`KB_LAYOUT_QWERTZ_HU`]    | Hungary                           |
+| ❌ | [`KB_LAYOUT_QWERTZ_PL`]    | Poland                            | 214
+| 💡 | [`KB_LAYOUT_QWERTZ_SK`]    | Slovakia                          |
 
-Ækeynox also aims to support a few alternative layouts, especially the non-ASCII
-ones:
+Ækeynox also supports a few alternative layouts, especially non-ASCII ones:
 
 - [x] [`KB_LAYOUT_BEPO`]
 - [x] [`KB_LAYOUT_DVORAK`]
@@ -67,30 +69,46 @@ ones:
 - [ ] [`KB_LAYOUT_NEO`]
 - [x] [`KB_LAYOUT_QWERTY_LAFAYETTE`]
 
-[`KB_LAYOUT_AZERTY`]:       https://kbdlayout.info/kbdfr
-[`KB_LAYOUT_BEPO`]:         https://kbdlayout.info/kbdfrnb
-[`KB_LAYOUT_DVORAK`]:       https://kbdlayout.info/kbddv
-[`KB_LAYOUT_QWERTY`]:       https://kbdlayout.info/kbdus
-[`KB_LAYOUT_QWERTY_BR`]:    https://kbdlayout.info/kbdbr
-[`KB_LAYOUT_QWERTY_DK`]:    https://kbdlayout.info/kbdda
-[`KB_LAYOUT_QWERTY_EE`]:    https://kbdlayout.info/kbdest
-[`KB_LAYOUT_QWERTY_ES`]:    https://kbdlayout.info/kbdsp
-[`KB_LAYOUT_QWERTY_INTL`]:  https://kbdlayout.info/kbdusx
-[`KB_LAYOUT_QWERTY_IT`]:    https://kbdlayout.info/kbdit142
-[`KB_LAYOUT_QWERTY_IS`]:    https://kbdlayout.info/kbdic
-[`KB_LAYOUT_QWERTY_LATAM`]: https://kbdlayout.info/kbdla
-[`KB_LAYOUT_QWERTY_NO`]:    https://kbdlayout.info/kbdno
-[`KB_LAYOUT_QWERTY_NO`]:    https://kbdlayout.info/kbdsp
-[`KB_LAYOUT_QWERTY_NO`]:    https://kbdlayout.info/kbdus
-[`KB_LAYOUT_QWERTY_PT`]:    https://kbdlayout.info/kbdpo
-[`KB_LAYOUT_QWERTY_SE`]:    https://kbdlayout.info/kbdse
-[`KB_LAYOUT_QWERTZ_CH_DE`]: https://kbdlayout.info/kbdsg
-[`KB_LAYOUT_QWERTZ_CH_FR`]: https://kbdlayout.info/kbdsf
-[`KB_LAYOUT_QWERTZ_DE`]:    https://kbdlayout.info/kbdgr
+[`KB_LAYOUT_QWERTY`]:           https://kbdlayout.info/kbdus
+[`KB_LAYOUT_QWERTY_INTL`]:      https://kbdlayout.info/kbdusx
 
+[`KB_LAYOUT_AZERTY`]:           https://kbdlayout.info/kbdfr
+[`KB_LAYOUT_AZERTY_BE`]:        https://kbdlayout.info/kbdbe
+
+[`KB_LAYOUT_QWERTY_BR`]:        https://kbdlayout.info/kbdbr
+[`KB_LAYOUT_QWERTY_CA`]:        https://kbdlayout.info/kbdcan
+[`KB_LAYOUT_QWERTY_CZ`]:        https://kbdlayout.info/kbdcz2
+[`KB_LAYOUT_QWERTY_DK`]:        https://kbdlayout.info/kbdda
+[`KB_LAYOUT_QWERTY_EE`]:        https://kbdlayout.info/kbdest
+[`KB_LAYOUT_QWERTY_ES`]:        https://kbdlayout.info/kbdsp
+[`KB_LAYOUT_QWERTY_HR`]:        https://kbdlayout.info/kbdycl
+[`KB_LAYOUT_QWERTY_HU`]:        https://kbdlayout.info/kbdhu1
+[`KB_LAYOUT_QWERTY_IT`]:        https://kbdlayout.info/kbdit142
+[`KB_LAYOUT_QWERTY_IS`]:        https://kbdlayout.info/kbdic
+[`KB_LAYOUT_QWERTY_LATAM`]:     https://kbdlayout.info/kbdla
+[`KB_LAYOUT_QWERTY_LV`]:        https://kbdlayout.info/kbdlvst
+[`KB_LAYOUT_QWERTY_LT`]:        https://kbdlayout.info/kbdlt1
+[`KB_LAYOUT_QWERTY_NL`]:        https://kbdlayout.info/kbdne
+[`KB_LAYOUT_QWERTY_NO`]:        https://kbdlayout.info/kbdno
+[`KB_LAYOUT_QWERTY_PL`]:        https://kbdlayout.info/kbdpl1
+[`KB_LAYOUT_QWERTY_PT`]:        https://kbdlayout.info/kbdpo
+[`KB_LAYOUT_QWERTY_RO`]:        https://kbdlayout.info/kbdropr
+[`KB_LAYOUT_QWERTY_SE`]:        https://kbdlayout.info/kbdse
+[`KB_LAYOUT_QWERTY_TR`]:        https://kbdlayout.info/kbdtuq
+
+[`KB_LAYOUT_QWERTZ_CH_DE`]:     https://kbdlayout.info/kbdsg
+[`KB_LAYOUT_QWERTZ_CH_FR`]:     https://kbdlayout.info/kbdsf
+[`KB_LAYOUT_QWERTZ_CZ`]:        https://kbdlayout.info/kbdcz
+[`KB_LAYOUT_QWERTZ_DE`]:        https://kbdlayout.info/kbdgr
+[`KB_LAYOUT_QWERTZ_HU`]:        https://kbdlayout.info/kbdhu
+[`KB_LAYOUT_QWERTZ_PL`]:        https://kbdlayout.info/kbdpl
+[`KB_LAYOUT_QWERTZ_SK`]:        https://kbdlayout.info/kbdsl
+
+[`KB_LAYOUT_BEPO`]:             https://kbdlayout.info/kbdfrnb
+[`KB_LAYOUT_BEPOLAR`]:          https://ergol.org/lafayette/bépolar
+[`KB_LAYOUT_DVORAK`]:           https://kbdlayout.info/kbddv
 [`KB_LAYOUT_ERGOL`]:            https://ergol.org
 [`KB_LAYOUT_ERGLACE`]:          https://ergol.org/erglace
-[`KB_LAYOUT_BEPOLAR`]:          https://ergol.org/lafayette/bépolar
 [`KB_LAYOUT_QWERTY_LAFAYETTE`]: https://qwerty-lafayette.org
 [`KB_LAYOUT_NEO`]:              https://neo-layout.org
 
@@ -120,11 +138,11 @@ Reference: [kbdlayout.info]
 
 ### macOS
 
-Apple often modifies existing national layouts to their liking, and sometimes
-use the same modified layout for several different countries:
+Apple often modify existing national layouts to their liking, and sometimes use
+the same modified layout for several different countries:
 
 - their AZERTY is shipped to both France and Belgium, and it’s *far* from the
-  local Windows versions;
+  local Windows and Linux versions;
 - their QWERTY-ro is specific to Romania, but it’s neither the Romanian standard
   nor the legacy QWERTZ-ro;
 - their QWERTY-nl is just a QWERTY-intl with a € sign;

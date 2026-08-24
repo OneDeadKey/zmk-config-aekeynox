@@ -17,13 +17,15 @@ to represent it.
 When possible, it’s placed on the `SEMI` key (QWERTY’s <kbd>;:</kbd> key).
 
 - [Multilingual Adaptations](#multilingual-adaptations)
-  - [Nordic](#nordic-todo) (Danish, Estonian, Faroese, Finnish, Icelandic, Norwegian, Swedish)
-  - [Transalp](#transalp) (French, German, Italian)
-  - [Transat](#transat-todo) (Portuguese, Spanish, Aranese, Basque, Catalan, Galician)
+  - [Nordic](#nordic): Denmark, Estonia, Finland, Iceland, Norway, Sweden
+  - [Transalp](#transalp): Germany, Italy, Switzerland, Luxembourg
+  - [Transat](#transat): Brazil, Latin America, Spain, Portugal
+- [Programmers’ QWERTY](#programmers-qwerty)
+  - [Recommended](#recommended): Latvia, Poland, Romania
+  - [Not Recommended](#not-recommended): Czech Republic, Lithuania
 - [Layout-Specific Adaptations](#layout-specific-adaptations)
-  - [AZERTY-1dk](#azerty-1dk-french)
-  - [Bépolar](#bépolar-french)
-  - [Programmers’ QWERTY](#programmers-qwerty)
+  - [AZERTY-1dk](#azerty-1dk)
+  - [Bépolar](#bépolar)
   - [Other Layouts](#other-layouts)
 - [Six-Column Configurations](#six-column-configurations)
   - [QWERTY-intl](#qwerty-intl)
@@ -46,17 +48,16 @@ selected with one of the following definitions:
 
 Activated by default on:
 
-- [x] [QWERTY-dk]: Denmark
-- [x] [QWERTY-ee]: Estonia
-- [ ] [QWERTY-is]: Iceland
-- [x] [QWERTY-no]: Norway
-- [x] [QWERTY-se]: Sweden, Finland
+- [x] [`KB_LAYOUT_QWERTY_DK`]: Denmark
+- [ ] [`KB_LAYOUT_QWERTY_IS`]: Iceland
+- [x] [`KB_LAYOUT_QWERTY_NO`]: Norway
+- [x] [`KB_LAYOUT_QWERTY_SE`]: Sweden, Finland
 
 Suitable for:
 
-- [x] [QWERTY-intl]
-- [ ] [QWERTY-nl]: Netherlands (but `^` and `˝` are missing)
-- [x] [QWERTZ-de]: Germany, Austria
+- [x] [`KB_LAYOUT_QWERTY_INTL`]
+- [ ] [`KB_LAYOUT_QWERTY_NL`]: Netherlands (but `^` and `˝` are missing)
+- [x] [`KB_LAYOUT_QWERTZ_DE`]: Germany, Austria
 
 ```
     |---------------|---------------|  base
@@ -91,13 +92,14 @@ Supported languages:
 
 Activated by default on:
 
-- [x] [QWERTZ-ch]: Switzerland, Luxembourg, Liechtenstein
-- [x] [QWERTZ-de]: Germany, Austria
-- [x] [QWERTY-it]: Italy
+- [x] [`KB_LAYOUT_QWERTZ_CH_DE`]: Switzerland, Luxembourg (German)
+- [x] [`KB_LAYOUT_QWERTZ_CH_FR`]: Switzerland, Luxembourg (French)
+- [x] [`KB_LAYOUT_QWERTZ_DE`]: Germany, Austria
+- [x] [`KB_LAYOUT_QWERTY_IT`]: Italy
 
 Suitable for:
 
-- [x] [QWERTY-intl]
+- [x] [`KB_LAYOUT_QWERTY_INTL`]
 
 ```
     |---------------|---------------|  base
@@ -129,14 +131,14 @@ Supported languages:
 
 Activated by default on:
 
-- [x] [QWERTY-br]: Brazil
-- [x] [QWERTY-latam]: Latin America
-- [x] [QWERTY-es]: Spain
-- [x] [QWERTY-pt]: Portugal
+- [x] [`KB_LAYOUT_QWERTY_BR`]: Brazil
+- [x] [`KB_LAYOUT_QWERTY_LATAM`]: Latin America
+- [x] [`KB_LAYOUT_QWERTY_ES`]: Spain
+- [x] [`KB_LAYOUT_QWERTY_PT`]: Portugal
 
 Suitable for:
 
-- [x] [QWERTY-intl]
+- [x] [KB_LAYOUT_QWERTY_INTL]
 
 ```
     |---------------|---------------|  base
@@ -167,12 +169,56 @@ Specific diacritics beside `ñ`, `ç` and `áéíóú`:
 - [x] Basque:     none
 
 
+Programmers’ QWERTY
+--------------------------------------------------------------------------------
+
+Some central/eastern European languages have a *“Programmers’ QWERTY”* variant,
+with a QWERTY-ANSI base layer and special chars in a secondary layer (AltGr).
+These layouts are often preferred to the standard layouts, especially in tech —
+and they’re a natural fit for ergonomic keyboards.
+
+### Recommended
+
+On these layouts, special chars are on the base letters, which works fine with
+compact keyboards:
+
+- [x] [`KB_LAYOUT_QWERTY_LV`]: Latvia
+- [x] [`KB_LAYOUT_QWERTY_PL`]: Poland
+- [x] [`KB_LAYOUT_QWERTY_RO`]: Romania
+
+By default (= when `KB_LAYOUT_*` is not specified), <kbd>AltGr</kbd> and
+<kbd>Shift</kbd>‑<kbd>AltGr</kbd> are required to access special chars:
+
+- <kbd>AltGr</kbd> is on <kbd>Nav</kbd>+<kbd>Symbols</kbd>
+- <kbd>AltGr</kbd>+<kbd>Shift</kbd> is on <kbd>Shift</kbd>+<kbd>Symbols</kbd>
+
+When `KB_LAYOUT_*` *is* specified, the semicolon (`SEMI`) becomes a dead key:
+
+- semicolon (<kbd>;</kbd>) is a dead <kbd>AltGr</kbd>
+  (semicolon + Space makes a semicolon)
+- colon (<kbd>:</kbd>) is a dead <kbd>AltGr</kbd>+<kbd>Shift</kbd>
+  (colon + Space makes a colon)
+
+### Not Recommended
+
+On these layouts, special chars are in the number row, which is a pain with
+compact keyboards:
+
+- [ ] [`KB_LAYOUT_QWERTY_CZ`]: Czech Republic
+- [ ] [`KB_LAYOUT_QWERTY_LT`]: Lithuania
+
+Specific adaptations would be required.
+
+
 Layout-Specific Adaptations
 --------------------------------------------------------------------------------
 
-### AZERTY-1dk (French)
+### AZERTY-1dk
 
-[AZERTY] is arguably one of the worst keyboard layouts ever made: <kbd>A</kbd>
+- [x] [`KB_LAYOUT_AZERTY`]: France
+- [ ] [`KB_LAYOUT_AZERTY_BE`]: Belgium
+
+AZERTY is arguably one of the worst keyboard layouts ever made: <kbd>A</kbd>
 is not on the home row, the dot and the numbers require <kbd>Shift</kbd>,
 accented chars on the numbers’ row…
 
@@ -198,14 +244,22 @@ AZERTY-1dk replaces the <kbd>ù</kbd> key with <kbd>1dk</kbd>, on the 6th column
     |---------------|---------------|
 ```
 
-For a better alternative, see [QWERTY-Lafayette](https://qwerty-lafayette.org).
-It can be emulated by Ækeynox on any AZERTY or QWERTY-intl host.
+For a better alternative, see QWERTY-Lafayette:
 
-### Bépolar (French)
+- [x] [`KB_LAYOUT_QWERTY_LAFAYETTE`]
 
-[Bépo] is a Dvorak-like layout for French, which has explicitly excluded ergonomic
-keyboards from the very beginning of its development. Bépolar is a Bépo variant
-that’s been designed *specifically* for ergonomic keyboards.
+It’s a QWERTY-ANSI base with a French 1dk layer, which makes it work out of the
+box on any ergonomic keyboard.
+It can be [emulated by Ækeynox] on any AZERTY or QWERTY-intl host.
+
+### Bépolar
+
+- [x] [`KB_LAYOUT_BEPO`]: Bépo on the host, Bépolar emulation on the keyboard
+- [x] [`KB_LAYOUT_BEPOLAR`]: Bépolar on the host
+
+Bépo is a Dvorak-like layout for French, which has explicitly excluded ergonomic
+keyboards from the very beginning of its development. Bépolar is an adaptation
+of Bépo for ergonomic keyboards.
 
 ```
     |---------------|---------------|  base
@@ -227,42 +281,31 @@ that’s been designed *specifically* for ergonomic keyboards.
     |---------------|---------------|
 ```
 
-For a better alternative, see [Ergo‑L](https://ergol.org).
-It can be emulated by Ækeynox on any AZERTY or QWERTY-intl host.
+For a better alternative, see Ergo‑L:
 
-### Programmers’ QWERTY
+- [x] [`KB_LAYOUT_ERGOL`]
 
-Many European languages in central or eastern Europe have a “Programmers’ QWERTY”
-variant, with a QWERTY-ANSI base layer and special chars in an secondary layer
-(often AltGr). This seems to be a natural fit for ergonomic keyboards.
-
-- [ ] QWERTY-cz: Czech Republic
-- [ ] QWERTY-hu: Hungary (101-key)
-- [ ] QWERTY-pl: Poland
-- [ ] QWERTY-ro: Romania
-
-However:
-
-- some of these layouts cannot fit on a 3×10 grid, and require an adaptation;
-- an option to replace the `SEMI` key by a dead AltGr could be nice.
-
-If you use such a layout, please open a ticket and we’ll propose a dedicated
-adaptation.
+It has been developed specifically for compact and ergonomic keyboards, and
+optimized for both French and English with a Colemak-DH approach.
+It can be [emulated by Ækeynox] on any AZERTY or QWERTY-intl host.
 
 ### Other Layouts
 
 Many other national layouts are still missing, among which:
 
-- [ ] QWERTY-ca: Canada (Multilingual)
-- [ ] QWERTY-hr: Bosnia, Croatia, Serbia (+ Slovenia, almost identical)
-- [ ] QWERTY-pl: Poland (214)
-- [ ] QWERTY-tr: Turkey
-- [ ] QWERTZ-cz: Czech Republic
-- [ ] QWERTZ-hu: Hungary
-- [ ] QWERTZ-sk: Slovakia
+- [ ] [`KB_LAYOUT_QWERTY_CA`]: Canada Multilingual Standard
+- [ ] [`KB_LAYOUT_QWERTY_HR`]: Bosnia, Croatia, Serbia, Slovenia (all almost identical)
+- [ ] [`KB_LAYOUT_QWERTY_LT`]: Lithuania
+- [ ] [`KB_LAYOUT_QWERTY_NL`]: Netherlands
+- [ ] [`KB_LAYOUT_QWERTY_TR`]: Turkey
+- [ ] [`KB_LAYOUT_QWERTZ_CZ`]: Czech Republic
+- [ ] [`KB_LAYOUT_QWERTZ_HU`]: Hungary
+- [ ] [`KB_LAYOUT_QWERTZ_SK`]: Slovakia
 
 If you use one of these layouts, please open a ticket and we’ll work something
 out.
+
+[emulated by Ækeynox]: ../emulations#non-ascii-layouts
 
 
 Six-Column Configurations
@@ -312,23 +355,46 @@ customized to include it under the left pinky.
 We still (highly) recommend using a `1dk` layer instead (both `Nordic` and
 `Transalp` work fine with German); but *your keyboard, your rules!*
 
-[AZERTY]:       https://kbdlayout.info/kbdfr
-[Bépo]:         https://kbdlayout.info/kbdfrnb
-[Dvorak]:       https://kbdlayout.info/kbddv
-[QWERTY]:       https://kbdlayout.info/kbdus
-[QWERTY-br]:    https://kbdlayout.info/kbdbr
-[QWERTY-dk]:    https://kbdlayout.info/kbdda
-[QWERTY-ee]:    https://kbdlayout.info/kbdest
-[QWERTY-es]:    https://kbdlayout.info/kbdsp
-[QWERTY-intl]:  https://kbdlayout.info/kbdusx
-[QWERTY-is]:    https://kbdlayout.info/kbdic
-[QWERTY-it]:    https://kbdlayout.info/kbdit142
-[QWERTY-latam]: https://kbdlayout.info/kbdla
-[QWERTY-no]:    https://kbdlayout.info/kbdno
-[QWERTY-no]:    https://kbdlayout.info/kbdsp
-[QWERTY-nl]:    https://kbdlayout.info/kbdne
-[QWERTY-no]:    https://kbdlayout.info/kbdus
-[QWERTY-pt]:    https://kbdlayout.info/kbdpo
-[QWERTY-se]:    https://kbdlayout.info/kbdse
-[QWERTZ-ch]:    https://kbdlayout.info/kbdsg
-[QWERTZ-de]:    https://kbdlayout.info/kbdgr
+
+[`KB_LAYOUT_QWERTY`]:           https://kbdlayout.info/kbdus
+[`KB_LAYOUT_QWERTY_INTL`]:      https://kbdlayout.info/kbdusx
+
+[`KB_LAYOUT_AZERTY`]:           https://kbdlayout.info/kbdfr
+[`KB_LAYOUT_AZERTY_BE`]:        https://kbdlayout.info/kbdbe
+
+[`KB_LAYOUT_QWERTY_BR`]:        https://kbdlayout.info/kbdbr
+[`KB_LAYOUT_QWERTY_CA`]:        https://kbdlayout.info/kbdcan
+[`KB_LAYOUT_QWERTY_CZ`]:        https://kbdlayout.info/kbdcz2
+[`KB_LAYOUT_QWERTY_DK`]:        https://kbdlayout.info/kbdda
+[`KB_LAYOUT_QWERTY_EE`]:        https://kbdlayout.info/kbdest
+[`KB_LAYOUT_QWERTY_ES`]:        https://kbdlayout.info/kbdsp
+[`KB_LAYOUT_QWERTY_HR`]:        https://kbdlayout.info/kbdycl
+[`KB_LAYOUT_QWERTY_HU`]:        https://kbdlayout.info/kbdhu1
+[`KB_LAYOUT_QWERTY_IT`]:        https://kbdlayout.info/kbdit142
+[`KB_LAYOUT_QWERTY_IS`]:        https://kbdlayout.info/kbdic
+[`KB_LAYOUT_QWERTY_LATAM`]:     https://kbdlayout.info/kbdla
+[`KB_LAYOUT_QWERTY_LV`]:        https://kbdlayout.info/kbdlvst
+[`KB_LAYOUT_QWERTY_LT`]:        https://kbdlayout.info/kbdlt1
+[`KB_LAYOUT_QWERTY_NL`]:        https://kbdlayout.info/kbdne
+[`KB_LAYOUT_QWERTY_NO`]:        https://kbdlayout.info/kbdno
+[`KB_LAYOUT_QWERTY_PL`]:        https://kbdlayout.info/kbdpl1
+[`KB_LAYOUT_QWERTY_PT`]:        https://kbdlayout.info/kbdpo
+[`KB_LAYOUT_QWERTY_RO`]:        https://kbdlayout.info/kbdropr
+[`KB_LAYOUT_QWERTY_SE`]:        https://kbdlayout.info/kbdse
+[`KB_LAYOUT_QWERTY_TR`]:        https://kbdlayout.info/kbdtuq
+
+[`KB_LAYOUT_QWERTZ_CH_DE`]:     https://kbdlayout.info/kbdsg
+[`KB_LAYOUT_QWERTZ_CH_FR`]:     https://kbdlayout.info/kbdsf
+[`KB_LAYOUT_QWERTZ_CZ`]:        https://kbdlayout.info/kbdcz
+[`KB_LAYOUT_QWERTZ_DE`]:        https://kbdlayout.info/kbdgr
+[`KB_LAYOUT_QWERTZ_HU`]:        https://kbdlayout.info/kbdhu
+[`KB_LAYOUT_QWERTZ_PL`]:        https://kbdlayout.info/kbdpl
+[`KB_LAYOUT_QWERTZ_SK`]:        https://kbdlayout.info/kbdsl
+
+[`KB_LAYOUT_BEPO`]:             https://kbdlayout.info/kbdfrnb
+[`KB_LAYOUT_BEPOLAR`]:          https://ergol.org/lafayette/bépolar
+[`KB_LAYOUT_DVORAK`]:           https://kbdlayout.info/kbddv
+[`KB_LAYOUT_ERGOL`]:            https://ergol.org
+[`KB_LAYOUT_ERGLACE`]:          https://ergol.org/erglace
+[`KB_LAYOUT_QWERTY_LAFAYETTE`]: https://qwerty-lafayette.org
+[`KB_LAYOUT_NEO`]:              https://neo-layout.org

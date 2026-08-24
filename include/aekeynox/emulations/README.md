@@ -1,16 +1,22 @@
-Layout Emulation
+Layout Emulations
 ====================================================================================================
 
 Using a non-QWERTY layout can be done in two ways:
 
 - either by setting the host computer to use this layout, in which case `KB_LAYOUT_*` is enough
-  (see above);
+  (sometimes [with an extra layer as 1dk adaptation](../extra_layers#1dk-adaptations));
 - or by letting the keyboard *emulate* a keyboard layout for a host using a default layout
   — and that’s what `KB_EMULATION_*` is about.
 
 
 ASCII Layouts
 ----------------------------------------------------------------------------------------------------
+
+- [x] [`KB_EMULATION_COLEMAK`]
+- [x] [`KB_EMULATION_COLEMAK_DH`]
+- [x] [`KB_EMULATION_DVORAK`]
+- [ ] [`KB_EMULATION_STURDY`]
+- [ ] [`KB_EMULATION_WORKMAN`]
 
 Keyboard layouts that are optimized for English are usually just a rearrangement of QWERTY keys:
 Dvorak, Colemak, Workman, Sturdy… all these layouts can be perfectly emulated by the keyboard.
@@ -21,9 +27,19 @@ To emulate Dvorak for QWERTY hosts, just uncomment this line in `include/aekeyno
 #define KB_EMULATION_DVORAK
 ```
 
+[`KB_EMULATION_COLEMAK`]:    https://kbdlayout.info/kbdcmk
+[`KB_EMULATION_COLEMAK_DH`]: https://colemakmods.github.io/mod-dh/
+[`KB_EMULATION_DVORAK`]:     https://kbdlayout.info/kbddv
+[`KB_EMULATION_STURDY`]:     https://oxey.dev/layouts/sturdy/
+[`KB_EMULATION_WORKMAN`]:    https://workmanlayout.org/
+
 
 Non-ASCII Layouts
 ----------------------------------------------------------------------------------------------------
+
+- [x] [`KB_EMULATION_ERGOL`]
+- [ ] [`KB_EMULATION_NEO`]
+- [x] [`KB_EMULATION_QWERTY_LAFAYETTE`]
 
 Emulating layouts designed for other languages is trickier.
 
@@ -53,9 +69,19 @@ keyboard to be usable with *any* OS, you’ll have a better experience by activa
 - either by selecting the `MACOS` or `LINUX` option, if that’s the targeted host OS;
 - or by selecting the `ENABLE_CP1252_ALT_CODES` option, which leverages Windows’ [Alt-Codes].
 
+```c
+// #define MACOS
+// #define LINUX
+#define ENABLE_CP1252_ALT_CODES // optimized for Windows hosts
+```
+
 The emulation of non-ASCII layouts is being actively developed.
 It’s already used as a daily driver by some of our European contributors.
 Feedback and patches are very welcome.
 
-[QWERTY-intl]: https://commons.wikimedia.org/wiki/File:KB_US-International.svg
+[QWERTY-intl]: https://kbdlayout.info/kbdusx
 [Alt-Codes]:   https://altcodeunicode.com/
+
+[`KB_EMULATION_ERGOL`]:              https://ergol.org
+[`KB_EMULATION_NEO`]:                https://neo-layout.org
+[`KB_EMULATION_QWERTY_LAFAYETTE`]:   https://qwerty-lafayette.org

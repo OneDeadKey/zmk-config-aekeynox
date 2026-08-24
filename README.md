@@ -21,7 +21,7 @@ with first-class support for non-QWERTY layouts.
 
 Customize your keymap once, and build it on all supported keebs.
 
-[Check the configuration guide.](include/aekeynox#readme)
+Check the [keymap configuration guide].
 
 
 In a Nutshell
@@ -62,7 +62,7 @@ This is where your keymap options can be safely selected:
 
 - which keyboard layout you use:
   - either by setting your keeb for the layout on the host computer
-  - or by [emulating a keyboard layout](include/aekeynox/emulations#readme)
+  - or by [emulating a keyboard layout](include/aekeynox/emulations#layout-emulations)
     on devices running the local default layout (computers, tablets, phones…)
 
 - which hold-tap flavor you prefer:
@@ -71,7 +71,7 @@ This is where your keymap options can be safely selected:
 
 - and all your personal options: Vim navigation, Callum mods…
 
-[Check the configuration guide.](include/aekeynox#readme)
+Check the [keymap configuration guide].
 
 ### Keyboard Descriptors: [`config/*.keymap`](config)
 
@@ -116,8 +116,8 @@ The idea comes from the [QWERTY-1dk](https://github.com/OneDeadKey/1dk) project,
 for almost a decade now.
 The result is much easier to use than any full-size European or Latin American layout.
 
-- [Supported host layouts](include/aekeynox/aliases#readme)
-- [Proposed layout adaptations](include/aekeynox/extra_layers#readme)
+- [Supported host layouts]
+- [Proposed 1dk adaptations]
 
 
 Why the name?
@@ -126,3 +126,9 @@ Why the name?
 Any name containing `key` and easy to search would’ve been a good fit, but here’s Nox:
 
 ![My name is Nox and I approve this project.](nox.jpg)
+
+
+[keymap configuration guide]:  include/aekeynox#keymap-configuration-guide
+[supported host layouts]:      include/aekeynox/aliases#layout-aliases
+[proposed 1dk adaptations]:    include/aekeynox/extra_layers#1dk-adaptations
+[supported layout emulations]: include/aekeynox/emulations#layout-emulations
