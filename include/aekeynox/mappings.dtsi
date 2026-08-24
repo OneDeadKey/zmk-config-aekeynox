@@ -40,7 +40,7 @@
   continue-list = <CAPS_WORD_CONTINUE_LIST>;
   no-default-keys;
   mods = <MOD_RSFT>;  // caps-word uses right shift in case we want to
-                      // diffrenciate it from regular shift
+                      // differentiate it from regular shift
 };
 
 / {
