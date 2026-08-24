@@ -20,7 +20,20 @@
   compatible = "zmk,behavior-mod-morph";                             \
   #binding-cells = <0>;                                              \
   bindings = <base>, <shift>;                                        \
-  mods = <(MOD_LSFT|MOD_RSFT)>;                                      \
+  mods = <MOD_LSFT>;                                                 \
+};
+
+&caps_word {
+  no-default-keys;
+  shift-list = <CAPS_WORD_SHIFT_LIST>;
+  continue-list = <
+    CAPS_WORD_CONTINUE_LIST
+    CAPS_WORD_NUMBERS
+    DELETE
+    BACKSPACE
+  >;
+  mods = <MOD_RSFT>;  // caps-word uses right shift in case we want to
+                      // differentiate it from regular shift
 };
 
 / {

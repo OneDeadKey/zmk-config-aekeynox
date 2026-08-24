@@ -185,3 +185,15 @@
 #define C_QRT2  &kp RA(N7)    // ½
 #define C_QRT3  &kp RA(N8)    // ¾
 #define C_MICRO &kp RA(M)     // µ
+
+/**
+* Caps-Word
+*/
+
+#define CAPS_WORD_SHIFT_LIST \
+    Q  W  E  R  T    Y  U  I  O  P \
+    A  S  D  F  G    H  J  K  L \
+    Z  X  C  V  B    N  M
+
+#define CAPS_WORD_CONTINUE_LIST MINUS \
+  DEAD_ACUTE DEAD_GRAVE DEAD_TILDE DEAD_CIRCUMFLEX DEAD_DIAERESIS

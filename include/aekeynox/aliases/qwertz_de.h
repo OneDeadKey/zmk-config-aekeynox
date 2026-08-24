@@ -105,3 +105,15 @@
 #define C_NOT   S_MINUS   // unsupported
 #define C_DEG   &kp TILDE
 #define C_SILC  &kp LS(N3)
+
+/**
+* Caps-Word
+*/
+
+#define CAPS_WORD_SHIFT_LIST \
+    Q  W  E  R  T    Y  U  I  O  P  LBKT \
+    A  S  D  F  G    H  J  K  L SEMI SQT \
+    Z  X  C  V  B    N  M
+
+#define CAPS_WORD_CONTINUE_LIST FSLH MINUS \
+  DEAD_CIRCUMFLEX DEAD_ACUTE DEAD_GRAVE

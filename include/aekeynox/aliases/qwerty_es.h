@@ -125,3 +125,15 @@
 #define C_MDOT  &kp LS(N3) // ·
 #define C_NOT   &kp RA(N6) // ¬
 #define C_EURO  &kp RA(E)  // €
+
+/**
+* Caps-Word
+*/
+
+#define CAPS_WORD_SHIFT_LIST \
+    Q  W  E  R  T    Y  U  I  O  P \
+    A  S  D  F  G    H  J  K  L SEMI     PIPE \
+    Z  X  C  V  B    N  M
+
+#define CAPS_WORD_CONTINUE_LIST FSLH \
+  DEAD_ACUTE DEAD_GRAVE DEAD_CIRCUMFLEX DEAD_DIAERESIS

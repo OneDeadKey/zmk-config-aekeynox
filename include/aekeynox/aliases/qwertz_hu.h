@@ -118,3 +118,20 @@
 
 #define C_SILC  &kp TILDE
 #define C_EURO  S_MONEY
+
+/**
+* Caps-Word
+*/
+
+#define CAPS_WORD_SHIFT_LIST \
+    Q  W  E  R  T    Y  U  I  O  P  LBKT RBKT \
+    A  S  D  F  G    H  J  K  L SEMI SQT PIPE \
+    Z  X  C  V  B    N  M
+
+#ifdef LINUX
+  #define CAPS_WORD_CONTINUE_LIST FSLH \
+    DEAD_CARON DEAD_DIAERESIS
+#else
+  #define CAPS_WORD_CONTINUE_LIST FSLH \
+    DEAD_CARON DEAD_DIAERESIS DEAD_CIRCUMFLEX
+#endif

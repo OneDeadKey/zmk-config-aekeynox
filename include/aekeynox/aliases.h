@@ -101,11 +101,15 @@
   #define S_N7  &kp LS(N7)
   #define S_N8  &kp LS(N8)
   #define S_N9  &kp LS(N9)
+  #define CAPS_WORD_NUMBERS \
+    LS(N1) LS(N2) LS(N3) LS(N4) LS(N5) LS(N6) LS(N7) LS(N8) LS(N9) LS(N0)
 #else
   #ifdef KB_LAYOUT_QWERTZ_HU
     #define S_N0  &kp GRAVE
+    #define CAPS_WORD_NUMBERS N1 N2 N3 N4 N5 N6 N7 N8 N9 GRAVE
   #else
     #define S_N0  &kp N0
+    #define CAPS_WORD_NUMBERS N1 N2 N3 N4 N5 N6 N7 N8 N9 N0
   #endif
   #define S_N1  &kp N1
   #define S_N2  &kp N2

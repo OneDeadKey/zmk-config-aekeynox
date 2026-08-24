@@ -136,3 +136,19 @@
 #define C_POUND &kp LS(N3)
 #define C_DEG   &kp DQT
 #define C_SILC  &kp PIPE
+
+/**
+* Caps-Word
+*/
+
+#define CAPS_WORD_SHIFT_LIST \
+    Q  W  E  R  T    Y  U  I  O  P \
+    A  S  D  F  G    H  J  K  L \
+    Z  X  C  V  B    N  M
+
+#ifdef LINUX
+  #define CAPS_WORD_CONTINUE_LIST SEMI SQT PIPE LBKT
+    DEAD_ACUTE DEAD_GRAVE DEAD_CIRCUMFLEX DEAD_DIAERESIS DEAD_CEDILLA
+#else
+  #define CAPS_WORD_CONTINUE_LIST SEMI SQT PIPE LBKT
+#endif
