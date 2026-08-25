@@ -39,7 +39,7 @@
       bindings = <SELENIUM_KEYMAP_BINDINGS(
         &trans  ,  &none   SC_ECAR SC_EACU SC_RCAR SC_TCAR  ,   SC_ZCAR SC_UACU SC_IACU SC_OACU &none   ,  &trans ,
         &trans  ,  SC_AACU SC_SCAR SC_DCAR SC_DSTR &none    ,   &none   SC_URNG &none   SC_LSTR &none   ,  &trans ,
-        &trans  ,  SC_YACU &none   SC_CCAR &none   &none    ,   SC_NCAR &none   &none   &none   &none   ,  &trans ,
+        &trans  ,  SC_YACU C_SILC  SC_CCAR &none   &none    ,   SC_NCAR &none   &none   &none   &none   ,  &trans ,
                                  &trans , &trans , &trans   ,   &trans , &trans , &trans
       )>;
     };
