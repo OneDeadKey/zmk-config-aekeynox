@@ -71,13 +71,6 @@
 #define  C_URNG   &kp SEMI
 #define SC_URNG &caps SEMI
 
-// đł, ß
-#define  C_DSTR &kp RA(S)
-#define SC_DSTR &kp RA(D)
-#define  C_LSTR &kp RA(K)
-#define SC_LSTR &kp RA(L)
-#define  C_SZ   &kp RA(SQT)
-
 // Shift+1dk keeps the default behavior
 #define SC_ODK  &kp COLON
 
@@ -135,10 +128,11 @@
  * Non-ASCII Symbols
  */
 
+#define C_EURO  &kp RA(E)   // €
+#define C_SILC  &kp SQT     // §
 #ifdef LINUX
-  #define C_SILC  &kp SQT
+  #define C_SZ  &kp SA(SQT) // ß
 #else
-  #define C_SILC  &kp RA(SQT)
+  #define C_SZ  &kp RA(SQT) // ß
 #endif
 
-#define C_EURO  &kp RA(E)
