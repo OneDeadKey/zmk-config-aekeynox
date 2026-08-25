@@ -24,18 +24,18 @@
 #if LINUX
   #define DEAD_RING_ABOVE TILDE
   #define DEAD_CARON      SA(N2)
-  #define DEAD_ACUTE      SA(N9)
   #define DEAD_CIRCUMFLEX SA(N3)
   #define DEAD_GRAVE      SA(N7)
+  #define DEAD_ACUTE      SA(N9)
   #define S_CARET     &kp RA(N6)
   #define S_GRAVE     &kp RA(GRAVE)
   #define S_TILDE     &kp RA(TILDE)
 #else
   #define DEAD_RING_ABOVE RA(TILDE)
   #define DEAD_CARON      RA(N2)
-  #define DEAD_ACUTE      RA(N9)
   #define DEAD_CIRCUMFLEX RA(N3)
   #define DEAD_GRAVE      RA(N7)
+  #define DEAD_ACUTE      RA(N9)
   #define S_CARET     DI_CIR SPACE
   #define S_GRAVE     DI_GRV SPACE
   #define S_TILDE     &kp RA(N1)
