@@ -135,5 +135,10 @@
  * Non-ASCII Symbols
  */
 
-#define C_SILC  &kp RA(SQT)
+#ifdef LINUX
+  #define C_SILC  &kp SQT
+#else
+  #define C_SILC  &kp RA(SQT)
+#endif
+
 #define C_EURO  &kp RA(E)
