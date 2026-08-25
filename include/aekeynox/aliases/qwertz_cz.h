@@ -61,6 +61,9 @@
 #define SC_LSTR &kp RA(L)
 #define  C_SZ   &kp RA(SQT)
 
+// Shift+1dk keeps the default behavior
+#define SC_ODK  &kp COLON
+
 #include "dead_keys.h"
 
 /**
