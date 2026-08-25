@@ -2,7 +2,7 @@
  * Acute Accent
  */
 
-#if (defined DEAD_ACUTE) && DEAD_ACUTE
+#ifdef DEAD_ACUTE
   #define DI_ACU &digraph DEAD_ACUTE
   #define DK_ACU &kp DEAD_ACUTE
 #else
@@ -90,7 +90,7 @@
  */
 
 // grave accent
-#if (defined DEAD_GRAVE) && DEAD_GRAVE
+#ifdef DEAD_GRAVE
   #define DI_GRV &digraph DEAD_GRAVE
   #define DK_GRV &kp DEAD_GRAVE
 #else
@@ -171,7 +171,7 @@
  * Circumflex Accent
  */
 
-#if (defined DEAD_CIRCUMFLEX) && DEAD_CIRCUMFLEX
+#ifdef DEAD_CIRCUMFLEX
   #define DI_CIR &digraph DEAD_CIRCUMFLEX
   #define DK_CIR &kp DEAD_CIRCUMFLEX
 #else
@@ -252,7 +252,7 @@
  * Diaeresis
  */
 
-#if (defined DEAD_DIAERESIS) && DEAD_DIAERESIS
+#ifdef DEAD_DIAERESIS
   #define DI_DIA &digraph DEAD_DIAERESIS
   #define DK_DIA &kp DEAD_DIAERESIS
 #else
@@ -339,7 +339,7 @@
  * Tilde
  */
 
-#if (defined DEAD_TILDE) && DEAD_TILDE
+#ifdef DEAD_TILDE
   #define DI_TLD &digraph DEAD_TILDE
   #define DK_TLD &kp DEAD_TILDE
 #else
@@ -414,7 +414,7 @@
  * Cedilla
  */
 
-#if (defined DEAD_CEDILLA) && DEAD_CEDILLA
+#ifdef DEAD_CEDILLA
   #define DI_CDL &digraph DEAD_CEDILLA
   #define DK_CDL &kp DEAD_CEDILLA
 #else
@@ -441,7 +441,7 @@
  * Caron
  */
 
-#if (defined DEAD_CARON) && DEAD_CARON
+#ifdef DEAD_CARON
   #define DI_CAR &digraph DEAD_CARON
   #define DK_CAR &kp DEAD_CARON
 #else
@@ -480,7 +480,7 @@
  * Ring Above
  */
 
-#if (defined DEAD_ABOVE_RING) && DEAD_ABOVE_RING
+#ifdef DEAD_ABOVE_RING
   #define DI_RNG &digraph DEAD_ABOVE_RING
   #define DK_RNG &kp DEAD_ABOVE_RING
 #else

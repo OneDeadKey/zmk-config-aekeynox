@@ -40,8 +40,12 @@
 
 #define DEAD_CIRCUMFLEX       LBKT
 #define DEAD_DIAERESIS        LBRC
-#define DEAD_TILDE OS_SELECT( RA(N2) ,, RA(N) , NULL ) // n/a on Linux
-#define DEAD_GRAVE OS_SELECT( RA(N9) ,, NUHS  , NULL ) // n/a on Linux
+#define DEAD_TILDE OS_SELECT( RA(N2) ,, RA(N) , ) // n/a on Linux
+#define DEAD_GRAVE OS_SELECT( RA(N9) ,, NUHS  , ) // n/a on Linux
+#ifdef LINUX
+  #undef DEAD_TILDE
+  #undef DEAD_GRAVE
+#endif
 
 // lowercase: é à è ù ç
 #define C_EACU &kp N2  // é
