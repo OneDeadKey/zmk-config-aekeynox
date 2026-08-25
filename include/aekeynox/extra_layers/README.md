@@ -22,10 +22,11 @@ When possible, it’s placed on the `SEMI` key (QWERTY’s <kbd>;:</kbd> key).
   - [Transat](#transat): Brazil, Latin America, Spain, Portugal
 - [Programmers’ QWERTY](#programmers-qwerty)
   - [Recommended](#recommended): Latvia, Poland, Romania
-  - [Not Recommended](#not-recommended): Czechia, Lithuania
+  - [Not Recommended](#not-recommended)
 - [Layout-Specific Adaptations](#layout-specific-adaptations)
   - [AZERTY-1dk](#azerty-1dk)
   - [Bépolar](#bépolar)
+  - [QWERTZ-cz-1dk](#qwertz-cz-1dk): Czechia
   - [Other Layouts](#other-layouts)
 - [Six-Column Configurations](#six-column-configurations)
   - [QWERTY-intl](#qwerty-intl)
@@ -304,13 +305,13 @@ QWERTZ-cz-1dk replaces the <kbd>ů</kbd> key with <kbd>1dk</kbd>:
 
     |---------------|---------------|  1dk
     |    € ě é ř ť  |  ž ú í ó      |
-    |    á š ď      |    ů          |
+    |    á š ď      |    ů     ˝    |
     |    ý ß č      |  ň            |
     |---------------|---------------|
 
     |---------------|---------------|  1dkShift
     |      Ě É Ř Ť  |  Ž Ú Í Ó      |
-    |    Á Š Ď      |    Ů          |
+    |    Á Š Ď      |    Ů     ˝    |
     |    Ý § Č      |  Ň            |
     |---------------|---------------|
 ```
