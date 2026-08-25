@@ -7,11 +7,21 @@
 #define  K_ODKS    &mo ODK_SHIFT_LAYER  // Shift key in the 1dk layer
 #define SK_ODKS &EZ_SL(ODK_SHIFT_LAYER) // Shift key in the 1dk layer (sticky)
 
+#ifndef SC_ODK
+#define SC_ODK &EZ_SL(ODK_SHIFT_LAYER)  // Shift + 1dk key in the base layer
+#endif
+
+/ {
+  behaviors {
+    TWO_LEVEL_KEY(odk, &EZ_SL(ODK_LAYER), SC_ODK)
+  };
+};
+
 &base_layer {
   bindings = <SELENIUM_KEYMAP_BINDINGS(
-    &kp LTOP    ,  &kp Q &kp W &kp E &kp R &kp T  ,  &kp Y  &kp U  &kp I     &kp O   &kp P             ,  &kp RTOP   ,
-    &kp LHOME   ,  &H4 A &H3 S &H2 D &H1 F &kp G  ,  &kp H  &H1 J  &H2 K     &H3 L   &EZ_SL(ODK_LAYER) ,  &kp RHOME  ,
-    &kp LSHIFT  ,  &kp Z &kp X &kp C &kp V &kp B  ,  &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH          ,  &kp RSHIFT ,
+    &kp LTOP    ,  &kp Q &kp W &kp E &kp R &kp T  ,  &kp Y  &kp U  &kp I     &kp O   &kp P     ,  &kp RTOP   ,
+    &kp LHOME   ,  &H4 A &H3 S &H2 D &H1 F &kp G  ,  &kp H  &H1 J  &H2 K     &H3 L   &odk      ,  &kp RHOME  ,
+    &kp LSHIFT  ,  &kp Z &kp X &kp C &kp V &kp B  ,  &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH  ,  &kp RSHIFT ,
         LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH  ,  RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
   )>;
 };
