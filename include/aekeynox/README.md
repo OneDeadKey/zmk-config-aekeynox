@@ -105,13 +105,13 @@ common errors you may encounter and what they mean:
 - `expected number or parenthesized expression`<br>
   a key/layer/modifier/macro is  missing or ill-defined
   (check that you or a macro didn’t accidentally add an extra `&`)
-  
+
 - `<Node … in …/empty_file.c> lacks #binding-cells`<br>
   a behavior in a `bindings` property has too few parameters
-  
+
 - `binding controller <Node <behavior> in …/empty_file.c> lacks binding`<br>
   the `compatible` field in the declaration of `behavior` is missing or incorrect
-  
+
 - `'DT_N_S_keymap_S_<layer_name>_P_bindings_IDX_<n>_PH_FULL_NAME' undeclared here`<br>
   same as the first one, but caught later in the compilation and much more precise,
   as it tells you the issue resides with the `n`th key of `layer_name`
