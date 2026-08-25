@@ -51,3 +51,32 @@ when the host computer is configured for a different keyboard layout.
 This file allows low-level customization.
 
 See the [customizing ZMK](https://zmk.dev/docs/customization) documentation.
+
+
+Debugging
+----------------------------------------------------------------------------------------------------
+
+When working on keymap files, especially on aliases and extra layers, many errors can be caught by
+the preprocessor if ZMK is installed locally. Here’s a quick how-to:
+
+1. start from this directory
+2. symlink `selenium.keymap` to `selenium.c`
+3. use `clang -E` on `selenium.c`
+4. examine the output
+
+Examples:
+
+```sh
+# check the output with the default options
+clang -E selenium.c -I/path/to/zmk
+
+# check the output for QWERTZ-de
+clang -E selenium.c -I/path/to/zmk -DKB_LAYOUT_QWERTZ_DE
+
+# check the output for QWERTY-intl on Linux
+clang -E selenium.c -I/path/to/zmk -DKB_LAYOUT_QWERTY_INTL -DLINUX
+```
+
+The output details all layers that will be built by ZMK, after one preprocessing pass.
+Seeing one of your own macros in this output means it’s not even use sending it to the CI,
+and the error is much easier to get right than from GHA outputs.
