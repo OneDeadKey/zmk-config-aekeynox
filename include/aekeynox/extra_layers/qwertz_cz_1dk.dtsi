@@ -21,9 +21,9 @@
     one_dead_key {
       display-name = "1dk";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
-        &trans  ,  C_EURO  C_ECAR  C_EACU  C_RCAR  C_TCAR   ,   C_ZCAR  C_UACU  C_IACU  C_OACU  &trans  ,  &trans ,
-        &trans  ,  C_AACU  C_SCAR  C_DCAR  C_DSTR  &trans   ,   &trans  C_URNG  &trans  C_LSTR  &none   ,  &trans ,
-        K_ODKS  ,  C_YACU  C_SZ    C_CCAR  &trans  &trans   ,   C_NCAR  &trans  &trans  &trans  &trans  ,  K_ODKS ,
+        &trans  ,  C_EURO  C_ECAR  C_EACU  C_RCAR  C_TCAR   ,   C_ZCAR  C_UACU  C_IACU  C_OACU  &none   ,  &trans ,
+        &trans  ,  C_AACU  C_SCAR  C_DCAR  C_DSTR  &none    ,   &none   C_URNG  &none   C_LSTR  &none   ,  &trans ,
+        K_ODKS  ,  C_YACU  C_SZ    C_CCAR  &none   &none    ,   C_NCAR  &none   &none   &none   &none   ,  K_ODKS ,
                                  SK_ODKS , S_SQT , &trans   ,   &trans , S_SQT , &trans
       )>;
     };
@@ -37,9 +37,9 @@
     one_dead_key_shift {
       display-name = "1dkShift";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
-        &trans  ,  &trans  SC_ECAR SC_EACU SC_RCAR SC_TCAR  ,   SC_ZCAR SC_UACU SC_IACU SC_OACU  &trans  ,  &trans ,
-        &trans  ,  SC_AACU SC_SCAR SC_DCAR SC_DSTR &trans   ,   &trans  SC_URNG &trans  SC_LSTR &none   ,  &trans ,
-        &trans  ,  SC_YACU &trans  SC_CCAR &trans  &trans   ,   SC_NCAR &trans  &trans  &trans  &trans  ,  &trans ,
+        &trans  ,  &none   SC_ECAR SC_EACU SC_RCAR SC_TCAR  ,   SC_ZCAR SC_UACU SC_IACU SC_OACU &none   ,  &trans ,
+        &trans  ,  SC_AACU SC_SCAR SC_DCAR SC_DSTR &none    ,   &none   SC_URNG &none   SC_LSTR &none   ,  &trans ,
+        &trans  ,  SC_YACU &none   SC_CCAR &none   &none    ,   SC_NCAR &none   &none   &none   &none   ,  &trans ,
                                  &trans , &trans , &trans   ,   &trans , &trans , &trans
       )>;
     };
