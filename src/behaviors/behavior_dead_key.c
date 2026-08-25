@@ -31,6 +31,9 @@ struct behavior_dead_key_data {
     uint32_t dead_key;
     uint32_t base_letter;
     bool is_down;
+    #if IS_ENABLED(CONFIG_ZMK_SPLIT)
+    uint8_t source;
+    #endif
 };
 
 static struct behavior_dead_key_data active_dead_key;
@@ -57,6 +60,9 @@ static int on_dead_key_binding_pressed(
         .dead_key = cfg->dead_key,
         .base_letter = binding->param1,
         .is_down = true,
+        #if IS_ENABLED(CONFIG_ZMK_SPLIT)
+        .source = event.source,
+        #endif
     };
 
     const zmk_mod_flags_t mods_after = zmk_hid_get_explicit_mods();
@@ -117,7 +123,7 @@ static int dead_key_keycode_state_changed_listener(const zmk_event_t *eh) {
         .position = active_dead_key.position,
         .timestamp = ev->timestamp,
         #if IS_ENABLED(CONFIG_ZMK_SPLIT)
-        .source = ev->source,
+        .source = active_dead_key.source,
         #endif
     };
 

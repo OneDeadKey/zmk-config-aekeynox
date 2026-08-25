@@ -23,7 +23,7 @@ include:
     # Ergol + Hummingbird
   - board: quacken_flex/rp2040
     artifact-name: ergol_hummingbird
-    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_ERGOL;-DHUMMINGBIRD"
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_ERGOL;-DHUMMINGBIRD;-DENABLE_FANCY_DEAD_KEYS"
 
     # Ensure the Ferris applies 2TK even when HRM is requested
   - board: ferris//zmk
