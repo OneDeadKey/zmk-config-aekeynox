@@ -152,7 +152,7 @@
   #include "emulations/qwerty_lafayette.dtsi"
 
 // Experimental Ergol variant for Hummingbird-style keyboards
-#elif defined KB_LAYOUT_ERGOL && defined HUMMINGBIRD
+#elif defined KB_LAYOUT_ERGOL && defined ENABLE_HUMMINGBIRD_MODE
   #include "extra_layers/ergol_hummingbird.dtsi"
 
 // Some layouts require extra layers to fit on a 3×10 grid

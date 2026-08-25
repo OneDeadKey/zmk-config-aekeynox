@@ -171,3 +171,13 @@
 // Beware: this increases the typing load of the left thumb.
 
 // #define LEFT_HAND_SPACE
+
+// [Experimental]
+// Uncomment the following line to enable a hummingbird-style adaptation of
+// your keyboard layout. Keys that are originally on the ZBN/ QWERTY-positions
+// will be duplicated on a 1dk layer. This reduces the number of keys required to
+// write texts, and thus limits finger movement (at the cost of a couple of extra
+// keystrokes). The adaptations are layout-specific; as of today, only Ergol is
+// supported.
+
+// #define ENABLE_HUMMINGBIRD_MODE
