@@ -19,11 +19,28 @@
  * Diacritics
  */
 
-#define DEAD_RING_ABOVE RA(TILDE)
-#define DEAD_CARON      RA(N2)
-#define DEAD_CIRCUMFLEX RA(N3)
-#define DEAD_GRAVE      RA(N7)
-#define DEAD_ACUTE      RA(N9)
+#define SA(key) RA(RS(key))
+
+#if LINUX
+  #define DEAD_RING_ABOVE TILDE
+  #define DEAD_CARON      SA(N2)
+  #define DEAD_ACUTE      SA(N9)
+  #define DEAD_CIRCUMFLEX SA(N3)
+  #define DEAD_GRAVE      SA(N7)
+  #define S_CARET     &kp RA(N6)
+  #define S_GRAVE     &kp RA(GRAVE)
+  #define S_TILDE     &kp RA(TILDE)
+#else
+  #define DEAD_RING_ABOVE RA(TILDE)
+  #define DEAD_CARON      RA(N2)
+  #define DEAD_ACUTE      RA(N9)
+  #define DEAD_CIRCUMFLEX RA(N3)
+  #define DEAD_GRAVE      RA(N7)
+  #define S_CARET     DI_CIR SPACE
+  #define S_GRAVE     DI_GRV SPACE
+  #define S_TILDE     &kp RA(N1)
+#endif
+
 #define DEAD_DIAERESIS  BSLH
 
 // áéíúý
@@ -74,7 +91,7 @@
  */
 
 // first row
-#define S_CARET DI_CIR SPACE
+// XXX: S_CARET is OS-specific
 #define S_LT    &kp RA(COMMA)
 #define S_GT    &kp RA(DOT)
 #define S_DLLR  &kp RA(SEMI)
@@ -83,7 +100,7 @@
 #define S_AMPS  &kp RA(C)
 #define S_STAR  &kp RA(FSLH)
 #define S_SQT   &kp PIPE
-#define S_GRAVE DI_GRV SPACE
+// XXX: S_GRAVE is OS-specific
 
 // second row
 #define S_LBRC  &kp RA(B)
@@ -98,7 +115,7 @@
 #define S_DQT   &kp COLON
 
 // third row
-#define S_TILDE &kp RA(N1)
+// XXX: S_TILDE is OS-specific
 #define S_LBKT  &kp RA(F)
 #define S_RBKT  &kp RA(G)
 #define S_UNDER &kp QMARK
