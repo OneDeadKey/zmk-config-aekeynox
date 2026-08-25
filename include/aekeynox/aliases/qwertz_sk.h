@@ -1,5 +1,5 @@
-// Czechia
-// https://kbdlayout.info/kbdcz
+// Slovakia
+// https://kbdlayout.info/kbdsl
 
 /**
  * Action Combos
@@ -21,49 +21,47 @@
 
 #define SA(key) RA(RS(key))
 
-#if LINUX // same as SK
+#if LINUX // same as CZ
   #define DEAD_ABOVE_RING TILDE
   #define DEAD_CARON      SA(N2)
   #define DEAD_CIRCUMFLEX SA(N3)
   #define DEAD_GRAVE      SA(N7)
   #define DEAD_ACUTE      SA(N9)
+  #define DEAD_DIAERESIS  SA(MINUS)
 #else
-  #define DEAD_ABOVE_RING RA(TILDE)
+  #define DEAD_ABOVE_RING TILDE
   #define DEAD_CARON      RA(N2)
   #define DEAD_CIRCUMFLEX RA(N3)
-  #define DEAD_GRAVE      RA(N7)
   #define DEAD_ACUTE      RA(N9)
+  #define DEAD_DIAERESIS  RA(MINUS)
 #endif
 
-#define DEAD_DIAERESIS  BSLH
+// Note: on Windows, CapsLock does not work on these letters below.
 
-// áéíúý
-#define  C_AACU   &kp N8
-#define SC_AACU &caps N8
-#define  C_EACU   &kp N0
-#define SC_EACU &caps N0
-#define  C_IACU   &kp N9
-#define SC_IACU &caps N9
-#define  C_UACU   &kp LBKT
-#define SC_UACU &caps LBKT
-#define  C_YACU   &kp N7
-#define SC_YACU &caps N7
+// caron/mäkčeň: ľščťž (ščž same as CZ)
+#define C_LCAR  &kp N2
+#define C_SCAR  &kp N3
+#define C_CCAR  &kp N4
+#define C_TCAR  &kp N5
+#define C_ZCAR  &kp N6
+#define C_NCAR  &kp BSLH
 
-// čěřšž
-#define  C_CCAR   &kp N4
-#define SC_CCAR &caps N4
-#define  C_ECAR   &kp N2
-#define SC_ECAR &caps N2
-#define  C_RCAR   &kp N5
-#define SC_RCAR &caps N5
-#define  C_SCAR   &kp N3
-#define SC_SCAR &caps N3
-#define  C_ZCAR   &kp N6
-#define SC_ZCAR &caps N6
+// acute accent: ýáíéú (same as CZ)
+#define C_YACU  &kp N7
+#define C_AACU  &kp N8
+#define C_IACU  &kp N9
+#define C_EACU  &kp N0
+#define C_UACU  &kp LBKT
 
-// ů
-#define  C_URNG   &kp SEMI
-#define SC_URNG &caps SEMI
+// circumflex: ô
+#define C_OCIR  &kp SEMI
+
+// diaeresis: ä
+#define C_ADIA  &kp RBKT
+
+// QWERTZ…
+#define SC_ZCAR  DI_CAR LS(Y)
+#define SC_YACU  DI_ACU LS(Z)
 
 // Shift+1dk keeps the default behavior
 #define SC_ODK  &kp COLON
@@ -79,11 +77,13 @@
 
 #if LINUX
   #define S_CARET &kp RA(N6)
+  #define S_SQT   &kp RA(J)
   #define S_GRAVE &kp RA(GRAVE)
   #define S_TILDE &kp RA(TILDE)
 #else
   #define S_CARET DI_CIR SPACE
-  #define S_GRAVE DI_GRV SPACE
+  #define S_SQT   &kp RA(P)
+  #define S_GRAVE &kp RA(N7)
   #define S_TILDE &kp RA(N1)
 #endif
 
@@ -96,16 +96,16 @@
 #define S_AT    &kp RA(V)
 #define S_AMPS  &kp RA(C)
 #define S_STAR  &kp RA(FSLH)
-#define S_SQT   &kp PIPE
+// XXX: S_SQT   is OS-specific
 // XXX: S_GRAVE is OS-specific
 
 // second row
 #define S_LBRC  &kp RA(B)
 #define S_LPAR  &kp RBRC
-#define S_RPAR  &kp RBKT
+#define S_RPAR  &kp PIPE
 #define S_RBRC  &kp RA(N)
 #define S_EQUAL &kp MINUS
-#define S_BSLH  &kp NUBS
+#define S_BSLH  &kp RA(Q)
 #define S_PLUS  &kp N1
 #define S_MINUS &kp FSLH
 #define S_FSLH  &kp LBRC
@@ -117,7 +117,7 @@
 #define S_RBKT  &kp RA(G)
 #define S_UNDER &kp QMARK
 #define S_HASH  &kp RA(X)
-#define S_PIPE  &kp PIPE2
+#define S_PIPE  &kp RA(W)
 #define S_EXCL  &kp DQT
 #define S_SEMI  &kp GRAVE
 #define S_COLON &kp LS(DOT)

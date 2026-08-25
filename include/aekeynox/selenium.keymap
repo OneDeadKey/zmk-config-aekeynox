@@ -163,6 +163,8 @@
     #include "extra_layers/bepolar.dtsi"
   #elif defined KB_LAYOUT_QWERTZ_CZ
     #include "extra_layers/qwertz_cz_1dk.dtsi"
+  #elif defined KB_LAYOUT_QWERTZ_SK
+    #include "extra_layers/qwertz_sk_1dk.dtsi"
   #elif defined KB_EXTRA_LAYERS_ALTGR
     #include "extra_layers/altgr_1dk.dtsi" // default for LV, PL, RO
   #elif defined KB_EXTRA_LAYERS_NORDIC

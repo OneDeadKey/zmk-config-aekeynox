@@ -45,6 +45,9 @@
     #ifndef SC_YACU
     #define SC_YACU CP1252_UPPERCASE_Y_ACUTE
     #endif
+    #ifndef  C_LACU
+    #define  C_LACU CP1252_LOWERCASE_Y_ACUTE
+    #endif
   #endif
 #endif
 
@@ -83,6 +86,18 @@
 #endif
 #ifndef SC_YACU
 #define SC_YACU DI_ACU RS(Y)
+#endif
+#ifndef  C_LACU
+#define  C_LACU DI_ACU L
+#endif
+#ifndef SC_LACU
+#define SC_LACU DI_ACU RS(L)
+#endif
+#ifndef  C_RACU
+#define  C_RACU DI_ACU R
+#endif
+#ifndef SC_RACU
+#define SC_RACU DI_ACU RS(R)
 #endif
 
 /**
@@ -480,6 +495,12 @@
 #endif
 #ifndef SC_ECAR
 #define SC_ECAR DI_CAR RS(E)
+#endif
+#ifndef  C_LCAR
+#define  C_LCAR DI_CAR L
+#endif
+#ifndef SC_LCAR
+#define SC_LCAR DI_CAR RS(L)
 #endif
 #ifndef  C_NCAR
 #define  C_NCAR DI_CAR N

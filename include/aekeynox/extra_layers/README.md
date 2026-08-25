@@ -27,6 +27,7 @@ When possible, it’s placed on the `SEMI` key (QWERTY’s <kbd>;:</kbd> key).
   - [AZERTY-1dk](#azerty-1dk)
   - [Bépolar](#bépolar)
   - [QWERTZ-cz-1dk](#qwertz-cz-1dk): Czechia
+  - [QWERTZ-sk-1dk](#qwertz-sk-1dk): Slovakia
   - [Other Layouts](#other-layouts)
 - [Six-Column Configurations](#six-column-configurations)
   - [QWERTY-intl](#qwerty-intl)
@@ -316,10 +317,43 @@ QWERTZ-cz-1dk replaces the <kbd>ů</kbd> key with <kbd>1dk</kbd>:
     |---------------|---------------|
 ```
 
-- 1dk is a dead acute accent on vowels (á, é, í, ó, ú, ý)
 - 1dk is a dead caron/háček on consonants (č, ď, ň, ř, š, ť, ž)
+- 1dk is a dead acute accent on vowels (á, é, í, ó, ú, ý)
 - 1dk is a dead ring below U (ů)
 - exception: ě (caron/háček) left to E
+
+### QWERTZ-sk-1dk
+
+- [x] [`KB_LAYOUT_QWERTZ_SK`]: Slovakia
+
+QWERTZ-sk-1dk replaces the <kbd>ô</kbd> key with <kbd>1dk</kbd>:
+
+```
+    |---------------|---------------|  base
+    |    q w e r t  |  z u i o p    |
+    |    a s d f g  |  h j k l *    |
+    |    z x c v b  |  n m , . -    |
+    |---------------|---------------|
+
+    |---------------|---------------|  1dk
+    |    ä ě é ř ť  |  ž ú í ó      |
+    |    á š ď ŕ    |    ů ô ľ ˝    |
+    |    ý ß č      |  ň     ĺ      |
+    |---------------|---------------|
+
+    |---------------|---------------|  1dkShift
+    |    Ä Ě É Ř Ť  |  Ž Ú Í Ó      |
+    |    Á Š Ď Ŕ    |    Ů Ô Ľ ˝    |
+    |    Ý § Č      |  Ň     Ĺ      |
+    |---------------|---------------|
+```
+
+- 1dk is a dead caron/mäkčeň on consonants (č, ď, ľ, ň, ř, š, ť, ž)
+- 1dk is a dead acute accent on vowels (á, é, í, ó, ú, ý)
+- 1dk is a dead acute accent below consonants (ĺ, ŕ)
+- 1dk is a dead diaeresis above A (ä)
+- exception: ô (circumflex) on K
+- compatibility with Czech: ů (ring) below U, ě (caron/mäkčeň) left to E
 
 ### Other Layouts
 

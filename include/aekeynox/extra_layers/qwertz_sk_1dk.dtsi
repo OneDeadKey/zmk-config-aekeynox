@@ -1,0 +1,50 @@
+#include "1dk.dtsi"
+
+/**
+ * This adds a dead key (1dk) to access all common Slovak chars:
+ *  - 1dk is a dead caron/mäkčeň on consonants (č, ď, ľ, ň, ř, š, ť, ž)
+ *  - 1dk is a dead acute accent on vowels (á, é, í, ó, ú, ý)
+ *  - 1dk is a dead acute accent below consonants (ĺ, ŕ)
+ *  - 1dk is a dead diaeresis above A (ä)
+ *  - exception: ô (circumflex) on K
+ *  - compatibility with Czech: ů (ring) below U, ě (caron/mäkčeň) left to E
+**/
+
+/ {
+  keymap {
+    compatible = "zmk,keymap";
+
+    //  |---------------|---------------|
+    //  |    ä ě é ř ť  |  ž ú í ó      |
+    //  |    á š ď ŕ    |    ů ô ľ ¨    |
+    //  |    ý ß č      |  ň     ĺ      |
+    //  |---------------|---------------|
+
+    one_dead_key {
+      display-name = "1dk";
+      bindings = <SELENIUM_KEYMAP_BINDINGS(
+        &trans  ,  C_ADIA  C_ECAR  C_EACU  C_RCAR  C_TCAR   ,   C_ZCAR  C_UACU  C_IACU  C_OACU  &none   ,  &trans ,
+        &trans  ,  C_AACU  C_SCAR  C_DCAR  C_RACU  &none    ,   &none   C_URNG  C_OCIR  C_LCAR  DK_DIA  ,  &trans ,
+        K_ODKS  ,  C_YACU  C_SZ    C_CCAR  &none   &none    ,   C_NCAR  &none   &none   C_LACU  &none   ,  K_ODKS ,
+                                 SK_ODKS , S_SQT , &trans   ,   &trans , S_SQT , &trans
+      )>;
+    };
+
+    //  |---------------|---------------|
+    //  |    Ä Ě É Ř Ť  |  Ž Ú Í Ó      |
+    //  |    Á Š Ď Ŕ    |    Ů Ô Ľ ¨    |
+    //  |    Ý § Č      |  Ň     Ĺ      |
+    //  |---------------|---------------|
+
+    one_dead_key_shift {
+      display-name = "1dkShift";
+      bindings = <SELENIUM_KEYMAP_BINDINGS(
+        &trans  ,  SC_ADIA SC_ECAR SC_EACU SC_RCAR SC_TCAR  ,   SC_ZCAR SC_UACU SC_IACU SC_OACU &none   ,  &trans ,
+        &trans  ,  SC_AACU SC_SCAR SC_DCAR SC_RACU &none    ,   &none   SC_URNG SC_OCIR SC_LCAR DK_DIA  ,  &trans ,
+        &trans  ,  SC_YACU C_SILC  SC_CCAR &none   &none    ,   SC_NCAR &none   &none   SC_LACU &none   ,  &trans ,
+                                 &trans , &trans , &trans   ,   &trans , &trans , &trans
+      )>;
+    };
+
+  };
+};
