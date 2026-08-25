@@ -27,21 +27,32 @@
 #define DEAD_DIAERESIS  BSLH
 
 // áéíúý
-#define C_AACU &kp N8
-#define C_EACU &kp N0
-#define C_IACU &kp N9
-#define C_UACU &kp LBKT
-#define C_YACU &kp N7
+#define  C_AACU   &kp N8
+#define SC_AACU &caps N8
+#define  C_EACU   &kp N0
+#define SC_EACU &caps N0
+#define  C_IACU   &kp N9
+#define SC_IACU &caps N9
+#define  C_UACU   &kp LBKT
+#define SC_UACU &caps LBKT
+#define  C_YACU   &kp N7
+#define SC_YACU &caps N7
 
 // čěřšž
-#define C_CCAR &kp N7
-#define C_ECAR &kp N2
-#define C_RCAR &kp N5
-#define C_SCAR &kp N3
-#define C_ZCAR &kp N6
+#define  C_CCAR   &kp N7
+#define SC_CCAR &caps N7
+#define  C_ECAR   &kp N2
+#define SC_ECAR &caps N2
+#define  C_RCAR   &kp N5
+#define SC_RCAR &caps N5
+#define  C_SCAR   &kp N3
+#define SC_SCAR &caps N3
+#define  C_ZCAR   &kp N6
+#define SC_ZCAR &caps N6
 
 // ů
-#define C_URNG &kp SEMI
+#define  C_URNG   &kp SEMI
+#define SC_URNG &caps SEMI
 
 // đł, ß
 #define  C_DSTR &kp RA(S)
