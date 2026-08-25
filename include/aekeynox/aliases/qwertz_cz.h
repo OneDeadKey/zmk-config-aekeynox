@@ -68,17 +68,17 @@
 #define S_AT    &kp RA(V)
 #define S_AMPS  &kp RA(C)
 #define S_STAR  &kp RA(FSLH)
-#define S_SQT   &kp BSLH
+#define S_SQT   &kp PIPE
 #define S_GRAVE DI_GRV SPACE
 
 // second row
 #define S_LBRC  &kp RA(B)
-#define S_LPAR  &kp LBRC
-#define S_RPAR  &kp RBRC
+#define S_LPAR  &kp RBRC
+#define S_RPAR  &kp RBKT
 #define S_RBRC  &kp RA(N)
 #define S_EQUAL &kp MINUS
 #define S_BSLH  &kp NUBS
-#define S_PLUS  &kp N0
+#define S_PLUS  &kp N1
 #define S_MINUS &kp FSLH
 #define S_FSLH  &kp LBRC
 #define S_DQT   &kp COLON
