@@ -39,8 +39,8 @@
 #define SC_YACU &caps N7
 
 // čěřšž
-#define  C_CCAR   &kp N7
-#define SC_CCAR &caps N7
+#define  C_CCAR   &kp N4
+#define SC_CCAR &caps N4
 #define  C_ECAR   &kp N2
 #define SC_ECAR &caps N2
 #define  C_RCAR   &kp N5
