@@ -59,6 +59,8 @@
   #include "aliases/qwertz_cz.h"
 #elifdef KB_LAYOUT_QWERTZ_DE
   #include "aliases/qwertz_de.h"
+#elifdef KB_LAYOUT_QWERTZ_HU
+  #include "aliases/qwertz_hu.h"
 
 // Alternative Layouts
 #elifdef KB_LAYOUT_BEPO
@@ -99,7 +101,11 @@
   #define S_N8  &kp LS(N8)
   #define S_N9  &kp LS(N9)
 #else
-  #define S_N0  &kp N0
+  #ifdef KB_LAYOUT_QWERTZ_HU
+    #define S_N0  &kp GRAVE
+  #else
+    #define S_N0  &kp N0
+  #endif
   #define S_N1  &kp N1
   #define S_N2  &kp N2
   #define S_N3  &kp N3

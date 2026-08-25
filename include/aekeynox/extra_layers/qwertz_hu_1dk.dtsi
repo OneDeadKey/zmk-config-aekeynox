@@ -1,0 +1,48 @@
+#include "1dk.dtsi"
+
+/**
+ * This adds a dead key (1dk) to access all common Hungarian chars:
+ *  - 1dk is a dead acute accent on vowels (á, é, í, ó, ú)
+ *  - 1dk is a dead double acute accent below vowels (ű, ő)
+ *  - 1dk is a dead diaeresis two rows below vowels (ü, ö)
+ *  - 1dk + 1dk is a dead diaeresis
+**/
+
+/ {
+  keymap {
+    compatible = "zmk,keymap";
+
+    //  |---------------|---------------|
+    //  |    €   é      |    ú í ó      |
+    //  |    á ß đ      |    ű ł ő ˝    |
+    //  |    ä §        |    ü   ö      |
+    //  |---------------|---------------|
+
+    one_dead_key {
+      display-name = "1dk";
+      bindings = <SELENIUM_KEYMAP_BINDINGS(
+        &trans  ,  C_EURO  &trans  C_EACU  &none   &none    ,   &none   C_UACU  C_IACU  C_OACU  &none   ,  &trans ,
+        &trans  ,  C_AACU  C_SZ    C_DSTR  &none   &none    ,   &none   C_UDAC  C_LSTR  C_ODAC  DK_DIA  ,  &trans ,
+        K_ODKS  ,  C_ADIA  C_SILC  &none   &none   &none    ,   &none   C_UDIA  &none   C_ODIA  &none   ,  K_ODKS ,
+                                 SK_ODKS , S_SQT , &trans   ,   &trans , S_SQT , &trans
+      )>;
+    };
+
+    //  |---------------|---------------|
+    //  |    €   É      |    Ú Í Ó      |
+    //  |    Á   Đ      |    Ű Ł Ő ˝    |
+    //  |    Ä          |    Ü   Ö      |
+    //  |---------------|---------------|
+
+    one_dead_key_shift {
+      display-name = "1dkShift";
+      bindings = <SELENIUM_KEYMAP_BINDINGS(
+        &trans  ,  &none   &none   SC_EACU &none   &none    ,   &none   SC_UACU SC_IACU SC_OACU &none   ,  &trans ,
+        &trans  ,  SC_AACU &none   SC_DSTR &none   &none    ,   &none   SC_UDAC SC_LSTR SC_ODAC DK_DIA  ,  &trans ,
+        &trans  ,  SC_ADIA &none   &none   &none   &none    ,   &none   SC_UDIA &none   SC_ODIA &none   ,  &trans ,
+                                 &trans , &trans , &trans   ,   &trans , &trans , &trans
+      )>;
+    };
+
+  };
+};
