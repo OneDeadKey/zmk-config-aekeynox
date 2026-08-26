@@ -131,23 +131,7 @@
 
 
 /******************************************************************************
- * Half layers selection
-*****************************************************************************/
-
-#define NAV_LEFT  HL_ARROWS_ESDF
-#define NAV_RIGHT HL_NUMPAD
-#define FN_LEFT   HL_FUN_PAD
-#define FN_RIGHT  HL_MEDIA
-
-#define L_LAYER_1 NAV_LAYER
-#define R_LAYER_1 NAV_LAYER
-#define L_LAYER_2 FN_MEDIA_LAYER
-#define R_LAYER_2 FN_MEDIA_LAYER
-
-#define NUM_LAYER NAV_LAYER
-
-/******************************************************************************
- * Other Options
+ * Navigation style
 *****************************************************************************/
 
 // Uncomment the following line to split the NavNum layer in two:
@@ -163,6 +147,45 @@
 // `VIM_NAVIGATION` option. Both options are mutually exclusive.
 
 // #define CALLUM_NAVIGATION
+
+
+/******************************************************************************
+ * [Advanced & experimental] Half layers selection
+*****************************************************************************/
+
+// Uncomment some of the following lines to further customise the definitions
+// of the Navigation or Function layers. They are composed from two independant
+// half layers that you may pick and choose however you want. The options in
+// the previous section are sane presets for those values.
+
+// #define NAV_LEFT  HL_ARROWS_ESDF
+// #define NAV_RIGHT HL_NUMPAD
+// #define FN_LEFT   HL_FUN_PAD
+// #define FN_RIGHT  HL_MEDIA
+
+// Uncomment some of the following lines to customise which layer the thumb
+// keys of the base layer will send you to.
+
+// #define L_LAYER_1 NAV_LAYER
+// #define R_LAYER_1 NAV_LAYER
+// #define L_LAYER_2 FN_MEDIA_LAYER
+// #define R_LAYER_2 FN_MEDIA_LAYER
+
+// Uncomment the following line to specify which layer contains the numbers,
+// so that transitions from the Navigation or Symbols layers work as expected.
+// XXX: Needs a better name
+
+// #define NUM_LAYER NAV_LAYER
+
+// Swaps Tab for Escape on the base layer’s left-reach thumb key.
+// Highly recommended for users of the `HL_SHORTCUTS` or `HL_CALLUM`` half layer,
+// as they have quick access to Tab and Shift+Tab.
+
+// #define ENABLE_QUICK_ESCAPE
+
+/******************************************************************************
+ * Other Options
+*****************************************************************************/
 
 // [Experimental]
 // Uncomment the following line to enable the "mod-hold behavior" on the left
