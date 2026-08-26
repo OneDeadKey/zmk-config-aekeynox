@@ -24,7 +24,7 @@
 
 #define HL_MIRROR \
   &kp P    &kp O   &kp I     &kp U &kp Y , \
-  HRM_SEMI HRM_L   HRM_K     HRM_J &kp H , \
+  &H4 SEMI &H3 L   &H2 K     &H1 J &kp H , \
   &kp FSLH &kp DOT &kp COMMA &kp M &kp N
 
 /******************************************************************************
