@@ -92,7 +92,7 @@ Common mistakes when dealing with the preprocessor include (but are not limited 
 - typos
 - missing header file(s)
 - macros being used before being defined
-- missing definition in a conditionnal compilation branch (`#if`, `#ifdef`…)
+- missing definition in a conditional compilation branch (`#if`, `#ifdef`…)
 - comparing things more complex than integers (yes, it’s *that* primitive)
 
 As simple as this trick may seem, it makes it a **LOT** easier and faster to
