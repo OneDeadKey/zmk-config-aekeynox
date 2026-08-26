@@ -67,6 +67,9 @@ the preprocessor if ZMK is installed locally. Here’s a quick how-to:
 Examples:
 
 ```sh
+# create the symlink
+ln -s selenium.keymap selenium.c
+
 # check the output with the default options
 clang -E selenium.c -I/path/to/zmk
 
