@@ -79,7 +79,7 @@ clang -E selenium.c -I/path/to/zmk -DKB_LAYOUT_QWERTY_INTL -DLINUX
 
 > [!NOTE]
 > Remember that any setting you tweaked will *stay active* when running this commmand,
-> so dont forget to comment them out or add the `-DCI_IGNORE_USER_SETTINGS` flag (to
+> so don’t forget to comment them out, or add the `-DCI_IGNORE_USER_SETTINGS` flag (to
 > ignore all of them) if they hinder you.
 
 The output details all layers that will be built by ZMK, after one
