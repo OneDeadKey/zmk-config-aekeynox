@@ -45,9 +45,6 @@
     #ifndef SC_YACU
     #define SC_YACU CP1252_UPPERCASE_Y_ACUTE
     #endif
-    #ifndef  C_LACU
-    #define  C_LACU CP1252_LOWERCASE_Y_ACUTE
-    #endif
   #endif
 #endif
 
