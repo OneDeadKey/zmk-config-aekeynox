@@ -96,7 +96,7 @@ Common mistakes when dealing with the preprocessor include (but are not limited 
 - comparing things more complex than integers (yes, it’s *that* primitive)
 
 As simple as this trick may seem, it makes it a **LOT** easier and faster to
-find errors reported by the GHA outputs. To that end, here are some of the more
+find errors reported by the GHA outputs. To that end, here are some of the most
 common errors you may encounter and what they mean:
 
 - `expected number or parenthesized expression`: a key/layer/modifier/macro is
