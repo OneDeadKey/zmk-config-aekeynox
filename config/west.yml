@@ -33,6 +33,21 @@ manifest:
       import: app/west.yml
 
       ###
+      # Custom behaviors
+      ##
+
+      # Safely wraps a dead key on the host layout
+    - name: zmk-behavior-dead-key
+      remote: NuclearSquid
+      revision: aekeynox
+
+      # Wraps a behavior to hold a selection of active modifiers for as long
+      # as that key is held
+    - name: zmk-behavior-mod-hold
+      remote: NuclearSquid
+      revision: aekeynox
+
+      ###
       # Community keyboards (not officially supported by ZMK)
       ##
 
