@@ -27,6 +27,8 @@ When possible, it’s placed on the `SEMI` key (QWERTY’s <kbd>;:</kbd> key).
   - [AZERTY-1dk](#azerty-1dk)
   - [Bépolar](#bépolar)
   - [QWERTZ-cz-1dk](#qwertz-cz-1dk): Czechia
+  - [QWERTZ-hr-1dk](#qwertz-hr-1dk): Bosnia, Croatia, Serbia (Latin), Slovenia
+  - [QWERTZ-hu-1dk](#qwertz-hu-1dk): Hungary
   - [QWERTZ-sk-1dk](#qwertz-sk-1dk): Slovakia
   - [Other Layouts](#other-layouts)
 - [Six-Column Configurations](#six-column-configurations)
@@ -51,6 +53,7 @@ selected with one of the following definitions:
 Activated by default on:
 
 - [x] [`KB_LAYOUT_QWERTY_DK`]: Denmark
+- [x] [`KB_LAYOUT_QWERTY_EE`]: Estonia
 - [ ] [`KB_LAYOUT_QWERTY_IS`]: Iceland
 - [x] [`KB_LAYOUT_QWERTY_NO`]: Norway
 - [x] [`KB_LAYOUT_QWERTY_SE`]: Sweden, Finland
@@ -58,7 +61,7 @@ Activated by default on:
 Suitable for:
 
 - [x] [`KB_LAYOUT_QWERTY_INTL`]
-- [ ] [`KB_LAYOUT_QWERTY_NL`]: Netherlands (but `^` and `˝` are missing)
+- [ ] [`KB_LAYOUT_QWERTY_NL`]: Netherlands (but `^` and `¨` are missing)
 - [x] [`KB_LAYOUT_QWERTZ_DE`]: Germany, Austria
 
 ```
@@ -89,6 +92,9 @@ Supported languages:
 - [x] Faroese:           `å`, `æ`, `ø`, `ð`
 - [x] German:            `ß`, `äöü`
 - [x] Icelandic:         `þ`, `æ`, `ö`, `ð`, `áéíóúý`
+
+Note: when not available in the host layout, `æ` and `ø` are replaced by `ä`
+and `ö` respectively. This is a common practice in Scandinavian languages.
 
 ### Transalp
 
@@ -126,7 +132,8 @@ Suitable for:
 Supported languages:
 
 - [x] German: `äöü` (diaeresis), `ß`
-- [x] French: `é` (acute), `èàù` (grave), `ç` (cedilla), `âêîôû` (circumflex), `ëïüÿ` (diaeresis)
+- [x] French: `é` (acute), `èàù` (grave), `ç` (cedilla), `âêîôû` (circumflex),
+              `ëïüÿ` (diaeresis)
 - [x] Italian: `é` (acute), `àèìòù` (grave)
 
 ### Transat
@@ -209,7 +216,7 @@ compact keyboards:
 - [ ] [`KB_LAYOUT_QWERTY_CZ`]: Czechia
 - [ ] [`KB_LAYOUT_QWERTY_LT`]: Lithuania
 
-Specific adaptations would be required.
+Specific adaptations are a better fit, as proposed below.
 
 
 Layout-Specific Adaptations
@@ -235,7 +242,7 @@ AZERTY-1dk replaces the <kbd>ù</kbd> key with <kbd>1dk</kbd>, on the 6th column
 
     |---------------|---------------|  1dk
     |    à é è € ¢  |    ù ï œ      |
-    |    â ß ê ( )  |    û î ô µ ˝  |
+    |    â ß ê ( )  |    û î ô µ ¨  |
     |        ç      |               |
     |---------------|---------------|
 
@@ -273,7 +280,7 @@ of Bépo for ergonomic keyboards.
     |---------------|---------------|  1dk
     |    â û î ô œ  |    ŭ          |
     |    à ù é è ê  |  ç ™ ß ® ñ    |
-    |    — ŷ _ … æ  |  ˝ – µ ©      |
+    |    — ŷ _ … æ  |  ¨ – µ ©      |
     |---------------|---------------|
 
     |---------------|---------------|  1dkShift
@@ -301,18 +308,18 @@ QWERTZ-cz-1dk replaces the <kbd>ů</kbd> key with <kbd>1dk</kbd>:
     |---------------|---------------|  base
     |    q w e r t  |  z u i o p    |
     |    a s d f g  |  h j k l *    |
-    |    z x c v b  |  n m , . -    |
+    |    y x c v b  |  n m , . -    |
     |---------------|---------------|
 
     |---------------|---------------|  1dk
     |    € ě é ř ť  |  ž ú í ó      |
-    |    á š ď      |    ů     ˝    |
+    |    á š ď      |    ů     ¨    |
     |    ý ß č      |  ň            |
     |---------------|---------------|
 
     |---------------|---------------|  1dkShift
     |      Ě É Ř Ť  |  Ž Ú Í Ó      |
-    |    Á Š Ď      |    Ů     ˝    |
+    |    Á Š Ď      |    Ů     ¨    |
     |    Ý § Č      |  Ň            |
     |---------------|---------------|
 ```
@@ -321,6 +328,75 @@ QWERTZ-cz-1dk replaces the <kbd>ů</kbd> key with <kbd>1dk</kbd>:
 - 1dk is a dead acute accent on vowels (á, é, í, ó, ú, ý)
 - 1dk is a dead ring below U (ů)
 - exception: ě (caron/háček) left to E
+
+### QWERTZ-hr-1dk
+
+- [ ] [`KB_LAYOUT_QWERTZ_HR`]: Bosnia, Croatia, Serbia (Latin), Slovenia
+
+QWERTZ-hr-1dk replaces the <kbd>č</kbd> key with <kbd>1dk</kbd>:
+
+```
+    |---------------|---------------|  base
+    |    q w e r t  |  y u i o p    |
+    |    a s d f g  |  h j k l *    |
+    |    z x c v b  |  n m , . -    |
+    |---------------|---------------|
+
+    |---------------|---------------|  1dk
+    |        €      |  ž            |
+    |      š đ      |        ł      |
+    |      ß č ć    |               |
+    |---------------|---------------|
+
+    |---------------|---------------|  1dkShift
+    |               |  Ž            |
+    |      Š Đ      |        Ł      |
+    |      § Č Ć    |               |
+    |---------------|---------------|
+```
+
+Supported languages:
+
+- [x] Serbo-Croatian: `čšž` (caron), `ć` (acute), `đ` (stroke)
+- [x] Slovene:        `čšž` (caron)
+
+Notes:
+
+- [accent marks] on a, e, i, o, u, r, l are not supported
+- the Apple layout for these countries is a QWERTY variant
+
+[accent marks]: https://en.wikipedia.org/wiki/Gaj's_Latin_alphabet#Accent_marks
+
+### QWERTZ-hu-1dk
+
+- [x] [`KB_LAYOUT_QWERTZ_HU`]: Hungary
+
+QWERTZ-hu-1dk replaces the <kbd>ů</kbd> key with <kbd>1dk</kbd>:
+
+```
+    |---------------|---------------|  base
+    |    q w e r t  |  z u i o p    |
+    |    a s d f g  |  h j k l *    |
+    |    y x c v b  |  n m , . -    |
+    |---------------|---------------|
+
+    |---------------|---------------|  1dk
+    |    €   é      |    ú í ó      |
+    |    á ß đ      |    ű ł ő ¨    |
+    |    ä §        |    ü   ö      |
+    |---------------|---------------|
+
+    |---------------|---------------|  1dkShift
+    |        É      |    Ú Í Ó      |
+    |    Á   Đ      |    Ű Ł Ő ¨    |
+    |    Ä          |    Ü   Ö      |
+    |---------------|---------------|
+```
+
+ - 1dk is a dead acute accent on vowels (á, é, í, ó, ú)
+ - 1dk is a dead double acute accent below vowels (ű, ő)
+ - 1dk is a dead diaeresis two rows below vowels (ü, ö)
+ - 1dk + 1dk is a dead diaeresis
 
 ### QWERTZ-sk-1dk
 
@@ -332,18 +408,18 @@ QWERTZ-sk-1dk replaces the <kbd>ô</kbd> key with <kbd>1dk</kbd>:
     |---------------|---------------|  base
     |    q w e r t  |  z u i o p    |
     |    a s d f g  |  h j k l *    |
-    |    z x c v b  |  n m , . -    |
+    |    y x c v b  |  n m , . -    |
     |---------------|---------------|
 
     |---------------|---------------|  1dk
     |    ä ě é ř ť  |  ž ú í ó      |
-    |    á š ď ŕ    |    ů ô ľ ˝    |
+    |    á š ď ŕ    |    ů ô ľ ¨    |
     |    ý ß č      |  ň     ĺ      |
     |---------------|---------------|
 
     |---------------|---------------|  1dkShift
     |    Ä Ě É Ř Ť  |  Ž Ú Í Ó      |
-    |    Á Š Ď Ŕ    |    Ů Ô Ľ ˝    |
+    |    Á Š Ď Ŕ    |    Ů Ô Ľ ¨    |
     |    Ý § Č      |  Ň     Ĺ      |
     |---------------|---------------|
 ```
@@ -355,17 +431,17 @@ QWERTZ-sk-1dk replaces the <kbd>ô</kbd> key with <kbd>1dk</kbd>:
 - exception: ô (circumflex) on K
 - compatibility with Czech: ů (ring) below U, ě (caron/mäkčeň) left to E
 
+This layer could be merged with the Czech one (Morava?).
+
 ### Other Layouts
 
 Many other national layouts are still missing, among which:
 
 - [ ] [`KB_LAYOUT_QWERTY_CA`]: Canada Multilingual Standard
-- [ ] [`KB_LAYOUT_QWERTY_HR`]: Bosnia, Croatia, Serbia, Slovenia (all almost identical)
 - [ ] [`KB_LAYOUT_QWERTY_LT`]: Lithuania
 - [ ] [`KB_LAYOUT_QWERTY_NL`]: Netherlands
 - [ ] [`KB_LAYOUT_QWERTY_TR`]: Turkey
-- [ ] [`KB_LAYOUT_QWERTZ_HU`]: Hungary
-- [ ] [`KB_LAYOUT_QWERTZ_SK`]: Slovakia
+- [ ] [`KB_LAYOUT_QWERTZ_HR`]: Bosnia, Croatia, Serbia (Latin), Slovenia
 
 If you use one of these layouts, please open a ticket and we’ll work something
 out.
@@ -388,7 +464,7 @@ columns. Here’s the default configuration:
 
 ```
     |---------------|---------------|
-    |  ˝ q w e r t  |  y u i o p `  |
+    |  ¨ q w e r t  |  y u i o p `  |
     |  ^ a s d f g  |  h j k l ; '  |
     |    z x c v b  |  n m , . /    |
     |---------------|---------------|
@@ -403,7 +479,19 @@ For AZERTY and other QWERTY and QWERTZ variants, you can force the use of these
 outer columns with the `KB_EXTRA_LAYERS_NONE` option: the 6th column is kept on
 the right, while the 7th column is moved to the left.
 
-As an example, QWERTZ-de works okay with `KB_EXTRA_LAYERS_NONE`:
+As an example, QWERTZ-hr works fine with `KB_EXTRA_LAYERS_NONE` if you’re okay
+with lateral pinky extensions:
+
+```
+    |---------------|---------------|
+    |  đ q w e r t  |  z u i o p š  |
+    |  ž a s d f g  |  h j k l č ć  |
+    |    z x c v b  |  n m , . -    |
+    |---------------|---------------|
+```
+
+On QWERTZ-de, `ß` would be missing, but `/include/aekeynox/outer_keys.h` could
+be customized to include it under the left pinky.
 
 ```
     |---------------|---------------|
@@ -412,10 +500,6 @@ As an example, QWERTZ-de works okay with `KB_EXTRA_LAYERS_NONE`:
     |    z x c v b  |  n m , . -    |
     |---------------|---------------|
 ```
-
-With this, `ÖÄÜ` can now be accessed directly — though with a lateral extension
-of the pinky. `ẞ` is missing, but `/include/aekeynox/outer_keys.h` could be
-customized to include it under the left pinky.
 
 We still (highly) recommend using a `1dk` layer instead (both `Nordic` and
 `Transalp` work fine with German); but *your keyboard, your rules!*
@@ -433,7 +517,6 @@ We still (highly) recommend using a `1dk` layer instead (both `Nordic` and
 [`KB_LAYOUT_QWERTY_DK`]:        https://kbdlayout.info/kbdda
 [`KB_LAYOUT_QWERTY_EE`]:        https://kbdlayout.info/kbdest
 [`KB_LAYOUT_QWERTY_ES`]:        https://kbdlayout.info/kbdsp
-[`KB_LAYOUT_QWERTY_HR`]:        https://kbdlayout.info/kbdycl
 [`KB_LAYOUT_QWERTY_HU`]:        https://kbdlayout.info/kbdhu1
 [`KB_LAYOUT_QWERTY_IT`]:        https://kbdlayout.info/kbdit142
 [`KB_LAYOUT_QWERTY_IS`]:        https://kbdlayout.info/kbdic
@@ -452,6 +535,7 @@ We still (highly) recommend using a `1dk` layer instead (both `Nordic` and
 [`KB_LAYOUT_QWERTZ_CH_FR`]:     https://kbdlayout.info/kbdsf
 [`KB_LAYOUT_QWERTZ_CZ`]:        https://kbdlayout.info/kbdcz
 [`KB_LAYOUT_QWERTZ_DE`]:        https://kbdlayout.info/kbdgr
+[`KB_LAYOUT_QWERTZ_HR`]:        https://kbdlayout.info/kbdycl
 [`KB_LAYOUT_QWERTZ_HU`]:        https://kbdlayout.info/kbdhu
 [`KB_LAYOUT_QWERTZ_PL`]:        https://kbdlayout.info/kbdpl
 [`KB_LAYOUT_QWERTZ_SK`]:        https://kbdlayout.info/kbdsl

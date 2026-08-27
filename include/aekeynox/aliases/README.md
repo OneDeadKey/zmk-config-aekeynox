@@ -38,7 +38,6 @@ others:
 | ✅ | [`KB_LAYOUT_QWERTY_DK`]    | Denmark                           |
 | ✅ | [`KB_LAYOUT_QWERTY_EE`]    | Estonia                           |
 | ✅ | [`KB_LAYOUT_QWERTY_ES`]    | Spain                             |
-| 🚧 | [`KB_LAYOUT_QWERTY_HR`]    | Bosnia, Croatia, Serbia, Slovenia |
 | ❌ | [`KB_LAYOUT_QWERTY_HU`]    | Hungary                           | 101-key
 | ✅ | [`KB_LAYOUT_QWERTY_IT`]    | Italy                             | 142
 | 🚧 | [`KB_LAYOUT_QWERTY_IS`]    | Iceland                           |
@@ -57,9 +56,10 @@ others:
 | ✅ | [`KB_LAYOUT_QWERTZ_CH_FR`] | Switzerland, Luxembourg           | French
 | ✅ | [`KB_LAYOUT_QWERTZ_CZ`]    | Czechia                           |
 | ✅ | [`KB_LAYOUT_QWERTZ_DE`]    | Germany, Austria                  |
-| 🚧 | [`KB_LAYOUT_QWERTZ_HU`]    | Hungary                           |
+| 🚧 | [`KB_LAYOUT_QWERTZ_HR`]    | Bosnia, Croatia, Serbia, Slovenia |
+| ✅ | [`KB_LAYOUT_QWERTZ_HU`]    | Hungary                           |
 | ❌ | [`KB_LAYOUT_QWERTZ_PL`]    | Poland                            | 214
-| 💡 | [`KB_LAYOUT_QWERTZ_SK`]    | Slovakia                          |
+| ✅ | [`KB_LAYOUT_QWERTZ_SK`]    | Slovakia                          |
 
 Ækeynox also supports a few alternative layouts, especially non-ASCII ones:
 
@@ -81,7 +81,6 @@ others:
 [`KB_LAYOUT_QWERTY_DK`]:        https://kbdlayout.info/kbdda
 [`KB_LAYOUT_QWERTY_EE`]:        https://kbdlayout.info/kbdest
 [`KB_LAYOUT_QWERTY_ES`]:        https://kbdlayout.info/kbdsp
-[`KB_LAYOUT_QWERTY_HR`]:        https://kbdlayout.info/kbdycl
 [`KB_LAYOUT_QWERTY_HU`]:        https://kbdlayout.info/kbdhu1
 [`KB_LAYOUT_QWERTY_IT`]:        https://kbdlayout.info/kbdit142
 [`KB_LAYOUT_QWERTY_IS`]:        https://kbdlayout.info/kbdic
@@ -101,6 +100,7 @@ others:
 [`KB_LAYOUT_QWERTZ_CZ`]:        https://kbdlayout.info/kbdcz
 [`KB_LAYOUT_QWERTZ_DE`]:        https://kbdlayout.info/kbdgr
 [`KB_LAYOUT_QWERTZ_HU`]:        https://kbdlayout.info/kbdhu
+[`KB_LAYOUT_QWERTZ_HR`]:        https://kbdlayout.info/kbdycl
 [`KB_LAYOUT_QWERTZ_PL`]:        https://kbdlayout.info/kbdpl
 [`KB_LAYOUT_QWERTZ_SK`]:        https://kbdlayout.info/kbdsl
 
@@ -146,6 +146,8 @@ the same modified layout for several different countries:
 - their QWERTY-ro is specific to Romania, but it’s neither the Romanian standard
   nor the legacy QWERTZ-ro;
 - their QWERTY-nl is just a QWERTY-intl with a € sign;
+- their Serbo-Croatian layout is a QWERTY, though the standard is QWERTZ
+  and `Y` doesn’t exist in [Gaj’s alphabet]…
 
 Reference: [keyshorts.com] (we couldn’t find any official source…)
 
@@ -164,3 +166,5 @@ Reference: [xkeyboard-config]
 [kbdlayout.info]:   https://kbdlayout.info/
 [keyshorts.com]:    https://keyshorts.com/blogs/blog/37615873-how-to-identify-macbook-keyboard-localization
 [xkeyboard-config]: https://xkeyboard-config.freedesktop.org/
+
+[Gaj’s alphabet]:   https://en.wikipedia.org/wiki/Gaj's_Latin_alphabet
