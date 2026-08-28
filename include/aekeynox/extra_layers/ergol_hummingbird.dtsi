@@ -25,7 +25,7 @@
 / {
   behaviors {
     // Swap out the standard dead key for a one-shot layer to override some of the keys
-    TWO_LEVEL_KEY(apos, &EZ_SL(ODK_LAYER), S_EXCL) // ' ! (1dk)
+    THREE_LEVEL_KEY(apos, &EZ_SL(ODK_LAYER), S_EXCL, &EZ_SL(ODK_SHIFT_LAYER)) // ' ! (1dk)
     TWO_LEVEL_KEY(em_dash, &odk V, &odk B) // – — (en-dash, em-dash)
 
     DEAD_KEY(odk, O)

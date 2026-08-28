@@ -13,7 +13,7 @@
 
 / {
   behaviors {
-    TWO_LEVEL_KEY(odk, &EZ_SL(ODK_LAYER), SC_ODK)
+    THREE_LEVEL_KEY(odk, &EZ_SL(ODK_LAYER), SC_ODK, SC_ODK)
   };
 };
 

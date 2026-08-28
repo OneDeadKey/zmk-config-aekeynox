@@ -23,6 +23,20 @@
   mods = <MOD_LSFT>;                                                 \
 };
 
+#define THREE_LEVEL_KEY(name, base, left_shift, right_shift) \
+  OMIT_IF_NO_REF name: name {                                \
+    compatible = "zmk,behavior-mod-morph";                   \
+    #binding-cells = <0>;                                    \
+    bindings = <&name##_right>, <left_shift>;                \
+    mods = <MOD_LSFT>;                                       \
+  };                                                         \
+  OMIT_IF_NO_REF name##_right: name##_right {                \
+    compatible = "zmk,behavior-mod-morph";                   \
+    #binding-cells = <0>;                                    \
+    bindings = <base>, <right_shift>;                        \
+    mods = <MOD_RSFT>;                                       \
+  };
+
 &caps_word {
   no-default-keys;
   shift-list = <CAPS_WORD_SHIFT_LIST>;
