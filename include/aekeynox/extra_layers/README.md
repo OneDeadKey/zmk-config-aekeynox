@@ -331,39 +331,44 @@ QWERTZ-cz-1dk replaces the <kbd>ů</kbd> key with <kbd>1dk</kbd>:
 
 ### QWERTZ-hr-1dk
 
-- [ ] [`KB_LAYOUT_QWERTZ_HR`]: Bosnia, Croatia, Serbia (Latin), Slovenia
+- [x] [`KB_LAYOUT_QWERTZ_HR`]: Bosnia, Croatia, Serbia (Latin), Slovenia
 
 QWERTZ-hr-1dk replaces the <kbd>č</kbd> key with <kbd>1dk</kbd>:
 
 ```
     |---------------|---------------|  base
     |    q w e r t  |  y u i o p    |
-    |    a s d f g  |  h j k l *    |
+    |    a s d f g  |  h j k l * ¨  |
     |    z x c v b  |  n m , . -    |
     |---------------|---------------|
 
     |---------------|---------------|  1dk
     |        €      |  ž            |
     |      š đ      |        ł      |
-    |      ß č ć    |               |
+    |    ž ß č ć    |               |
     |---------------|---------------|
 
     |---------------|---------------|  1dkShift
     |               |  Ž            |
     |      Š Đ      |        Ł      |
-    |      § Č Ć    |               |
+    |    Ž § Č Ć    |               |
     |---------------|---------------|
 ```
 
-Supported languages:
-
-- [x] Serbo-Croatian: `čšž` (caron), `ć` (acute), `đ` (stroke)
-- [x] Slovene:        `čšž` (caron)
+- 1dk is a dead caron on C, S, Z (č, š, ž)
+- 1dk is a dead stroke on D, L (đ, ł)
+- exception: ć (acute) on V
 
 Notes:
 
 - [accent marks] on a, e, i, o, u, r, l are not supported
-- the Apple layout for these countries is a QWERTY variant
+- the Apple layout for these countries is a QWERTY variant,
+  hence the duplicated `ž` on both [Y] and [Z]
+
+Support for Italian and Albanian could be added (“Adriatic” layer?):
+- Albanian is an official minority language in Italy, Croatia, Serbia
+- Slovene is an official minority language in Italy
+- Italian is an official minority language in Croatia
 
 [accent marks]: https://en.wikipedia.org/wiki/Gaj's_Latin_alphabet#Accent_marks
 
@@ -431,17 +436,19 @@ QWERTZ-sk-1dk replaces the <kbd>ô</kbd> key with <kbd>1dk</kbd>:
 - exception: ô (circumflex) on K
 - compatibility with Czech: ů (ring) below U, ě (caron/mäkčeň) left to E
 
-This layer could be merged with the Czech one (Morava?).
+This layer could be merged with the Czech one (“[Morava]”?).
+
+[Morava]: https://en.wikipedia.org/wiki/Morava_(river)
 
 ### Other Layouts
 
 Many other national layouts are still missing, among which:
 
+- [ ] [`KB_LAYOUT_AZERTY_BE`]: Belgium
 - [ ] [`KB_LAYOUT_QWERTY_CA`]: Canada Multilingual Standard
 - [ ] [`KB_LAYOUT_QWERTY_LT`]: Lithuania
 - [ ] [`KB_LAYOUT_QWERTY_NL`]: Netherlands
 - [ ] [`KB_LAYOUT_QWERTY_TR`]: Turkey
-- [ ] [`KB_LAYOUT_QWERTZ_HR`]: Bosnia, Croatia, Serbia (Latin), Slovenia
 
 If you use one of these layouts, please open a ticket and we’ll work something
 out.

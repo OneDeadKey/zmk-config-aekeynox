@@ -117,17 +117,22 @@ include:
     # QWERTZ-cz (Czechia)
   - board: quacken_flex/rp2040
     artifact-name: qwertz_cz
-    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTZ_CZ;-DLINUX"
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTZ_CZ"
 
     # QWERTZ-de (Germany)
   - board: quacken_flex/rp2040
     artifact-name: qwertz_de
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTZ_DE"
 
+    # QWERTZ-hr (Bosnia, Croatia, Serbia, Slovenia)
+  - board: quacken_flex/rp2040
+    artifact-name: qwertz_hr
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTZ_HR"
+
     # QWERTZ-hu (Hungary)
   - board: quacken_flex/rp2040
     artifact-name: qwertz_hu
-    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTZ_HU;-DLINUX"
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTZ_HU"
 
     # QWERTZ-sk (Slovakia)
   - board: quacken_flex/rp2040

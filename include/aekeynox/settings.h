@@ -34,6 +34,7 @@
 // #define KB_LAYOUT_QWERTZ_CH_FR      // Switzerland (French)
 // #define KB_LAYOUT_QWERTZ_CZ         // Czechia
 // #define KB_LAYOUT_QWERTZ_DE         // Germany, Austria
+// #define KB_LAYOUT_QWERTZ_HR         // Bosnia, Croatia, Serbia, Slovenia
 // #define KB_LAYOUT_QWERTZ_HU         // Hungary
 // #define KB_LAYOUT_QWERTZ_SK         // Slovakia
 

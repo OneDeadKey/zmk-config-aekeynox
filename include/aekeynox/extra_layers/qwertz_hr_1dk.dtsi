@@ -1,0 +1,47 @@
+#include "1dk.dtsi"
+
+/**
+ * This adds a dead key (1dk) to access all common Serbo-Croatian chars:
+ *  - 1dk is a dead caron on C, S, Z (č, š, ž)
+ *  - 1dk is a dead stroke on D, L (đ, ł)  (đ is useless in Slovenian, ł is a Polish char)
+ *  - exception: ć (acute) on V            (ć is useless in Slovenian)
+**/
+
+/ {
+  keymap {
+    compatible = "zmk,keymap";
+
+    //  |---------------|---------------|
+    //  |        €      |  ž            |
+    //  |      š ď      |        ł      |
+    //  |    ž ß č ć    |               |
+    //  |---------------|---------------|
+
+    one_dead_key {
+      display-name = "1dk";
+      bindings = <SELENIUM_KEYMAP_BINDINGS(
+        &trans  ,  &none   &none   C_EURO  &none   &none    ,   C_ZCAR  &none   &none   &none   &none   ,  &trans ,
+        &trans  ,  &none   C_SCAR  C_DSTR  &none   &none    ,   &none   &none   &none   C_LSTR  &none   ,  &trans ,
+        K_ODKS  ,  C_ZCAR  C_SZ    C_CCAR  C_CACU  &none    ,   &none   &none   &none   &none   &none   ,  K_ODKS ,
+                                 SK_ODKS , S_SQT , &trans   ,   &trans , S_SQT , &trans
+      )>;
+    };
+
+    //  |---------------|---------------|
+    //  |               |  Ž            |
+    //  |      Š Ď      |        Ł      |
+    //  |    Ž § Č Ć    |               |
+    //  |---------------|---------------|
+
+    one_dead_key_shift {
+      display-name = "1dkShift";
+      bindings = <SELENIUM_KEYMAP_BINDINGS(
+        &trans  ,  &none   &none   &none   &none   &none    ,   SC_ZCAR &none   &none   &none   &none   ,  &trans ,
+        &trans  ,  &none   SC_SCAR SC_DSTR &none   &none    ,   &none   &none   &none   SC_LSTR &none   ,  &trans ,
+        &trans  ,  SC_ZCAR C_SILC  SC_CCAR SC_CACU &none    ,   &none   &none   &none   &none   &none   ,  &trans ,
+                                 &trans , &trans , &trans   ,   &trans , &trans , &trans
+      )>;
+    };
+
+  };
+};

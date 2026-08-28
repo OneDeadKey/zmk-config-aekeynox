@@ -58,6 +58,8 @@
   #include "aliases/qwertz_cz.h"
 #elifdef KB_LAYOUT_QWERTZ_DE
   #include "aliases/qwertz_de.h"
+#elifdef KB_LAYOUT_QWERTZ_HR
+  #include "aliases/qwertz_hr.h"
 #elifdef KB_LAYOUT_QWERTZ_HU
   #include "aliases/qwertz_hu.h"
 #elifdef KB_LAYOUT_QWERTZ_SK
