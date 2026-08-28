@@ -1,7 +1,3 @@
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include <behaviors/mod-hold.dtsi>
-
 // clang-format off
 
 /**

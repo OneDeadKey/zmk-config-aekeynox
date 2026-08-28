@@ -1,26 +1,7 @@
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
+// clang-format off
 
-#ifdef ENABLE_FANCY_DEAD_KEYS
-  // This header file provides a DEAD_KEY macro to quicly declare
-  // fancy dead-key behaviors.
-  #include <behaviors/dead-key.dtsi>
-#else
-  // Fallback using a simple one-param macro
-  #define DEAD_KEY(name, key) OMIT_IF_NO_REF name: name { \
-    compatible = "zmk,behavior-macro-one-param";          \
-    #binding-cells = <1>;                                 \
-    tap-ms = <0>;                                         \
-    wait-ms = <0>;                                        \
-    bindings                                              \
-      = <&macro_tap &kp key>                              \
-      , <&macro_param_1to1 &kp MACRO_PLACEHOLDER>         \
-      ;                                                   \
-  };
-#endif
-
-// Same as the DEAD_KEY fallback, but with the following key shifted.
-// Must be unconditionnaly defined for as long as odk-shift layers use it.
+// Convenience macro to help define ocasionnal dead-key -> shifted-key mappings.
+// Mostly a legacy feature for layouts who didn’t have the proper aliases yet.
 #define DEAD_KEY_SHIFT(name, key) OMIT_IF_NO_REF name: name { \
   compatible = "zmk,behavior-macro-one-param";                \
   #binding-cells = <1>;                                       \

@@ -1,9 +1,6 @@
 #define ODK_LAYER        EXTRA_LAYERS_START_INDEX
 #define ODK_SHIFT_LAYER (EXTRA_LAYERS_START_INDEX + 1)
 
-#define  K_ODKS    &mo ODK_SHIFT_LAYER  // Shift key in the 1dk layer
-#define SK_ODKS &EZ_SL(ODK_SHIFT_LAYER) // Shift key in the 1dk layer (sticky)
-
 #define SA(key) RS(RA(key))
 
 // Override the default base layer to apply Bepolar over a Bepo host ([N] becomes 1DK).
@@ -34,7 +31,15 @@
       keep-mods = <(MOD_LSFT|MOD_RSFT)>;
     };
 
-    DEAD_KEY(kpc, Y)  // circumflex accent
+    #ifdef ENABLE_FANCY_DEAD_KEYS
+      DEAD_KEY(kpc, Y)  // circumflex accent
+      #define  K_ODKS    &kp LEFT_SHIFT
+      #define SK_ODKS &EZ_SK(LEFT_SHIFT)
+    #else
+      #define kpc digraph Y
+      #define  K_ODKS    &mo ODK_SHIFT_LAYER  // Shift key in the 1dk layer
+      #define SK_ODKS &EZ_SL(ODK_SHIFT_LAYER) // Shift key in the 1dk layer (sticky)
+    #endif
     DEAD_KEY_SHIFT(skpc, Y)
   };
 
