@@ -33,11 +33,9 @@
       mods      = <(MOD_LSFT|MOD_RSFT)>;
       keep-mods = <(MOD_LSFT|MOD_RSFT)>;
     };
-  };
 
-  macros {
-    DEAD_KEY(kpc, &kp Y)  // circumflex accent
-    DEAD_KEY_SHIFT(skpc, &kp Y)
+    DEAD_KEY(kpc, Y)  // circumflex accent
+    DEAD_KEY_SHIFT(skpc, Y)
   };
 
   // Extra layers defined specifically for this keymap, appended to the base keymap.

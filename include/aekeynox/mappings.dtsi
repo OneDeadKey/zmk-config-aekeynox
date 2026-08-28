@@ -1,26 +1,33 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-// Define a dead layer key
-#define DEAD_KEY(name, key) OMIT_IF_NO_REF name: name { \
-  compatible = "zmk,behavior-macro-one-param";          \
-  #binding-cells = <1>;                                 \
-  tap-ms = <0>;                                         \
-  wait-ms = <0>;                                        \
-  bindings                                              \
-    = <&macro_tap key>                                  \
-    , <&macro_param_1to1 &kp MACRO_PLACEHOLDER>         \
-    ;                                                   \
-};
+#ifdef ENABLE_FANCY_DEAD_KEYS
+  // This header file provides a DEAD_KEY macro to quicly declare
+  // fancy dead-key behaviors.
+  #include <behaviors/dead-key.dtsi>
+#else
+  // Fallback using a simple one-param macro
+  #define DEAD_KEY(name, key) OMIT_IF_NO_REF name: name { \
+    compatible = "zmk,behavior-macro-one-param";          \
+    #binding-cells = <1>;                                 \
+    tap-ms = <0>;                                         \
+    wait-ms = <0>;                                        \
+    bindings                                              \
+      = <&macro_tap &kp key>                              \
+      , <&macro_param_1to1 &kp MACRO_PLACEHOLDER>         \
+      ;                                                   \
+  };
+#endif
 
-// Define a shifted dead layer key
+// Same as the DEAD_KEY fallback, but with the following key shifted.
+// Must be unconditionnaly defined for as long as odk-shift layers use it.
 #define DEAD_KEY_SHIFT(name, key) OMIT_IF_NO_REF name: name { \
   compatible = "zmk,behavior-macro-one-param";                \
   #binding-cells = <1>;                                       \
   tap-ms = <0>;                                               \
   wait-ms = <0>;                                              \
   bindings                                                    \
-    = <&macro_tap key>                                        \
+    = <&macro_tap &kp key>                                    \
     , <&macro_press &kp LSHIFT>                               \
     , <&macro_tap &macro_param_1to1 &kp MACRO_PLACEHOLDER>    \
     , <&macro_release &kp LSHIFT>                             \
