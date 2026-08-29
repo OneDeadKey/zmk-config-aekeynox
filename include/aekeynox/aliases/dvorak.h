@@ -64,8 +64,8 @@
 #define S_MONEY &kp DLLR
 
 /**
-* Caps-Word
-*/
+ * Caps-Word
+ */
 
 #define CAPS_WORD_SHIFT_LIST \
              R  T    Y  U  I  O  P \

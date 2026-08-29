@@ -120,8 +120,8 @@
 #define C_EURO  S_MONEY
 
 /**
-* Caps-Word
-*/
+ * Caps-Word
+ */
 
 #define CAPS_WORD_SHIFT_LIST \
     Q  W  E  R  T    Y  U  I  O  P  LBKT RBKT \

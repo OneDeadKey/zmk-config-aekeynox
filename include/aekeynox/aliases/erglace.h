@@ -64,8 +64,8 @@
 #define S_MONEY &kp RS(N1)
 
 /**
-* Caps-Word
-*/
+ * Caps-Word
+ */
 
 #define CAPS_WORD_SHIFT_LIST \
     Q     E  R  T    Y  U  I  O  P \

@@ -76,8 +76,8 @@
 };
 
 /**
-* Caps-Word
-*/
+ * Caps-Word
+ */
 
 #define CAPS_WORD_SHIFT_LIST \
          Q  W  E  R  T       U    I    O   P    LBKT RBKT \
