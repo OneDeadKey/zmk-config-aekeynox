@@ -85,6 +85,12 @@
   #include "aliases/qwerty.h" // includes LV, PL, RO
 #endif
 
+#if !defined CAPS_WORD_SHIFT_LIST || !defined CAPS_WORD_CONTINUE_LIST
+  #error caps-word configuration macros `CAPS_WORD_SHIFT_LIST` and  \
+         `CAPS_WORD_CONTINUE_LIST` are needed but weren’t defined by  \
+         the included alias file
+#endif
+
 
 /**
  * Numbers
