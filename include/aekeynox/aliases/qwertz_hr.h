@@ -39,7 +39,7 @@
 #define  C_CCAR  &kp SEMI
 #define SC_CCAR  &kp COLON
 #define  C_ZCAR  &kp BSLH
-#define SC_ZCAR  &kp BSLH
+#define SC_ZCAR  &kp PIPE
 
 // acute: ć
 #define  C_CACU  &kp SQT
@@ -136,7 +136,7 @@
     Z  X  C  V  B    N  M
 
 #ifdef LINUX
-  #define CAPS_WORD_CONTINUE_LIST \
+  #define CAPS_WORD_CONTINUE_LIST FSLH \
     DEAD_CARON DEAD_ABOVE_RING DEAD_CIRCUMFLEX DEAD_ACUTE DEAD_GRAVE
 #else
   #define CAPS_WORD_CONTINUE_LIST FSLH \

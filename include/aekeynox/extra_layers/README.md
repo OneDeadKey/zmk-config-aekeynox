@@ -338,20 +338,20 @@ QWERTZ-hr-1dk replaces the <kbd>č</kbd> key with <kbd>1dk</kbd>:
 ```
     |---------------|---------------|  base
     |    q w e r t  |  y u i o p    |
-    |    a s d f g  |  h j k l * ¨  |
+    |    a s d f g  |  h j k l *    |
     |    z x c v b  |  n m , . -    |
     |---------------|---------------|
 
     |---------------|---------------|  1dk
     |        €      |  ž            |
     |      š đ      |        ł      |
-    |    ž ß č ć    |               |
+    |    ž § č ć    |               |
     |---------------|---------------|
 
     |---------------|---------------|  1dkShift
     |               |  Ž            |
     |      Š Đ      |        Ł      |
-    |    Ž § Č Ć    |               |
+    |    Ž   Č Ć    |               |
     |---------------|---------------|
 ```
 
@@ -369,6 +369,9 @@ Support for Italian and Albanian could be added (“Adriatic” layer?):
 - Albanian is an official minority language in Italy, Croatia, Serbia
 - Slovene is an official minority language in Italy
 - Italian is an official minority language in Croatia
+
+Support for German would be possible on Windows and macOS,
+but the default Linux driver lacks `ß` and the dead umlaut.
 
 [accent marks]: https://en.wikipedia.org/wiki/Gaj's_Latin_alphabet#Accent_marks
 
