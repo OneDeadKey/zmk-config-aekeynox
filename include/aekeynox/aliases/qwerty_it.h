@@ -3,7 +3,7 @@
 // https://kbdlayout.info/kbdit    => lacks GRAVE, HASH, TILDE (2)
 
 #ifdef KB_EXTRA_LAYERS_AUTO
-  #define KB_EXTRA_LAYERS_TRANSALP
+  #define KB_EXTRA_LAYERS_ALPINE
 #endif
 
 /**

@@ -2,7 +2,7 @@
 // https://kbdlayout.info/kbdbr
 
 #ifdef KB_EXTRA_LAYERS_AUTO
-  #define KB_EXTRA_LAYERS_TRANSAT
+  #define KB_EXTRA_LAYERS_IBERICAN
 #endif
 
 /**

@@ -59,9 +59,10 @@
 
 // #define KB_EXTRA_LAYERS_AUTO      // default (recommended)
 // #define KB_EXTRA_LAYERS_ALTGR     // default for LV, PL, RO
-// #define KB_EXTRA_LAYERS_TRANSALP  // default for CH, DE, IT
-// #define KB_EXTRA_LAYERS_TRANSAT   // default for BR, ES, LATAM, PT
-// #define KB_EXTRA_LAYERS_NONE      // disable all 1dk layers, use outer cols
+// #define KB_EXTRA_LAYERS_ALPINE    // default for CH, DE, IT
+// #define KB_EXTRA_LAYERS_IBERICAN  // default for BR, ES, LATAM, PT
+// #define KB_EXTRA_LAYERS_NORDIC    // default for DK, FI, NO, SE
+// #define KB_EXTRA_LAYERS_NONE      // no 1dk layers, use outer cols
 
 
 /******************************************************************************

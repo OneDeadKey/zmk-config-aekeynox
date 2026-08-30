@@ -14,12 +14,12 @@ at high typing speeds. *“One dead key to type them all”*, hence our org name
 
 We refer to this positional dead key as <kbd>1dk</kbd>, and use the `*` symbol
 to represent it.
-When possible, it’s placed on the `SEMI` key (QWERTY’s <kbd>;:</kbd> key).
+It’s usually placed on the `SEMI` key (QWERTY’s <kbd>;:</kbd> key).
 
 - [Multilingual Adaptations](#multilingual-adaptations)
+  - [Alpine](#aLpine): Germany, Italy, Switzerland, Luxembourg
+  - [Iberican](#iberican): Brazil, Latin America, Spain, Portugal
   - [Nordic](#nordic): Denmark, Estonia, Finland, Iceland, Norway, Sweden
-  - [Transalp](#transalp): Germany, Italy, Switzerland, Luxembourg
-  - [Transat](#transat): Brazil, Latin America, Spain, Portugal
 - [Programmers’ QWERTY](#programmers-qwerty)
   - [Recommended](#recommended): Latvia, Poland, Romania
   - [Not Recommended](#not-recommended)
@@ -39,16 +39,107 @@ When possible, it’s placed on the `SEMI` key (QWERTY’s <kbd>;:</kbd> key).
 Multilingual Adaptations
 --------------------------------------------------------------------------------
 
-Most West-European languages can be supported by three 1dk layers: Nordic,
-Transalp, Transat. They can be used either on QWERTY or QWERTZ, they’re
-activated by default on relevant non-ASCII layouts, and they can be explicitly
-selected with one of the following definitions:
+Most West-European languages can be supported by three 1dk layers: Alpine,
+Iberican, Nordic. They can be used either on QWERTY or QWERTZ, they’re activated
+by default on relevant non-ASCII layouts, and they can be explicitly selected
+with one of the following definitions:
 
+- [x] `KB_EXTRA_LAYERS_ALPINE`
+- [x] `KB_EXTRA_LAYERS_IBERICAN`
 - [x] `KB_EXTRA_LAYERS_NORDIC`
-- [x] `KB_EXTRA_LAYERS_TRANSALP`
-- [x] `KB_EXTRA_LAYERS_TRANSAT`
+
+### Alpine
+
+This is mostly inspired by the Swiss QWERTZ, which nicely supports the four
+official languages in Switzerland.
+
+Activated by default on:
+
+- [x] [`KB_LAYOUT_QWERTZ_CH_DE`]: Switzerland, Luxembourg (German)
+- [x] [`KB_LAYOUT_QWERTZ_CH_FR`]: Switzerland, Luxembourg (French)
+- [x] [`KB_LAYOUT_QWERTZ_DE`]: Germany, Austria
+- [x] [`KB_LAYOUT_QWERTY_IT`]: Italy
+
+Suitable for:
+
+- [x] [`KB_LAYOUT_QWERTY_INTL`]
+
+```
+    |---------------|---------------|  base
+    |    q w e r t  |  z u i o p    |
+    |    a s d f g  |  h j k l *    |
+    |    y x c v b  |  n m , . -    |
+    |---------------|---------------|
+
+    |---------------|---------------|  1dk
+    |    à é è € ¢  |    ù ì ò      |
+    |    ä ß ë ( )  |    ü ï ö ^    |
+    |    ÿ § ç ? !  |    µ     ¬    |
+    |---------------|---------------|
+
+    |---------------|---------------|  1dkShift
+    |    À É È £    |    Ù Ì Ò      |
+    |    Ä ẞ Ë      |    Ü Ï Ö      |
+    |    Ÿ   Ç      |               |
+    |---------------|---------------|
+```
+
+Supported languages:
+
+- [x] German: `äöü` (diaeresis), `ß`
+- [x] French: `é` (acute), `èàù` (grave), `ç` (cedilla), `âêîôû` (circumflex),
+              `ëïüÿ` (diaeresis)
+- [x] Italian: `é` (acute), `àèìòù` (grave)
+
+### Iberican
+
+Spanish- and Portuguese- speaking countries have very similar keyboard layouts,
+and aren’t limited to one language. This layer should fit all languages spoken
+in the Iberian Peninsula and Latin America.
+
+Activated by default on:
+
+- [x] [`KB_LAYOUT_QWERTY_BR`]: Brazil
+- [x] [`KB_LAYOUT_QWERTY_LATAM`]: Latin America
+- [x] [`KB_LAYOUT_QWERTY_ES`]: Spain
+- [x] [`KB_LAYOUT_QWERTY_PT`]: Portugal
+
+Suitable for:
+
+- [x] [KB_LAYOUT_QWERTY_INTL]
+
+```
+    |---------------|---------------|  base
+    |    q w e r t  |  y u i o p    |
+    |    a s d f g  |  h j k l *    |
+    |    z x c v b  |  n m , . -    |
+    |---------------|---------------|
+
+    |---------------|---------------|  1dk
+    |    ª º é € ¢  |    ú í ó      |
+    |    à § è ( )  |  · ü ï ò ^    |
+    |    ã õ ç ? !  |  ñ µ     ¬    |
+    |---------------|---------------|
+
+    |---------------|---------------|  1dkShift
+    |        É £    |    Ú Í Ó      |
+    |    À   È « »  |    Ü Ï Ò      |
+    |    Ã Õ Ç ¿ ¡  |  Ñ            |
+    |---------------|---------------|
+```
+
+Specific diacritics beside `ñ`, `ç` and `áéíóú`:
+
+- [x] Portuguese: `à`, `ã`, `õ`, `^` (+ `ü`, deprecated)
+- [x] Catalan:    `è`, `ò`, `ï`, `·`
+- [x] Aranese:    `à`, `è`, `ò`
+- [x] Galician:   none (?)
+- [x] Basque:     none
 
 ### Nordic
+
+Scandinavian countries have very similar keyboard layouts, and Finland uses the
+Swedish layout as well. This layer covers Scandinavian and Finnic languages.
 
 Activated by default on:
 
@@ -95,87 +186,6 @@ Supported languages:
 
 Note: when not available in the host layout, `æ` and `ø` are replaced by `ä`
 and `ö` respectively. This is a common practice in Scandinavian languages.
-
-### Transalp
-
-Activated by default on:
-
-- [x] [`KB_LAYOUT_QWERTZ_CH_DE`]: Switzerland, Luxembourg (German)
-- [x] [`KB_LAYOUT_QWERTZ_CH_FR`]: Switzerland, Luxembourg (French)
-- [x] [`KB_LAYOUT_QWERTZ_DE`]: Germany, Austria
-- [x] [`KB_LAYOUT_QWERTY_IT`]: Italy
-
-Suitable for:
-
-- [x] [`KB_LAYOUT_QWERTY_INTL`]
-
-```
-    |---------------|---------------|  base
-    |    q w e r t  |  z u i o p    |
-    |    a s d f g  |  h j k l *    |
-    |    y x c v b  |  n m , . -    |
-    |---------------|---------------|
-
-    |---------------|---------------|  1dk
-    |    à é è € ¢  |    ù ì ò      |
-    |    ä ß ë ( )  |    ü ï ö ^    |
-    |    ÿ § ç ? !  |    µ     ¬    |
-    |---------------|---------------|
-
-    |---------------|---------------|  1dkShift
-    |    À É È £    |    Ù Ì Ò      |
-    |    Ä ẞ Ë      |    Ü Ï Ö      |
-    |    Ÿ   Ç      |               |
-    |---------------|---------------|
-```
-
-Supported languages:
-
-- [x] German: `äöü` (diaeresis), `ß`
-- [x] French: `é` (acute), `èàù` (grave), `ç` (cedilla), `âêîôû` (circumflex),
-              `ëïüÿ` (diaeresis)
-- [x] Italian: `é` (acute), `àèìòù` (grave)
-
-### Transat
-
-Activated by default on:
-
-- [x] [`KB_LAYOUT_QWERTY_BR`]: Brazil
-- [x] [`KB_LAYOUT_QWERTY_LATAM`]: Latin America
-- [x] [`KB_LAYOUT_QWERTY_ES`]: Spain
-- [x] [`KB_LAYOUT_QWERTY_PT`]: Portugal
-
-Suitable for:
-
-- [x] [KB_LAYOUT_QWERTY_INTL]
-
-```
-    |---------------|---------------|  base
-    |    q w e r t  |  y u i o p    |
-    |    a s d f g  |  h j k l *    |
-    |    z x c v b  |  n m , . -    |
-    |---------------|---------------|
-
-    |---------------|---------------|  1dk
-    |    ª º é € ¢  |    ú í ó      |
-    |    à § è ( )  |  · ü ï ò ^    |
-    |    ã õ ç ? !  |  ñ µ     ¬    |
-    |---------------|---------------|
-
-    |---------------|---------------|  1dkShift
-    |        É £    |    Ú Í Ó      |
-    |    À   È « »  |    Ü Ï Ò      |
-    |    Ã Õ Ç ¿ ¡  |  Ñ            |
-    |---------------|---------------|
-```
-
-Specific diacritics beside `ñ`, `ç` and `áéíóú`:
-
-- [x] Portuguese: `à`, `ã`, `õ`, `^` (+ `ü`, deprecated)
-- [x] Catalan:    `è`, `ò`, `ï`, `·`
-- [x] Aranese:    `à`, `è`, `ò`
-- [x] Galician:   none (?)
-- [x] Basque:     none
 
 
 Programmers’ QWERTY
@@ -502,7 +512,7 @@ be customized to include it under the left pinky.
 ```
 
 We still (highly) recommend using a `1dk` layer instead (both `Nordic` and
-`Transalp` work fine with German); but *your keyboard, your rules!*
+`Alpine` work fine with German); but *your keyboard, your rules!*
 
 
 [`KB_LAYOUT_QWERTY`]:           https://kbdlayout.info/kbdus
