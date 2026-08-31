@@ -224,7 +224,6 @@
       tapping-term-ms = <TAPPING_TERM>;
       flavor = "tap-preferred";
       bindings = <&kp>, <&osm>;
-      hold-while-undecided-linger;
       hold-while-undecided;
     };
 
