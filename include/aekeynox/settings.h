@@ -10,7 +10,7 @@
 // a non-QWERTY-ANSI keyboard layout. This is required to set an appropriate
 // 'Symbols' layer and relevant keyboard shortcuts in the 'Nav' layer.
 
-// #define KB_LAYOUT_AZERTY            // France
+#define KB_LAYOUT_AZERTY            // France
 // #define KB_LAYOUT_BEPO              // France
 // #define KB_LAYOUT_BEPOLAR           // France
 // #define KB_LAYOUT_DVORAK            // US
@@ -105,7 +105,7 @@
 // Uncomment one of the following lines to pick your preferred hold-tap config.
 
 // #define HT_NONE
-// #define HT_THUMB_TAPS
+#define HT_THUMB_TAPS
 // #define HT_HOME_ROW_MODS  // (default behavior)
 // #define HT_TWO_THUMB_KEYS
 
