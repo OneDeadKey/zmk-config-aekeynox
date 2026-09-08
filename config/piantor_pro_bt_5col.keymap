@@ -1,0 +1,18 @@
+// Piantor Pro BT 5-col: 36 keys (drop outer columns, 3 thumbs per side).
+// Same physical shape as config/temper.keymap.
+#define SELENIUM_KEYMAP_BINDINGS(LOUT1,  LROW1,  RROW1,  ROUT1, \
+                                 LOUT2,  LROW2,  RROW2,  ROUT2, \
+                                 LOUT3,  LROW3,  RROW3,  ROUT3, \
+                                 LT1, LT2, LT3,  RT3, RT2, RT1) \
+      LROW1   RROW1 \
+      LROW2   RROW2 \
+      LROW3   RROW3 \
+LT1 LT2 LT3  RT3 RT2 RT1
+
+#include <aekeynox/selenium.keymap>
+
+/ {
+    chosen {
+        zmk,physical-layout = &five_col_layout;
+    };
+};
