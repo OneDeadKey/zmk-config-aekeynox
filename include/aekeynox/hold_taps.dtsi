@@ -34,18 +34,28 @@
   #define ALT_CTL LALT
 #endif
 
+#ifndef HRM_INDEX_MOD
+  #define HRM_INDEX_MOD ALT_CTL
+#endif
+#ifndef HRM_MIDDLE_MOD
+  #define HRM_MIDDLE_MOD CTL_CMD
+#endif
+#ifndef HRM_RING_MOD
+  #define HRM_RING_MOD GUI_OPT
+#endif
+
 // Unconditionnal home row mods, needed by the fn/media layer, since combining
 // modifiers on the thumb-taps variant with this layer can be tricky.
 // Hopefully, this issue can be cleanly resolved with mod-holds someday.
-#define UH1 hrm ALT_CTL
-#define UH2 hrm CTL_CMD
-#define UH3 hrm GUI_OPT
+#define UH1 hrm HRM_INDEX_MOD
+#define UH2 hrm HRM_MIDDLE_MOD
+#define UH3 hrm HRM_RING_MOD
 #define UH4 hrm LSHIFT
 
 #ifdef ENABLE_HOME_ROW_MODS
-  #define H1 hrm ALT_CTL
-  #define H2 hrm CTL_CMD
-  #define H3 hrm GUI_OPT
+  #define H1 hrm HRM_INDEX_MOD
+  #define H2 hrm HRM_MIDDLE_MOD
+  #define H3 hrm HRM_RING_MOD
 #else
   #define H1 kp
   #define H2 kp

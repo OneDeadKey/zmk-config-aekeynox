@@ -109,6 +109,13 @@
 // #define HT_HOME_ROW_MODS  // (default behavior)
 // #define HT_TWO_THUMB_KEYS
 
+// Override home row modifiers per finger, mirrored on both hands (also Fn/Media).
+// Defaults: index ALT_CTL, middle CTL_CMD, ring GUI_OPT (OS-aware aliases).
+// Example custom order using fixed keycodes, independent of the host OS:
+// #define HRM_INDEX_MOD LGUI
+// #define HRM_MIDDLE_MOD LALT
+// #define HRM_RING_MOD LCTL
+
 // Timing is key! Keep the default value if unsure.
 // This defines how long (in ms) a hold-tap key with the "tap-preferred" flavor
 // must be held to be considered as a modifier or layer shift. These hold-taps

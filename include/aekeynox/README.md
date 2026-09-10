@@ -39,6 +39,22 @@ when the host computer is configured for a different keyboard layout.
 [2TK]:         https://onedeadkey.github.io/selenium/#flavor-2tk
 [Vim variant]: https://onedeadkey.github.io/selenium/#vim-variant
 
+### Home Row Modifier Order
+
+Set `HRM_INDEX_MOD`, `HRM_MIDDLE_MOD`, and `HRM_RING_MOD` in `settings.h` to
+choose the modifiers on both hands.
+
+For example, to put GUI on the index fingers, Alt on the middle fingers, and
+Ctrl on the ring fingers:
+
+```c
+#define HRM_INDEX_MOD LGUI
+#define HRM_MIDDLE_MOD LALT
+#define HRM_RING_MOD LCTL
+```
+The defaults are `ALT_CTL`, `CTL_CMD`, `GUI_OPT`, which resolve to Ctrl/Cmd/Alt
+on MacOS and Alt/Ctrl/GUI otherwise.
+
 ### Other Options
 
 - `VIM_NAVIGATION` enables the [Vim variant]

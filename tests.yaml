@@ -10,6 +10,11 @@ include:
     artifact-name: default
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS"
 
+    # Custom home row order
+  - board: quacken_flex/rp2040
+    artifact-name: custom_hrm_order
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DMACOS;-DHRM_INDEX_MOD=LGUI;-DHRM_MIDDLE_MOD=LALT;-DHRM_RING_MOD=LCTL;-DHRM_SHIFT;-DPINKY_MOD_HOLD"
+
     # QWERTY + thumb-taps
   - board: quacken_flex/rp2040
     artifact-name: qwerty_tt
