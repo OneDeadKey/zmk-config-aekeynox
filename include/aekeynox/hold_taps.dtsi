@@ -332,7 +332,7 @@
     };
 
     MOD_HOLD_0(mh, &none, MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)
-    MOD_HOLD_1(mhsc, &sc, MOD_LALT)
+    MOD_HOLD_2(mhsc, &sc, MOD_LALT)
     MOD_HOLD_2(mhhrm, &hrm, MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)
 
     OMIT_IF_NO_REF mhkp: hrm_with_raw_mh_on_hold {

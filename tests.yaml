@@ -30,6 +30,11 @@ include:
     artifact-name: ferris_hrm
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DHT_HOME_ROW_MODS"
 
+    # Callum-Mods + mod-hold on nav
+  - board: quacken_flex/rp2040
+    artifact_name: callum_mods
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DCALLUM_NAVIGATION;-DENABLE_MOD_HOLD_NAVIGATION"
+
   ###
   # Layout Adaptations
   ##
