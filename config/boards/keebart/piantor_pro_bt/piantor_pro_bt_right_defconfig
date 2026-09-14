@@ -1,0 +1,36 @@
+# SPDX-License-Identifier: MIT
+
+# Enable MPU
+CONFIG_ARM_MPU=y
+
+# Enable GPIO
+CONFIG_GPIO=y
+
+CONFIG_USE_DT_CODE_PARTITION=y
+CONFIG_BUILD_OUTPUT_UF2=y
+
+CONFIG_MPU_ALLOW_FLASH_WRITE=y
+CONFIG_NVS=y
+CONFIG_SETTINGS_NVS=y
+CONFIG_FLASH=y
+CONFIG_FLASH_PAGE_LAYOUT=y
+CONFIG_FLASH_MAP=y
+
+# Enable BLE for split peripheral
+CONFIG_ZMK_USB=n
+CONFIG_ZMK_BLE=y
+
+# Enable I2C
+CONFIG_I2C=y
+CONFIG_I2C_NRFX=y
+CONFIG_PINCTRL=y
+
+# Enable RGB underglow (the ws2812-spi driver auto-selects from the devicetree node)
+CONFIG_ZMK_RGB_UNDERGLOW=y
+CONFIG_ZMK_RGB_UNDERGLOW_BRT_MAX=30
+
+# Windows Battery Reporting Fix
+CONFIG_BT_GATT_ENFORCE_SUBSCRIPTION=n
+
+# Improved connection stability
+CONFIG_ZMK_BLE_EXPERIMENTAL_CONN=y

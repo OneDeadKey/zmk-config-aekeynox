@@ -1,0 +1,162 @@
+/*
+* Copyright (c) 2020 The ZMK Contributors
+*
+* SPDX-License-Identifier: MIT
+*/
+
+/dts-v1/;
+#include <nordic/nrf52840_qiaa.dtsi>
+#include <dt-bindings/zmk/matrix_transform.h>
+
+#include "piantor_pro_bt-layouts.dtsi"
+
+&default_layout {
+    transform = <&default_transform>;
+};
+
+&five_col_layout {
+    transform = <&five_col_transform>;
+};
+
+/ {
+    chosen {
+        zephyr,code-partition = &code_partition;
+        zephyr,sram = &sram0;
+        zephyr,flash = &flash0;
+        zmk,kscan = &kscan0;
+        zmk,battery = &fuelgauge;
+    };
+
+    default_transform: keymap_transform_0 {
+        compatible = "zmk,matrix-transform";
+        columns = <42>;
+        rows = <1>;
+        map = <
+            RC(0,0)  RC(0,1)  RC(0,2)  RC(0,3)  RC(0,4)  RC(0,5)  RC(0,21) RC(0,22) RC(0,23) RC(0,24) RC(0,25) RC(0,26)
+            RC(0,6)  RC(0,7)  RC(0,8)  RC(0,9)  RC(0,10) RC(0,11) RC(0,27) RC(0,28) RC(0,29) RC(0,30) RC(0,31) RC(0,32)
+            RC(0,12) RC(0,13) RC(0,14) RC(0,15) RC(0,16) RC(0,17) RC(0,33) RC(0,34) RC(0,35) RC(0,36) RC(0,37) RC(0,38)
+                                       RC(0,18) RC(0,19) RC(0,20) RC(0,39) RC(0,40) RC(0,41)
+        >;
+    };
+
+    five_col_transform: keymap_transform_1 {
+        compatible = "zmk,matrix-transform";
+        columns = <36>;
+        rows = <1>;
+        map = <
+            RC(0,1)  RC(0,2)  RC(0,3)  RC(0,4)  RC(0,5)  RC(0,21) RC(0,22) RC(0,23) RC(0,24) RC(0,25)
+            RC(0,7)  RC(0,8)  RC(0,9)  RC(0,10) RC(0,11) RC(0,27) RC(0,28) RC(0,29) RC(0,30) RC(0,31)
+            RC(0,13) RC(0,14) RC(0,15) RC(0,16) RC(0,17) RC(0,33) RC(0,34) RC(0,35) RC(0,36) RC(0,37)
+                              RC(0,18) RC(0,19) RC(0,20) RC(0,39) RC(0,40) RC(0,41)
+        >;
+    };
+
+    // Node name must match original "EXT_POWER" label to preserve user settings.
+    EXT_POWER {
+        compatible = "zmk,ext-power-generic";
+        control-gpios = <&gpio1 11 GPIO_ACTIVE_HIGH>;
+        init-delay-ms = <50>;
+    };
+};
+
+&gpiote {
+    status = "okay";
+};
+
+&gpio0 {
+    status = "okay";
+};
+
+&gpio1 {
+    status = "okay";
+};
+
+zephyr_udc0: &usbd {
+    status = "okay";
+};
+
+
+&pinctrl {
+    spi0_default: spi0_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 17)>,
+                <NRF_PSEL(SPIM_MOSI, 0, 20)>,
+                <NRF_PSEL(SPIM_MISO, 0, 25)>;
+        };
+    };
+
+    spi0_sleep: spi0_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 17)>,
+                <NRF_PSEL(SPIM_MOSI, 0, 20)>,
+                <NRF_PSEL(SPIM_MISO, 0, 25)>;
+            low-power-enable;
+        };
+    };
+
+    i2c1_default: i2c1_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 4)>,
+                <NRF_PSEL(TWIM_SCL, 0, 12)>;
+        };
+    };
+
+    i2c1_sleep: i2c1_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 4)>,
+                <NRF_PSEL(TWIM_SCL, 0, 12)>;
+            low-power-enable;
+        };
+    };
+};
+
+nice_view_spi: &spi0 {
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-1 = <&spi0_sleep>;
+    pinctrl-names = "default", "sleep";
+    cs-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
+};
+
+&i2c1 {
+    status = "okay";
+    compatible = "nordic,nrf-twim";
+    pinctrl-0 = <&i2c1_default>;
+    pinctrl-1 = <&i2c1_sleep>;
+    pinctrl-names = "default", "sleep";
+    clock-frequency = <100000>;
+
+    fuelgauge: max17048@36 {
+        compatible = "zmk,maxim-max17048";
+        reg = <0x36>;
+    };
+};
+
+&flash0 {
+    /*
+* For more information, see:
+* http://docs.zephyrproject.org/latest/devices/dts/flash_partitions.html
+    */
+    partitions {
+        compatible = "fixed-partitions";
+        #address-cells = <1>;
+        #size-cells = <1>;
+
+        sd_partition: partition@0 {
+            label = "softdevice";
+            reg = <0x00000000 0x00026000>;
+        };
+        code_partition: partition@26000 {
+            label = "code_partition";
+            reg = <0x00026000 0x000c6000>;
+        };
+        storage_partition: partition@ec000 {
+            label = "storage";
+            reg = <0x000ec000 0x00008000>;
+        };
+        boot_partition: partition@f4000 {
+            label = "adafruit_boot";
+            reg = <0x000f4000 0x0000c000>;
+        };
+    };
+};
