@@ -41,7 +41,7 @@
 #define DEAD_CIRCUMFLEX       LBKT
 #define DEAD_DIAERESIS        LBRC
 #define DEAD_TILDE OS_SELECT( RA(N2) ,, RA(N) , ) // n/a on Linux
-#define DEAD_GRAVE OS_SELECT( RA(N9) ,, NUHS  , ) // n/a on Linux
+#define DEAD_GRAVE OS_SELECT( RA(N7) ,, NUHS  , ) // n/a on Linux
 #ifdef LINUX
   #undef DEAD_TILDE
   #undef DEAD_GRAVE
@@ -54,8 +54,14 @@
 #define C_UGRV &kp SQT // ù
 #define C_CCDL &kp N9  // ç
 
+// A is [Q] in AZERTY
+#define  C_ACIR DI_CIR    Q  // â
+#define SC_ACIR DI_CIR LS(Q) // Â
+#define  C_ADIA DI_DIA    Q  // ä
+#define SC_ADIA DI_DIA LS(Q) // Ä
+
 // uppercase: À È Ù       ( default      ,, macOS     , Linux     )
-#define SC_AGRV OS_SELECT ( DI_GRV LS(A) ,, &caps N0  , &caps N0  ) // À
+#define SC_AGRV OS_SELECT ( DI_GRV LS(Q) ,, &caps N0  , &caps N0  ) // À
 #define SC_EGRV OS_SELECT ( DI_GRV LS(E) ,, &caps N7  , &caps N7  ) // È
 #define SC_UGRV OS_SELECT ( DI_GRV LS(U) ,, &caps SQT , &caps SQT ) // Ù
 
@@ -101,7 +107,7 @@
 // third row             ( default       ,, macOS         , Linux         )
 #define S_TILDE OS_SELECT( DI_TLD SPACE  ,,               , &kp RA(N2)    )
 #define S_LBKT  OS_SELECT( &kp RA(N5)    ,, &kp SA(N5)    ,               )
-#define S_RBKT  OS_SELECT( &kp RA(EQUAL) ,, &kp SA(MINUS) ,               )
+#define S_RBKT  OS_SELECT( &kp RA(MINUS) ,, &kp SA(MINUS) ,               )
 #define S_UNDER OS_SELECT( &kp N8        ,, &kp PLUS      ,               )
 #define S_HASH  OS_SELECT( &kp RA(N3)    ,, &kp PIPE2     ,               )
 #define S_PIPE  OS_SELECT( &kp RA(N6)    ,, &kp SA(L)     ,               )

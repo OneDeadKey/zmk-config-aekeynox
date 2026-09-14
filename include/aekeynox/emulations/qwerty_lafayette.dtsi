@@ -3,10 +3,10 @@
 
 / {
   behaviors {
-    TWO_LEVEL_KEY(apos, &EZ_SL(ODK_LAYER), S_EXCL) // ' ! (1dk)
-    TWO_LEVEL_KEY(comma, S_COMMA, S_SEMI)          // , ;
-    TWO_LEVEL_KEY(dot,   S_DOT,   S_COLON)         // . :
-    TWO_LEVEL_KEY(slash, S_FSLH,  S_QMARK)         // / ?
+    THREE_LEVEL_KEY(apos, &EZ_SL(ODK_LAYER), S_EXCL, &EZ_SL(ODK_SHIFT_LAYER)) // ' ! (1dk)
+    TWO_LEVEL_KEY(comma, S_COMMA, S_SEMI)   // , ;
+    TWO_LEVEL_KEY(dot,   S_DOT,   S_COLON)  // . :
+    TWO_LEVEL_KEY(slash, S_FSLH,  S_QMARK)  // / ?
   };
 };
 
