@@ -48,7 +48,7 @@
     OMIT_IF_NO_REF magic_backspace_34_keys_emul: magic_backspace_34_keys_emulation {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&sc HRM_LAYER BACKSPACE>, <&ltsp HRM_LAYER 0>;
+      bindings = <&sc L_LAYER_1 BACKSPACE>, <&ltsp L_LAYER_1 0>;
       mods      = <MOD_LSFT>;
       keep-mods = <MOD_LSFT>;
     };

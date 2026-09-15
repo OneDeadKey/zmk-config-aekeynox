@@ -13,7 +13,8 @@
  *     LT[1-3],   RT[1-3]: keys on the left/right thumb clusters (usually Space or modifiers/layers)
  */
 
-// This macro concatenates Selenium keymap bindings so they can be used by ZMK:
+// This macro concatenates Selenium keymap bindings so they can be used by ZMK,
+// it can be overridden in /config/*.keymap for keyboards with more or less than 42 keys:
 #ifndef SELENIUM_KEYMAP_BINDINGS
 #define SELENIUM_KEYMAP_BINDINGS(LOUT1,  LROW1,  RROW1,  ROUT1, \
                                  LOUT2,  LROW2,  RROW2,  ROUT2, \
@@ -25,4 +26,15 @@
     LT1 LT2 LT3 RT3 RT2 RT1
 #endif
 
-// This macro can be overridden in /config/*.keymap for keyboards with more or less than 42 keys.
+
+#define SELENIUM_LAYER_COMPOSE_(LROW1, LROW2, LROW3, RROW1, RROW2, RROW3, \
+                                LT1,   LT2,   LT3,   RT3,   RT2,   RT1) \
+  SELENIUM_KEYMAP_BINDINGS(&trans,  LROW1,  RROW1,  &trans, \
+                           &trans,  LROW2,  RROW2,  &trans, \
+                           &trans,  LROW3,  RROW3,  &trans, \
+                           LT1, LT2, LT3,   RT3, RT2, RT1)
+
+// This macro allows us to build a full layer frow two half layers
+#define SELENIUM_LAYER_COMPOSE(...) SELENIUM_LAYER_COMPOSE_(__VA_ARGS__)
+
+
