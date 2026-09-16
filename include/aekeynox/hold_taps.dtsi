@@ -92,12 +92,6 @@
   #define REACH_TAP TAB
 #endif
 
-#if defined HT_TWO_THUMB_KEYS && !defined VIM_NAVIGATION
-  #define SYM_NUM_LAYER &sc NAV_NUM_LAYER CAPSLOCK
-#else
-  #define SYM_NUM_LAYER &EZ_SL(NUM_LAYER)
-#endif
-
 #ifdef LHAND_SPACE
   #define LTHUMB_TT  &hrm CTL_CMD SPACE
   #define RTHUMB_TT  &magic_backspace
@@ -128,14 +122,14 @@
   #define RTHUMB_REACH  &mt ALT_CTL ENTER
   #define RTHUMB_HOME   RTHUMB_TT
   #define RTHUMB_TUCK   &sym_shift_altgr
-#elif defined HT_HOME_ROW_MODS || defined HT_CALLUM_MODS
+#elif defined HT_HOME_ROW_MODS
   #define LTHUMB_TUCK   &shift_caps
   #define LTHUMB_HOME   LTHUMB_HRM
   #define LTHUMB_REACH  &sc HRM_LAYER REACH_TAP
   #define RTHUMB_REACH  &sc HRM_LAYER ENTER
   #define RTHUMB_HOME   RTHUMB_HRM
   #define RTHUMB_TUCK   &sym_shift_altgr
-#elif defined HT_TWO_THUMB_KEYS || defined HT_CALLUM_MODS_2TK
+#elif defined HT_TWO_THUMB_KEYS
   #define LTHUMB_TUCK   &mt LSHIFT REACH_TAP
   #define LTHUMB_HOME   LTHUMB_S34
   #define LTHUMB_REACH  LTHUMB_TUCK
@@ -144,15 +138,24 @@
   #define RTHUMB_TUCK   RTHUMB_REACH
 #endif
 
-// nav_num layer thumb cluster
+// Tucked thumb keys
 #ifdef HT_TWO_THUMB_KEYS
-  #define NAV_LTHUMB_TUCK   &kp LS(TAB)
-  #define NAV_LTHUMB_REACH  &none
+  #define SYM_LTHUMB      &sc NAV_NUM_LAYER CAPSLOCK
+  #define VIM_NAV_LTHUMB  &sc NUM_ROW_LAYER CAPSLOCK
+  #define VIM_NAV_RTHUMB  &lmt RALT ENTER
+  #define NAV_NUM_LTHUMB  &kp LS(TAB)
+  #define NAV_NUM_RTHUMB  &lmt RALT ESCAPE
+  #define CAL_TEE_LTHUMB  &sc NUM_ROW_LAYER CAPSLOCK
+  #define CAL_TEE_RTHUMB  &lmt RALT ENTER
 #else
-  #define NAV_LTHUMB_TUCK   &EZ_SK(LSHIFT)
-  #define NAV_LTHUMB_REACH  &kp LS(TAB)
+  #define SYM_LTHUMB      &EZ_SL(NUM_LAYER)
+  #define VIM_NAV_LTHUMB  &kp CAPSLOCK
+  #define VIM_NAV_RTHUMB  &EZ_LSK(RALT)
+  #define NAV_NUM_LTHUMB  &EZ_SK(LSHIFT)
+  #define NAV_NUM_RTHUMB  &EZ_LSK(RALT)
+  #define CAL_TEE_LTHUMB  &kp CAPSLOCK
+  #define CAL_TEE_RTHUMB  &EZ_LSK(RALT)
 #endif
-
 
 /**
  * Timing is Key!
@@ -296,6 +299,13 @@
         <&macro_pause_for_release>,
         <&macro_param_1to1>,
         <&macro_release &kp MACRO_PLACEHOLDER>;
+    };
+    OMIT_IF_NO_REF lmt: mt_on_other_layer {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <SHORT_TAPPING_TERM>;
+      flavor = "hold-preferred";
+      bindings = <&lkp>, <&kp>;
     };
     OMIT_IF_NO_REF losm: goto_layer_then_osm {
       compatible = "zmk,behavior-macro-one-param";
