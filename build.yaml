@@ -152,6 +152,22 @@ include:
   - board: go60_rh
     artifact-name: go60_right
 
+    # Piantor Pro BT (nRF52840)
+  - board: piantor_pro_bt_left
+    artifact-name: piantor_pro_bt_left
+    snippet: studio-rpc-usb-uart
+    cmake-args: *cmake-args
+  - board: piantor_pro_bt_right
+    artifact-name: piantor_pro_bt_right
+
+    # Piantor Pro BT 5-column (nRF52840)
+  - board: piantor_pro_bt_5col_left
+    artifact-name: piantor_pro_bt_5col_left
+    snippet: studio-rpc-usb-uart
+    cmake-args: *cmake-args
+  - board: piantor_pro_bt_5col_right
+    artifact-name: piantor_pro_bt_5col_right
+
 
   ###
   # BLE Resets

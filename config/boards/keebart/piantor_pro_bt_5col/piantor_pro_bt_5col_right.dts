@@ -1,0 +1,8 @@
+/* SPDX-License-Identifier: MIT */
+
+#include "../piantor_pro_bt/piantor_pro_bt_right.dts"
+
+/ {
+    model = "piantor_pro_bt_5col_right";
+    compatible = "piantor_pro_bt_5col_right";
+};

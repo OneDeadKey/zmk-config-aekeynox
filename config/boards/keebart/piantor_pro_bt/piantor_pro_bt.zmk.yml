@@ -1,0 +1,16 @@
+file_format: "1"
+id: piantor_pro_bt
+name: Piantor Pro BT
+type: board
+arch: arm
+features:
+  - keys
+  - underglow
+  - studio
+outputs:
+  - usb
+  - ble
+url: https://keebart.com/products/piantor-wireless
+siblings:
+  - piantor_pro_bt_left
+  - piantor_pro_bt_right
