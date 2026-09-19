@@ -50,22 +50,11 @@
                       // differentiate it from regular shift
 };
 
-
-#ifndef LOW_MEMORY_DEVICE
-  &os_sel {
-    #ifdef LINUX
-      default-os = <OS_LIN>;
-    #elifdef ENABLE_CP1252
-      default-os = <OS_WIN>;
-    #elifdef MACOS
-      default-os = <OS_MAC>;
-    #else
-      default-os = <OS_UNS>;
-    #endif
-  };
-  #define OS_SEL_WIN &os_sel_win_uns // Windows, toggle CP1252 ON/OFF
+// oskey selection keys
+#ifdef OS_LIN
+  #define OS_SEL_WIN &os_sel_win_uns // select Windows, toggle CP1252 ON/OFF
   #define OS_SEL_MAC &os_sel_mac_ios // toggle macOS/iOS
-  #define OS_SEL_LIN &os_sel OS_LIN  // Linux
+  #define OS_SEL_LIN &os_sel OS_LIN  // select Linux
 #else
   #define OS_SEL_WIN &none
   #define OS_SEL_MAC &none
