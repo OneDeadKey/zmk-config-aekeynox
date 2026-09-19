@@ -52,12 +52,8 @@
   #define H3 kp
 #endif
 
-#if defined HRM_SHIFT && defined PINKY_MOD_HOLD
-  #define H4 mhhrm LSHIFT
-#elif defined HRM_SHIFT
+#if defined HRM_SHIFT
   #define H4 hrm LSHIFT
-#elif defined PINKY_MOD_HOLD
-  #define H4 mhkp 0
 #else
   #define H4 kp
 #endif
@@ -331,17 +327,6 @@
       keep-mods = <(MOD_LALT|MOD_LGUI)>;
     };
 
-    MOD_HOLD_0(mh, &none, MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)
     MOD_HOLD_2(mhsc, &sc, MOD_LALT)
-    MOD_HOLD_2(mhhrm, &hrm, MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)
-
-    OMIT_IF_NO_REF mhkp: hrm_with_raw_mh_on_hold {
-      compatible = "zmk,behavior-hold-tap";
-      #binding-cells = <2>;
-      tapping-term-ms = <TAPPING_TERM>;
-      quick-tap-ms = <QUICK_TAP>;
-      flavor = "tap-preferred";
-      bindings = <&mh>, <&kp>;
-    };
   };
 };
