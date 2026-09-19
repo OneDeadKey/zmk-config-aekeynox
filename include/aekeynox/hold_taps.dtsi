@@ -24,28 +24,18 @@
  * Home Row
  */
 
-#ifdef MACOS
-  #define GUI_OPT LALT
-  #define CTL_CMD LGUI
-  #define ALT_CTL LCTL
-#else
-  #define GUI_OPT LGUI
-  #define CTL_CMD LCTL
-  #define ALT_CTL LALT
-#endif
-
-// Unconditionnal home row mods, needed by the fn/media layer, since combining
+// Unconditional home row mods, needed by the fn/media layer, since combining
 // modifiers on the thumb-taps variant with this layer can be tricky.
 // Hopefully, this issue can be cleanly resolved with mod-holds someday.
-#define UH1 hrm ALT_CTL
-#define UH2 hrm CTL_CMD
-#define UH3 hrm GUI_OPT
+#define UH1 hrm_alt_ctl
+#define UH2 hrm_ctl_cmd
+#define UH3 hrm_gui_opt
 #define UH4 hrm LSHIFT
 
 #ifdef ENABLE_HOME_ROW_MODS
-  #define H1 hrm ALT_CTL
-  #define H2 hrm CTL_CMD
-  #define H3 hrm GUI_OPT
+  #define H1 hrm_alt_ctl
+  #define H2 hrm_ctl_cmd
+  #define H3 hrm_gui_opt
 #else
   #define H1 kp
   #define H2 kp
@@ -95,14 +85,14 @@
 #endif
 
 #ifdef LHAND_SPACE
-  #define LTHUMB_TT  &hrm CTL_CMD SPACE
+  #define LTHUMB_TT  &hrm_ctl_cmd SPACE
   #define RTHUMB_TT  &magic_backspace
   #define LTHUMB_HRM &lt NAV_LAYER SPACE
   #define RTHUMB_HRM &magic_backspace
   #define LTHUMB_S34 &lt NAV_LAYER SPACE
   #define RTHUMB_S34 &magic_backspace_34_keys
 #else
-  #define LTHUMB_TT  &hrm CTL_CMD BACKSPACE
+  #define LTHUMB_TT  &mt_ctl_cmd BACKSPACE
   #define RTHUMB_TT  &magic_space
   #define LTHUMB_HRM NAV_SC NAV_LAYER BACKSPACE
   #define RTHUMB_HRM &lt NAV_LAYER SPACE
@@ -111,17 +101,17 @@
 #endif
 
 #ifdef HT_NONE
-  #define LTHUMB_TUCK   &kp ALT_CTL
-  #define LTHUMB_HOME   &kp CTL_CMD
-  #define LTHUMB_REACH  &kp GUI_OPT
+  #define LTHUMB_TUCK   &kp_alt_ctl
+  #define LTHUMB_HOME   &kp_ctl_cmd
+  #define LTHUMB_REACH  &kp_gui_opt
   #define RTHUMB_REACH  &mo NAV_LAYER
   #define RTHUMB_HOME   &kp SPACE
   #define RTHUMB_TUCK   &mo SYMBOLS_LAYER
 #elifdef HT_THUMB_TAPS
   #define LTHUMB_TUCK   &shift_caps
   #define LTHUMB_HOME   LTHUMB_TT
-  #define LTHUMB_REACH  &mt GUI_OPT REACH_TAP
-  #define RTHUMB_REACH  &mt ALT_CTL ENTER
+  #define LTHUMB_REACH  &mt_gui_opt REACH_TAP
+  #define RTHUMB_REACH  &mt_alt_ctl ENTER
   #define RTHUMB_HOME   RTHUMB_TT
   #define RTHUMB_TUCK   &sym_shift_altgr
 #elif defined HT_HOME_ROW_MODS || defined HT_CALLUM_MODS
@@ -223,6 +213,20 @@
       hold-while-undecided;
     };
 
+    OMIT_IF_NO_REF ex_mods: explicit_modifiers {
+      compatible = "zmk,behavior-macro-two-param";
+      wait-ms = <0>;
+      tap-ms = <0>;
+      #binding-cells = <2>;
+      bindings =
+        <&macro_param_1to1>,
+        <&macro_press   &kp MACRO_PLACEHOLDER>,
+        <&macro_param_2to1>,
+        <&macro_tap     &kp MACRO_PLACEHOLDER>,
+        <&macro_param_1to1>,
+        <&macro_release &kp MACRO_PLACEHOLDER>;
+    };
+
     // mod‐morph to have Capslock on double‐tap Shift
     OMIT_IF_NO_REF shift_caps: shift_caps {
       compatible = "zmk,behavior-mod-morph";
@@ -314,7 +318,7 @@
     OMIT_IF_NO_REF vim_prev: vim_prev {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&kp LA(LEFT)>, <&kp LS(GRAVE)>;
+      bindings = <&prev>, <&kp LS(GRAVE)>;
       mods      = <(MOD_LALT|MOD_LGUI)>;
       keep-mods = <(MOD_LALT|MOD_LGUI)>;
     };
@@ -322,7 +326,7 @@
     OMIT_IF_NO_REF vim_next: vim_next {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&kp LA(RIGHT)>, <&kp GRAVE>;
+      bindings = <&next>, <&kp GRAVE>;
       mods      = <(MOD_LALT|MOD_LGUI)>;
       keep-mods = <(MOD_LALT|MOD_LGUI)>;
     };

@@ -5,15 +5,15 @@
  * Action Combos
  */
 
-#define X_UNDO  &kp CMD(B)
-#define X_CUT   &kp CMD(FSLH)
-#define X_COPY  &kp CMD(O)
-#define X_PASTE &kp CMD(Y)
-#define X_REDO  &kp CMD(Q)
+#define X_UNDO  &cmd B
+#define X_CUT   &cmd FSLH
+#define X_COPY  &cmd O
+#define X_PASTE &cmd Y
+#define X_REDO  &cmd Q
 
 #define X_CTL_W &kp LC(DOT)
-#define X_SAVE  &kp CMD(L)
-#define X_ALL   &kp CMD(S)
+#define X_SAVE  &cmd L
+#define X_ALL   &cmd S
 
 /**
  * Arsenik Symbols:
