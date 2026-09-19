@@ -22,7 +22,11 @@
 // Non-ASCII Layouts
 #ifdef KB_LAYOUT_AZERTY
   #define SHIFTED_NUMBERS
-  #include "aliases/azerty.h"
+  #ifdef LOW_MEMORY_DEVICE
+    #include "aliases/azerty.h"
+  #else
+    #include "aliases/azerty.dtsi"
+  #endif
 #elifdef KB_LAYOUT_QWERTY_BR
   #include "aliases/qwerty_br.h"
 #elifdef KB_LAYOUT_QWERTY_DK

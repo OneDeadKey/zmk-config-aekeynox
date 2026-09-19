@@ -10,9 +10,10 @@
 // Community module headers
 #include <behaviors/mod-hold.dtsi> // Provides helper macros for the mod-hold behavior
 #include <behaviors/dead-key.dtsi> // Provides helper macros for the dead-key behavior
+#ifndef LOW_MEMORY_DEVICE
 #include <dt-bindings/zmk/oskey.h> // Bindings for oskey OS ids and placeholder params
 #include <behaviors/oskey.dtsi>    // Provides helper macros for the oskey behavior,
-                                   // along with a manual OS selector
+#endif                             // along with a manual OS selector
 
 #ifndef CI_IGNORE_USER_SETTINGS
   #include "settings.h"   // user settings
@@ -138,10 +139,10 @@
     fn_media_layer: fn_media_layer {
       display-name = "FnMedia";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
-        &trans  ,  &kp F1  &kp F2  &kp F3  &kp F4  &os_sel_win_uns   ,   &bt BT_SEL 2  &kp C_NEXT  &kp C_VOL_UP  &kp C_BRI_UP   &kp SLCK    ,  &trans ,
-        &trans  ,  &kp F5  &kp F6  &kp F7  &kp F8  &os_sel_mac_ios   ,   &bt_sel1_clr  &UH1 C_PP   &UH2 C_MUTE   &UH3 C_AL_LOCK &UH4 PSCRN  ,  &trans ,
-        &trans  ,  &kp F9  &kp F10 &kp F11 &kp F12 &os_sel OS_LIN    ,   &bt BT_SEL 0  &kp C_PREV  &kp C_VOL_DN  &kp C_BRI_DN   &kp INS     ,  &trans ,
-                           &trans , &bootloader , &trans   ,   &trans , &sys_reset , &studio_unlock
+        &trans  ,  &kp F1  &kp F2  &kp F3  &kp F4  OS_SEL_WIN   ,   &bt BT_SEL 2  &kp C_NEXT  &kp C_VOL_UP  &kp C_BRI_UP   &kp SLCK    ,  &trans ,
+        &trans  ,  &kp F5  &kp F6  &kp F7  &kp F8  OS_SEL_MAC   ,   &bt_sel1_clr  &UH1 C_PP   &UH2 C_MUTE   &UH3 C_AL_LOCK &UH4 PSCRN  ,  &trans ,
+        &trans  ,  &kp F9  &kp F10 &kp F11 &kp F12 OS_SEL_LIN   ,   &bt BT_SEL 0  &kp C_PREV  &kp C_VOL_DN  &kp C_BRI_DN   &kp INS     ,  &trans ,
+                                &trans , &bootloader , &trans   ,   &trans , &sys_reset , &studio_unlock
       )>;
     };
 
