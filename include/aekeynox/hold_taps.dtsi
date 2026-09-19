@@ -102,7 +102,7 @@
   #define LTHUMB_S34 &lt NAV_LAYER SPACE
   #define RTHUMB_S34 &magic_backspace_34_keys
 #else
-  #define LTHUMB_TT  &hrm CTL_CMD BACKSPACE
+  #define LTHUMB_TT  &mt CTL_CMD BACKSPACE
   #define RTHUMB_TT  &magic_space
   #define LTHUMB_HRM NAV_SC NAV_LAYER BACKSPACE
   #define RTHUMB_HRM &lt NAV_LAYER SPACE
@@ -143,10 +143,8 @@
 // nav_num layer thumb cluster
 #ifdef HT_TWO_THUMB_KEYS
   #define NAV_LTHUMB_TUCK   &kp LS(TAB)
-  #define NAV_LTHUMB_REACH  &none
 #else
-  #define NAV_LTHUMB_TUCK   &EZ_SK(LSHIFT)
-  #define NAV_LTHUMB_REACH  &kp LS(TAB)
+  #define NAV_LTHUMB_TUCK   &mt LSHIFT CAPSLOCK
 #endif
 
 
