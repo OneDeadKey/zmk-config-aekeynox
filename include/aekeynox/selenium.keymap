@@ -10,16 +10,13 @@
 // Community module headers
 #include <behaviors/mod-hold.dtsi> // Provides helper macros for the mod-hold behavior
 #include <behaviors/dead-key.dtsi> // Provides helper macros for the dead-key behavior
-#ifndef LOW_MEMORY_DEVICE
-#include <dt-bindings/zmk/oskey.h> // Bindings for oskey OS ids and placeholder params
-#include <behaviors/oskey.dtsi>    // Provides helper macros for the oskey behavior,
-#endif                             // along with a manual OS selector
 
 #ifndef CI_IGNORE_USER_SETTINGS
   #include "settings.h"   // user settings
 #endif
 
 #include "defaults.h"     // default options and safeguards
+#include "oskey.dtsi"     // <oskey> integration and fallbacks
 #include "hold_taps.dtsi" // defines thumb keys and homerow mods
 #include "aliases.h"      // defines symbols and actions
 #include "bindings.h"     // default SELENIUM_KEYMAP_BINDINGS macro
