@@ -30,6 +30,6 @@
     &trans  ,  &kp ESC  &kp HOME &kp UP   &kp END   &kp PG_UP   ,   &to NUM_LOCK_LAYER &nm7  &nm8  &nm9  S_FSLH  ,  &trans ,
     &trans  ,  X_ALL    &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN   ,   S_MINUS            &nm4  &nm5  &nm6  &nm0    ,  &trans ,
     &trans  ,  X_UNDO   X_CUT    X_COPY   X_PASTE   X_REDO      ,   S_COMMA            &nm1  &nm2  &nm3  S_DOT   ,  &trans ,
-  NAV_LTHUMB_TUCK , &sc FN_MEDIA_LAYER DEL , NAV_LTHUMB_REACH   ,   &kp ESCAPE , &lt FN_MEDIA_LAYER LS(SPACE) , &EZ_LSK(RALT)
+           NAV_LTHUMB_TUCK , &sc FN_MEDIA_LAYER DEL , &kp TAB   ,   &kp ESCAPE , &lt FN_MEDIA_LAYER LS(SPACE) , &EZ_LSK(RALT)
   )>;
 };
