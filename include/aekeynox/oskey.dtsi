@@ -63,6 +63,14 @@
     #define hrm_ctl_cmd hrm LGUI
     #define hrm_gui_opt hrm LALT
 
+    #define mt_gui_opt mt LALT
+    #define mt_alt_ctl mt LCTL
+    #define mt_ctl_cmd mt LGUI
+
+    #define kp_gui_opt kp LALT
+    #define kp_alt_ctl kp LCTL
+    #define kp_ctl_cmd kp LGUI
+
     #define prev kp LG(LBKT)
     #define next kp LG(RBKT)
 
@@ -88,6 +96,14 @@
     #define hrm_alt_ctl hrm LALT
     #define hrm_ctl_cmd hrm LCTL
     #define hrm_gui_opt hrm LGUI
+
+    #define mt_gui_opt mt LGUI
+    #define mt_alt_ctl mt LALT
+    #define mt_ctl_cmd mt LCTL
+
+    #define kp_gui_opt kp LGUI
+    #define kp_alt_ctl kp LALT
+    #define kp_ctl_cmd kp LCTL
 
     #define prev kp LA(LEFT)
     #define next kp LA(RIGHT)
