@@ -42,6 +42,9 @@
 #ifdef LOW_MEMORY_DEVICE
   #define OMIT_IF_NO_REF /omit-if-no-ref/
   // #undef memery-hungry options here
+  #ifdef ENABLE_OSKEY
+  #undef ENABLE_OSKEY
+  #endif
 #else
   #define OMIT_IF_NO_REF
 #endif

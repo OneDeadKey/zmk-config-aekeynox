@@ -51,7 +51,7 @@
 };
 
 // oskey selection keys
-#ifdef OS_LIN
+#ifdef ENABLE_OSKEY
   #define OS_SEL_WIN &os_sel_win_uns // select Windows, toggle CP1252 ON/OFF
   #define OS_SEL_MAC &os_sel_mac_ios // toggle macOS/iOS
   #define OS_SEL_LIN &os_sel OS_LIN  // select Linux
@@ -64,7 +64,7 @@
 / {
   behaviors {
     TWO_LEVEL_KEY(bt_sel1_clr    , &bt BT_SEL 1   , &bt BT_CLR    )
-    #ifndef LOW_MEMORY_DEVICE
+    #ifdef ENABLE_OSKEY
     TWO_LEVEL_KEY(os_sel_win_uns , &os_sel OS_WIN , &os_sel OS_UNS)
     TWO_LEVEL_KEY(os_sel_mac_ios , &os_sel OS_MAC , &os_sel OS_IOS)
     #endif

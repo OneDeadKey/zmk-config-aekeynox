@@ -92,6 +92,12 @@
 // #define ENABLE_CP1252_ALT_CODES
 
 // [Experimental]
+// Uncomment the following line to be able to switch between several OS configs:
+// default, Windows, macOS, Linux, changing modifiers and aliases accordingly.
+
+// #define ENABLE_OSKEY
+
+// [Experimental]
 // Uncomment the following line for an improved dead key support.
 // This only applies to some Hummingbird keymaps and layout emulations.
 

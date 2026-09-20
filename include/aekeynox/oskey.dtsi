@@ -1,4 +1,4 @@
-#ifndef LOW_MEMORY_DEVICE
+#ifdef ENABLE_OSKEY
 
   #include <dt-bindings/zmk/oskey.h>  // Bindings for oskey OS ids and placeholder params
   #include <behaviors/oskey.dtsi>     // Provides helper macros for the oskey behavior,
@@ -38,7 +38,7 @@
     };
   };
 
-#else // !LOW_MEMORY_DEVICE
+#else // !ENABLE_OSKEY
 
   #ifdef MACOS
 
@@ -94,4 +94,4 @@
 
   #endif // MACOS
 
-#endif // LOW_MEMORY_DEVICE
+#endif // ENABLE_OSKEY
