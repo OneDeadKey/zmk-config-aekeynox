@@ -1,24 +1,60 @@
 #ifdef ENABLE_OSKEY
 
   #include <dt-bindings/zmk/oskey.h>  // Bindings for oskey OS ids and placeholder params
-  #include <behaviors/oskey.dtsi>     // Provides helper macros for the oskey behavior,
-                                      // along with a manual OS selector
 
-  &os_sel {
-    #ifdef LINUX
-      default-os = <OS_LIN>;
-    #elifdef ENABLE_CP1252
-      default-os = <OS_WIN>;
-    #elifdef MACOS
-      default-os = <OS_MAC>;
-    #else
-      default-os = <OS_UNS>;
-    #endif
-  };
+  #define OSKEY(name, uns, lin, win, mac, ios)              \
+    OMIT_IF_NO_REF name: name {                             \
+      compatible = "zmk,behavior-os-key";                   \
+      #binding-cells = <0>;                                 \
+      bindings = <uns>                                      \
+        , <COND_CODE_0(IS_EMPTY(lin), (lin), (uns))>        \
+        , <COND_CODE_0(IS_EMPTY(win), (win), (uns))>        \
+        , <COND_CODE_0(IS_EMPTY(mac), (mac), (uns))>        \
+        , <COND_CODE_0(IS_EMPTY(ios), (ios), (uns))>        \
+      ;                                                     \
+    };
+
+  #define OSKEY_1_PARAM(name, uns, lin, win, mac, ios)      \
+    OMIT_IF_NO_REF name: name {                             \
+      compatible = "zmk,behavior-os-key-one-param";         \
+      #binding-cells = <1>;                                 \
+      bindings = <uns>                                      \
+        , <COND_CODE_0(IS_EMPTY(lin), (lin), (uns))>        \
+        , <COND_CODE_0(IS_EMPTY(win), (win), (uns))>        \
+        , <COND_CODE_0(IS_EMPTY(mac), (mac), (uns))>        \
+        , <COND_CODE_0(IS_EMPTY(ios), (ios), (uns))>        \
+      ;                                                     \
+    };
+
+  #define OSKEY_2_PARAM(name, uns, lin, win, mac, ios)      \
+    OMIT_IF_NO_REF name: name {                             \
+      compatible = "zmk,behavior-os-key-two-param";         \
+      #binding-cells = <2>;                                 \
+      bindings = <uns>                                      \
+        , <COND_CODE_0(IS_EMPTY(lin), (lin), (uns))>        \
+        , <COND_CODE_0(IS_EMPTY(win), (win), (uns))>        \
+        , <COND_CODE_0(IS_EMPTY(mac), (mac), (uns))>        \
+        , <COND_CODE_0(IS_EMPTY(ios), (ios), (uns))>        \
+      ;                                                     \
+    };
 
   // swap around modifiers for macOS, as they use them differently than other OSes
   / {
     behaviors {
+      os_sel: os_selector {
+        compatible = "zmk,behavior-os-selector";
+        #binding-cells = <1>;
+        #ifdef LINUX
+          default-os = <OS_LIN>;
+        #elifdef ENABLE_CP1252
+          default-os = <OS_WIN>;
+        #elifdef MACOS
+          default-os = <OS_MAC>;
+        #else
+          default-os = <OS_UNS>;
+        #endif
+      };
+
       OSKEY_1_PARAM(hrm_gui_opt , &hrm LGUI OSKEY_1ST_PARAM ,,, &hrm LALT OSKEY_1ST_PARAM , )
       OSKEY_1_PARAM(hrm_alt_ctl , &hrm LALT OSKEY_1ST_PARAM ,,, &hrm LCTL OSKEY_1ST_PARAM , )
       OSKEY_1_PARAM(hrm_ctl_cmd , &hrm LCTL OSKEY_1ST_PARAM ,,, &hrm LGUI OSKEY_1ST_PARAM , )
