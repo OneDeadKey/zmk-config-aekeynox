@@ -15,10 +15,10 @@ include:
     artifact-name: qwerty_tt
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DHT_THUMB_TAPS"
 
-    # QWERTY + Vim + hrm_shift
+    # QWERTY + Vim + hrm_shift + oskey
   - board: quacken_flex/rp2040
     artifact-name: qwerty_vim_shift
-    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DVIM_NAVIGATION;-DHRM_SHIFT"
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DVIM_NAVIGATION;-DHRM_SHIFT;-DENABLE_OSKEY"
 
     # Ergol + Hummingbird
   - board: quacken_flex/rp2040
@@ -163,20 +163,20 @@ include:
     artifact-name: qwerty_to_dvorak
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY;-DKB_EMULATION_DVORAK"
 
-    # Ergol on AZERTY
+    # Ergol on AZERTY (+ oskey)
   - board: quacken_flex/rp2040
     artifact-name: azerty_to_ergol
-    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_AZERTY;-DKB_EMULATION_ERGOL"
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_AZERTY;-DKB_EMULATION_ERGOL;-DENABLE_OSKEY"
 
     # Ergol on QWERTY-intl
   - board: quacken_flex/rp2040
     artifact-name: qwerty_intl_to_ergol
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY_INTL;-DKB_EMULATION_ERGOL"
 
-    # Lafayette on AZERTY
+    # Lafayette on AZERTY (+ oskey)
   - board: quacken_flex/rp2040
     artifact-name: azerty_to_lafayette
-    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_AZERTY;-DKB_EMULATION_QWERTY_LAFAYETTE"
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_AZERTY;-DKB_EMULATION_QWERTY_LAFAYETTE;-DENABLE_OSKEY"
 
     # Lafayette on QWERTY-intl
   - board: quacken_flex/rp2040
