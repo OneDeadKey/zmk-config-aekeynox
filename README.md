@@ -1,4 +1,4 @@
-Ækeynox
+Ækeynox-zmk
 ====================================================================================================
 
 Reference ZMK implementation of the [Arsenik] and [Selenium] keymaps,
