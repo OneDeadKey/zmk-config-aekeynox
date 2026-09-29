@@ -153,18 +153,15 @@
 // #define CALLUM_NAVIGATION
 
 // [Experimental]
-// Uncomment the following line to enable the "mod-hold behavior" on the
+// Uncomment the following line to enable the "mod-hold" behavior on
 // non-sticky layer keys. Enabling this means that any modifier held while
 // entering the nav/fn/num layers will only be released when returning to
-// the base layer.
-//
-// This is useful for:
+// the base layer. This is useful for:
 // - one-handed shortcuts (Alt + Tab, Alt + F4, Ctrl + page-up/down)
 // - carrying modifiers to fn-media when using the Thumb-Taps flavor
 // - not accidentally dropping Shift when selecting text
-//
-// Note: you may need to release and rehold the layer to drop modifiers you
-// no longer need
+// Note: you may have to release and rehold the layer to drop modifiers you
+// no longer need.
 
 // #define ENABLE_MOD_HOLDS
 
