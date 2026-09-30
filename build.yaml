@@ -99,6 +99,19 @@ include:
     shield: temper_right nice_view_adapter nice_view
     artifact-name: temper_right
 
+    # Temper/Chocofi + nice!nano v2, with a dongle (see README)
+    # The dongle becomes the central part, both halves are peripherals.
+    # The right half firmware above is already a peripheral: no change needed.
+  - board: nice_nano@2//zmk
+    shield: temper_left dongle
+    artifact-name: temper_dongle
+    snippet: studio-rpc-usb-uart
+    cmake-args: *cmake-args
+  - board: nice_nano@2//zmk
+    shield: temper_left nice_view_adapter nice_view
+    artifact-name: temper_left_peripheral
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+
   # Re-gret + XIAO RP2040
   - board: xiao_rp2040//zmk
     shield: re-gret
