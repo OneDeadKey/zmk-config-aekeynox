@@ -1,0 +1,85 @@
+/*
+* Copyright (c) 2020 The ZMK Contributors
+*
+* SPDX-License-Identifier: MIT
+*/
+
+#include "piantor_pro_bt.dtsi"
+#include <dt-bindings/led/led.h>
+
+/ {
+    model = "piantor_pro_bt_left";
+    compatible = "piantor_pro_bt_left";
+
+    chosen {
+        zmk,underglow = &led_strip;
+    };
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-direct";
+        wakeup-source;
+        input-gpios
+            = <&gpio0  7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0  9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio1  4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio1  2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio1  0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio1  6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0 24 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0  2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio1 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0 30 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0  5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio1  9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0  8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0 28 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0  3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio1 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+        ;
+    };
+};
+
+&pinctrl {
+    spi3_default: spi3_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 26)>;
+        };
+    };
+
+    spi3_sleep: spi3_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 26)>;
+            low-power-enable;
+        };
+    };
+};
+
+&spi3 {
+    compatible = "nordic,nrf-spim";
+    status = "okay";
+
+    pinctrl-0 = <&spi3_default>;
+    pinctrl-1 = <&spi3_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    led_strip: ws2812@0 {
+        compatible = "worldsemi,ws2812-spi";
+
+        /* SPI */
+        reg = <0>; /* ignored, but necessary for SPI bindings */
+        spi-max-frequency = <4000000>;
+
+        /* WS2812 */
+        chain-length = <21>; /* number of LEDs */
+        spi-one-frame = <0x70>;
+        spi-zero-frame = <0x40>;
+        color-mapping = <LED_COLOR_ID_GREEN
+            LED_COLOR_ID_RED
+            LED_COLOR_ID_BLUE>;
+    };
+};

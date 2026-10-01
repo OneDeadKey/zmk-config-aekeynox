@@ -1,0 +1,7 @@
+#include <aekeynox/selenium.keymap>
+
+/ {
+    chosen {
+        zmk,physical-layout = &default_layout;
+    };
+};

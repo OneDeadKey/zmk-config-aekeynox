@@ -1,0 +1,9 @@
+boards:
+  - name: piantor_pro_bt_left
+    vendor: keebart
+    socs:
+      - name: nrf52840
+  - name: piantor_pro_bt_right
+    vendor: keebart
+    socs:
+      - name: nrf52840

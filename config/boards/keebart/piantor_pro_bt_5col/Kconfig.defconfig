@@ -1,0 +1,38 @@
+# Copyright (c) 2020 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if BOARD_PIANTOR_PRO_BT_5COL_LEFT
+
+config ZMK_SPLIT_ROLE_CENTRAL
+	default y
+
+endif # BOARD_PIANTOR_PRO_BT_5COL_LEFT
+
+if BOARD_PIANTOR_PRO_BT_5COL_LEFT || BOARD_PIANTOR_PRO_BT_5COL_RIGHT
+
+config BOARD
+	default "piantor_pro_bt_5col"
+
+config ZMK_SPLIT
+	default y
+
+if USB
+
+config USB_NRFX
+	default y
+
+config USB_DEVICE_STACK
+	default y
+
+endif # USB
+
+config BT_CTLR
+	default BT
+
+config I2C
+	default y
+
+config ZMK_MAX17048
+	default y
+
+endif # BOARD_PIANTOR_PRO_BT_5COL_LEFT || BOARD_PIANTOR_PRO_BT_5COL_RIGHT
