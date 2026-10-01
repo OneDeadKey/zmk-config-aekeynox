@@ -128,6 +128,12 @@ include:
   - board: ferris//zmk
     artifact-name: ferris
 
+    # Planck rev6 (STM32F303)
+  - board: planck//zmk
+    artifact-name: planck
+    snippet: studio-rpc-usb-uart
+    cmake-args: *cmake-args
+
     # Corneish Zen (nRF52840)
   - board: corneish_zen_left//zmk
     artifact-name: corneish_zen_left

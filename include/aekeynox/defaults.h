@@ -25,6 +25,20 @@
   #error "Please select only up to one hold-tap configuration at a time"
 #endif
 
+#ifdef THREE_THUMB_KEYS
+  // Arsenik (applied after the flavor check): Nav can't be reached without
+  // hold-taps, 2TK needs four thumb keys, and the spacebar can't be moved to
+  // the left hand.
+  #undef LHAND_SPACE
+  #ifdef HT_NONE
+    #undef HT_NONE
+    #define HT_THUMB_TAPS
+  #elifdef HT_TWO_THUMB_KEYS
+    #undef HT_TWO_THUMB_KEYS
+    #define HT_HOME_ROW_MODS
+  #endif
+#endif
+
 #if (defined HT_HOME_ROW_MODS || defined HT_TWO_THUMB_KEYS) && !defined CALLUM_NAVIGATION
   #define ENABLE_HOME_ROW_MODS
 #endif

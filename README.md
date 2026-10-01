@@ -77,6 +77,9 @@ Check the [keymap configuration guide].
 
 This is where you can add a new keyboard, or redefine an existing keyboard.
 
+Keyboards with a central spacebar (e.g. the Planck) only have three thumb keys: their descriptor
+defines `THREE_THUMB_KEYS`, and they get the [Arsenik] thumb keys automatically.
+
 A few keyboards expose hardware-level options in `config/*.conf` files.
 
 ### [`build.yaml`](build.yaml)
