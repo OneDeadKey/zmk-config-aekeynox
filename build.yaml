@@ -89,6 +89,16 @@ include:
     shield: lily58_right
     artifact-name: lily58_right
 
+    # Sofle + nice!nano v2
+  - board: nice_nano@2//zmk
+    shield: sofle_left
+    artifact-name: sofle_left
+    snippet: studio-rpc-usb-uart
+    cmake-args: *cmake-args
+  - board: nice_nano@2//zmk
+    shield: sofle_right
+    artifact-name: sofle_right
+
     # Temper/Chocofi + nice!nano v2
   - board: nice_nano@2//zmk
     shield: temper_left nice_view_adapter nice_view
