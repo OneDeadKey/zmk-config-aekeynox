@@ -1,0 +1,29 @@
+// OLKB Planck rev6, MIT layout: 4×12 grid with a 2u spacebar in the middle of
+// the bottom row (11 keys). Like a 3×6 Corne, outer columns are used.
+// https://github.com/zmkfirmware/zmk/tree/main/app/boards/olkb/planck
+
+// The spare keys of the bottom row are static modifiers, on every layer, as on
+// a laptop. Harmless with home row mods, they're needed by the Thumb-Taps flavor
+// along with the Shift keys of the outer columns.
+#define SELENIUM_KEYMAP_BINDINGS(LOUT1,  LROW1,  RROW1,  ROUT1, \
+                                 LOUT2,  LROW2,  RROW2,  ROUT2, \
+                                 LOUT3,  LROW3,  RROW3,  ROUT3, \
+                                 LT1, LT2, LT3,  RT3, RT2, RT1) \
+    LOUT1       LROW1                                                RROW1       ROUT1       \
+    LOUT2       LROW2                                                RROW2       ROUT2       \
+    LOUT3       LROW3                                                RROW3       ROUT3       \
+    &kp CTL_CMD &kp GUI_OPT &kp ALT_CTL &none  LT1  RT2  RT1  &none  &kp ALT_CTL &kp GUI_OPT &kp CTL_CMD
+
+// This keyboard has a central spacebar: only three thumb keys (left, spacebar,
+// right). Ensure the Arsenik thumb keys are selected.
+#define THREE_THUMB_KEYS
+
+// Select the MIT physical layout (2u spacebar) rather than the default 1u grid.
+// Grid owners: switch the physical layout in ZMK Studio.
+/ {
+  chosen {
+    zmk,physical-layout = &layout_ortho_4x12_1x2u;
+  };
+};
+
+#include <aekeynox/selenium.keymap>
