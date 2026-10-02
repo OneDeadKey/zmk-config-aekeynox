@@ -30,6 +30,21 @@ include:
     artifact-name: ferris_hrm
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DHT_HOME_ROW_MODS"
 
+    # Planck: Arsenik thumb keys (central spacebar)
+  - board: planck//zmk
+    artifact-name: planck
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS"
+
+    # Ensure the Planck applies TT when EZ is requested
+  - board: planck//zmk
+    artifact-name: planck_ez
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DHT_NONE"
+
+    # Ergol on AZERTY + Arsenik thumb keys (no-break-space emulation)
+  - board: planck//zmk
+    artifact-name: planck_azerty_to_ergol
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_AZERTY;-DKB_EMULATION_ERGOL"
+
     # Callum-Mods + mod-hold on nav
   - board: quacken_flex/rp2040
     artifact_name: callum_mods

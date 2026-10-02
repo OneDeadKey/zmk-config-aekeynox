@@ -28,10 +28,12 @@
   #define GUI_OPT LALT
   #define CTL_CMD LGUI
   #define ALT_CTL LCTL
+  #define ALT_CMD LGUI
 #else
   #define GUI_OPT LGUI
   #define CTL_CMD LCTL
   #define ALT_CTL LALT
+  #define ALT_CMD LALT
 #endif
 
 // Unconditionnal home row mods, needed by the fn/media layer, since combining
@@ -152,11 +154,40 @@
   #define RTHUMB_TUCK   RTHUMB_REACH
 #endif
 
-// nav_num layer thumb cluster
-#ifdef HT_TWO_THUMB_KEYS
-  #define NAV_LTHUMB_TUCK   &kp LS(TAB)
+// Arsenik keyboards (central spacebar) only have three thumb keys, placed on the
+// LT1 (left), RT2 (spacebar) and RT1 (right) slots of the Selenium thumb cluster.
+// With thumb taps, the left key keeps the native modifier next to the spacebar.
+#ifdef THREE_THUMB_KEYS
+  #undef LTHUMB_TUCK
+  #undef RTHUMB_HOME
+  #undef RTHUMB_TUCK
+  #ifdef HT_THUMB_TAPS
+    #define LTHUMB_TUCK &mt ALT_CMD BACKSPACE
+  #else
+    #define LTHUMB_TUCK &mt LSHIFT BACKSPACE
+  #endif
+  #define RTHUMB_HOME   RTHUMB_HRM
+  #define RTHUMB_TUCK   &sc SYMBOLS_LAYER ENTER
+#endif
+
+// nav layers' thumb keys:
+//  - NAV_LTHUMB_TUCK: NavNum
+//  - VIM_LTHUMB_TUCK: VimNav and CalTee (2TK differs between VimNav and NavNum)
+//  - NAV_RTHUMB_TUCK: all of them
+// Arsenik: Delete (FnMedia when held) on the left, Escape on the right. `&lt` is
+// tap-preferred, so a Delete->Escape roll can't trigger FnMedia.
+#ifdef THREE_THUMB_KEYS
+  #define NAV_LTHUMB_TUCK   &lt FN_MEDIA_LAYER DEL
+  #define VIM_LTHUMB_TUCK   NAV_LTHUMB_TUCK
+  #define NAV_RTHUMB_TUCK   &kp ESCAPE
 #else
-  #define NAV_LTHUMB_TUCK   &mt LSHIFT CAPSLOCK
+  #ifdef HT_TWO_THUMB_KEYS
+    #define NAV_LTHUMB_TUCK &kp LS(TAB)
+  #else
+    #define NAV_LTHUMB_TUCK &mt LSHIFT CAPSLOCK
+  #endif
+  #define VIM_LTHUMB_TUCK   &mt LSFT CAPS
+  #define NAV_RTHUMB_TUCK   &EZ_LSK(RALT)
 #endif
 
 
