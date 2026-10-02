@@ -93,6 +93,28 @@ You might have to change the `board` field to match the micro-controller unit as
 
 If your keeb has an onboard controller, there’s nothing to configure.
 
+#### Dongle
+
+Wireless split keebs can use a [dongle]: a spare BLE controller becomes the central part of the
+keyboard, and both halves become peripherals — which saves their batteries.
+
+Any split shield can get a dongle by stacking the generic `dongle` shield on its left part, then
+turning this left part into a peripheral. See the Temper example in `build.yaml`:
+
+```yaml
+- board: nice_nano@2//zmk
+  shield: temper_left dongle
+- board: nice_nano@2//zmk
+  shield: temper_left
+  cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+```
+
+The right part and the keymap are unchanged. Flash `settings_reset` on all parts first.
+
+Keebs with an onboard controller (Glove80, Go60…) need a dedicated dongle, and aren’t covered yet.
+
+[dongle]: https://zmk.dev/docs/hardware-integration/dongle
+
 
 Non-ASCII Layouts
 ----------------------------------------------------------------------------------------------------
