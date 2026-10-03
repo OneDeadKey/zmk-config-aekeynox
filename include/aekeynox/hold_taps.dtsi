@@ -139,7 +139,7 @@
 #elif defined HT_HOME_ROW_MODS || defined HT_CALLUM_MODS
   #define LTHUMB_TUCK   &shift_caps
   #define LTHUMB_HOME   LTHUMB_HRM
-  #define LTHUMB_REACH  &MHSC HRM_LAYER REACH_TAP
+  #define LTHUMB_REACH  &MHSC FN_MEDIA_LAYER REACH_TAP
   #define RTHUMB_REACH  &MHSC HRM_LAYER ENTER
   #define RTHUMB_HOME   RTHUMB_HRM
   #define RTHUMB_TUCK   &sym_shift_altgr
