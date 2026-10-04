@@ -48,9 +48,15 @@ Your firmware will now be built automatically by GitHub’s CI:
 - unzip, pick the firmware matching your keeb
 - flash your keeb
 
-Note: if you encounter Bluetooth connection issues, it might help to flash your keyboard
-with the `settings_reset` firmware matching your controller.
-More info [in the ZMK documentation](https://zmk.dev/docs/troubleshooting/connection-issues).
+> [!TIP]
+> `.bin` firmwares (common for STM32 boards like the Ferris) can be tough to
+> flash, so a simple bash script is provided as a wrapper to `dfu-util`:
+> `./dfu_flash <.bin file path>`
+
+> [!NOTE]
+> If you encounter Bluetooth connection issues, it might help to flash your keyboard
+> with the `settings_reset` firmware matching your controller.
+> More info [in the ZMK documentation](https://zmk.dev/docs/troubleshooting/connection-issues).
 
 
 Configuration
