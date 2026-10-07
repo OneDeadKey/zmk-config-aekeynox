@@ -25,20 +25,25 @@ include:
     artifact-name: ergol_hummingbird
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_ERGOL;-DHUMMINGBIRD;-DENABLE_FANCY_DEAD_KEYS"
 
+    # Callum-Mods + mod-hold on nav
+  - board: quacken_flex/rp2040
+    artifact_name: callum_mods
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DCALLUM_NAVIGATION;-DENABLE_MOD_HOLDS"
+
     # Ensure the Ferris applies 2TK even when HRM is requested
   - board: ferris//zmk
     artifact-name: ferris_hrm
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DHT_HOME_ROW_MODS"
 
-    # Planck: Arsenik thumb keys (central spacebar)
+    # Ensure the Planck applies Arsenik even when EZ is requested
   - board: planck//zmk
-    artifact-name: planck
-    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS"
+    artifact-name: planck_ez
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DHT_NONE"
 
-    # Callum-Mods + mod-hold on nav
-  - board: quacken_flex/rp2040
-    artifact_name: callum_mods
-    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DCALLUM_NAVIGATION;-DENABLE_MOD_HOLDS"
+    # Ensure the Preonic applies Arsenik even when TT is requested
+  - board: preonic//zmk
+    artifact-name: preonic_tt
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DHT_THUMB_TAPS"
 
   ###
   # Layout Adaptations
