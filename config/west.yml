@@ -20,6 +20,8 @@ manifest:
       url-base: https://github.com/rloutier
     - name: rschenk
       url-base: https://github.com/rschenk
+    - name: niiico69
+      url-base: https://github.com/niiico69
 
   projects:
       # We rely on a fork of ZMK for a couple of reasons:
@@ -80,6 +82,16 @@ manifest:
     - name: zmk-keyboard-re-gret
       remote: rschenk
       revision: 34ca1fc7dc6991475b0c20f2c8361598e7aaeaca
+
+      ###
+      # Hardware add-ons
+      ##
+
+      # Dongle: turns any split shield into a dongle-centered keyboard
+      # (see build.yaml, e.g. `shield: temper_left dongle`)
+    - name: zmk-dongle
+      remote: niiico69
+      revision: e77540e9c65a860be2dc51b1fcac288c20d2cc92
 
   self:
     path: config
