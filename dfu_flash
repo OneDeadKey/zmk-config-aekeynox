@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+set -euo pipefail # Bash strict mode
+
+function usage() {
+  echo "Usage: $0 <.bin file path>"
+  echo "Make sure your keyboard is in bootloader mode *before* running this script"
+  exit 1
+}
+
+test "$#" -eq 1 || usage
+bin_file="$1"
+
+# Add a "DFU firmware file suffix" if it is missing. Enables safety checks when
+# flashing the firmware, and will be required in later releases of `dfu-util`
+dfu-suffix --check "$bin_file" &>/dev/null || dfu-suffix --add "$bin_file" &>/dev/null
+
+# Get the DFU of the internal flash of the device
+internal_flash="$(dfu-util --list | grep '@Internal Flash')" || usage
+
+# Parsing the DFU using `sed`, we look for a delimiter, catch the value, remove
+# everything else. Probably a job for `awk` or something else, but hey it works.
+device_id="$(echo "$internal_flash" | sed 's/.*\[\(.*\)\].*/\1/')"
+alt="$(echo "$internal_flash" | sed 's/.*alt=\(.\).*/\1/')"
+dfuse_address="$(echo "$internal_flash" | sed 's,.*/\(.*\)/.*,\1,')"
+
+# Flash the device
+dfu-util -a "$alt" -d "$device_id" -s "$dfuse_address:leave" -D "$bin_file"

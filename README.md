@@ -46,11 +46,53 @@ Your firmware will now be built automatically by GitHub’s CI:
 - click on this task
 - download the CI artifact
 - unzip, pick the firmware matching your keeb
-- flash your keeb
+- [flash your keeb](#flashing)
 
-Note: if you encounter Bluetooth connection issues, it might help to flash your keyboard
-with the `settings_reset` firmware matching your controller.
-More info [in the ZMK documentation](https://zmk.dev/docs/troubleshooting/connection-issues).
+> [!NOTE]
+> If you encounter Bluetooth connection issues, it might help to flash your keyboard
+> with the `settings_reset` firmware matching your controller.
+> More info [in the ZMK documentation](https://zmk.dev/docs/troubleshooting/connection-issues).
+
+
+Flashing
+----------------------------------------------------------------------------------------------------
+
+### Bootloader Mode
+
+Before flashing, your keyboard must put in bootloader mode:
+
+- for nRF52840 boards: double-tap the RESET button;
+- for RP2040 boards: hold the BOOT button while plugging the keyboard;
+- for STM32F boards: tap the RESET button;
+- properly configured keyboards often have a `&bootloader` key.
+
+### `.uf2` Firmware
+
+Modern controllers such as the RP2040 or the nRF52840 support the [USB Flashing Format (uf2)][uf2],
+which makes it trivial to flash your keyboard:
+
+1. put your keyboard in bootloader mode;
+2. your keyboard now appears as a removable flash drive;
+3. drag the `.uf2` file onto this removable flash drive.
+
+The keyboard restarts, the removable flash drive is unmounted, done.
+
+[uf2]: https://microsoft.github.io/uf2/
+
+### `.bin` Firmware
+
+Other controllers like the STM32F rely on the raw `.bin` format, which requires [dfu-util] to be
+flashed. `dfu-util` itself is available as an official package in most Linux distributions, and
+Ækeynox provides a `dfu_flash` wrapper script to ease its usage:
+
+1. put your keyboard in bootloader mode;
+2. run this script:
+```bash
+./dfu_flash path/to/firmware.bin
+```
+3. unplug and replug the keyboard to restart it.
+
+[dfu-util]: https://dfu-util.sourceforge.net/
 
 
 Configuration
