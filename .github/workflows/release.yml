@@ -1,0 +1,41 @@
+name: Release
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5.0.0
+        id: release
+        with:
+          target-branch: ${{ github.ref_name }}
+
+      - if: ${{ steps.release.outputs.release_created }}
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ steps.release.outputs.sha }}
+          path: aekeynox
+
+      - if: ${{ steps.release.outputs.release_created }}
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      # manifest.lock.yml: the exact commit of every module of this release
+      - if: ${{ steps.release.outputs.release_created }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          pip install west
+          west init -l aekeynox/config
+          cd aekeynox # west workspace: parent of the manifest directory
+          west update --narrow -o=--depth=1
+          west manifest --freeze --active-only > manifest.lock.yml
+          gh release upload "${{ steps.release.outputs.tag_name }}" manifest.lock.yml -R "${{ github.repository }}"
