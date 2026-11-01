@@ -1,0 +1,18 @@
+// OLKB Planck rev6, MIT layout (4×12 grid with a 2u spacebar)
+// https://github.com/zmkfirmware/zmk/tree/main/app/boards/olkb/planck
+
+// XXX: Arsenik configuration -- three thumb keys are taken out,
+//      only three thumb keys are used (left, spacebar, right).
+#define SELENIUM_KEYMAP_BINDINGS(LOUT1,  LROW1,  RROW1,  ROUT1, \
+                                 LOUT2,  LROW2,  RROW2,  ROUT2, \
+                                 LOUT3,  LROW3,  RROW3,  ROUT3, \
+                                 LT, _2, _3, _4, BAR, RT) \
+                       LOUT1   LROW1             RROW1   ROUT1 \
+                       LOUT2   LROW2             RROW2   ROUT2 \
+                       LOUT3   LROW3             RROW3   ROUT3 \
+    &none &kp LCTL &kp LALT &kp LGUI  LT BAR RT  &kp LEFT &kp DOWN &kp UP &kp RIGHT
+
+// Ensure the Arsenik hold-taps are selected.
+#define THREE_THUMB_KEYS
+
+#include <aekeynox/selenium.keymap>
