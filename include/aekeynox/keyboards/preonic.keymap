@@ -1,0 +1,22 @@
+// OLKB Preonic rev3, 5×12 grid
+// https://github.com/zmkfirmware/zmk/tree/main/app/boards/olkb/preonic
+
+// Note: the center thumb keys are doubled to match a 2u spacebar (e.g. MassDrop edition),
+// but in case there are two 1u keys, a classic Selenium keymap would be better.
+
+// XXX: Arsenik configuration -- three thumb keys are taken out,
+//      only three thumb keys are used (left, spacebar, right).
+#define SELENIUM_KEYMAP_BINDINGS(LOUT1,  LROW1,  RROW1,  ROUT1, \
+                                 LOUT2,  LROW2,  RROW2,  ROUT2, \
+                                 LOUT3,  LROW3,  RROW3,  ROUT3, \
+                                 LT, _2, _3, _4, BAR, RT) \
+    &kp CAPS &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp DEL \
+                       LOUT1   LROW1                 RROW1   ROUT1 \
+                       LOUT2   LROW2                 RROW2   ROUT2 \
+                       LOUT3   LROW3                 RROW3   ROUT3 \
+    &none &kp LCTL &kp LALT &kp LGUI  LT BAR BAR RT  &kp LEFT &kp DOWN &kp UP &kp RIGHT
+
+// Ensure the Arsenik hold-taps are selected.
+#define THREE_THUMB_KEYS
+
+#include <aekeynox/selenium.keymap>

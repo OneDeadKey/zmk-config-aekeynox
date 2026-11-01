@@ -1,0 +1,33 @@
+#define SELENIUM_KEYMAP_BINDINGS(LOUT1,  LROW1,  RROW1,  ROUT1, \
+                                 LOUT2,  LROW2,  RROW2,  ROUT2, \
+                                 LOUT3,  LROW3,  RROW3,  ROUT3, \
+                                 LT1, LT2, LT3,  RT3, RT2, RT1) \
+      LROW1   RROW1 \
+      LROW2   RROW2 \
+      LROW3   RROW3 \
+    LT1 LT2   RT2 RT1
+
+// This keyboard has only two keys per thumb.
+// Ensure the 2TK flavor is selected.
+#define FOUR_THUMB_KEYS
+
+// Force hummingbird layout for any compatible layout
+#define LESS_THAN_3X5_KEYS
+
+// Redirect some keys to make the otherwise too small keyboard fill the 3x5
+// matrix that Selenium expects. The original definition of the matrix transform
+// for this keyboard can be found here:
+// https://github.com/zmkfirmware/zmk/blob/main/app/boards/shields/hummingbird/hummingbird.overlay#L20-L30
+//
+// Note that this `redirection-table` field is an addition made by the fork of
+// ZMK that we rely on.
+&matrix_transform0 {
+  redirection-table = <
+     0  1  2  3  4     5  6  7  8  9
+    10 11 12 13 14    15 16 17 18 19
+       21 22 23          26 27 28
+             30 31    32 33
+  >;
+};
+
+#include <aekeynox/selenium.keymap>
