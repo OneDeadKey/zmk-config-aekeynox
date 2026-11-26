@@ -54,12 +54,12 @@
     };
 
     // 1. NumLock layer -- a NavNum layer that stays on until deactivated without holding any key
-    num_lock_layer: num_lock_layer {
-      display-name = "NumLock";
+    nav_lock_layer: nav_lock_layer {
+      display-name = "NavLock";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
-        &trans  ,  &kp ESC  &kp HOME &kp UP   &kp END   &kp PG_UP   ,   &to BASE_LAYER S_N7  S_N8  S_N9  S_FSLH  ,  &trans ,
-        &trans  ,  S_EQUAL  &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN   ,   S_MINUS        S_N4  S_N5  S_N6  S_N0    ,  &trans ,
-        &trans  ,  S_MONEY  S_COLON  S_STAR   S_PLUS    S_PRCNT     ,   S_COMMA        S_N1  S_N2  S_N3  S_DOT   ,  &trans ,
+        &trans  ,  &kp ESC  &kp HOME &kp UP   &kp END   &kp PG_UP   ,   S_FSLH  S_N7  S_N8  S_N9  &to BASE_LAYER  ,  &trans ,
+        &trans  ,  S_EQUAL  &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN   ,   S_MINUS S_N4  S_N5  S_N6  S_N0            ,  &trans ,
+        &trans  ,  S_MONEY  S_COLON  S_STAR   S_PLUS    S_PRCNT     ,   S_COMMA S_N1  S_N2  S_N3  S_DOT           ,  &trans ,
                  &trans , &sc NAV_NUM_LAYER BACKSPACE , &kp (TAB)   ,   &trans , &lt NAV_NUM_LAYER LS(SPACE) , &EZ_SL(SYMBOLS_LAYER)
       )>;
     };
@@ -82,9 +82,9 @@
     vim_nav_layer: vim_nav_layer {
       display-name = "VimNav";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
-        &trans  ,  &none    X_CTL_W  &vim_prev &vim_next &none     ,   &kp HOME &kp PG_DN &kp PG_UP &kp END   &kp DEL ,  &trans ,
-        &trans  ,  X_ALL    X_SAVE   X_SHTAB   &kp TAB   &none     ,   &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &none   ,  &trans ,
-        &trans  ,  X_UNDO   X_CUT    X_COPY    X_PASTE   X_REDO    ,   X_MSC_L  X_MSC_D   X_MSC_U   X_MSC_R   &none   ,  &trans ,
+        &trans  ,  &none    X_CTL_W  &vim_prev &vim_next &none     ,   &kp HOME &kp PG_DN &kp PG_UP &kp END   &to NAV_LOCK_LAYER  ,  &trans ,
+        &trans  ,  X_ALL    X_SAVE   X_SHTAB   &kp TAB   &none     ,   &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &none               ,  &trans ,
+        &trans  ,  X_UNDO   X_CUT    X_COPY    X_PASTE   X_REDO    ,   X_MSC_L  X_MSC_D   X_MSC_U   X_MSC_R   &none               ,  &trans ,
               VIM_LTHUMB_TUCK , &sc FN_MEDIA_LAYER DEL , &trans    ,   &trans ,  &mo FN_MEDIA_LAYER , NAV_RTHUMB_TUCK
       )>;
     };
@@ -95,9 +95,9 @@
     nav_num_layer: nav_num_layer {
       display-name = "NavNum";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
-        &trans  ,  &kp ESC  &kp HOME &kp UP   &kp END   &kp PG_UP   ,   &to NUM_LOCK_LAYER S_N7  S_N8  S_N9  S_FSLH  ,  &trans ,
-        &trans  ,  X_ALL    &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN   ,   S_MINUS            S_N4  S_N5  S_N6  S_N0    ,  &trans ,
-        &trans  ,  X_UNDO   X_CUT    X_COPY   X_PASTE   X_REDO      ,   S_COMMA            S_N1  S_N2  S_N3  S_DOT   ,  &trans ,
+        &trans  ,  &kp ESC  &kp HOME &kp UP   &kp END   &kp PG_UP   ,   S_FSLH  S_N7  S_N8  S_N9  &to NAV_LOCK_LAYER  ,  &trans ,
+        &trans  ,  X_ALL    &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN   ,   S_MINUS S_N4  S_N5  S_N6  S_N0                ,  &trans ,
+        &trans  ,  X_UNDO   X_CUT    X_COPY   X_PASTE   X_REDO      ,   S_COMMA S_N1  S_N2  S_N3  S_DOT               ,  &trans ,
            NAV_LTHUMB_TUCK , &sc FN_MEDIA_LAYER DEL , &kp LS(TAB)   ,   &trans , &lt FN_MEDIA_LAYER LS(SPACE) , NAV_RTHUMB_TUCK
       )>;
     };
@@ -108,9 +108,9 @@
     cal_tee_layer: cal_tee_layer {
       display-name = "CalTee";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
-        &trans  ,  &vim_prev    &kp LS(TAB)  &kp TAB      &vim_next     &trans   ,   &kp PG_UP &kp HOME &kp UP   &kp END    &trans  ,  &trans ,
-        &trans  ,  &EZ_SK(LSFT) &EZ_SK(LGUI) &EZ_SK(LCTL) &EZ_SK(LALT)  &trans   ,   &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT  &trans  ,  &trans ,
-        &trans  ,  X_UNDO       X_CUT        X_COPY       X_PASTE       X_REDO   ,   &trans    &trans   &trans   &trans     &trans  ,  &trans ,
+        &trans  ,  &vim_prev    &kp LS(TAB)  &kp TAB      &vim_next     &trans   ,   &kp PG_UP &kp HOME &kp UP   &kp END    &to NAV_LOCK_LAYER  ,  &trans ,
+        &trans  ,  &EZ_SK(LSFT) &EZ_SK(LGUI) &EZ_SK(LCTL) &EZ_SK(LALT)  &trans   ,   &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT  &trans              ,  &trans ,
+        &trans  ,  X_UNDO       X_CUT        X_COPY       X_PASTE       X_REDO   ,   &trans    &trans   &trans   &trans     &trans              ,  &trans ,
                              VIM_LTHUMB_TUCK , &sc FN_MEDIA_LAYER DEL , &trans   ,   &trans ,  &mo FN_MEDIA_LAYER , NAV_RTHUMB_TUCK
       )>;
     };
